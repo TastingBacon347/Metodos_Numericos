@@ -12,6 +12,7 @@ namespace Metodos_Numeros
 {
     public partial class Forms1: Form
     {
+        
         public Forms1()
         {
             InitializeComponent();
