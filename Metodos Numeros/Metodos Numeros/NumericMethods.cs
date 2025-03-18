@@ -6,6 +6,7 @@ using LiveCharts;
 using LiveCharts.WinForms;
 using LiveCharts.Wpf;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 
 
 namespace Metodos_Numeros
@@ -13,27 +14,25 @@ namespace Metodos_Numeros
     public static class NumericMethods
     {
         static Expression exp;
-        static double a, b, fa, fb, c, fc, fcAnterior, errorActual;
-        public static void Biseccion(string funcion, double limiteA, double limiteB, double error, DataGridView dataGridView)
+        static double a, b, fa, fb, c, fc, cAnterior, errorActual;
+        public static List<string[]> Biseccion(string funcion, double limiteA, double limiteB, double error)
         {
+            List<string[]> listaStrings = new List<string[]>();
+            funcion = Regex.Replace(funcion, @"(\([^\)]+\)|[a-zA-Z0-9\.]+)\s*\^\s*([\-]?[0-9a-zA-Z\.]+)", "Pow($1,$2)");
             exp = new Expression(funcion);
-            if (!EsExpresionValida()) return;
+            if (!EsExpresionValida()) return listaStrings;
             a = limiteA;
             b = limiteB;
             fa = EvaluarLaFuncion(a);
             fb = EvaluarLaFuncion(b);
-            if (NoExisteRaizEnElIntervalo()) return;
-            exp = new Expression(funcion);
+            if (NoExisteRaizEnElIntervalo()) return listaStrings;
             c = ObtenerValorDeCEnBiseccion();
-            fcAnterior = EvaluarLaFuncion(c);
+            fc = EvaluarLaFuncion(c);
             errorActual = 0;
-            dataGridView.Rows.Add(a, b, c, fa, fb, fc, "Null");
+            string lado = fa * fc > 0 ? "DER" : "IZQ";
+            listaStrings.Add(new string[] { a.ToString(), b.ToString(), c.ToString(), fa.ToString(), fb.ToString(), fc.ToString(), lado, "Null" });
             do
             {
-                fa = EvaluarLaFuncion(a);
-                fb = EvaluarLaFuncion(b);
-                c = ObtenerValorDeCEnBiseccion();
-                fc = EvaluarLaFuncion(c);
                 if (fa * fc > 0)
                 {
                     a = c;
@@ -42,31 +41,42 @@ namespace Metodos_Numeros
                 {
                     b = c;
                 }
+                cAnterior = c;
+                fa = EvaluarLaFuncion(a);
+                fb = EvaluarLaFuncion(b);
+                c = ObtenerValorDeCEnBiseccion();
+                fc = EvaluarLaFuncion(c);
+                if (fa * fc > 0)
+                {
+                    lado = "DER";
+                }
+                else
+                {
+                    lado = "IZQ";
+                }
                 CalcularErrorActual();
-                fcAnterior = fc;
-                dataGridView.Rows.Add(a, b, c, fa, fb, fc, errorActual);
+                listaStrings.Add(new string[] { a.ToString(), b.ToString(), c.ToString(), fa.ToString(), fb.ToString(), fc.ToString(), lado, errorActual.ToString() });
             } while (errorActual >= error);
+            return listaStrings;
         }
-        public static void ReglaFalsa(string funcion, int limiteA, int limiteB, float error, DataGridView dataGridView)
+        public static List<string[]> ReglaFalsa(string funcion, double limiteA, double limiteB, double error)
         {
+            List<string[]> listaStrings = new List<string[]>();
+            funcion = Regex.Replace(funcion, @"(\([^\)]+\)|[a-zA-Z0-9\.]+)\s*\^\s*([\-]?[0-9a-zA-Z\.]+)", "Pow($1,$2)");
             exp = new Expression(funcion);
-            if (!EsExpresionValida()) return;
+            if (!EsExpresionValida()) return listaStrings;
             a = limiteA;
             b = limiteB;
             fa = EvaluarLaFuncion(a);
             fb = EvaluarLaFuncion(b);
-            if (NoExisteRaizEnElIntervalo()) return;
-            exp = new Expression(funcion);
+            if (NoExisteRaizEnElIntervalo()) return listaStrings;
             c = ObtenerValorDeCEnReglaFalsa();
-            fcAnterior = EvaluarLaFuncion(c);
+            fc = EvaluarLaFuncion(c);
             errorActual = 0;
-            dataGridView.Rows.Add(a, b, c, fa, fb, fc, "Null");
+            string lado = fa * fc > 0 ? "DER" : "IZQ";
+            listaStrings.Add(new string[] { a.ToString(), b.ToString(), c.ToString(), fa.ToString(), fb.ToString(), fc.ToString(), lado, "Null" });
             do
             {
-                fa = EvaluarLaFuncion(a);
-                fb = EvaluarLaFuncion(b);
-                c = ObtenerValorDeCEnBiseccion();
-                fc = EvaluarLaFuncion(c);
                 if (fa * fc > 0)
                 {
                     a = c;
@@ -75,14 +85,27 @@ namespace Metodos_Numeros
                 {
                     b = c;
                 }
-                CalcularErrorActual();
-                fcAnterior = fc;
-                dataGridView.Rows.Add(a, b, c, fa, fb, fc, errorActual);
+                cAnterior = c;
+                fa = EvaluarLaFuncion(a);
+                fb = EvaluarLaFuncion(b);
+                c = ObtenerValorDeCEnReglaFalsa();
+                fc = EvaluarLaFuncion(c);
+                if (fa * fc > 0)
+                {
+                    lado = "DER";
+                }
+                else
+                {
+                    lado = "IZQ";
+                }
+                CalcularErrorActual(); 
+                listaStrings.Add(new string[] { a.ToString(), b.ToString(), c.ToString(), fa.ToString(), fb.ToString(), fc.ToString(), lado, errorActual.ToString() });
             } while (errorActual >= error);
+            return listaStrings;
         }
         private static void CalcularErrorActual()
         {
-            errorActual = fc != 0 ? Math.Abs((fcAnterior - fc) / fc) : Math.Abs((fcAnterior - fc) / (fc + 0.01));
+            errorActual = fc != 0 ? Math.Abs((cAnterior - c) / c) : 0;
         }
         private static double ObtenerValorDeCEnReglaFalsa()
         {
@@ -148,7 +171,7 @@ namespace Metodos_Numeros
             {
                 exp.Parameters["x"] = 1;
                 var result = exp.Evaluate();  
-                return !exp.HasErrors();        
+                return true;        
             }
             catch
             {

@@ -52,7 +52,22 @@ namespace Metodos_Numeros
 
         private void btnGraficaBiseccion_Click(object sender, EventArgs e)
         {
+            
 
+        }
+
+        private void btnCorrerReglaFalsa_Click(object sender, EventArgs e)
+        {
+            if (txtFuncionReglaFalsa.Text == string.Empty) return;
+            if (txtParametroAReglaFalsa.Text == string.Empty) return;
+            if (txtParametroBReglaFalsa.Text == string.Empty) return;
+            if (txtErrorReglaFalsa.Text == string.Empty) return;
+            DGVReglaFalsa.Rows.Clear();
+            List<string[]> lista = NumericMethods.ReglaFalsa(txtFuncionReglaFalsa.Text, Convert.ToDouble(txtParametroAReglaFalsa.Text), Convert.ToDouble(txtParametroBReglaFalsa.Text), Convert.ToDouble(txtErrorReglaFalsa.Text));
+            foreach (string[] array in lista)
+            {
+                DGVReglaFalsa.Rows.Add(array);
+            }
         }
     }
 }

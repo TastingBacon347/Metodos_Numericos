@@ -55,8 +55,23 @@ namespace Metodos_Numeros
             txtErrorBiseccion.Visible = true;
             DGVBiseccion.Visible = true;
             lblNo.Visible = true;
-
             
+            
+        }
+
+        private void btnCorrerBiseccion_Click(object sender, EventArgs e)
+        {
+            if (txtFuncionBiseccion.Text == string.Empty) return;
+            if (txtParametroABiseccion.Text == string.Empty) return;
+            if (txtParametroBBiseccion.Text == string.Empty) return;
+            if (txtErrorBiseccion.Text == string.Empty) return;
+            DGVBiseccion.Rows.Clear();
+            List<string[]> lista = NumericMethods.Biseccion(txtFuncionBiseccion.Text, Convert.ToDouble(txtParametroABiseccion.Text), Convert.ToDouble(txtParametroBBiseccion.Text), Convert.ToDouble(txtErrorBiseccion.Text));
+            foreach(string[] array in lista)
+            {
+                DGVBiseccion.Rows.Add(array);
+            }
+
         }
     }
 }
