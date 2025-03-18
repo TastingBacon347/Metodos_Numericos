@@ -13,10 +13,15 @@ namespace Metodos_Numeros
     public partial class Form2: Form
     {
 
+
         public Form2()
         {
             InitializeComponent();
-            
+            if (Application.OpenForms["Form4"] == null)
+            {
+                btnGraficaBiseccion.Enabled = true;
+            }
+
         }
 
         private void Form2_Load(object sender, EventArgs e)
@@ -45,18 +50,28 @@ namespace Metodos_Numeros
 
         private void btnVerficarBiseccion_Click(object sender, EventArgs e)
         {
-            //Boton Verificar Metodo Biseccion
-            //Si los parametros no arrojan raiz que muestr el lblNo
-            //Si los parametros si arrojan raiz
-            // Y ps poner que hasta que se no llenen los campos de parametros
-            //y funcion que no se active este boton xd
-            btnCorrerBiseccion.Visible = true;
-            lblError1.Visible = true;
-            txtErrorBiseccion.Visible = true;
-            DGVBiseccion.Visible = true;
-            lblNo.Visible = true;
             
-            
+
+            float num1, num2, num3;
+
+
+            if (float.TryParse(txtErrorBiseccion.Text, out num1) &&
+                float.TryParse(txtParametroBBiseccion.Text, out num2) &&
+                float.TryParse(txtParametroABiseccion.Text, out num3) &&
+                !string.IsNullOrWhiteSpace(txtFuncionBiseccion.Text))
+            {
+                btnCorrerBiseccion.Visible = true;
+                DGVBiseccion.Visible = true;
+                lblNo.Visible = false;
+            }
+            else
+            {
+                lblNo.Visible = true;
+                btnCorrerBiseccion.Visible = false;
+                DGVBiseccion.Visible = false;
+            }
+
+
         }
 
         private void btnCorrerBiseccion_Click(object sender, EventArgs e)
@@ -71,6 +86,19 @@ namespace Metodos_Numeros
             {
                 DGVBiseccion.Rows.Add(array);
             }
+
+        }
+
+        private void txtErrorBiseccion_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnGraficaBiseccion_Click(object sender, EventArgs e)
+        {
+
+            Form4 nuevaVentana = new Form4();
+            nuevaVentana.Show();
 
         }
     }

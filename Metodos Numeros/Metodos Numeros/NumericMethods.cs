@@ -73,6 +73,7 @@ namespace Metodos_Numeros
             ConfigurarEjes(chart, valoresX);
         }
 
+
         // -------------------------------------------------------------
         //                     MÉTODOS AUXILIARES
         // -------------------------------------------------------------

@@ -28,13 +28,25 @@ namespace Metodos_Numeros
 
         private void btnVerificarReglaFalsa_Click(object sender, EventArgs e)
         {
-            btnCorrerReglaFalsa.Visible = true;
-            lblError2.Visible = true;
-            txtErrorReglaFalsa.Visible = true;
-            DGVReglaFalsa.Visible = true;
-            lblNo2.Visible = true;
-        }
 
+                float num1, num2, num3;
+
+            if (float.TryParse(txtErrorReglaFalsa.Text, out num1) &&
+                float.TryParse(txtParametroBReglaFalsa.Text, out num2) &&
+                float.TryParse(txtParametroAReglaFalsa.Text, out num3) &&
+                !string.IsNullOrWhiteSpace(txtFuncionReglaFalsa.Text))
+            {
+                btnCorrerReglaFalsa.Visible = true;
+                DGVReglaFalsa.Visible = true;
+                lblNo2.Visible =false;
+            }
+            else
+            {
+                lblNo2.Visible = true;
+                btnCorrerReglaFalsa.Visible = false;
+                DGVReglaFalsa.Visible = false;
+            }
+        }
         private void btnRegreso2_Click(object sender, EventArgs e)
         {
             Form1 form1 = (Form1)Application.OpenForms["Form1"]; 
@@ -52,8 +64,8 @@ namespace Metodos_Numeros
 
         private void btnGraficaBiseccion_Click(object sender, EventArgs e)
         {
-            
-
+            Form4 nuevaVentana = new Form4();
+            nuevaVentana.Show();
         }
 
         private void btnCorrerReglaFalsa_Click(object sender, EventArgs e)

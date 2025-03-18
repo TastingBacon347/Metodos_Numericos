@@ -25,13 +25,16 @@ namespace Metodos_Numeros
         private void btnBiseccion_Click_1(object sender, EventArgs e)
         {
             Form2 nuevaVentana = new Form2();
-            nuevaVentana.ShowDialog(); // Bloquea Form1 hasta que Form2 se cierre
+            nuevaVentana.Show();
+            this.Hide();
+
         }
 
         private void btnReglaFalsa_Click_1(object sender, EventArgs e)
         {
             Form3 nuevaVentana = new Form3();
             nuevaVentana.Show();
+            this.Hide();
         }
 
         private void btnSalir3_Click(object sender, EventArgs e)
