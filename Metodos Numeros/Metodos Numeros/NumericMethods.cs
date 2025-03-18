@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using NCalc;
 using LiveCharts;
+using LiveCharts.WinForms;
+using LiveCharts.Wpf;
 using System.Windows.Forms;
-using NCalc.Domain;
-using System.Runtime.CompilerServices;
+
 
 namespace Metodos_Numeros
 {
@@ -28,6 +27,7 @@ namespace Metodos_Numeros
             c = ObtenerValorDeCEnBiseccion();
             fcAnterior = EvaluarLaFuncion(c);
             errorActual = 0;
+            dataGridView.Rows.Add(a, b, c, fa, fb, fc, "Null");
             do
             {
                 fa = EvaluarLaFuncion(a);
@@ -44,6 +44,7 @@ namespace Metodos_Numeros
                 }
                 CalcularErrorActual();
                 fcAnterior = fc;
+                dataGridView.Rows.Add(a, b, c, fa, fb, fc, errorActual);
             } while (errorActual >= error);
         }
         public static void ReglaFalsa(string funcion, int limiteA, int limiteB, float error, DataGridView dataGridView)
@@ -59,6 +60,7 @@ namespace Metodos_Numeros
             c = ObtenerValorDeCEnReglaFalsa();
             fcAnterior = EvaluarLaFuncion(c);
             errorActual = 0;
+            dataGridView.Rows.Add(a, b, c, fa, fb, fc, "Null");
             do
             {
                 fa = EvaluarLaFuncion(a);
@@ -75,6 +77,7 @@ namespace Metodos_Numeros
                 }
                 CalcularErrorActual();
                 fcAnterior = fc;
+                dataGridView.Rows.Add(a, b, c, fa, fb, fc, errorActual);
             } while (errorActual >= error);
         }
         private static void CalcularErrorActual()
@@ -99,10 +102,45 @@ namespace Metodos_Numeros
             exp.Parameters["x"] = parametro;
             return Convert.ToDouble(exp.Evaluate());
         }
-        
-        public static void Grafica(string funcion, int a, int b)
-        {
 
+        public static void Grafica(string funcion, double a, double b, LiveCharts.WinForms.CartesianChart chart)
+        { 
+            exp = new Expression(funcion);
+            if (!EsExpresionValida())
+                return;
+            chart.Series.Clear();
+            chart.AxisX.Clear();
+            chart.AxisY.Clear();
+            ChartValues<double> valoresY = new ChartValues<double>();
+            List<double> valoresX = new List<double>();
+
+            double paso = (b - a) / 100.0; 
+
+            for (double x = a; x <= b; x += paso)
+            {
+                double y = EvaluarLaFuncion(x);
+                valoresX.Add(x);
+                valoresY.Add(y);
+            }
+
+            chart.Series.Add(new LineSeries
+            {
+                Title = $"f(x) = {funcion}",
+                Values = valoresY,
+                PointGeometry = null
+            });
+
+            chart.AxisX.Add(new Axis
+            {
+                Title = "X",
+                Labels = valoresX.Select(v => v.ToString("F2")).ToArray(),
+                Separator = new LiveCharts.Wpf.Separator { Step = 10 }
+            });
+
+            chart.AxisY.Add(new Axis
+            {
+                Title = "Y"
+            });
         }
         private static bool EsExpresionValida()
         {
