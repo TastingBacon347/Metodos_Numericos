@@ -16,7 +16,7 @@ namespace Metodos_Numeros
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Forms1());
+            Application.Run(new Form1());
         }
     }
 }
