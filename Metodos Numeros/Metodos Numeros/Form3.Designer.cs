@@ -35,6 +35,14 @@
             this.btnRegreso2 = new System.Windows.Forms.Button();
             this.btnCorrerReglaFalsa = new System.Windows.Forms.Button();
             this.DGVReglaFalsa = new System.Windows.Forms.DataGridView();
+            this.a = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.b = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.c = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fb = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IzqoDer = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ErrorAbsoluto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtErrorReglaFalsa = new System.Windows.Forms.TextBox();
             this.lblError2 = new System.Windows.Forms.Label();
             this.lblNo2 = new System.Windows.Forms.Label();
@@ -50,14 +58,6 @@
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.btnGraficaBiseccion = new System.Windows.Forms.Button();
-            this.a = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.b = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.c = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fa = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fb = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IzqoDer = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ErrorAbsoluto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DGVReglaFalsa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
@@ -131,6 +131,58 @@
             this.DGVReglaFalsa.Size = new System.Drawing.Size(776, 175);
             this.DGVReglaFalsa.TabIndex = 82;
             this.DGVReglaFalsa.Visible = false;
+            // 
+            // a
+            // 
+            this.a.HeaderText = "a";
+            this.a.Name = "a";
+            this.a.ReadOnly = true;
+            // 
+            // b
+            // 
+            this.b.HeaderText = "b";
+            this.b.Name = "b";
+            this.b.ReadOnly = true;
+            // 
+            // c
+            // 
+            this.c.HeaderText = "c";
+            this.c.Name = "c";
+            this.c.ReadOnly = true;
+            // 
+            // fa
+            // 
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            this.fa.DefaultCellStyle = dataGridViewCellStyle3;
+            this.fa.HeaderText = "f(a)";
+            this.fa.Name = "fa";
+            this.fa.ReadOnly = true;
+            // 
+            // fb
+            // 
+            this.fb.HeaderText = "f(b)";
+            this.fb.Name = "fb";
+            this.fb.ReadOnly = true;
+            // 
+            // fc
+            // 
+            this.fc.HeaderText = "f(c)";
+            this.fc.Name = "fc";
+            this.fc.ReadOnly = true;
+            // 
+            // IzqoDer
+            // 
+            this.IzqoDer.HeaderText = "Izq o Der";
+            this.IzqoDer.Name = "IzqoDer";
+            this.IzqoDer.ReadOnly = true;
+            // 
+            // ErrorAbsoluto
+            // 
+            this.ErrorAbsoluto.HeaderText = "ErrorAbsoluto";
+            this.ErrorAbsoluto.Name = "ErrorAbsoluto";
+            this.ErrorAbsoluto.ReadOnly = true;
             // 
             // txtErrorReglaFalsa
             // 
@@ -285,58 +337,6 @@
             this.btnGraficaBiseccion.UseVisualStyleBackColor = true;
             this.btnGraficaBiseccion.Click += new System.EventHandler(this.btnGraficaBiseccion_Click);
             // 
-            // a
-            // 
-            this.a.HeaderText = "a";
-            this.a.Name = "a";
-            this.a.ReadOnly = true;
-            // 
-            // b
-            // 
-            this.b.HeaderText = "b";
-            this.b.Name = "b";
-            this.b.ReadOnly = true;
-            // 
-            // c
-            // 
-            this.c.HeaderText = "c";
-            this.c.Name = "c";
-            this.c.ReadOnly = true;
-            // 
-            // fa
-            // 
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            this.fa.DefaultCellStyle = dataGridViewCellStyle3;
-            this.fa.HeaderText = "f(a)";
-            this.fa.Name = "fa";
-            this.fa.ReadOnly = true;
-            // 
-            // fb
-            // 
-            this.fb.HeaderText = "f(b)";
-            this.fb.Name = "fb";
-            this.fb.ReadOnly = true;
-            // 
-            // fc
-            // 
-            this.fc.HeaderText = "f(c)";
-            this.fc.Name = "fc";
-            this.fc.ReadOnly = true;
-            // 
-            // IzqoDer
-            // 
-            this.IzqoDer.HeaderText = "Izq o Der";
-            this.IzqoDer.Name = "IzqoDer";
-            this.IzqoDer.ReadOnly = true;
-            // 
-            // ErrorAbsoluto
-            // 
-            this.ErrorAbsoluto.HeaderText = "ErrorAbsoluto";
-            this.ErrorAbsoluto.Name = "ErrorAbsoluto";
-            this.ErrorAbsoluto.ReadOnly = true;
-            // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -363,7 +363,7 @@
             this.Controls.Add(this.lbl15);
             this.Name = "Form3";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form3";
+            this.Text = "Metodo de Regla Falsa";
             this.Load += new System.EventHandler(this.Form3_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DGVReglaFalsa)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
