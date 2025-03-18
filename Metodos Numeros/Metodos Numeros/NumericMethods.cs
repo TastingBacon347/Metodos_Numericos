@@ -247,7 +247,6 @@ namespace Metodos_Numeros
                 b = c;
 
             cAnterior = c;
-            cAnterior = fc;
             fa = EvaluarLaFuncion(a);
             fb = EvaluarLaFuncion(b);
             c = ObtenerValorDeCEnReglaFalsa();
