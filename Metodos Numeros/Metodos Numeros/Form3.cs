@@ -64,8 +64,34 @@ namespace Metodos_Numeros
 
         private void btnGraficaBiseccion_Click(object sender, EventArgs e)
         {
-            Form4 nuevaVentana = new Form4();
-            nuevaVentana.Show();
+            string funcion = txtFuncionReglaFalsa.Text;  // 
+            if (string.IsNullOrWhiteSpace(funcion))
+            {
+                MessageBox.Show("Ingresa una función válida.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (!double.TryParse(txtParametroAReglaFalsa.Text, out double inicio))
+            {
+                MessageBox.Show("Valor de inicio inválido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (!double.TryParse(txtParametroBReglaFalsa.Text, out double fin))
+            {
+                MessageBox.Show("Valor de fin inválido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (inicio >= fin)
+            {
+                MessageBox.Show("El valor de inicio debe ser menor que el de fin.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // Abre Form5 pasando los datos
+            Form5 grafica = new Form5(funcion, inicio, fin);
+            grafica.Show();
         }
 
         private void btnCorrerReglaFalsa_Click(object sender, EventArgs e)

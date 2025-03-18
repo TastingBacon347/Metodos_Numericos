@@ -17,9 +17,9 @@ namespace Metodos_Numeros
             InitializeComponent();
         }
 
-        private void btnRegresar_Click(object sender, EventArgs e)
+        private void Form4_Load(object sender, EventArgs e)
         {
-            this.Hide();
+
         }
     }
 }
