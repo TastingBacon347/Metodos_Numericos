@@ -91,11 +91,12 @@ namespace Metodos_Numeros
             if (txtParametroBReglaFalsa.Text == string.Empty) return;
             if (txtErrorReglaFalsa.Text == string.Empty) return;
             DGVReglaFalsa.Rows.Clear();
-            List<string[]> lista = NumericMethods.ReglaFalsa(txtFuncionReglaFalsa.Text, Convert.ToDouble(txtParametroAReglaFalsa.Text), Convert.ToDouble(txtParametroBReglaFalsa.Text), Convert.ToDouble(txtErrorReglaFalsa.Text));
-            foreach (string[] array in lista)
+            string mensaje = NumericMethods.ReglaFalsa(txtFuncionReglaFalsa.Text, Convert.ToDouble(txtParametroAReglaFalsa.Text), Convert.ToDouble(txtParametroBReglaFalsa.Text), Convert.ToDouble(txtErrorReglaFalsa.Text));
+            foreach (string[] array in NumericMethods.ListaStrings)
             {
                 DGVReglaFalsa.Rows.Add(array);
             }
+            MessageBox.Show(mensaje, "Metodo Regla Falsa", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

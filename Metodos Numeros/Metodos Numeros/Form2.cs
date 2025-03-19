@@ -61,12 +61,12 @@ namespace Metodos_Numeros
             if (txtParametroBBiseccion.Text == string.Empty) return;
             if (txtErrorBiseccion.Text == string.Empty) return;
             DGVBiseccion.Rows.Clear();
-            List<string[]> lista = NumericMethods.Biseccion(txtFuncionBiseccion.Text, Convert.ToDouble(txtParametroABiseccion.Text), Convert.ToDouble(txtParametroBBiseccion.Text), Convert.ToDouble(txtErrorBiseccion.Text));
-            foreach(string[] array in lista)
+            string mensaje = NumericMethods.Biseccion(txtFuncionBiseccion.Text, Convert.ToDouble(txtParametroABiseccion.Text), Convert.ToDouble(txtParametroBBiseccion.Text), Convert.ToDouble(txtErrorBiseccion.Text));
+            foreach(string[] array in NumericMethods.ListaStrings)
             {
                 DGVBiseccion.Rows.Add(array);
             }
-
+            MessageBox.Show(mensaje, "Metodo Biseccion", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
 

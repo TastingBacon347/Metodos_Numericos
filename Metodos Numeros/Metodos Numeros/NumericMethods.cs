@@ -16,53 +16,67 @@ namespace Metodos_Numeros
     {
         static Expression exp;
         static double a, b, fa, fb, c, fc, cAnterior, errorActual;
-        public static List<string[]> Biseccion(string funcion, double limiteA, double limiteB, double error)
+        static List<string[]> listaStrings = new List<string[]>();
+
+        public static List<string[]> ListaStrings { get => listaStrings;}
+
+        /// <summary>
+        /// Calcula la raiz de una funcion mediante el metodo numerico de Biseccion.
+        /// </summary>
+        public static string Biseccion(string funcion, double limiteA, double limiteB, double error)
         {
-            List<string[]> listaStrings = new List<string[]>();
+            ListaStrings.Clear();
 
             if (!ReemplazarEInicializarFuncion(ref funcion))
-                return listaStrings;
+                return "La Funcion Ingresada No Tiene la Sintaxis Correcta";
 
             if (!PrepararIntervalo(limiteA, limiteB))
-                return listaStrings; 
+                return "No se Encontro una Raiz en el Intervalo Proporcionado"; 
 
             c = ObtenerValorDeCEnBiseccion();
             fc = EvaluarLaFuncion(c);
             errorActual = 0;
             string lado = (fa * fc > 0) ? "DER" : "IZQ";
-            listaStrings.Add(ConstruirFila(a, b, c, fa, fb, fc, lado, "Null"));
+            ListaStrings.Add(ConstruirFila(a, b, c, fa, fb, fc, lado, "Null"));
             if(SeEncontroRaizExacta())
-                return listaStrings;
+                return "Se Encontro Raiz Exacta";
             do
             {
                 RealizarIteracionBiseccion(ref lado);
-                listaStrings.Add(ConstruirFila(a, b, c, fa, fb, fc, lado, errorActual.ToString()));
+                ListaStrings.Add(ConstruirFila(a, b, c, fa, fb, fc, lado, errorActual.ToString()));
             } while (errorActual >= error);
-
-            return listaStrings;
+            if(SeEncontroRaizExacta())
+                return "Se Encontro Raiz Exacta";
+            return "Se Encontro Una Aproximacion";
         }
-        public static List<string[]> ReglaFalsa(string funcion, double limiteA, double limiteB, double error)
+        /// <summary>
+        /// Calcula la raiz de una funcion mediante el metodo numerico de Regla Falsa.
+        /// </summary>
+        public static string ReglaFalsa(string funcion, double limiteA, double limiteB, double error)
         {
-            List<string[]> listaStrings = new List<string[]>();
+            ListaStrings.Clear();
 
             if (!ReemplazarEInicializarFuncion(ref funcion))
-                return listaStrings; 
+                return "La Funcion Ingresada No Tiene la Sintaxis Correcta";
 
             if (!PrepararIntervalo(limiteA, limiteB))
-                return listaStrings;
+                return "No se Encontro una Raiz en el Intervalo Proporcionado";
 
             c = ObtenerValorDeCEnReglaFalsa();
             fc = EvaluarLaFuncion(c);
             errorActual = 0;
             string lado = (fa * fc > 0) ? "DER" : "IZQ";
-            listaStrings.Add(ConstruirFila(a, b, c, fa, fb, fc, lado, "Null"));
+            ListaStrings.Add(ConstruirFila(a, b, c, fa, fb, fc, lado, "Null"));
+            if (SeEncontroRaizExacta())
+                return "Se Encontro Raiz Exacta";
             do
             {
                 RealizarIteracionReglaFalsa(ref lado);
-                listaStrings.Add(ConstruirFila(a, b, c, fa, fb, fc, lado, errorActual.ToString()));
+                ListaStrings.Add(ConstruirFila(a, b, c, fa, fb, fc, lado, errorActual.ToString()));
             } while (errorActual >= error);
-
-            return listaStrings;
+            if (SeEncontroRaizExacta())
+                return "Se Encontro Raiz Exacta";
+            return "Se Encontro Una Aproximacion";
         }
         /// <summary>
         /// Grafica la función (expresión) usando OxyPlot en el rango [inicio, fin].
@@ -126,7 +140,9 @@ namespace Metodos_Numeros
         // -------------------------------------------------------------
         //                     MÉTODOS AUXILIARES
         // -------------------------------------------------------------
-
+        /// <summary>
+        /// Regresa True si se encontro una raiz exacta.
+        /// </summary>
         private static bool SeEncontroRaizExacta()
         {
             return fc == 0;
