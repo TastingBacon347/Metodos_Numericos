@@ -49,26 +49,20 @@ namespace Metodos_Numeros
                 return;
             }
 
-            if (!double.TryParse(txtParametroAReglaFalsa.Text, out double inicio))
+            if (!double.TryParse(txtParametroAReglaFalsa.Text, out double a))
             {
                 MessageBox.Show("Valor de inicio inválido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            if (!double.TryParse(txtParametroBReglaFalsa.Text, out double fin))
+            if (!double.TryParse(txtParametroBReglaFalsa.Text, out double b))
             {
                 MessageBox.Show("Valor de fin inválido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            if (inicio >= fin)
-            {
-                MessageBox.Show("El valor de inicio debe ser menor que el de fin.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
             // Abre Form5 pasando los datos
-            Form5 grafica = new Form5(NumericMethods.Grafica(txtFuncionReglaFalsa.Text, Convert.ToDouble(txtParametroAReglaFalsa.Text), Convert.ToDouble(txtParametroBReglaFalsa.Text)));
+            Form5 grafica = new Form5(NumericMethods.Grafica(funcion, a, b));
             grafica.Show();
         }
 

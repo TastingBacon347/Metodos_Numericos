@@ -19,7 +19,7 @@ namespace Metodos_Numeros
         public Form5(PlotView plotView)
         {
             InitializeComponent();
-            this.plotView1 = plotView;
+            this.Controls.Add(plotView);
         }
 
         private void Form5_Load(object sender, EventArgs e)

@@ -86,6 +86,7 @@ namespace Metodos_Numeros
         public static PlotView Grafica(string funcion, double limiteA, double limiteB)
         {
             PlotView plotView = new PlotView();
+            plotView.Dock = DockStyle.Fill;
             if (!ReemplazarEInicializarFuncion(ref funcion))
                 return null;
             a = limiteA;
@@ -98,22 +99,49 @@ namespace Metodos_Numeros
                 a = b; 
                 b = temp;
             }
-            for (double i = a; i < b; i+=0.1)
+            for (double i = a; i < b; i+=0.01)
             {
                 linea.Points.Add(new DataPoint(i, EvaluarLaFuncion(i)));
             }
-            // Crear el modelo del gráfico
+
             PlotModel modelo = new PlotModel { Title = funcion };
             modelo.Series.Add(linea);
 
-            // Asignar el modelo al control PlotView
-            
+            var xAxis = new LinearAxis
+            {
+                Position = AxisPosition.Bottom,    
+                Title = "Eje X",                 
+                Minimum = -10,              
+                Maximum = 10,                     
+                MajorStep = 2,                     
+                MinorStep = 0.5                    
+            };
+
+            var yAxis = new LinearAxis
+            {
+                Position = AxisPosition.Left, 
+                Title = "Eje Y",              
+                Minimum = -10,                      
+                Maximum = 10,                      
+                MajorStep = 2,                      
+                MinorStep = 0.5                     
+            };
+            xAxis.MajorGridlineStyle = LineStyle.Solid;   
+            xAxis.MinorGridlineStyle = LineStyle.Dot;      
+            xAxis.MajorGridlineThickness = 1;              
+            xAxis.MinorGridlineThickness = 0.5;            
+
+            xAxis.AxislineStyle = LineStyle.Solid;
+            xAxis.AxislineColor = OxyColors.Black;
+            xAxis.TitleFontWeight = FontWeights.Bold;
+            xAxis.TitleFontSize = 14;
+
+            modelo.Axes.Add(xAxis);
+            modelo.Axes.Add(yAxis);
             plotView.Model = modelo;
             linea.Title = funcion;
             linea.Color = OxyColors.Blue;
             linea.StrokeThickness = 2;
-            linea.MarkerSize = 4;
-            linea.MarkerType = MarkerType.Circle;
             return plotView;
         }
 

@@ -73,8 +73,28 @@ namespace Metodos_Numeros
 
         private void btnGraficaBiseccion_Click(object sender, EventArgs e)
         {
-           //Form4 nuevaVentana = new Form4(NumericMethods.Grafica(txtFuncionBiseccion.Text, Convert.ToDouble(txtParametroABiseccion.Text), Convert.ToDouble(txtParametroBBiseccion.Text)));
-            //nuevaVentana.Show();
+            string funcion = txtFuncionBiseccion.Text;  // 
+            if (string.IsNullOrWhiteSpace(funcion))
+            {
+                MessageBox.Show("Ingresa una función válida.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (!double.TryParse(txtParametroABiseccion.Text, out double a))
+            {
+                MessageBox.Show("Valor de inicio inválido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (!double.TryParse(txtParametroBBiseccion.Text, out double b))
+            {
+                MessageBox.Show("Valor de fin inválido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // Abre Form5 pasando los datos
+            Form5 grafica = new Form5(NumericMethods.Grafica(funcion, a, b));
+            grafica.Show();
 
         }
 
