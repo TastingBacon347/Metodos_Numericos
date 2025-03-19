@@ -68,7 +68,7 @@ namespace Metodos_Numeros
             }
 
             // Abre Form5 pasando los datos
-            Form5 grafica = new Form5(funcion, inicio, fin);
+            Form5 grafica = new Form5(NumericMethods.Grafica(txtFuncionReglaFalsa.Text, Convert.ToDouble(txtParametroAReglaFalsa.Text), Convert.ToDouble(txtParametroBReglaFalsa.Text)));
             grafica.Show();
         }
 

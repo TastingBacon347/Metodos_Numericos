@@ -8,6 +8,8 @@ using OxyPlot.Axes;
 using OxyPlot.WindowsForms;
 using OxyPlot;
 using OxyPlot.Series;
+using System.CodeDom.Compiler;
+using System.Drawing;
 
 
 namespace Metodos_Numeros
@@ -39,15 +41,15 @@ namespace Metodos_Numeros
             string lado = (fa * fc > 0) ? "DER" : "IZQ";
             ListaStrings.Add(ConstruirFila(a, b, c, fa, fb, fc, lado, "Null"));
             if(SeEncontroRaizExacta())
-                return "Se Encontro Raiz Exacta";
+                return string.Format("Se Encontro Raiz Exacta\rRaiz: {0}\rError Final: {1}", c, errorActual);
             do
             {
                 RealizarIteracionBiseccion(ref lado);
                 ListaStrings.Add(ConstruirFila(a, b, c, fa, fb, fc, lado, errorActual.ToString()));
             } while (errorActual >= error);
             if(SeEncontroRaizExacta())
-                return "Se Encontro Raiz Exacta";
-            return "Se Encontro Una Aproximacion";
+                return string.Format("Se Encontro Raiz Exacta\rRaiz: {0}\rError Final: {1}", c, errorActual);
+            return string.Format("Se Encontro Una Aproximacion\rRaiz: {0}\rError Final: {1}", c, errorActual);
         }
         /// <summary>
         /// Calcula la raiz de una funcion mediante el metodo numerico de Regla Falsa.
@@ -68,73 +70,51 @@ namespace Metodos_Numeros
             string lado = (fa * fc > 0) ? "DER" : "IZQ";
             ListaStrings.Add(ConstruirFila(a, b, c, fa, fb, fc, lado, "Null"));
             if (SeEncontroRaizExacta())
-                return "Se Encontro Raiz Exacta";
+                return string.Format("Se Encontro Raiz Exacta\rRaiz: {0}\rError Final: {1}", c, errorActual);
             do
             {
                 RealizarIteracionReglaFalsa(ref lado);
                 ListaStrings.Add(ConstruirFila(a, b, c, fa, fb, fc, lado, errorActual.ToString()));
             } while (errorActual >= error);
             if (SeEncontroRaizExacta())
-                return "Se Encontro Raiz Exacta";
-            return "Se Encontro Una Aproximacion";
+                return string.Format("Se Encontro Raiz Exacta\rRaiz: {0}\rError Final: {1}", c, errorActual);
+            return string.Format("Se Encontro Una Aproximacion\rRaiz: {0}\rError Final: {1}", c, errorActual);
         }
         /// <summary>
         /// Grafica la función (expresión) usando OxyPlot en el rango [inicio, fin].
         /// </summary>
-        public static void Grafica(string funcion, double inicio, double fin, PlotView plotView)
+        public static PlotView Grafica(string funcion, double limiteA, double limiteB)
         {
+            PlotView plotView = new PlotView();
             if (!ReemplazarEInicializarFuncion(ref funcion))
-                return;
+                return null;
+            a = limiteA;
+            b = limiteB;
+            LineSeries linea = new LineSeries();
 
-            // Inicializa la expresión
-            exp = new Expression(funcion);
-
-            // Construimos un nuevo modelo de OxyPlot
-            var plotModel = new PlotModel
+            if (a > b)
             {
-                Title = $"Función: {funcion}"
-            };
-
-            // Agregamos ejes al modelo
-            plotModel.Axes.Add(new LinearAxis
-            {
-                Position = AxisPosition.Bottom,
-                Title = "X"
-            });
-            plotModel.Axes.Add(new LinearAxis
-            {
-                Position = AxisPosition.Left,
-                Title = "Y"
-            });
-
-            // Creamos la serie de línea
-            var serie = new LineSeries
-            {
-                Title = $"f(x) = {funcion}",
-                StrokeThickness = 2
-            };
-
-            // Definimos la cantidad de puntos o el paso
-            int cantidadPuntos = 100;
-            double paso = (fin - inicio) / cantidadPuntos;
-
-            // Generamos los puntos en el rango [inicio, fin]
-            if (paso == 0) paso = 0.01; // Evitar división por cero si inicio=fin
-
-            // Si el rango va al revés, ajustamos paso para avanzar correctamente
-            if (fin < inicio) paso = -Math.Abs(paso);
-
-            for (double x = inicio; (paso > 0 && x <= fin) || (paso < 0 && x >= fin); x += paso)
-            {
-                double y = EvaluarLaFuncion(x);
-                serie.Points.Add(new DataPoint(x, y));
+                double temp = a;
+                a = b; 
+                b = temp;
             }
+            for (double i = a; i < b; i+=0.1)
+            {
+                linea.Points.Add(new DataPoint(i, EvaluarLaFuncion(i)));
+            }
+            // Crear el modelo del gráfico
+            PlotModel modelo = new PlotModel { Title = funcion };
+            modelo.Series.Add(linea);
 
-            // Agregamos la serie al modelo
-            plotModel.Series.Add(serie);
-
-            // Finalmente, asignamos el modelo resultante al PlotView
-            plotView.Model = plotModel;
+            // Asignar el modelo al control PlotView
+            
+            plotView.Model = modelo;
+            linea.Title = funcion;
+            linea.Color = OxyColors.Blue;
+            linea.StrokeThickness = 2;
+            linea.MarkerSize = 4;
+            linea.MarkerType = MarkerType.Circle;
+            return plotView;
         }
 
         // -------------------------------------------------------------
@@ -177,13 +157,13 @@ namespace Metodos_Numeros
         {
             funcion = Regex.Replace(
                 funcion,
-                @"e\s*\^\s*(.+)|e\s*\^\s*[\dx]+",
+                @"e\s*\^\s*(\(?-?\s*[\dx]+\)?)",
                 "Exp($1)",
                 RegexOptions.IgnoreCase
             );
             funcion = Regex.Replace(
                 funcion,
-                @"sin\s*(.+)|sin\s*[\dx]+",
+                @"sin\s*(\(?\s*[\dx]+\)?)",
                 "Sin($1)",
                 RegexOptions.IgnoreCase
             );

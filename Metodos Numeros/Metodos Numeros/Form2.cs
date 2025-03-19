@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OxyPlot.WindowsForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -72,9 +73,8 @@ namespace Metodos_Numeros
 
         private void btnGraficaBiseccion_Click(object sender, EventArgs e)
         {
-
-            Form4 nuevaVentana = new Form4();
-            nuevaVentana.Show();
+           //Form4 nuevaVentana = new Form4(NumericMethods.Grafica(txtFuncionBiseccion.Text, Convert.ToDouble(txtParametroABiseccion.Text), Convert.ToDouble(txtParametroBBiseccion.Text)));
+            //nuevaVentana.Show();
 
         }
 
