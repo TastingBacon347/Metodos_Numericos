@@ -34,6 +34,7 @@
             // 
             this.ClientSize = new System.Drawing.Size(315, 316);
             this.Name = "Form5";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.ResumeLayout(false);
 
         }

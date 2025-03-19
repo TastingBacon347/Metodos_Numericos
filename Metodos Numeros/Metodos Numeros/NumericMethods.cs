@@ -111,9 +111,9 @@ namespace Metodos_Numeros
             {
                 Position = AxisPosition.Bottom,    
                 Title = "Eje X",                 
-                Minimum = -10,              
-                Maximum = 10,                     
-                MajorStep = 2,                     
+                Minimum = a,              
+                Maximum = b,                     
+                MajorStep = 1,                     
                 MinorStep = 0.5                    
             };
 
@@ -121,9 +121,9 @@ namespace Metodos_Numeros
             {
                 Position = AxisPosition.Left, 
                 Title = "Eje Y",              
-                Minimum = -10,                      
-                Maximum = 10,                      
-                MajorStep = 2,                      
+                Minimum = -2,                      
+                Maximum = 2,                      
+                MajorStep = 1,                      
                 MinorStep = 0.5                     
             };
             xAxis.MajorGridlineStyle = LineStyle.Solid;   
@@ -135,6 +135,16 @@ namespace Metodos_Numeros
             xAxis.AxislineColor = OxyColors.Black;
             xAxis.TitleFontWeight = FontWeights.Bold;
             xAxis.TitleFontSize = 14;
+
+            yAxis.MajorGridlineStyle = LineStyle.Solid;
+            yAxis.MinorGridlineStyle = LineStyle.Dot;
+            yAxis.MajorGridlineThickness = 1;
+            yAxis.MinorGridlineThickness = 0.5;
+
+            yAxis.AxislineStyle = LineStyle.Solid;
+            yAxis.AxislineColor = OxyColors.Black;
+            yAxis.TitleFontWeight = FontWeights.Bold;
+            yAxis.TitleFontSize = 14;
 
             modelo.Axes.Add(xAxis);
             modelo.Axes.Add(yAxis);
