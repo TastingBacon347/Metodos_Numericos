@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using NCalc;
-using LiveCharts;
-using LiveCharts.WinForms;
-using LiveCharts.Wpf;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
+using OxyPlot.Axes;
+using OxyPlot.WindowsForms;
+using OxyPlot;
+using OxyPlot.Series;
 
 
 namespace Metodos_Numeros
@@ -61,130 +62,69 @@ namespace Metodos_Numeros
 
             return listaStrings;
         }
-        public static void Grafica(string funcion, double inicio, double fin, LiveCharts.WinForms.CartesianChart chart)
+        /// <summary>
+        /// Grafica la función (expresión) usando OxyPlot en el rango [inicio, fin].
+        /// </summary>
+        public static void Grafica(string funcion, double inicio, double fin, PlotView plotView)
         {
-            if (!ReemplazarEInicializarFuncion(ref funcion)) return;
-            if (!InicializarYValidarExpresion(funcion)) return;
+            if (!ReemplazarEInicializarFuncion(ref funcion))
+                return;
 
-            LimpiarGrafica(chart);
-            double paso = CalcularPaso(inicio, fin, 100);
-            var (valoresX, valoresY) = GenerarValoresFuncion(inicio, fin, paso);
-            AgregarSerieAlChart(chart, funcion, valoresX, valoresY);
-            ConfigurarEjes(chart, valoresX);
+            // Inicializa la expresión
+            exp = new Expression(funcion);
+
+            // Construimos un nuevo modelo de OxyPlot
+            var plotModel = new PlotModel
+            {
+                Title = $"Función: {funcion}"
+            };
+
+            // Agregamos ejes al modelo
+            plotModel.Axes.Add(new LinearAxis
+            {
+                Position = AxisPosition.Bottom,
+                Title = "X"
+            });
+            plotModel.Axes.Add(new LinearAxis
+            {
+                Position = AxisPosition.Left,
+                Title = "Y"
+            });
+
+            // Creamos la serie de línea
+            var serie = new LineSeries
+            {
+                Title = $"f(x) = {funcion}",
+                StrokeThickness = 2
+            };
+
+            // Definimos la cantidad de puntos o el paso
+            int cantidadPuntos = 100;
+            double paso = (fin - inicio) / cantidadPuntos;
+
+            // Generamos los puntos en el rango [inicio, fin]
+            if (paso == 0) paso = 0.01; // Evitar división por cero si inicio=fin
+
+            // Si el rango va al revés, ajustamos paso para avanzar correctamente
+            if (fin < inicio) paso = -Math.Abs(paso);
+
+            for (double x = inicio; (paso > 0 && x <= fin) || (paso < 0 && x >= fin); x += paso)
+            {
+                double y = EvaluarLaFuncion(x);
+                serie.Points.Add(new DataPoint(x, y));
+            }
+
+            // Agregamos la serie al modelo
+            plotModel.Series.Add(serie);
+
+            // Finalmente, asignamos el modelo resultante al PlotView
+            plotView.Model = plotModel;
         }
-
 
         // -------------------------------------------------------------
         //                     MÉTODOS AUXILIARES
         // -------------------------------------------------------------
-        /// <summary>
-        /// Crea la expresión NCalc y verifica si es válida.
-        /// </summary>
-        private static bool InicializarYValidarExpresion(string funcion)
-        {
-            try
-            {
-                exp = new Expression(funcion);
-                exp.Parameters["x"] = 1.0;
-                exp.Evaluate();
-                return true;
-            }
-            catch
-            {
-                return false;
-            }
-        }
 
-        /// <summary>
-        /// Limpia las series y ejes anteriores del CartesianChart.
-        /// </summary>
-        private static void LimpiarGrafica(LiveCharts.WinForms.CartesianChart chart)
-        {
-            chart.Series.Clear();
-            chart.AxisX.Clear();
-            chart.AxisY.Clear();
-        }
-
-        /// <summary>
-        /// Calcula un paso en función de la cantidad de puntos deseada.
-        /// </summary>
-        private static double CalcularPaso(double inicio, double fin, int cantidadPuntos)
-        {
-
-            return (Math.Abs(fin - inicio) < 1e-15)
-                ? 1e-3
-                : (fin - inicio) / cantidadPuntos;
-        }
-
-        /// <summary>
-        /// Genera los valores X e Y a graficar en el rango [inicio, fin] con el paso indicado.
-        /// </summary>
-        private static (List<double> valoresX, ChartValues<double> valoresY) GenerarValoresFuncion(double inicio, double fin, double paso)
-        {
-            var valoresX = new List<double>();
-            var valoresY = new ChartValues<double>();
-
-            double limite = (fin >= inicio) ? fin : inicio;
-            double x = inicio;
-
-            while ((fin >= inicio && x <= limite) || (fin < inicio && x >= limite))
-            {
-                double y = EvaluarFuncion(x);
-                valoresX.Add(x);
-                valoresY.Add(y);
-                x += paso;
-            }
-
-            return (valoresX, valoresY);
-        }
-
-        /// <summary>
-        /// Evalúa la función NCalc en un valor de x.
-        /// </summary>
-        private static double EvaluarFuncion(double x)
-        {
-            exp.Parameters["x"] = x;
-            object resultado = exp.Evaluate();
-            return Convert.ToDouble(resultado);
-        }
-
-        /// <summary>
-        /// Crea una LineSeries y la agrega al chart, usando los valores generados.
-        /// </summary>
-        private static void AgregarSerieAlChart(
-            LiveCharts.WinForms.CartesianChart chart,
-            string funcion,
-            List<double> valoresX,
-            ChartValues<double> valoresY
-        )
-        {
-            var serie = new LineSeries
-            {
-                Title = $"f(x) = {funcion}",
-                Values = valoresY,
-                PointGeometry = null
-            };
-
-            chart.Series.Add(serie);
-        }
-
-        /// <summary>
-        /// Configura los ejes (AxisX, AxisY) del chart.
-        /// </summary>
-        private static void ConfigurarEjes(LiveCharts.WinForms.CartesianChart chart, List<double> valoresX)
-        {
-            chart.AxisX.Add(new Axis
-            {
-                Title = "X",
-                Labels = valoresX.Select(v => v.ToString("F2")).ToArray(),
-                Separator = new Separator { Step = 10 }
-            });
-
-            chart.AxisY.Add(new Axis
-            {
-                Title = "Y"
-            });
-        }
 
         /// <summary>
         /// Encapsula la iteración de la bisección (actualiza a, b, c, fc y calcula error).
@@ -216,10 +156,37 @@ namespace Metodos_Numeros
         {
             funcion = Regex.Replace(
                 funcion,
-                @"(\([^\)]+\)|[a-zA-Z0-9\.]+)\s*\^\s*([\-]?[0-9a-zA-Z\.]+)",
+                @"e\s*\^\s*(.+)|e\s*\^\s*[\dx]+",
+                "Exp($1)",
+                RegexOptions.IgnoreCase
+            );
+            funcion = Regex.Replace(
+                funcion,
+                @"sin\s*(.+)|sin\s*[\dx]+",
+                "Sin($1)",
+                RegexOptions.IgnoreCase
+            );
+            funcion = Regex.Replace(
+                funcion,
+                @"(\)|[\.]+)\s*([\(\dx])",
+                "$1 * $2"
+            );
+            funcion = Regex.Replace(
+                funcion,
+                @"(x)\s*(\d)",
+                "$1 * $2"
+            );
+            funcion = Regex.Replace(
+                funcion,
+                @"(\d)\s*(x)",
+                "$1 * $2"
+            );
+            funcion = Regex.Replace(
+                funcion,
+                @"(\([^\)]+\)|[a-zA-Z0-9\.]+)\s*\^\s*(\([^\)]+\)|[\-]?[0-9a-zA-Z\.]+)",
                 "Pow($1,$2)"
             );
-
+            
             exp = new Expression(funcion);
             return EsExpresionValida();
         }

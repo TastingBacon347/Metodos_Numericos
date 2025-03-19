@@ -30,6 +30,7 @@ namespace Metodos_Numeros
             DGVBiseccion.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
 
             DGVBiseccion.AlternatingRowsDefaultCellStyle.BackColor = Color.LightGray;
+            
         }
 
 

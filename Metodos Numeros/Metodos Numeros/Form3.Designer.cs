@@ -30,19 +30,18 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnRegreso2 = new System.Windows.Forms.Button();
             this.btnCorrerReglaFalsa = new System.Windows.Forms.Button();
             this.DGVReglaFalsa = new System.Windows.Forms.DataGridView();
-            this.a = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.b = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.c = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fa = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fb = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IzqoDer = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ErrorAbsoluto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtErrorReglaFalsa = new System.Windows.Forms.TextBox();
             this.lblError2 = new System.Windows.Forms.Label();
             this.lblNo2 = new System.Windows.Forms.Label();
@@ -58,6 +57,14 @@
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.a = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.b = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.c = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fb = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IzqoDer = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ErrorAbsoluto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DGVReglaFalsa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
@@ -67,9 +74,10 @@
             // btnRegreso2
             // 
             this.btnRegreso2.ForeColor = System.Drawing.Color.Black;
-            this.btnRegreso2.Location = new System.Drawing.Point(709, 421);
+            this.btnRegreso2.Location = new System.Drawing.Point(945, 518);
+            this.btnRegreso2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnRegreso2.Name = "btnRegreso2";
-            this.btnRegreso2.Size = new System.Drawing.Size(79, 24);
+            this.btnRegreso2.Size = new System.Drawing.Size(105, 30);
             this.btnRegreso2.TabIndex = 85;
             this.btnRegreso2.Text = "Regresar";
             this.btnRegreso2.UseVisualStyleBackColor = true;
@@ -78,9 +86,10 @@
             // btnCorrerReglaFalsa
             // 
             this.btnCorrerReglaFalsa.ForeColor = System.Drawing.Color.Black;
-            this.btnCorrerReglaFalsa.Location = new System.Drawing.Point(227, 191);
+            this.btnCorrerReglaFalsa.Location = new System.Drawing.Point(303, 235);
+            this.btnCorrerReglaFalsa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCorrerReglaFalsa.Name = "btnCorrerReglaFalsa";
-            this.btnCorrerReglaFalsa.Size = new System.Drawing.Size(93, 28);
+            this.btnCorrerReglaFalsa.Size = new System.Drawing.Size(124, 34);
             this.btnCorrerReglaFalsa.TabIndex = 83;
             this.btnCorrerReglaFalsa.Text = "Correr";
             this.btnCorrerReglaFalsa.UseVisualStyleBackColor = true;
@@ -116,99 +125,42 @@
             this.fc,
             this.IzqoDer,
             this.ErrorAbsoluto});
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Gold;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DGVReglaFalsa.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.Gold;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DGVReglaFalsa.DefaultCellStyle = dataGridViewCellStyle11;
             this.DGVReglaFalsa.GridColor = System.Drawing.Color.Cornsilk;
-            this.DGVReglaFalsa.Location = new System.Drawing.Point(14, 237);
+            this.DGVReglaFalsa.Location = new System.Drawing.Point(19, 292);
+            this.DGVReglaFalsa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.DGVReglaFalsa.Name = "DGVReglaFalsa";
             this.DGVReglaFalsa.ReadOnly = true;
             this.DGVReglaFalsa.RowHeadersVisible = false;
             this.DGVReglaFalsa.RowHeadersWidth = 51;
-            this.DGVReglaFalsa.Size = new System.Drawing.Size(776, 175);
+            this.DGVReglaFalsa.Size = new System.Drawing.Size(1035, 215);
             this.DGVReglaFalsa.TabIndex = 82;
             this.DGVReglaFalsa.Visible = false;
-            // 
-            // a
-            // 
-            this.a.HeaderText = "a";
-            this.a.MinimumWidth = 6;
-            this.a.Name = "a";
-            this.a.ReadOnly = true;
-            // 
-            // b
-            // 
-            this.b.HeaderText = "b";
-            this.b.MinimumWidth = 6;
-            this.b.Name = "b";
-            this.b.ReadOnly = true;
-            // 
-            // c
-            // 
-            this.c.HeaderText = "c";
-            this.c.MinimumWidth = 6;
-            this.c.Name = "c";
-            this.c.ReadOnly = true;
-            // 
-            // fa
-            // 
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            this.fa.DefaultCellStyle = dataGridViewCellStyle3;
-            this.fa.HeaderText = "f(a)";
-            this.fa.MinimumWidth = 6;
-            this.fa.Name = "fa";
-            this.fa.ReadOnly = true;
-            // 
-            // fb
-            // 
-            this.fb.HeaderText = "f(b)";
-            this.fb.MinimumWidth = 6;
-            this.fb.Name = "fb";
-            this.fb.ReadOnly = true;
-            // 
-            // fc
-            // 
-            this.fc.HeaderText = "f(c)";
-            this.fc.MinimumWidth = 6;
-            this.fc.Name = "fc";
-            this.fc.ReadOnly = true;
-            // 
-            // IzqoDer
-            // 
-            this.IzqoDer.HeaderText = "Izq o Der";
-            this.IzqoDer.MinimumWidth = 6;
-            this.IzqoDer.Name = "IzqoDer";
-            this.IzqoDer.ReadOnly = true;
-            // 
-            // ErrorAbsoluto
-            // 
-            this.ErrorAbsoluto.HeaderText = "ErrorAbsoluto";
-            this.ErrorAbsoluto.MinimumWidth = 6;
-            this.ErrorAbsoluto.Name = "ErrorAbsoluto";
-            this.ErrorAbsoluto.ReadOnly = true;
             // 
             // txtErrorReglaFalsa
             // 
             this.txtErrorReglaFalsa.ForeColor = System.Drawing.Color.Black;
-            this.txtErrorReglaFalsa.Location = new System.Drawing.Point(119, 179);
+            this.txtErrorReglaFalsa.Location = new System.Drawing.Point(159, 220);
+            this.txtErrorReglaFalsa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtErrorReglaFalsa.Name = "txtErrorReglaFalsa";
-            this.txtErrorReglaFalsa.Size = new System.Drawing.Size(63, 20);
+            this.txtErrorReglaFalsa.Size = new System.Drawing.Size(83, 22);
             this.txtErrorReglaFalsa.TabIndex = 75;
             // 
             // lblError2
             // 
             this.lblError2.AutoSize = true;
             this.lblError2.ForeColor = System.Drawing.Color.Black;
-            this.lblError2.Location = new System.Drawing.Point(9, 182);
+            this.lblError2.Location = new System.Drawing.Point(12, 224);
+            this.lblError2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblError2.Name = "lblError2";
-            this.lblError2.Size = new System.Drawing.Size(113, 13);
+            this.lblError2.Size = new System.Drawing.Size(144, 16);
             this.lblError2.TabIndex = 80;
             this.lblError2.Text = "Ingrese error deseado:";
             // 
@@ -216,9 +168,10 @@
             // 
             this.lblNo2.AutoSize = true;
             this.lblNo2.ForeColor = System.Drawing.Color.Red;
-            this.lblNo2.Location = new System.Drawing.Point(9, 159);
+            this.lblNo2.Location = new System.Drawing.Point(12, 196);
+            this.lblNo2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNo2.Name = "lblNo2";
-            this.lblNo2.Size = new System.Drawing.Size(225, 13);
+            this.lblNo2.Size = new System.Drawing.Size(277, 16);
             this.lblNo2.TabIndex = 79;
             this.lblNo2.Text = "Datos faltantes o incorrectos, intente denuevo";
             this.lblNo2.Visible = false;
@@ -226,9 +179,10 @@
             // btnVerificarReglaFalsa
             // 
             this.btnVerificarReglaFalsa.ForeColor = System.Drawing.Color.Black;
-            this.btnVerificarReglaFalsa.Location = new System.Drawing.Point(218, 107);
+            this.btnVerificarReglaFalsa.Location = new System.Drawing.Point(291, 132);
+            this.btnVerificarReglaFalsa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnVerificarReglaFalsa.Name = "btnVerificarReglaFalsa";
-            this.btnVerificarReglaFalsa.Size = new System.Drawing.Size(85, 45);
+            this.btnVerificarReglaFalsa.Size = new System.Drawing.Size(113, 55);
             this.btnVerificarReglaFalsa.TabIndex = 81;
             this.btnVerificarReglaFalsa.Text = "Verificar";
             this.btnVerificarReglaFalsa.UseVisualStyleBackColor = true;
@@ -239,35 +193,39 @@
             this.lbl12.AutoSize = true;
             this.lbl12.Font = new System.Drawing.Font("MS PGothic", 26.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl12.ForeColor = System.Drawing.Color.Black;
-            this.lbl12.Location = new System.Drawing.Point(20, 6);
+            this.lbl12.Location = new System.Drawing.Point(27, 7);
+            this.lbl12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl12.Name = "lbl12";
-            this.lbl12.Size = new System.Drawing.Size(348, 35);
+            this.lbl12.Size = new System.Drawing.Size(433, 44);
             this.lbl12.TabIndex = 74;
             this.lbl12.Text = "Metodo de Regla Falsa";
             // 
             // txtParametroBReglaFalsa
             // 
             this.txtParametroBReglaFalsa.ForeColor = System.Drawing.Color.Black;
-            this.txtParametroBReglaFalsa.Location = new System.Drawing.Point(119, 136);
+            this.txtParametroBReglaFalsa.Location = new System.Drawing.Point(159, 167);
+            this.txtParametroBReglaFalsa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtParametroBReglaFalsa.Name = "txtParametroBReglaFalsa";
-            this.txtParametroBReglaFalsa.Size = new System.Drawing.Size(62, 20);
+            this.txtParametroBReglaFalsa.Size = new System.Drawing.Size(81, 22);
             this.txtParametroBReglaFalsa.TabIndex = 73;
             // 
             // txtParametroAReglaFalsa
             // 
             this.txtParametroAReglaFalsa.ForeColor = System.Drawing.Color.Black;
-            this.txtParametroAReglaFalsa.Location = new System.Drawing.Point(118, 107);
+            this.txtParametroAReglaFalsa.Location = new System.Drawing.Point(157, 132);
+            this.txtParametroAReglaFalsa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtParametroAReglaFalsa.Name = "txtParametroAReglaFalsa";
-            this.txtParametroAReglaFalsa.Size = new System.Drawing.Size(63, 20);
+            this.txtParametroAReglaFalsa.Size = new System.Drawing.Size(83, 22);
             this.txtParametroAReglaFalsa.TabIndex = 72;
             // 
             // lbl13
             // 
             this.lbl13.AutoSize = true;
             this.lbl13.ForeColor = System.Drawing.Color.Black;
-            this.lbl13.Location = new System.Drawing.Point(9, 139);
+            this.lbl13.Location = new System.Drawing.Point(12, 171);
+            this.lbl13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl13.Name = "lbl13";
-            this.lbl13.Size = new System.Drawing.Size(104, 13);
+            this.lbl13.Size = new System.Drawing.Size(131, 16);
             this.lbl13.TabIndex = 71;
             this.lbl13.Text = "Ingrese parametro b:";
             // 
@@ -275,35 +233,39 @@
             // 
             this.lbl14.AutoSize = true;
             this.lbl14.ForeColor = System.Drawing.Color.Black;
-            this.lbl14.Location = new System.Drawing.Point(9, 108);
+            this.lbl14.Location = new System.Drawing.Point(12, 133);
+            this.lbl14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl14.Name = "lbl14";
-            this.lbl14.Size = new System.Drawing.Size(104, 13);
+            this.lbl14.Size = new System.Drawing.Size(131, 16);
             this.lbl14.TabIndex = 70;
             this.lbl14.Text = "Ingrese parametro a:";
             // 
             // txtFuncionReglaFalsa
             // 
             this.txtFuncionReglaFalsa.ForeColor = System.Drawing.Color.Black;
-            this.txtFuncionReglaFalsa.Location = new System.Drawing.Point(167, 63);
+            this.txtFuncionReglaFalsa.Location = new System.Drawing.Point(223, 78);
+            this.txtFuncionReglaFalsa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtFuncionReglaFalsa.Name = "txtFuncionReglaFalsa";
-            this.txtFuncionReglaFalsa.Size = new System.Drawing.Size(166, 20);
+            this.txtFuncionReglaFalsa.Size = new System.Drawing.Size(220, 22);
             this.txtFuncionReglaFalsa.TabIndex = 69;
             // 
             // lbl15
             // 
             this.lbl15.AutoSize = true;
             this.lbl15.ForeColor = System.Drawing.Color.Black;
-            this.lbl15.Location = new System.Drawing.Point(23, 66);
+            this.lbl15.Location = new System.Drawing.Point(31, 81);
+            this.lbl15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl15.Name = "lbl15";
-            this.lbl15.Size = new System.Drawing.Size(138, 13);
+            this.lbl15.Size = new System.Drawing.Size(170, 16);
             this.lbl15.TabIndex = 68;
             this.lbl15.Text = "Ingrese la funcion a evaluar";
             // 
             // btnGraficaReglaFalsa
             // 
-            this.btnGraficaReglaFalsa.Location = new System.Drawing.Point(341, 414);
+            this.btnGraficaReglaFalsa.Location = new System.Drawing.Point(455, 510);
+            this.btnGraficaReglaFalsa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnGraficaReglaFalsa.Name = "btnGraficaReglaFalsa";
-            this.btnGraficaReglaFalsa.Size = new System.Drawing.Size(163, 38);
+            this.btnGraficaReglaFalsa.Size = new System.Drawing.Size(217, 47);
             this.btnGraficaReglaFalsa.TabIndex = 87;
             this.btnGraficaReglaFalsa.Text = "Generar Grafica";
             this.btnGraficaReglaFalsa.UseVisualStyleBackColor = true;
@@ -315,9 +277,10 @@
             this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox4.InitialImage = global::Metodos_Numeros.Properties.Resources.Paso_1;
-            this.pictureBox4.Location = new System.Drawing.Point(372, 114);
+            this.pictureBox4.Location = new System.Drawing.Point(496, 140);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(395, 87);
+            this.pictureBox4.Size = new System.Drawing.Size(526, 107);
             this.pictureBox4.TabIndex = 78;
             this.pictureBox4.TabStop = false;
             // 
@@ -327,9 +290,10 @@
             this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox5.InitialImage = global::Metodos_Numeros.Properties.Resources.Paso_1;
-            this.pictureBox5.Location = new System.Drawing.Point(582, 6);
+            this.pictureBox5.Location = new System.Drawing.Point(776, 7);
+            this.pictureBox5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(185, 101);
+            this.pictureBox5.Size = new System.Drawing.Size(246, 124);
             this.pictureBox5.TabIndex = 77;
             this.pictureBox5.TabStop = false;
             // 
@@ -339,18 +303,94 @@
             this.pictureBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox6.InitialImage = global::Metodos_Numeros.Properties.Resources.Paso_1;
-            this.pictureBox6.Location = new System.Drawing.Point(372, 6);
+            this.pictureBox6.Location = new System.Drawing.Point(496, 7);
+            this.pictureBox6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(185, 101);
+            this.pictureBox6.Size = new System.Drawing.Size(246, 124);
             this.pictureBox6.TabIndex = 76;
             this.pictureBox6.TabStop = false;
             // 
+            // a
+            // 
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.a.DefaultCellStyle = dataGridViewCellStyle3;
+            this.a.HeaderText = "a";
+            this.a.MinimumWidth = 6;
+            this.a.Name = "a";
+            this.a.ReadOnly = true;
+            // 
+            // b
+            // 
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            this.b.DefaultCellStyle = dataGridViewCellStyle4;
+            this.b.HeaderText = "b";
+            this.b.MinimumWidth = 6;
+            this.b.Name = "b";
+            this.b.ReadOnly = true;
+            // 
+            // c
+            // 
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.c.DefaultCellStyle = dataGridViewCellStyle5;
+            this.c.HeaderText = "c";
+            this.c.MinimumWidth = 6;
+            this.c.Name = "c";
+            this.c.ReadOnly = true;
+            // 
+            // fa
+            // 
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
+            this.fa.DefaultCellStyle = dataGridViewCellStyle6;
+            this.fa.HeaderText = "f(a)";
+            this.fa.MinimumWidth = 6;
+            this.fa.Name = "fa";
+            this.fa.ReadOnly = true;
+            // 
+            // fb
+            // 
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.fb.DefaultCellStyle = dataGridViewCellStyle7;
+            this.fb.HeaderText = "f(b)";
+            this.fb.MinimumWidth = 6;
+            this.fb.Name = "fb";
+            this.fb.ReadOnly = true;
+            // 
+            // fc
+            // 
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.fc.DefaultCellStyle = dataGridViewCellStyle8;
+            this.fc.HeaderText = "f(c)";
+            this.fc.MinimumWidth = 6;
+            this.fc.Name = "fc";
+            this.fc.ReadOnly = true;
+            // 
+            // IzqoDer
+            // 
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.IzqoDer.DefaultCellStyle = dataGridViewCellStyle9;
+            this.IzqoDer.HeaderText = "Izq o Der";
+            this.IzqoDer.MinimumWidth = 6;
+            this.IzqoDer.Name = "IzqoDer";
+            this.IzqoDer.ReadOnly = true;
+            // 
+            // ErrorAbsoluto
+            // 
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.ErrorAbsoluto.DefaultCellStyle = dataGridViewCellStyle10;
+            this.ErrorAbsoluto.HeaderText = "ErrorAbsoluto";
+            this.ErrorAbsoluto.MinimumWidth = 6;
+            this.ErrorAbsoluto.Name = "ErrorAbsoluto";
+            this.ErrorAbsoluto.ReadOnly = true;
+            // 
             // Form3
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Cornsilk;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
             this.ControlBox = false;
             this.Controls.Add(this.btnGraficaReglaFalsa);
             this.Controls.Add(this.btnRegreso2);
@@ -370,6 +410,7 @@
             this.Controls.Add(this.lbl14);
             this.Controls.Add(this.txtFuncionReglaFalsa);
             this.Controls.Add(this.lbl15);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form3";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Metodo de Regla Falsa";

@@ -31,7 +31,7 @@ namespace Metodos_Numeros
         private void Form5_Load(object sender, EventArgs e)
         {
             // Cuando se carga Form5, genera la gráfica
-            NumericMethods.Grafica(funcion, inicio, fin, cartesianChart2);
+            NumericMethods.Grafica(funcion, inicio, fin, plotView1);
         }
     }
 }

@@ -28,21 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.cartesianChart2 = new LiveCharts.WinForms.CartesianChart();
+            this.plotView1 = new OxyPlot.WindowsForms.PlotView();
             this.SuspendLayout();
             // 
-            // cartesianChart2
+            // plotView1
             // 
-            this.cartesianChart2.Location = new System.Drawing.Point(6, 4);
-            this.cartesianChart2.Name = "cartesianChart2";
-            this.cartesianChart2.Size = new System.Drawing.Size(270, 251);
-            this.cartesianChart2.TabIndex = 0;
-            this.cartesianChart2.Text = "cartesianChart2";
+            this.plotView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.plotView1.Location = new System.Drawing.Point(0, 0);
+            this.plotView1.Name = "plotView1";
+            this.plotView1.PanCursor = System.Windows.Forms.Cursors.Hand;
+            this.plotView1.Size = new System.Drawing.Size(284, 261);
+            this.plotView1.TabIndex = 0;
+            this.plotView1.Text = "plotView1";
+            this.plotView1.ZoomHorizontalCursor = System.Windows.Forms.Cursors.SizeWE;
+            this.plotView1.ZoomRectangleCursor = System.Windows.Forms.Cursors.SizeNWSE;
+            this.plotView1.ZoomVerticalCursor = System.Windows.Forms.Cursors.SizeNS;
             // 
             // Form5
             // 
             this.ClientSize = new System.Drawing.Size(284, 261);
-            this.Controls.Add(this.cartesianChart2);
+            this.Controls.Add(this.plotView1);
             this.Name = "Form5";
             this.ResumeLayout(false);
 
@@ -51,6 +56,6 @@
         #endregion
 
         private System.Windows.Forms.Integration.ElementHost cartesianChart1;
-        private LiveCharts.WinForms.CartesianChart cartesianChart2;
+        private OxyPlot.WindowsForms.PlotView plotView1;
     }
 }
