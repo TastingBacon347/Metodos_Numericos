@@ -28,9 +28,7 @@ namespace Metodos_Numeros
         {
             DGVBiseccion.ColumnHeadersDefaultCellStyle.BackColor = Color.DarkBlue;
             DGVBiseccion.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-
             DGVBiseccion.AlternatingRowsDefaultCellStyle.BackColor = Color.LightGray;
-            
         }
 
 
@@ -42,41 +40,22 @@ namespace Metodos_Numeros
                 form1.Show(); 
                 this.Close(); 
             }
-            btnCorrerBiseccion.Visible = false;
-            lblError1.Visible = false;
-            txtErrorBiseccion.Visible = false;
-            DGVBiseccion.Visible = false;
-            lblNo.Visible = false;
         }
 
-        private void btnVerficarBiseccion_Click(object sender, EventArgs e)
+        private void btnCorrerBiseccion_Click(object sender, EventArgs e)
         {
-            
-
             float num1, num2, num3;
-
-
             if (float.TryParse(txtErrorBiseccion.Text, out num1) &&
                 float.TryParse(txtParametroBBiseccion.Text, out num2) &&
                 float.TryParse(txtParametroABiseccion.Text, out num3) &&
                 !string.IsNullOrWhiteSpace(txtFuncionBiseccion.Text))
             {
-                btnCorrerBiseccion.Visible = true;
-                DGVBiseccion.Visible = true;
                 lblNo.Visible = false;
             }
             else
             {
                 lblNo.Visible = true;
-                btnCorrerBiseccion.Visible = false;
-                DGVBiseccion.Visible = false;
             }
-
-
-        }
-
-        private void btnCorrerBiseccion_Click(object sender, EventArgs e)
-        {
             if (txtFuncionBiseccion.Text == string.Empty) return;
             if (txtParametroABiseccion.Text == string.Empty) return;
             if (txtParametroBBiseccion.Text == string.Empty) return;
@@ -90,10 +69,6 @@ namespace Metodos_Numeros
 
         }
 
-        private void txtErrorBiseccion_TextChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void btnGraficaBiseccion_Click(object sender, EventArgs e)
         {
@@ -103,9 +78,5 @@ namespace Metodos_Numeros
 
         }
 
-        private void pictureBox3_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

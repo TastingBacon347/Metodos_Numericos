@@ -31,6 +31,8 @@ namespace Metodos_Numeros
             errorActual = 0;
             string lado = (fa * fc > 0) ? "DER" : "IZQ";
             listaStrings.Add(ConstruirFila(a, b, c, fa, fb, fc, lado, "Null"));
+            if(SeEncontroRaizExacta())
+                return listaStrings;
             do
             {
                 RealizarIteracionBiseccion(ref lado);
@@ -125,7 +127,10 @@ namespace Metodos_Numeros
         //                     MÉTODOS AUXILIARES
         // -------------------------------------------------------------
 
-
+        private static bool SeEncontroRaizExacta()
+        {
+            return fc == 0;
+        }
         /// <summary>
         /// Encapsula la iteración de la bisección (actualiza a, b, c, fc y calcula error).
         /// </summary>
@@ -200,7 +205,7 @@ namespace Metodos_Numeros
             b = limiteB;
             fa = EvaluarLaFuncion(a);
             fb = EvaluarLaFuncion(b);
-            return !NoExisteRaizEnElIntervalo();
+            return ExisteRaizEnElIntervalo();
         }
 
         /// <summary>
@@ -261,9 +266,9 @@ namespace Metodos_Numeros
         /// <summary>
         /// Verifica si fa*fb >= 0, lo que implica que no hay raíz (o hay múltiples) en [a,b].
         /// </summary>
-        private static bool NoExisteRaizEnElIntervalo()
+        private static bool ExisteRaizEnElIntervalo()
         {
-            return fa * fb >= 0;
+            return fa * fb <= 0;
         }
 
         /// <summary>

@@ -25,28 +25,6 @@ namespace Metodos_Numeros
 
             DGVReglaFalsa.AlternatingRowsDefaultCellStyle.BackColor = Color.LightGray;
         }
-
-        private void btnVerificarReglaFalsa_Click(object sender, EventArgs e)
-        {
-
-                float num1, num2, num3;
-
-            if (float.TryParse(txtErrorReglaFalsa.Text, out num1) &&
-                float.TryParse(txtParametroBReglaFalsa.Text, out num2) &&
-                float.TryParse(txtParametroAReglaFalsa.Text, out num3) &&
-                !string.IsNullOrWhiteSpace(txtFuncionReglaFalsa.Text))
-            {
-                btnCorrerReglaFalsa.Visible = true;
-                DGVReglaFalsa.Visible = true;
-                lblNo2.Visible =false;
-            }
-            else
-            {
-                lblNo2.Visible = true;
-                btnCorrerReglaFalsa.Visible = false;
-                DGVReglaFalsa.Visible = false;
-            }
-        }
         private void btnRegreso2_Click(object sender, EventArgs e)
         {
             Form1 form1 = (Form1)Application.OpenForms["Form1"]; 
@@ -96,6 +74,18 @@ namespace Metodos_Numeros
 
         private void btnCorrerReglaFalsa_Click(object sender, EventArgs e)
         {
+            float num1, num2, num3;
+            if (float.TryParse(txtErrorReglaFalsa.Text, out num1) &&
+                float.TryParse(txtParametroBReglaFalsa.Text, out num2) &&
+                float.TryParse(txtParametroAReglaFalsa.Text, out num3) &&
+                !string.IsNullOrWhiteSpace(txtFuncionReglaFalsa.Text))
+            {
+                lblNo2.Visible = false;
+            }
+            else
+            {
+                lblNo2.Visible = true;
+            }
             if (txtFuncionReglaFalsa.Text == string.Empty) return;
             if (txtParametroAReglaFalsa.Text == string.Empty) return;
             if (txtParametroBReglaFalsa.Text == string.Empty) return;
