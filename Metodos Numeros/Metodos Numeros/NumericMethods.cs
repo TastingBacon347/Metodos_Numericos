@@ -19,8 +19,31 @@ namespace Metodos_Numeros
         static Expression exp;
         static double a, b, fa, fb, c, fc, cAnterior, errorActual;
         static List<string[]> listaStrings = new List<string[]>();
+        static double[][] valores;
 
         public static List<string[]> ListaStrings { get => listaStrings;}
+        /// <summary>
+        /// Calcula los Valores para la Diferencia Dividida utilizada en la representación de Newton del polinomio interpolante.
+        /// </summary>
+        public static string DiferenciaDividida(Point[] puntos)
+        {
+            if (puntos.Length == 0)
+                return "No se Ingresaron Puntos";
+            valores = new double[puntos.Length][];
+            for (int i = 0; i < puntos.Length; i++)
+            {
+                valores[i] = new double[puntos.Length];
+                valores[i][0] = puntos[i].Y;
+            }
+            for (int j = 1; j < puntos.Length; j++)
+            {
+                for (int i = 0; i < puntos.Length - j; i++)
+                {
+                    valores[i][j] = (valores[i + 1][j - 1] - valores[i][j - 1]) / (puntos[i + j].X - puntos[i].X);
+                }
+            }
+            return "";
+        }
 
         /// <summary>
         /// Calcula la raiz de una funcion mediante el metodo numerico de Biseccion.
