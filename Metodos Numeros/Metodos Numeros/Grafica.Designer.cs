@@ -1,6 +1,6 @@
 ﻿namespace Metodos_Numeros
 {
-    partial class Form4
+    partial class Grafica
     {
         /// <summary>
         /// Required designer variable.
@@ -30,13 +30,13 @@
         {
             this.SuspendLayout();
             // 
-            // Form4
+            // Grafica
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
-            this.Name = "Form4";
-            this.Text = "Form4";
+            this.Name = "Grafica";
+            this.Text = "Grafica";
             this.Load += new System.EventHandler(this.Form4_Load);
             this.ResumeLayout(false);
 

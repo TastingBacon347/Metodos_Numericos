@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Metodos_Numeros
 {
-    public partial class Form4: Form
+    public partial class Grafica: Form
     {
-        public Form4()
+        public Grafica()
         {
             InitializeComponent();
         }

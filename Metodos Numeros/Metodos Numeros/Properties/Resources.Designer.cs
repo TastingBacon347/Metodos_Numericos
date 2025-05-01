@@ -163,6 +163,16 @@ namespace Metodos_Numeros.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap power_off_icon_f {
+            get {
+                object obj = ResourceManager.GetObject("power-off-icon_f", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Regla_Falsa_drawio {
             get {
                 object obj = ResourceManager.GetObject("Regla Falsa.drawio", resourceCulture);

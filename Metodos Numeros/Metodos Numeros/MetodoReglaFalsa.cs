@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Metodos_Numeros
 {
-    public partial class Form3: Form
+    public partial class Metodo_De_Regla_Falsa: Form
     {
-        public Form3()
+        public Metodo_De_Regla_Falsa()
         {
             InitializeComponent();
 
@@ -27,11 +27,11 @@ namespace Metodos_Numeros
         }
         private void btnRegreso2_Click(object sender, EventArgs e)
         {
-            Form1 form1 = (Form1)Application.OpenForms["Form1"]; 
-            if (form1 != null)
+            Menu Menu = (Menu)Application.OpenForms["Menu"];
+            if (Menu != null)
             {
-                form1.Show(); 
-                this.Close(); 
+                Menu.Show();
+                this.Close();
             }
             btnCorrerReglaFalsa.Visible = false;
             lblError2.Visible = false;
@@ -61,9 +61,7 @@ namespace Metodos_Numeros
                 return;
             }
 
-            // Abre Form5 pasando los datos
-            Form5 grafica = new Form5(NumericMethods.Grafica(funcion, a, b));
-            grafica.Show();
+            
         }
 
         private void btnCorrerReglaFalsa_Click(object sender, EventArgs e)

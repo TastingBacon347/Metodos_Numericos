@@ -1,6 +1,6 @@
 ﻿namespace Metodos_Numeros
 {
-    partial class Form2
+    partial class Metodo_De_Biseccion
     {
         /// <summary>
         /// Required designer variable.
@@ -75,10 +75,9 @@
             // 
             // btnRegresar
             // 
-            this.btnRegresar.Location = new System.Drawing.Point(945, 514);
-            this.btnRegresar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnRegresar.Location = new System.Drawing.Point(709, 418);
             this.btnRegresar.Name = "btnRegresar";
-            this.btnRegresar.Size = new System.Drawing.Size(105, 30);
+            this.btnRegresar.Size = new System.Drawing.Size(79, 24);
             this.btnRegresar.TabIndex = 84;
             this.btnRegresar.Text = "Regresar";
             this.btnRegresar.UseVisualStyleBackColor = true;
@@ -125,8 +124,7 @@
             this.DGVBiseccion.DefaultCellStyle = dataGridViewCellStyle11;
             this.DGVBiseccion.EnableHeadersVisualStyles = false;
             this.DGVBiseccion.GridColor = System.Drawing.Color.LightSeaGreen;
-            this.DGVBiseccion.Location = new System.Drawing.Point(19, 292);
-            this.DGVBiseccion.Margin = new System.Windows.Forms.Padding(4);
+            this.DGVBiseccion.Location = new System.Drawing.Point(14, 237);
             this.DGVBiseccion.Name = "DGVBiseccion";
             this.DGVBiseccion.ReadOnly = true;
             this.DGVBiseccion.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -134,7 +132,7 @@
             this.DGVBiseccion.RowHeadersWidth = 60;
             dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.DGVBiseccion.RowsDefaultCellStyle = dataGridViewCellStyle12;
-            this.DGVBiseccion.Size = new System.Drawing.Size(1035, 215);
+            this.DGVBiseccion.Size = new System.Drawing.Size(776, 175);
             this.DGVBiseccion.TabIndex = 82;
             // 
             // dataGridViewTextBoxColumn1
@@ -212,10 +210,9 @@
             // 
             // btnCorrerBiseccion
             // 
-            this.btnCorrerBiseccion.Location = new System.Drawing.Point(321, 219);
-            this.btnCorrerBiseccion.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCorrerBiseccion.Location = new System.Drawing.Point(241, 178);
             this.btnCorrerBiseccion.Name = "btnCorrerBiseccion";
-            this.btnCorrerBiseccion.Size = new System.Drawing.Size(124, 34);
+            this.btnCorrerBiseccion.Size = new System.Drawing.Size(93, 28);
             this.btnCorrerBiseccion.TabIndex = 81;
             this.btnCorrerBiseccion.Text = "Correr";
             this.btnCorrerBiseccion.UseVisualStyleBackColor = true;
@@ -223,19 +220,17 @@
             // 
             // txtErrorBiseccion
             // 
-            this.txtErrorBiseccion.Location = new System.Drawing.Point(161, 228);
-            this.txtErrorBiseccion.Margin = new System.Windows.Forms.Padding(4);
+            this.txtErrorBiseccion.Location = new System.Drawing.Point(121, 185);
             this.txtErrorBiseccion.Name = "txtErrorBiseccion";
-            this.txtErrorBiseccion.Size = new System.Drawing.Size(83, 22);
+            this.txtErrorBiseccion.Size = new System.Drawing.Size(63, 20);
             this.txtErrorBiseccion.TabIndex = 74;
             // 
             // lblError1
             // 
             this.lblError1.AutoSize = true;
-            this.lblError1.Location = new System.Drawing.Point(15, 228);
-            this.lblError1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblError1.Location = new System.Drawing.Point(11, 185);
             this.lblError1.Name = "lblError1";
-            this.lblError1.Size = new System.Drawing.Size(144, 16);
+            this.lblError1.Size = new System.Drawing.Size(113, 13);
             this.lblError1.TabIndex = 79;
             this.lblError1.Text = "Ingrese error deseado:";
             // 
@@ -243,10 +238,9 @@
             // 
             this.lblNo.AutoSize = true;
             this.lblNo.ForeColor = System.Drawing.Color.Red;
-            this.lblNo.Location = new System.Drawing.Point(15, 199);
-            this.lblNo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblNo.Location = new System.Drawing.Point(11, 162);
             this.lblNo.Name = "lblNo";
-            this.lblNo.Size = new System.Drawing.Size(277, 16);
+            this.lblNo.Size = new System.Drawing.Size(225, 13);
             this.lblNo.TabIndex = 78;
             this.lblNo.Text = "Datos faltantes o incorrectos, intente denuevo";
             this.lblNo.Visible = false;
@@ -255,73 +249,65 @@
             // 
             this.lbl6.AutoSize = true;
             this.lbl6.Font = new System.Drawing.Font("MS PGothic", 26.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl6.Location = new System.Drawing.Point(29, 11);
-            this.lbl6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl6.Location = new System.Drawing.Point(22, 9);
             this.lbl6.Name = "lbl6";
-            this.lbl6.Size = new System.Drawing.Size(401, 44);
+            this.lbl6.Size = new System.Drawing.Size(323, 35);
             this.lbl6.TabIndex = 73;
             this.lbl6.Text = "Metodo de Biseccion";
             // 
             // txtParametroBBiseccion
             // 
-            this.txtParametroBBiseccion.Location = new System.Drawing.Point(161, 171);
-            this.txtParametroBBiseccion.Margin = new System.Windows.Forms.Padding(4);
+            this.txtParametroBBiseccion.Location = new System.Drawing.Point(121, 139);
             this.txtParametroBBiseccion.Name = "txtParametroBBiseccion";
-            this.txtParametroBBiseccion.Size = new System.Drawing.Size(81, 22);
+            this.txtParametroBBiseccion.Size = new System.Drawing.Size(62, 20);
             this.txtParametroBBiseccion.TabIndex = 72;
             // 
             // txtParametroABiseccion
             // 
-            this.txtParametroABiseccion.Location = new System.Drawing.Point(160, 135);
-            this.txtParametroABiseccion.Margin = new System.Windows.Forms.Padding(4);
+            this.txtParametroABiseccion.Location = new System.Drawing.Point(120, 110);
             this.txtParametroABiseccion.Name = "txtParametroABiseccion";
-            this.txtParametroABiseccion.Size = new System.Drawing.Size(83, 22);
+            this.txtParametroABiseccion.Size = new System.Drawing.Size(63, 20);
             this.txtParametroABiseccion.TabIndex = 71;
             // 
             // lbl1
             // 
             this.lbl1.AutoSize = true;
-            this.lbl1.Location = new System.Drawing.Point(15, 175);
-            this.lbl1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl1.Location = new System.Drawing.Point(11, 142);
             this.lbl1.Name = "lbl1";
-            this.lbl1.Size = new System.Drawing.Size(131, 16);
+            this.lbl1.Size = new System.Drawing.Size(104, 13);
             this.lbl1.TabIndex = 70;
             this.lbl1.Text = "Ingrese parametro b:";
             // 
             // lbl2
             // 
             this.lbl2.AutoSize = true;
-            this.lbl2.Location = new System.Drawing.Point(15, 137);
-            this.lbl2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl2.Location = new System.Drawing.Point(11, 111);
             this.lbl2.Name = "lbl2";
-            this.lbl2.Size = new System.Drawing.Size(131, 16);
+            this.lbl2.Size = new System.Drawing.Size(104, 13);
             this.lbl2.TabIndex = 69;
             this.lbl2.Text = "Ingrese parametro a:";
             // 
             // txtFuncionBiseccion
             // 
-            this.txtFuncionBiseccion.Location = new System.Drawing.Point(225, 81);
-            this.txtFuncionBiseccion.Margin = new System.Windows.Forms.Padding(4);
+            this.txtFuncionBiseccion.Location = new System.Drawing.Point(169, 66);
             this.txtFuncionBiseccion.Name = "txtFuncionBiseccion";
-            this.txtFuncionBiseccion.Size = new System.Drawing.Size(220, 22);
+            this.txtFuncionBiseccion.Size = new System.Drawing.Size(166, 20);
             this.txtFuncionBiseccion.TabIndex = 68;
             // 
             // lbl3
             // 
             this.lbl3.AutoSize = true;
-            this.lbl3.Location = new System.Drawing.Point(33, 85);
-            this.lbl3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl3.Location = new System.Drawing.Point(25, 69);
             this.lbl3.Name = "lbl3";
-            this.lbl3.Size = new System.Drawing.Size(170, 16);
+            this.lbl3.Size = new System.Drawing.Size(138, 13);
             this.lbl3.TabIndex = 67;
             this.lbl3.Text = "Ingrese la funcion a evaluar";
             // 
             // btnGraficaBiseccion
             // 
-            this.btnGraficaBiseccion.Location = new System.Drawing.Point(455, 510);
-            this.btnGraficaBiseccion.Margin = new System.Windows.Forms.Padding(4);
+            this.btnGraficaBiseccion.Location = new System.Drawing.Point(341, 414);
             this.btnGraficaBiseccion.Name = "btnGraficaBiseccion";
-            this.btnGraficaBiseccion.Size = new System.Drawing.Size(217, 47);
+            this.btnGraficaBiseccion.Size = new System.Drawing.Size(163, 38);
             this.btnGraficaBiseccion.TabIndex = 86;
             this.btnGraficaBiseccion.Text = "Generar Grafica";
             this.btnGraficaBiseccion.UseVisualStyleBackColor = true;
@@ -333,10 +319,9 @@
             this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox3.InitialImage = global::Metodos_Numeros.Properties.Resources.Paso_1;
-            this.pictureBox3.Location = new System.Drawing.Point(499, 149);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox3.Location = new System.Drawing.Point(374, 121);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(549, 124);
+            this.pictureBox3.Size = new System.Drawing.Size(412, 101);
             this.pictureBox3.TabIndex = 85;
             this.pictureBox3.TabStop = false;
             // 
@@ -346,10 +331,9 @@
             this.image.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.image.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.image.InitialImage = global::Metodos_Numeros.Properties.Resources.Paso_1;
-            this.image.Location = new System.Drawing.Point(860, 11);
-            this.image.Margin = new System.Windows.Forms.Padding(4);
+            this.image.Location = new System.Drawing.Point(645, 9);
             this.image.Name = "image";
-            this.image.Size = new System.Drawing.Size(187, 124);
+            this.image.Size = new System.Drawing.Size(141, 101);
             this.image.TabIndex = 77;
             this.image.TabStop = false;
             // 
@@ -359,10 +343,9 @@
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox2.InitialImage = global::Metodos_Numeros.Properties.Resources.Paso_1;
-            this.pictureBox2.Location = new System.Drawing.Point(681, 11);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox2.Location = new System.Drawing.Point(511, 9);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(170, 124);
+            this.pictureBox2.Size = new System.Drawing.Size(128, 101);
             this.pictureBox2.TabIndex = 76;
             this.pictureBox2.TabStop = false;
             // 
@@ -372,19 +355,18 @@
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox1.InitialImage = global::Metodos_Numeros.Properties.Resources.Paso_1;
-            this.pictureBox1.Location = new System.Drawing.Point(499, 11);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox1.Location = new System.Drawing.Point(374, 9);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(174, 124);
+            this.pictureBox1.Size = new System.Drawing.Size(131, 101);
             this.pictureBox1.TabIndex = 75;
             this.pictureBox1.TabStop = false;
             // 
-            // Form2
+            // Metodo_De_Biseccion
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.ControlBox = false;
             this.Controls.Add(this.btnGraficaBiseccion);
             this.Controls.Add(this.pictureBox3);
@@ -404,10 +386,9 @@
             this.Controls.Add(this.image);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "Form2";
+            this.Name = "Metodo_De_Biseccion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Metodo de Biseccion";
             this.Load += new System.EventHandler(this.Form2_Load);

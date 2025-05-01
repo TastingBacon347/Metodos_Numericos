@@ -11,11 +11,11 @@ using System.Windows.Forms;
 
 namespace Metodos_Numeros
 {
-    public partial class Form2: Form
+    public partial class Metodo_De_Biseccion: Form
     {
 
 
-        public Form2()
+        public Metodo_De_Biseccion()
         {
             InitializeComponent();
             if (Application.OpenForms["Form4"] == null)
@@ -35,10 +35,10 @@ namespace Metodos_Numeros
 
         private void btnRegresar_Click(object sender, EventArgs e)
         {
-            Form1 form1 = (Form1)Application.OpenForms["Form1"];
-            if (form1 != null)
+            Menu Menu = (Menu)Application.OpenForms["Menu"];
+            if (Menu != null)
             {
-                form1.Show(); 
+                Menu.Show(); 
                 this.Close(); 
             }
         }
@@ -92,9 +92,7 @@ namespace Metodos_Numeros
                 return;
             }
 
-            // Abre Form5 pasando los datos
-            Form5 grafica = new Form5(NumericMethods.Grafica(funcion, a, b));
-            grafica.Show();
+            
 
         }
 
