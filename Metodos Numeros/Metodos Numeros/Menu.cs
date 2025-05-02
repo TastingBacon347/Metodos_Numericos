@@ -60,16 +60,13 @@ namespace Metodos_Numeros
 
         private void guna2CircleButton1_Click(object sender, EventArgs e)
         {
-            tabControl1.SelectedTab = tabPageMetodos;
+            
             
         }
 
         private void guna2CircleButton2_Click(object sender, EventArgs e)
         {
-            tabControl1.SelectedTab = tabPageCreditos;
-            containerControl1.BackColor = Color.FromArgb(192, 192, 255);
-            containerControl2.BackColor = Color.FromArgb(192, 192, 255);
-            containerControl3.BackColor = Color.FromArgb(192, 192, 255);
+            
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -92,6 +89,45 @@ namespace Metodos_Numeros
             DiferenciaDividida diferenciaDividida = new DiferenciaDividida();
             diferenciaDividida.Show();
             this.Hide();
+        }
+
+        private void btnIMetodos_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectedTab = tabPageMetodos;
+
+            Random rand = new Random();
+
+
+            Color color1 = Color.FromArgb(255, rand.Next(150, 256), rand.Next(150, 256), rand.Next(150, 256));
+            Color color2 = Color.FromArgb(255, rand.Next(150, 256), rand.Next(150, 256), rand.Next(150, 256));
+
+
+            PanelMetodos.FillColor = color1;
+            PanelMetodos.FillColor2 = color2;
+        }
+
+        private void btnICreditos_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectedTab = tabPageCreditos;
+
+            Random rand = new Random();
+
+            Color color1 = Color.FromArgb(255, rand.Next(150, 256), rand.Next(150, 256), rand.Next(150, 256));
+            Color color2 = Color.FromArgb(255, rand.Next(150, 256), rand.Next(150, 256), rand.Next(150, 256));
+
+
+            PanelCreditos.FillColor = color1;
+            PanelCreditos.FillColor2 = color2;
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label12_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

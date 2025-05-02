@@ -118,26 +118,26 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="Paso 1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Paso 1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Paso2Bis1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Paso2Bis1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Paso3RF" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Paso3RF.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="istockphoto-1332100919-612x612" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\istockphoto-1332100919-612x612.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Regla Falsa.drawio" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Regla Falsa.drawio.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Paso 1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Paso 1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Paso3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Paso3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Paso3Regla" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Paso3Regla.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Paso2Bis" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Paso2Bis.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Paso1Regla" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Paso1Regla.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Paso2Regla" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Paso2Regla.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Biseccion.drawio" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Biseccion.drawio.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -145,13 +145,25 @@
   <data name="Paso4Bis" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Paso4Bis.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Paso2Bis" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Paso2Bis.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Paso3RF" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Paso3RF.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Paso2Regla" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Paso2Regla.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Paso3Regla" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Paso3Regla.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Paso3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Paso3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="power-off-icon_f" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\power-off-icon_f;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="metodos" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\metodos.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="persona" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\persona.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="persona1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\persona1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

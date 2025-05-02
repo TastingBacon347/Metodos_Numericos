@@ -73,6 +73,26 @@ namespace Metodos_Numeros.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap istockphoto_1332100919_612x612 {
+            get {
+                object obj = ResourceManager.GetObject("istockphoto-1332100919-612x612", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap metodos {
+            get {
+                object obj = ResourceManager.GetObject("metodos", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Paso_1 {
             get {
                 object obj = ResourceManager.GetObject("Paso 1", resourceCulture);
@@ -156,6 +176,26 @@ namespace Metodos_Numeros.Properties {
         internal static System.Drawing.Bitmap Paso4Bis {
             get {
                 object obj = ResourceManager.GetObject("Paso4Bis", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap persona {
+            get {
+                object obj = ResourceManager.GetObject("persona", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap persona1 {
+            get {
+                object obj = ResourceManager.GetObject("persona1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
