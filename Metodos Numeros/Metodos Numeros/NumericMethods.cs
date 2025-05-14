@@ -51,6 +51,8 @@ namespace Metodos_Numeros
         public static string Biseccion(string funcion, double limiteA, double limiteB, double error)
         {
             ListaStrings.Clear();
+            if(error <= 0)
+                return "El Error Debe Ser Mayor a 0";
 
             if (!ReemplazarEInicializarFuncion(ref funcion))
                 return "La Funcion Ingresada No Tiene la Sintaxis Correcta";
@@ -80,7 +82,8 @@ namespace Metodos_Numeros
         public static string ReglaFalsa(string funcion, double limiteA, double limiteB, double error)
         {
             ListaStrings.Clear();
-
+            if (error <= 0)
+                return "El Error Debe Ser Mayor a 0";
             if (!ReemplazarEInicializarFuncion(ref funcion))
                 return "La Funcion Ingresada No Tiene la Sintaxis Correcta";
 

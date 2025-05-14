@@ -31,27 +31,6 @@ namespace Metodos_Numeros
         {
 
         }
-
-        private void btnBiseccion_Click_1(object sender, EventArgs e)
-        {
-            
-
-        }
-
-        private void btnReglaFalsa_Click_1(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void btnSalir3_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            
-        }
      
         private void guna2ImageButton1_Click(object sender, EventArgs e)
         {
@@ -61,17 +40,6 @@ namespace Metodos_Numeros
         private void tabPageMenu_Click(object sender, EventArgs e)
         {
 
-        }
-
-        private void guna2CircleButton1_Click(object sender, EventArgs e)
-        {
-            
-            
-        }
-
-        private void guna2CircleButton2_Click(object sender, EventArgs e)
-        {
-            
         }
 
         private void button2_Click(object sender, EventArgs e)

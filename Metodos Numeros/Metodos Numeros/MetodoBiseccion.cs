@@ -18,10 +18,6 @@ namespace Metodos_Numeros
         public Metodo_De_Biseccion()
         {
             InitializeComponent();
-            if (Application.OpenForms["Form4"] == null)
-            {
-                btnGraficaBiseccion.Enabled = true;
-            }
 
         }
 
@@ -33,39 +29,37 @@ namespace Metodos_Numeros
         }
 
 
-        private void btnRegresar_Click(object sender, EventArgs e)
-        {
-            
-        }
-
         private void btnCorrerBiseccion_Click(object sender, EventArgs e)
         {
-            float num1, num2, num3;
-            if (float.TryParse(txtErrorBiseccionGuna.Text, out num1) &&
-                float.TryParse(txtParametroBBiseccionGuna.Text, out num2) &&
-                float.TryParse(txtParametroABiseccionGuna.Text, out num3) &&
-                !string.IsNullOrWhiteSpace(txtFuncionBiseccionGuna.Text))
+            if (!float.TryParse(txtErrorBiseccionGuna.Text, out _))
             {
-                
+                MensajeGunaDatosFaltantes.Show();
+                return;
             }
-
-            //No se donde poner el messagebox en caso de que no haya raiz en el intervalo 
-            //Cambie el codigo y no se como invocar la grafica lolamento
-            else
+            if (!float.TryParse(txtParametroBBiseccionGuna.Text, out _))
             {
-                MensajeGuna1.Show();
+                MensajeGunaDatosFaltantes.Show();
+                return;
             }
-            if (txtFuncionBiseccionGuna.Text == string.Empty) return;
-            if (txtParametroABiseccionGuna.Text == string.Empty) return;
-            if (txtParametroBBiseccionGuna.Text == string.Empty) return;
-            if (txtErrorBiseccionGuna.Text == string.Empty) return;
+            if(!float.TryParse(txtParametroABiseccionGuna.Text, out _))
+            {
+                MensajeGunaDatosFaltantes.Show();
+                return;
+            }
+            if(string.IsNullOrWhiteSpace(txtFuncionBiseccionGuna.Text))
+            {
+                MensajeGunaFuncionValida.Show();
+                return;
+            }
             DGVBiseccion.Rows.Clear();
             string mensaje = NumericMethods.Biseccion(txtFuncionBiseccionGuna.Text, Convert.ToDouble(txtParametroABiseccionGuna.Text), Convert.ToDouble(txtParametroBBiseccionGuna.Text), Convert.ToDouble(txtErrorBiseccionGuna.Text));
-            foreach(string[] array in NumericMethods.ListaStrings)
+
+            foreach (string[] array in NumericMethods.ListaStrings)
             {
                 DGVBiseccion.Rows.Add(array);
             }
-            
+            MensajeGunaResultado.Text = mensaje;
+            MensajeGunaResultado.Show();
         }
 
 
@@ -74,20 +68,26 @@ namespace Metodos_Numeros
             string funcion = txtFuncionBiseccionGuna.Text;  // 
             if (string.IsNullOrWhiteSpace(funcion))
             {
-                MensajeGuna2.Show();
+                MensajeGunaFuncionValida.Show();
                 return;
             }
 
             if (!double.TryParse(txtParametroABiseccionGuna.Text, out double a))
             {
-                MensajeGuna3.Show();
+                MensajeGunaDatosFaltantes.Show();
                 return;
             }
 
             if (!double.TryParse(txtParametroBBiseccionGuna.Text, out double b))
             {
-                MensajeGuna4.Show();
+                MensajeGunaDatosFaltantes.Show();
                 return;
+            }
+            if (Application.OpenForms["Grafica"] == null)
+            {
+                Grafica grafica = new Grafica();
+                grafica.Controls.Add(NumericMethods.Grafica(funcion, a, b));
+                grafica.Show();
             }
         }
 
@@ -98,15 +98,6 @@ namespace Metodos_Numeros
 
         }
 
-        private void DGVBiseccion_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void txtParametroBBiseccionGuna_TextChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void guna2ImageButton1_Click_1(object sender, EventArgs e)
         {
