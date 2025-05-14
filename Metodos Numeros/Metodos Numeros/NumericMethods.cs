@@ -118,9 +118,7 @@ namespace Metodos_Numeros
 
             if (a > b)
             {
-                double temp = a;
-                a = b; 
-                b = temp;
+                (b, a) = (a, b);
             }
             for (double i = a; i < b; i+=0.01)
             {
