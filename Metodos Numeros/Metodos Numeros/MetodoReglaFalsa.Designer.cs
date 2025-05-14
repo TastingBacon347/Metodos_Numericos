@@ -39,7 +39,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.btnRegreso2 = new System.Windows.Forms.Button();
             this.btnCorrerReglaFalsa = new System.Windows.Forms.Button();
             this.DGVReglaFalsa = new System.Windows.Forms.DataGridView();
             this.a = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -50,41 +49,31 @@
             this.fc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IzqoDer = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ErrorAbsoluto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtErrorReglaFalsa = new System.Windows.Forms.TextBox();
-            this.lblError2 = new System.Windows.Forms.Label();
-            this.lblNo2 = new System.Windows.Forms.Label();
             this.lbl12 = new System.Windows.Forms.Label();
-            this.txtParametroBReglaFalsa = new System.Windows.Forms.TextBox();
-            this.txtParametroAReglaFalsa = new System.Windows.Forms.TextBox();
-            this.lbl13 = new System.Windows.Forms.Label();
-            this.lbl14 = new System.Windows.Forms.Label();
-            this.txtFuncionReglaFalsa = new System.Windows.Forms.TextBox();
-            this.lbl15 = new System.Windows.Forms.Label();
             this.btnGraficaReglaFalsa = new System.Windows.Forms.Button();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.MensajeGuna4 = new Guna.UI2.WinForms.Guna2MessageDialog();
+            this.MensajeGuna3 = new Guna.UI2.WinForms.Guna2MessageDialog();
+            this.MensajeGuna1 = new Guna.UI2.WinForms.Guna2MessageDialog();
+            this.MensajeGuna2 = new Guna.UI2.WinForms.Guna2MessageDialog();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtErrorReglaFGuna = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtParametroBReglaFGuna = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtParametroAReglaFGuna = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtFuncionReglaFGuna = new Guna.UI2.WinForms.Guna2TextBox();
+            this.guna2ImageButton1 = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.btnAyuda = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.DGVReglaFalsa)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btnRegreso2
-            // 
-            this.btnRegreso2.ForeColor = System.Drawing.Color.Black;
-            this.btnRegreso2.Location = new System.Drawing.Point(1163, 465);
-            this.btnRegreso2.Name = "btnRegreso2";
-            this.btnRegreso2.Size = new System.Drawing.Size(79, 24);
-            this.btnRegreso2.TabIndex = 85;
-            this.btnRegreso2.Text = "Regresar";
-            this.btnRegreso2.UseVisualStyleBackColor = true;
-            this.btnRegreso2.Click += new System.EventHandler(this.btnRegreso2_Click);
             // 
             // btnCorrerReglaFalsa
             // 
             this.btnCorrerReglaFalsa.ForeColor = System.Drawing.Color.Black;
-            this.btnCorrerReglaFalsa.Location = new System.Drawing.Point(239, 175);
+            this.btnCorrerReglaFalsa.Location = new System.Drawing.Point(543, 55);
             this.btnCorrerReglaFalsa.Name = "btnCorrerReglaFalsa";
             this.btnCorrerReglaFalsa.Size = new System.Drawing.Size(93, 28);
             this.btnCorrerReglaFalsa.TabIndex = 83;
@@ -130,12 +119,12 @@
             dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.DGVReglaFalsa.DefaultCellStyle = dataGridViewCellStyle11;
             this.DGVReglaFalsa.GridColor = System.Drawing.Color.Cornsilk;
-            this.DGVReglaFalsa.Location = new System.Drawing.Point(12, 270);
+            this.DGVReglaFalsa.Location = new System.Drawing.Point(12, 298);
             this.DGVReglaFalsa.Name = "DGVReglaFalsa";
             this.DGVReglaFalsa.ReadOnly = true;
             this.DGVReglaFalsa.RowHeadersVisible = false;
             this.DGVReglaFalsa.RowHeadersWidth = 51;
-            this.DGVReglaFalsa.Size = new System.Drawing.Size(1227, 175);
+            this.DGVReglaFalsa.Size = new System.Drawing.Size(706, 175);
             this.DGVReglaFalsa.TabIndex = 82;
             // 
             // a
@@ -213,35 +202,6 @@
             this.ErrorAbsoluto.Name = "ErrorAbsoluto";
             this.ErrorAbsoluto.ReadOnly = true;
             // 
-            // txtErrorReglaFalsa
-            // 
-            this.txtErrorReglaFalsa.ForeColor = System.Drawing.Color.Black;
-            this.txtErrorReglaFalsa.Location = new System.Drawing.Point(119, 179);
-            this.txtErrorReglaFalsa.Name = "txtErrorReglaFalsa";
-            this.txtErrorReglaFalsa.Size = new System.Drawing.Size(63, 20);
-            this.txtErrorReglaFalsa.TabIndex = 75;
-            // 
-            // lblError2
-            // 
-            this.lblError2.AutoSize = true;
-            this.lblError2.ForeColor = System.Drawing.Color.Black;
-            this.lblError2.Location = new System.Drawing.Point(9, 182);
-            this.lblError2.Name = "lblError2";
-            this.lblError2.Size = new System.Drawing.Size(113, 13);
-            this.lblError2.TabIndex = 80;
-            this.lblError2.Text = "Ingrese error deseado:";
-            // 
-            // lblNo2
-            // 
-            this.lblNo2.AutoSize = true;
-            this.lblNo2.ForeColor = System.Drawing.Color.Red;
-            this.lblNo2.Location = new System.Drawing.Point(9, 159);
-            this.lblNo2.Name = "lblNo2";
-            this.lblNo2.Size = new System.Drawing.Size(225, 13);
-            this.lblNo2.TabIndex = 79;
-            this.lblNo2.Text = "Datos faltantes o incorrectos, intente denuevo";
-            this.lblNo2.Visible = false;
-            // 
             // lbl12
             // 
             this.lbl12.AutoSize = true;
@@ -253,63 +213,9 @@
             this.lbl12.TabIndex = 74;
             this.lbl12.Text = "Metodo de Regla Falsa";
             // 
-            // txtParametroBReglaFalsa
-            // 
-            this.txtParametroBReglaFalsa.ForeColor = System.Drawing.Color.Black;
-            this.txtParametroBReglaFalsa.Location = new System.Drawing.Point(119, 136);
-            this.txtParametroBReglaFalsa.Name = "txtParametroBReglaFalsa";
-            this.txtParametroBReglaFalsa.Size = new System.Drawing.Size(62, 20);
-            this.txtParametroBReglaFalsa.TabIndex = 73;
-            // 
-            // txtParametroAReglaFalsa
-            // 
-            this.txtParametroAReglaFalsa.ForeColor = System.Drawing.Color.Black;
-            this.txtParametroAReglaFalsa.Location = new System.Drawing.Point(118, 107);
-            this.txtParametroAReglaFalsa.Name = "txtParametroAReglaFalsa";
-            this.txtParametroAReglaFalsa.Size = new System.Drawing.Size(63, 20);
-            this.txtParametroAReglaFalsa.TabIndex = 72;
-            // 
-            // lbl13
-            // 
-            this.lbl13.AutoSize = true;
-            this.lbl13.ForeColor = System.Drawing.Color.Black;
-            this.lbl13.Location = new System.Drawing.Point(9, 139);
-            this.lbl13.Name = "lbl13";
-            this.lbl13.Size = new System.Drawing.Size(104, 13);
-            this.lbl13.TabIndex = 71;
-            this.lbl13.Text = "Ingrese parametro b:";
-            // 
-            // lbl14
-            // 
-            this.lbl14.AutoSize = true;
-            this.lbl14.ForeColor = System.Drawing.Color.Black;
-            this.lbl14.Location = new System.Drawing.Point(9, 108);
-            this.lbl14.Name = "lbl14";
-            this.lbl14.Size = new System.Drawing.Size(104, 13);
-            this.lbl14.TabIndex = 70;
-            this.lbl14.Text = "Ingrese parametro a:";
-            // 
-            // txtFuncionReglaFalsa
-            // 
-            this.txtFuncionReglaFalsa.ForeColor = System.Drawing.Color.Black;
-            this.txtFuncionReglaFalsa.Location = new System.Drawing.Point(167, 63);
-            this.txtFuncionReglaFalsa.Name = "txtFuncionReglaFalsa";
-            this.txtFuncionReglaFalsa.Size = new System.Drawing.Size(166, 20);
-            this.txtFuncionReglaFalsa.TabIndex = 69;
-            // 
-            // lbl15
-            // 
-            this.lbl15.AutoSize = true;
-            this.lbl15.ForeColor = System.Drawing.Color.Black;
-            this.lbl15.Location = new System.Drawing.Point(23, 66);
-            this.lbl15.Name = "lbl15";
-            this.lbl15.Size = new System.Drawing.Size(138, 13);
-            this.lbl15.TabIndex = 68;
-            this.lbl15.Text = "Ingrese la funcion a evaluar";
-            // 
             // btnGraficaReglaFalsa
             // 
-            this.btnGraficaReglaFalsa.Location = new System.Drawing.Point(526, 451);
+            this.btnGraficaReglaFalsa.Location = new System.Drawing.Point(515, 182);
             this.btnGraficaReglaFalsa.Name = "btnGraficaReglaFalsa";
             this.btnGraficaReglaFalsa.Size = new System.Drawing.Size(163, 38);
             this.btnGraficaReglaFalsa.TabIndex = 87;
@@ -317,97 +223,252 @@
             this.btnGraficaReglaFalsa.UseVisualStyleBackColor = true;
             this.btnGraficaReglaFalsa.Click += new System.EventHandler(this.btnGraficaBiseccion_Click);
             // 
-            // pictureBox4
+            // MensajeGuna4
             // 
-            this.pictureBox4.BackgroundImage = global::Metodos_Numeros.Properties.Resources.Paso3Regla;
-            this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox4.InitialImage = global::Metodos_Numeros.Properties.Resources.Paso_1;
-            this.pictureBox4.Location = new System.Drawing.Point(847, 117);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(395, 87);
-            this.pictureBox4.TabIndex = 78;
-            this.pictureBox4.TabStop = false;
+            this.MensajeGuna4.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
+            this.MensajeGuna4.Caption = "Error";
+            this.MensajeGuna4.Icon = Guna.UI2.WinForms.MessageDialogIcon.Warning;
+            this.MensajeGuna4.Parent = this;
+            this.MensajeGuna4.Style = Guna.UI2.WinForms.MessageDialogStyle.Light;
+            this.MensajeGuna4.Text = "Valor de fin invalido";
             // 
-            // pictureBox5
+            // MensajeGuna3
             // 
-            this.pictureBox5.BackgroundImage = global::Metodos_Numeros.Properties.Resources.Paso2Regla;
-            this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox5.InitialImage = global::Metodos_Numeros.Properties.Resources.Paso_1;
-            this.pictureBox5.Location = new System.Drawing.Point(1057, 9);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(185, 101);
-            this.pictureBox5.TabIndex = 77;
-            this.pictureBox5.TabStop = false;
+            this.MensajeGuna3.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
+            this.MensajeGuna3.Caption = "Error";
+            this.MensajeGuna3.Icon = Guna.UI2.WinForms.MessageDialogIcon.Warning;
+            this.MensajeGuna3.Parent = this;
+            this.MensajeGuna3.Style = Guna.UI2.WinForms.MessageDialogStyle.Light;
+            this.MensajeGuna3.Text = "Valor de inicio invalido ";
             // 
-            // pictureBox6
+            // MensajeGuna1
             // 
-            this.pictureBox6.BackgroundImage = global::Metodos_Numeros.Properties.Resources.Paso1Regla;
-            this.pictureBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox6.InitialImage = global::Metodos_Numeros.Properties.Resources.Paso_1;
-            this.pictureBox6.Location = new System.Drawing.Point(847, 9);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(185, 101);
-            this.pictureBox6.TabIndex = 76;
-            this.pictureBox6.TabStop = false;
+            this.MensajeGuna1.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
+            this.MensajeGuna1.Caption = "Error";
+            this.MensajeGuna1.Icon = Guna.UI2.WinForms.MessageDialogIcon.Warning;
+            this.MensajeGuna1.Parent = this;
+            this.MensajeGuna1.Style = Guna.UI2.WinForms.MessageDialogStyle.Light;
+            this.MensajeGuna1.Text = "Datos faltantes o incorrectos, Intente denuevo";
+            // 
+            // MensajeGuna2
+            // 
+            this.MensajeGuna2.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
+            this.MensajeGuna2.Caption = "Error";
+            this.MensajeGuna2.Icon = Guna.UI2.WinForms.MessageDialogIcon.Warning;
+            this.MensajeGuna2.Parent = this;
+            this.MensajeGuna2.Style = Guna.UI2.WinForms.MessageDialogStyle.Light;
+            this.MensajeGuna2.Text = "Ingrese una funcion valida";
+            // 
+            // label4
+            // 
+            this.label4.Font = new System.Drawing.Font("Bookman Old Style", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(15, 191);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(200, 39);
+            this.label4.TabIndex = 106;
+            this.label4.Text = "\r\nIngrese el error deseado:\r\n";
+            // 
+            // label3
+            // 
+            this.label3.Font = new System.Drawing.Font("Bookman Old Style", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(14, 144);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(173, 39);
+            this.label3.TabIndex = 105;
+            this.label3.Text = "\r\nIngrese parametro b:\r\n";
+            // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("Bookman Old Style", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(14, 102);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(173, 39);
+            this.label1.TabIndex = 104;
+            this.label1.Text = "\r\nIngrese parametro a:\r\n";
+            // 
+            // label2
+            // 
+            this.label2.Font = new System.Drawing.Font("Bookman Old Style", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(14, 55);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(156, 39);
+            this.label2.TabIndex = 103;
+            this.label2.Text = "\r\nIngrese la funcion:\r\n\r\n";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            // 
+            // txtErrorReglaFGuna
+            // 
+            this.txtErrorReglaFGuna.Animated = true;
+            this.txtErrorReglaFGuna.AutoRoundedCorners = true;
+            this.txtErrorReglaFGuna.BackColor = System.Drawing.Color.Transparent;
+            this.txtErrorReglaFGuna.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.txtErrorReglaFGuna.BorderRadius = 12;
+            this.txtErrorReglaFGuna.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtErrorReglaFGuna.DefaultText = "";
+            this.txtErrorReglaFGuna.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtErrorReglaFGuna.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtErrorReglaFGuna.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtErrorReglaFGuna.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtErrorReglaFGuna.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtErrorReglaFGuna.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtErrorReglaFGuna.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtErrorReglaFGuna.Location = new System.Drawing.Point(221, 203);
+            this.txtErrorReglaFGuna.Name = "txtErrorReglaFGuna";
+            this.txtErrorReglaFGuna.PlaceholderText = "";
+            this.txtErrorReglaFGuna.SelectedText = "";
+            this.txtErrorReglaFGuna.Size = new System.Drawing.Size(66, 27);
+            this.txtErrorReglaFGuna.TabIndex = 102;
+            // 
+            // txtParametroBReglaFGuna
+            // 
+            this.txtParametroBReglaFGuna.Animated = true;
+            this.txtParametroBReglaFGuna.AutoRoundedCorners = true;
+            this.txtParametroBReglaFGuna.BackColor = System.Drawing.Color.Transparent;
+            this.txtParametroBReglaFGuna.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.txtParametroBReglaFGuna.BorderRadius = 12;
+            this.txtParametroBReglaFGuna.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtParametroBReglaFGuna.DefaultText = "";
+            this.txtParametroBReglaFGuna.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtParametroBReglaFGuna.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtParametroBReglaFGuna.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtParametroBReglaFGuna.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtParametroBReglaFGuna.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtParametroBReglaFGuna.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtParametroBReglaFGuna.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtParametroBReglaFGuna.Location = new System.Drawing.Point(193, 156);
+            this.txtParametroBReglaFGuna.Name = "txtParametroBReglaFGuna";
+            this.txtParametroBReglaFGuna.PlaceholderText = "";
+            this.txtParametroBReglaFGuna.SelectedText = "";
+            this.txtParametroBReglaFGuna.Size = new System.Drawing.Size(66, 27);
+            this.txtParametroBReglaFGuna.TabIndex = 101;
+            // 
+            // txtParametroAReglaFGuna
+            // 
+            this.txtParametroAReglaFGuna.Animated = true;
+            this.txtParametroAReglaFGuna.AutoRoundedCorners = true;
+            this.txtParametroAReglaFGuna.BackColor = System.Drawing.Color.Transparent;
+            this.txtParametroAReglaFGuna.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.txtParametroAReglaFGuna.BorderRadius = 12;
+            this.txtParametroAReglaFGuna.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtParametroAReglaFGuna.DefaultText = "";
+            this.txtParametroAReglaFGuna.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtParametroAReglaFGuna.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtParametroAReglaFGuna.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtParametroAReglaFGuna.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtParametroAReglaFGuna.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtParametroAReglaFGuna.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtParametroAReglaFGuna.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtParametroAReglaFGuna.Location = new System.Drawing.Point(193, 114);
+            this.txtParametroAReglaFGuna.Name = "txtParametroAReglaFGuna";
+            this.txtParametroAReglaFGuna.PlaceholderText = "";
+            this.txtParametroAReglaFGuna.SelectedText = "";
+            this.txtParametroAReglaFGuna.Size = new System.Drawing.Size(66, 27);
+            this.txtParametroAReglaFGuna.TabIndex = 100;
+            // 
+            // txtFuncionReglaFGuna
+            // 
+            this.txtFuncionReglaFGuna.Animated = true;
+            this.txtFuncionReglaFGuna.AutoRoundedCorners = true;
+            this.txtFuncionReglaFGuna.BackColor = System.Drawing.Color.Transparent;
+            this.txtFuncionReglaFGuna.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.txtFuncionReglaFGuna.BorderRadius = 12;
+            this.txtFuncionReglaFGuna.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtFuncionReglaFGuna.DefaultText = "";
+            this.txtFuncionReglaFGuna.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtFuncionReglaFGuna.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtFuncionReglaFGuna.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtFuncionReglaFGuna.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtFuncionReglaFGuna.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtFuncionReglaFGuna.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtFuncionReglaFGuna.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtFuncionReglaFGuna.Location = new System.Drawing.Point(175, 67);
+            this.txtFuncionReglaFGuna.Name = "txtFuncionReglaFGuna";
+            this.txtFuncionReglaFGuna.PlaceholderText = "";
+            this.txtFuncionReglaFGuna.SelectedText = "";
+            this.txtFuncionReglaFGuna.Size = new System.Drawing.Size(160, 27);
+            this.txtFuncionReglaFGuna.TabIndex = 99;
+            // 
+            // guna2ImageButton1
+            // 
+            this.guna2ImageButton1.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.guna2ImageButton1.HoverState.ImageSize = new System.Drawing.Size(64, 64);
+            this.guna2ImageButton1.Image = global::Metodos_Numeros.Properties.Resources.arrow_return_left_icon_160458;
+            this.guna2ImageButton1.ImageOffset = new System.Drawing.Point(0, 0);
+            this.guna2ImageButton1.ImageRotate = 0F;
+            this.guna2ImageButton1.Location = new System.Drawing.Point(724, 409);
+            this.guna2ImageButton1.Name = "guna2ImageButton1";
+            this.guna2ImageButton1.PressedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.guna2ImageButton1.Size = new System.Drawing.Size(64, 54);
+            this.guna2ImageButton1.TabIndex = 98;
+            this.guna2ImageButton1.Click += new System.EventHandler(this.guna2ImageButton1_Click);
+            // 
+            // btnAyuda
+            // 
+            this.btnAyuda.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.btnAyuda.HoverState.ImageSize = new System.Drawing.Size(64, 64);
+            this.btnAyuda.Image = global::Metodos_Numeros.Properties.Resources.stock_helpagent_104167;
+            this.btnAyuda.ImageOffset = new System.Drawing.Point(0, 0);
+            this.btnAyuda.ImageRotate = 0F;
+            this.btnAyuda.Location = new System.Drawing.Point(735, -1);
+            this.btnAyuda.Name = "btnAyuda";
+            this.btnAyuda.PressedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.btnAyuda.Size = new System.Drawing.Size(64, 68);
+            this.btnAyuda.TabIndex = 88;
+            this.btnAyuda.Click += new System.EventHandler(this.btnAyuda_Click);
+            // 
+            // guna2PictureBox1
+            // 
+            this.guna2PictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox1.BackgroundImage = global::Metodos_Numeros.Properties.Resources.La_Chica;
+            this.guna2PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.guna2PictureBox1.ErrorImage = global::Metodos_Numeros.Properties.Resources.La_Chica;
+            this.guna2PictureBox1.Image = global::Metodos_Numeros.Properties.Resources.La_Chica;
+            this.guna2PictureBox1.ImageRotate = 0F;
+            this.guna2PictureBox1.InitialImage = global::Metodos_Numeros.Properties.Resources.La_Chica;
+            this.guna2PictureBox1.Location = new System.Drawing.Point(379, 114);
+            this.guna2PictureBox1.Name = "guna2PictureBox1";
+            this.guna2PictureBox1.Size = new System.Drawing.Size(110, 74);
+            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2PictureBox1.TabIndex = 107;
+            this.guna2PictureBox1.TabStop = false;
             // 
             // Metodo_De_Regla_Falsa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Cornsilk;
-            this.ClientSize = new System.Drawing.Size(1251, 501);
+            this.ClientSize = new System.Drawing.Size(800, 475);
             this.ControlBox = false;
+            this.Controls.Add(this.guna2PictureBox1);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.txtErrorReglaFGuna);
+            this.Controls.Add(this.txtParametroBReglaFGuna);
+            this.Controls.Add(this.txtParametroAReglaFGuna);
+            this.Controls.Add(this.txtFuncionReglaFGuna);
+            this.Controls.Add(this.guna2ImageButton1);
+            this.Controls.Add(this.btnAyuda);
             this.Controls.Add(this.btnGraficaReglaFalsa);
-            this.Controls.Add(this.btnRegreso2);
             this.Controls.Add(this.btnCorrerReglaFalsa);
             this.Controls.Add(this.DGVReglaFalsa);
-            this.Controls.Add(this.txtErrorReglaFalsa);
-            this.Controls.Add(this.lblError2);
-            this.Controls.Add(this.lblNo2);
-            this.Controls.Add(this.pictureBox4);
-            this.Controls.Add(this.pictureBox5);
-            this.Controls.Add(this.pictureBox6);
             this.Controls.Add(this.lbl12);
-            this.Controls.Add(this.txtParametroBReglaFalsa);
-            this.Controls.Add(this.txtParametroAReglaFalsa);
-            this.Controls.Add(this.lbl13);
-            this.Controls.Add(this.lbl14);
-            this.Controls.Add(this.txtFuncionReglaFalsa);
-            this.Controls.Add(this.lbl15);
             this.Name = "Metodo_De_Regla_Falsa";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Metodo de Regla Falsa";
             this.Load += new System.EventHandler(this.Form3_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DGVReglaFalsa)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnRegreso2;
         private System.Windows.Forms.Button btnCorrerReglaFalsa;
         private System.Windows.Forms.DataGridView DGVReglaFalsa;
-        private System.Windows.Forms.TextBox txtErrorReglaFalsa;
-        private System.Windows.Forms.Label lblError2;
-        private System.Windows.Forms.Label lblNo2;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.Label lbl12;
-        private System.Windows.Forms.TextBox txtParametroBReglaFalsa;
-        private System.Windows.Forms.TextBox txtParametroAReglaFalsa;
-        private System.Windows.Forms.Label lbl13;
-        private System.Windows.Forms.Label lbl14;
-        private System.Windows.Forms.TextBox txtFuncionReglaFalsa;
-        private System.Windows.Forms.Label lbl15;
         private System.Windows.Forms.Button btnGraficaReglaFalsa;
         private System.Windows.Forms.DataGridViewTextBoxColumn a;
         private System.Windows.Forms.DataGridViewTextBoxColumn b;
@@ -417,5 +478,20 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn fc;
         private System.Windows.Forms.DataGridViewTextBoxColumn IzqoDer;
         private System.Windows.Forms.DataGridViewTextBoxColumn ErrorAbsoluto;
+        private Guna.UI2.WinForms.Guna2ImageButton btnAyuda;
+        private Guna.UI2.WinForms.Guna2ImageButton guna2ImageButton1;
+        private Guna.UI2.WinForms.Guna2MessageDialog MensajeGuna4;
+        private Guna.UI2.WinForms.Guna2MessageDialog MensajeGuna3;
+        private Guna.UI2.WinForms.Guna2MessageDialog MensajeGuna1;
+        private Guna.UI2.WinForms.Guna2MessageDialog MensajeGuna2;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private Guna.UI2.WinForms.Guna2TextBox txtErrorReglaFGuna;
+        private Guna.UI2.WinForms.Guna2TextBox txtParametroBReglaFGuna;
+        private Guna.UI2.WinForms.Guna2TextBox txtParametroAReglaFGuna;
+        private Guna.UI2.WinForms.Guna2TextBox txtFuncionReglaFGuna;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
     }
 }

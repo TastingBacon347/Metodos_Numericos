@@ -34,30 +34,28 @@ namespace Metodos_Numeros
                 this.Close();
             }
             btnCorrerReglaFalsa.Visible = false;
-            lblError2.Visible = false;
-            txtErrorReglaFalsa.Visible = false;
+            txtErrorReglaFGuna.Visible = false;
             DGVReglaFalsa.Visible = false;
-            lblNo2.Visible = false;
         }
 
         private void btnGraficaBiseccion_Click(object sender, EventArgs e)
         {
-            string funcion = txtFuncionReglaFalsa.Text;  // 
+            string funcion = txtFuncionReglaFGuna.Text;  // 
             if (string.IsNullOrWhiteSpace(funcion))
             {
-                MessageBox.Show("Ingresa una función válida.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MensajeGuna2.Show();
                 return;
             }
 
-            if (!double.TryParse(txtParametroAReglaFalsa.Text, out double a))
+            if (!double.TryParse(txtParametroAReglaFGuna.Text, out double a))
             {
-                MessageBox.Show("Valor de inicio inválido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MensajeGuna3.Show();
                 return;
             }
 
-            if (!double.TryParse(txtParametroBReglaFalsa.Text, out double b))
+            if (!double.TryParse(txtParametroBReglaFGuna.Text, out double b))
             {
-                MessageBox.Show("Valor de fin inválido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MensajeGuna4.Show();
                 return;
             }
 
@@ -67,28 +65,45 @@ namespace Metodos_Numeros
         private void btnCorrerReglaFalsa_Click(object sender, EventArgs e)
         {
             float num1, num2, num3;
-            if (float.TryParse(txtErrorReglaFalsa.Text, out num1) &&
-                float.TryParse(txtParametroBReglaFalsa.Text, out num2) &&
-                float.TryParse(txtParametroAReglaFalsa.Text, out num3) &&
-                !string.IsNullOrWhiteSpace(txtFuncionReglaFalsa.Text))
+            if (float.TryParse(txtErrorReglaFGuna.Text, out num1) &&
+                float.TryParse(txtParametroBReglaFGuna.Text, out num2) &&
+                float.TryParse(txtParametroAReglaFGuna.Text, out num3) &&
+                !string.IsNullOrWhiteSpace(txtFuncionReglaFGuna.Text))
             {
-                lblNo2.Visible = false;
+                
             }
+            //No se donde poner el messagebox en caso de que no haya raiz en el intervalo 
+            //Cambie el codigo y no se como invocar la grafica lolamento
             else
             {
-                lblNo2.Visible = true;
+                MensajeGuna1.Show();
             }
-            if (txtFuncionReglaFalsa.Text == string.Empty) return;
-            if (txtParametroAReglaFalsa.Text == string.Empty) return;
-            if (txtParametroBReglaFalsa.Text == string.Empty) return;
-            if (txtErrorReglaFalsa.Text == string.Empty) return;
+            if (txtFuncionReglaFGuna.Text == string.Empty) return;
+            if (txtParametroAReglaFGuna.Text == string.Empty) return;
+            if (txtParametroBReglaFGuna.Text == string.Empty) return;
+            if (txtErrorReglaFGuna.Text == string.Empty) return;
             DGVReglaFalsa.Rows.Clear();
-            string mensaje = NumericMethods.ReglaFalsa(txtFuncionReglaFalsa.Text, Convert.ToDouble(txtParametroAReglaFalsa.Text), Convert.ToDouble(txtParametroBReglaFalsa.Text), Convert.ToDouble(txtErrorReglaFalsa.Text));
+            string mensaje = NumericMethods.ReglaFalsa(txtFuncionReglaFGuna.Text, Convert.ToDouble(txtParametroAReglaFGuna.Text), Convert.ToDouble(txtParametroBReglaFGuna.Text), Convert.ToDouble(txtErrorReglaFGuna.Text));
             foreach (string[] array in NumericMethods.ListaStrings)
             {
                 DGVReglaFalsa.Rows.Add(array);
             }
-            MessageBox.Show(mensaje, "Metodo Regla Falsa", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void btnAyuda_Click(object sender, EventArgs e)
+        {
+            AyudaD AyudaD = new AyudaD();
+            AyudaD.Show();
+        }
+
+        private void guna2ImageButton1_Click(object sender, EventArgs e)
+        {
+            Menu Menu = (Menu)Application.OpenForms["Menu"];
+            if (Menu != null)
+            {
+                Menu.Show();
+                this.Close();
+            }
         }
     }
 }

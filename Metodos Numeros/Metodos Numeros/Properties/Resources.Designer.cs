@@ -63,6 +63,26 @@ namespace Metodos_Numeros.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap arrow_return_left_icon_160458 {
+            get {
+                object obj = ResourceManager.GetObject("arrow_return_left_icon_160458", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ayuda {
+            get {
+                object obj = ResourceManager.GetObject("ayuda", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Biseccion_drawio {
             get {
                 object obj = ResourceManager.GetObject("Biseccion.drawio", resourceCulture);
@@ -76,6 +96,16 @@ namespace Metodos_Numeros.Properties {
         internal static System.Drawing.Bitmap istockphoto_1332100919_612x612 {
             get {
                 object obj = ResourceManager.GetObject("istockphoto-1332100919-612x612", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap La_Chica {
+            get {
+                object obj = ResourceManager.GetObject("La Chica", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -216,6 +246,16 @@ namespace Metodos_Numeros.Properties {
         internal static System.Drawing.Bitmap Regla_Falsa_drawio {
             get {
                 object obj = ResourceManager.GetObject("Regla Falsa.drawio", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap stock_helpagent_104167 {
+            get {
+                object obj = ResourceManager.GetObject("stock-helpagent_104167", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -104,6 +104,8 @@ namespace Metodos_Numeros
 
             PanelMetodos.FillColor = color1;
             PanelMetodos.FillColor2 = color2;
+            PanelMenu.FillColor = color1;
+            PanelMenu.FillColor2 = color2;
         }
 
         private void btnICreditos_Click(object sender, EventArgs e)
@@ -118,6 +120,8 @@ namespace Metodos_Numeros
 
             PanelCreditos.FillColor = color1;
             PanelCreditos.FillColor2 = color2;
+            PanelMenu.FillColor = color1;
+            PanelMenu.FillColor2 = color2;
         }
 
         private void label7_Click(object sender, EventArgs e)
@@ -128,6 +132,11 @@ namespace Metodos_Numeros
         private void label12_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void guna2GradientPanel1_Paint(object sender, PaintEventArgs e)
+        {
+            
         }
     }
 }
