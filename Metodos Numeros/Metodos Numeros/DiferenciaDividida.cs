@@ -136,7 +136,7 @@ namespace Metodos_Numeros
             }
         }
 
-        private void DGVEntrada_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void btnCalcular_Click_1(object sender, EventArgs e)
         {
 
         }

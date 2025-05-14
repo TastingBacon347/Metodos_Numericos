@@ -10,6 +10,7 @@ using OxyPlot;
 using OxyPlot.Series;
 using System.CodeDom.Compiler;
 using System.Drawing;
+using System.Text;
 
 
 namespace Metodos_Numeros
@@ -25,24 +26,35 @@ namespace Metodos_Numeros
         /// <summary>
         /// Calcula los Valores para la Diferencia Dividida utilizada en la representación de Newton del polinomio interpolante.
         /// </summary>
-        public static string DiferenciaDividida(Point[] puntos)
+        
+        public static string Newton(Point[] puntos)
+        {
+            ListaStrings.Clear();
+            if (puntos.Length == 0)
+                return "No se Ingresaron Puntos";
+            DiferenciaDividida(puntos);
+
+            return "Valores Calculados";
+        }
+
+        public static string Lagrange(Point[] puntos, double x)
         {
             if (puntos.Length == 0)
                 return "No se Ingresaron Puntos";
-            valores = new double[puntos.Length][];
+            double resultado = 0;
             for (int i = 0; i < puntos.Length; i++)
             {
-                valores[i] = new double[puntos.Length];
-                valores[i][0] = puntos[i].Y;
-            }
-            for (int j = 1; j < puntos.Length; j++)
-            {
-                for (int i = 0; i < puntos.Length - j; i++)
+                double termino = puntos[i].Y;
+                for (int j = 0; j < puntos.Length; j++)
                 {
-                    valores[i][j] = (valores[i + 1][j - 1] - valores[i][j - 1]) / (puntos[i + j].X - puntos[i].X);
+                    if (i != j)
+                    {
+                        termino *= (x - puntos[j].X) / (puntos[i].X - puntos[j].X);
+                    }
                 }
+                resultado += termino;
             }
-            return "";
+            return resultado.ToString();
         }
 
         /// <summary>
@@ -182,6 +194,51 @@ namespace Metodos_Numeros
         // -------------------------------------------------------------
         //                     MÉTODOS AUXILIARES
         // -------------------------------------------------------------
+        public static string ObtenerPolinomio(Point[] puntos)
+        {
+            if (puntos.Length == 0)
+                return "No hay puntos para interpolar";
+
+            StringBuilder polinomio = new StringBuilder();
+            polinomio.Append(valores[0][0].ToString("0.######"));
+
+            for (int i = 1; i < puntos.Length; i++)
+            {
+                double coef = valores[0][i];
+                if (coef == 0) continue;
+
+                string termino = coef >= 0 ? " + " : " - ";
+                polinomio.Append(termino + Math.Abs(coef).ToString("0.######"));
+
+                for (int j = 0; j < i; j++)
+                {
+                    polinomio.Append("(x - " + puntos[j].X.ToString("0.######") + ")");
+                }
+            }
+
+            return polinomio.ToString();
+        }
+        private static void DiferenciaDividida(Point[] puntos)
+        {
+            valores = new double[puntos.Length][];
+            for (int i = 0; i < puntos.Length; i++)
+            {
+                valores[i] = new double[puntos.Length];
+                valores[i][0] = puntos[i].Y;
+                ListaStrings.Add(new string[puntos.Length+1]);
+                ListaStrings[i][0] = puntos[i].X.ToString();
+                ListaStrings[i][1] = puntos[i].Y.ToString();
+            }
+            for (int j = 1; j < puntos.Length; j++)
+            {
+                for (int i = 0; i < puntos.Length - j; i++)
+                {
+                    valores[i][j] = (valores[i + 1][j - 1] - valores[i][j - 1]) / (puntos[i + j].X - puntos[i].X);
+                    ListaStrings[i][j + 1] = valores[i][j].ToString();
+                }
+            }
+        }
+
         /// <summary>
         /// Regresa True si se encontro una raiz exacta.
         /// </summary>
