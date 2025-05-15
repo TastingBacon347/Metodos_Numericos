@@ -60,7 +60,6 @@
             this.bntBiseccion = new System.Windows.Forms.Button();
             this.btnDiferenciasDivididas = new System.Windows.Forms.Button();
             this.btnReglaFalsa = new System.Windows.Forms.Button();
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.tabControl1.SuspendLayout();
             this.tabPageMenu.SuspendLayout();
             this.tabPageCreditos.SuspendLayout();
@@ -68,7 +67,6 @@
             this.tabPageMetodos.SuspendLayout();
             this.PanelMetodos.SuspendLayout();
             this.PanelMenu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2ColorTransition1
@@ -98,7 +96,6 @@
             // tabPageMenu
             // 
             this.tabPageMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.tabPageMenu.Controls.Add(this.guna2PictureBox1);
             this.tabPageMenu.Controls.Add(this.label9);
             this.tabPageMenu.Controls.Add(this.label4);
             this.tabPageMenu.Location = new System.Drawing.Point(4, 22);
@@ -425,22 +422,6 @@
             this.btnReglaFalsa.UseVisualStyleBackColor = true;
             this.btnReglaFalsa.Click += new System.EventHandler(this.btnReglaFalsa_Click);
             // 
-            // guna2PictureBox1
-            // 
-            this.guna2PictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox1.BackgroundImage = global::Metodos_Numeros.Properties.Resources.La_Chica;
-            this.guna2PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.guna2PictureBox1.ErrorImage = global::Metodos_Numeros.Properties.Resources.La_Chica;
-            this.guna2PictureBox1.Image = global::Metodos_Numeros.Properties.Resources.La_Chica;
-            this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.InitialImage = global::Metodos_Numeros.Properties.Resources.La_Chica;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(6, 3);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(836, 566);
-            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2PictureBox1.TabIndex = 99;
-            this.guna2PictureBox1.TabStop = false;
-            // 
             // Menu
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -464,7 +445,6 @@
             this.PanelMetodos.ResumeLayout(false);
             this.PanelMetodos.PerformLayout();
             this.PanelMenu.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -500,7 +480,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label14;
         private Guna.UI2.WinForms.Guna2GradientPanel PanelMenu;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
     }
 }
 
