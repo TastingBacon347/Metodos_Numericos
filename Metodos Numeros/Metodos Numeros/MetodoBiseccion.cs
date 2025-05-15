@@ -115,8 +115,6 @@ namespace Metodos_Numeros
             {
                 Menu.Show();
                 this.Close();
-                AyudaB AyudaB = new AyudaB();
-                AyudaB.Close();
             }
         }
     }

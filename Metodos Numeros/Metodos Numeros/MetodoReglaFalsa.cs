@@ -103,10 +103,7 @@ namespace Metodos_Numeros
             {
                 Menu.Show();
                 this.Close();
-                AyudaD AyudaD = new AyudaD();
-                AyudaD.Close();
             }
-
         }
     }
 }
