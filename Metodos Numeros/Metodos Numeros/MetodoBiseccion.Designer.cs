@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             this.DGVBiseccion = new System.Windows.Forms.DataGridView();
             this.btnCorrerBiseccion = new System.Windows.Forms.Button();
             this.labelMetodoBiseccion = new System.Windows.Forms.Label();
@@ -45,7 +45,6 @@
             this.labelParametroA = new System.Windows.Forms.Label();
             this.labelParametroB = new System.Windows.Forms.Label();
             this.labelError = new System.Windows.Forms.Label();
-            this.MensajeGunaFuncionValida = new Guna.UI2.WinForms.Guna2MessageDialog();
             this.MensajeGunaResultado = new Guna.UI2.WinForms.Guna2MessageDialog();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2ImageButtonRegresar = new Guna.UI2.WinForms.Guna2ImageButton();
@@ -59,31 +58,31 @@
             this.DGVBiseccion.AllowUserToDeleteRows = false;
             this.DGVBiseccion.AllowUserToResizeColumns = false;
             this.DGVBiseccion.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGVBiseccion.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGVBiseccion.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
             this.DGVBiseccion.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DGVBiseccion.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.DGVBiseccion.BackgroundColor = System.Drawing.Color.LightSkyBlue;
             this.DGVBiseccion.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.LightSkyBlue;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGVBiseccion.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.LightSkyBlue;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGVBiseccion.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
             this.DGVBiseccion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.LightSteelBlue;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DGVBiseccion.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle15.BackColor = System.Drawing.Color.LightSteelBlue;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DGVBiseccion.DefaultCellStyle = dataGridViewCellStyle15;
             this.DGVBiseccion.EnableHeadersVisualStyles = false;
             this.DGVBiseccion.GridColor = System.Drawing.Color.LightSeaGreen;
             this.DGVBiseccion.Location = new System.Drawing.Point(16, 329);
@@ -93,8 +92,8 @@
             this.DGVBiseccion.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.DGVBiseccion.RowHeadersVisible = false;
             this.DGVBiseccion.RowHeadersWidth = 60;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.DGVBiseccion.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.DGVBiseccion.RowsDefaultCellStyle = dataGridViewCellStyle16;
             this.DGVBiseccion.Size = new System.Drawing.Size(919, 241);
             this.DGVBiseccion.TabIndex = 82;
             // 
@@ -234,7 +233,7 @@
             this.MensajeGunaDatosFaltantes.Icon = Guna.UI2.WinForms.MessageDialogIcon.Warning;
             this.MensajeGunaDatosFaltantes.Parent = this;
             this.MensajeGunaDatosFaltantes.Style = Guna.UI2.WinForms.MessageDialogStyle.Light;
-            this.MensajeGunaDatosFaltantes.Text = "Datos faltantes o incorrectos, Intente denuevo";
+            this.MensajeGunaDatosFaltantes.Text = "Datos faltantes o Incorrectos, Intente denuevo";
             // 
             // labelFuncion
             // 
@@ -277,19 +276,10 @@
             this.labelError.TabIndex = 96;
             this.labelError.Text = "\r\nIngrese el error deseado:\r\n";
             // 
-            // MensajeGunaFuncionValida
-            // 
-            this.MensajeGunaFuncionValida.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
-            this.MensajeGunaFuncionValida.Caption = "Error";
-            this.MensajeGunaFuncionValida.Icon = Guna.UI2.WinForms.MessageDialogIcon.Error;
-            this.MensajeGunaFuncionValida.Parent = this;
-            this.MensajeGunaFuncionValida.Style = Guna.UI2.WinForms.MessageDialogStyle.Light;
-            this.MensajeGunaFuncionValida.Text = "Ingrese una funcion valida";
-            // 
             // MensajeGunaResultado
             // 
             this.MensajeGunaResultado.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
-            this.MensajeGunaResultado.Caption = "Error";
+            this.MensajeGunaResultado.Caption = "Método Biseccion Detectó";
             this.MensajeGunaResultado.Icon = Guna.UI2.WinForms.MessageDialogIcon.Information;
             this.MensajeGunaResultado.Parent = this;
             this.MensajeGunaResultado.Style = Guna.UI2.WinForms.MessageDialogStyle.Light;
@@ -394,7 +384,6 @@
         private System.Windows.Forms.Label labelParametroA;
         private System.Windows.Forms.Label labelFuncion;
         private Guna.UI2.WinForms.Guna2ImageButton guna2ImageButtonRegresar;
-        private Guna.UI2.WinForms.Guna2MessageDialog MensajeGunaFuncionValida;
         private Guna.UI2.WinForms.Guna2MessageDialog MensajeGunaResultado;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
     }

@@ -25,7 +25,7 @@ namespace Metodos_Numeros
             string funcion = txtFuncionBiseccionGuna.Text;
             if (string.IsNullOrWhiteSpace(funcion))
             {
-                MensajeGunaFuncionValida.Show();
+                MensajeGunaDatosFaltantes.Show();
                 return;
             }
             if (!double.TryParse(txtParametroABiseccionGuna.Text, out double a))
@@ -57,7 +57,7 @@ namespace Metodos_Numeros
             string funcion = txtFuncionBiseccionGuna.Text;
             if (string.IsNullOrWhiteSpace(funcion))
             {
-                MensajeGunaFuncionValida.Show();
+                MensajeGunaDatosFaltantes.Show();
                 return;
             }
 
