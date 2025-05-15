@@ -24,30 +24,29 @@ namespace Metodos_Numeros
         static double[][] valores;
 
         public static List<string[]> ListaStrings { get => listaStrings;}
-        public static DataTable ObtenerTablaNewton()
+        public static DataTable ObtenerTablaDiferenciasDivididas()
         {
             DataTable tabla = new DataTable();
 
             tabla.Columns.Add("x", typeof(double));
-            tabla.Columns.Add("f(x)", typeof(double));
-            for (int i = 1; i < valores.Length; i++)
+            tabla.Columns.Add("y", typeof(double));
+            for (int i = 1; i < ListaStrings.Count; i++)
             {
                 tabla.Columns.Add("f[" + i + "]", typeof(double));
             }
 
-            for (int i = 0; i < valores.Length; i++)
+            for (int i = 0; i < ListaStrings.Count; i++)
             {
                 DataRow fila = tabla.NewRow();
-                fila[0] = valores[i];
-
-                for (int j = 0; j < valores.Length - i; j++)
+                fila[0] = ListaStrings[i][0];
+                fila[1] = ListaStrings[i][1];
+                for (int j = 1; j < ListaStrings.Count - i; j++)
                 {
-                    fila[j + 1] = Math.Round(valores[i][j], 6);
+                    fila[j + 1] = ListaStrings[i][j + 1];
                 }
 
                 tabla.Rows.Add(fila);
             }
-
             return tabla;
         }
         /// <summary>
@@ -81,10 +80,10 @@ namespace Metodos_Numeros
         /// </summary>
 
         public static string Newton(Point[] puntos)
-        {
-            ListaStrings.Clear();
+        {          
             if (puntos.Length == 0)
                 return "No se Ingresaron Puntos";
+            ListaStrings.Clear();
             DiferenciaDividida(puntos);
 
             return "Valores Calculados";
@@ -136,7 +135,7 @@ namespace Metodos_Numeros
             do
             {
                 RealizarIteracionBiseccion(ref lado);
-                ListaStrings.Add(ConstruirFila(a, b, c, fa, fb, fc, lado, Math.Round(errorActual, 6).ToString()));
+                ListaStrings.Add(ConstruirFila(a, b, c, fa, fb, fc, lado, errorActual.ToString("0.######")));
             } while (errorActual >= error);
             if(SeEncontroRaizExacta())
                 return string.Format("Se Encontro Raiz Exacta\rRaiz: {0}\rError Final: {1}", c, errorActual);
@@ -168,7 +167,7 @@ namespace Metodos_Numeros
             do
             {
                 RealizarIteracionReglaFalsa(ref lado);
-                ListaStrings.Add(ConstruirFila(a, b, c, fa, fb, fc, lado, Math.Round(errorActual, 6).ToString()));
+                ListaStrings.Add(ConstruirFila(a, b, c, fa, fb, fc, lado, errorActual.ToString("0.######")));
             } while (errorActual >= error);
             if (SeEncontroRaizExacta())
                 return string.Format("Se Encontro Raiz Exacta\rRaiz: {0}\rError Final: {1}", c, errorActual);
@@ -254,25 +253,23 @@ namespace Metodos_Numeros
         /// Obtiene el polinomio interpolante en forma de cadena.
         /// </summary>
 
-        public static string ObtenerPolinomio(Point[] puntos)
+        public static string ObtenerPolinomio()
         {
-            if (puntos.Length == 0)
-                return "No hay puntos para interpolar";
-
             StringBuilder polinomio = new StringBuilder();
-            polinomio.Append(valores[0][0].ToString("0.######"));
+            polinomio.Append(ListaStrings[0][1]);
 
-            for (int i = 1; i < puntos.Length; i++)
+            for (int i = 2; i < ListaStrings[0].Length; i++)
             {
-                double coef = valores[0][i];
+                double coef = Convert.ToDouble(ListaStrings[0][i]);
                 if (coef == 0) continue;
 
                 string termino = coef >= 0 ? " + " : " - ";
                 polinomio.Append(termino + Math.Abs(coef).ToString("0.######"));
 
-                for (int j = 0; j < i; j++)
+                for (int j = 1; j < i; j++)
                 {
-                    polinomio.Append("(x - " + puntos[j].X.ToString("0.######") + ")");
+                    double valor = Convert.ToDouble(ListaStrings[j-1][0]);
+                    polinomio.Append(valor == 0 ? "(x)" : valor < 0 ? "(x + " + Math.Abs(valor).ToString("0.######") + ")" : "(x - " + Math.Abs(valor).ToString("0.######") + ")");
                 }
             }
 
@@ -298,7 +295,7 @@ namespace Metodos_Numeros
                 for (int i = 0; i < puntos.Length - j; i++)
                 {
                     valores[i][j] = (valores[i + 1][j - 1] - valores[i][j - 1]) / (puntos[i + j].X - puntos[i].X);
-                    ListaStrings[i][j + 1] = valores[i][j].ToString();
+                    ListaStrings[i][j + 1] = Math.Round(valores[i][j], 6).ToString("0.######");
                 }
             }
         }
@@ -418,8 +415,8 @@ namespace Metodos_Numeros
         {
             return new string[]
             {
-            Math.Round(a, 6).ToString(), Math.Round(b, 6).ToString(), Math.Round(c, 6).ToString(),
-            Math.Round(fa, 6).ToString(), Math.Round(fb, 6).ToString(), Math.Round(fc, 6).ToString(),
+            a.ToString("0.######"), b.ToString("0.######"), c.ToString("0.######"),
+            fa.ToString("0.######"), fb.ToString("0.######"), fc.ToString("0.######"),
             lado, error
             };
         }

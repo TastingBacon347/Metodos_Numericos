@@ -107,12 +107,14 @@ namespace Metodos_Numeros
                 Point[] puntosArray = puntos.ToArray();
 
                 DataTable resultado = CalculadoraDiferenciaDividida.CalcularDiferenciaDividida(puntosArray);
-
+                //string res = NumericMethods.Newton(puntosArray);
+                //DataTable resultado = NumericMethods.ObtenerTablaDiferenciasDivididas();
                 if (resultado != null)
                 {
                     DGVDiferenciaDividida.DataSource = resultado;
 
                     string polinomio = CalculadoraDiferenciaDividida.ObtenerPolinomio(puntosArray);
+                    //string polinomio = NumericMethods.ObtenerPolinomio();
                     txtPolinomio.Text = polinomio;
                 }
                 else
