@@ -34,6 +34,7 @@
             this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPageMenu = new System.Windows.Forms.TabPage();
+            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.tabPageCreditos = new System.Windows.Forms.TabPage();
@@ -46,29 +47,29 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.PanelMenu = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.btnICreditos = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.guna2ImageButton1 = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.btnIMetodos = new Guna.UI2.WinForms.Guna2ImageButton();
             this.button1 = new System.Windows.Forms.Button();
             this.bntBiseccion = new System.Windows.Forms.Button();
             this.btnDiferenciasDivididas = new System.Windows.Forms.Button();
             this.btnReglaFalsa = new System.Windows.Forms.Button();
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.labelSalir = new System.Windows.Forms.Label();
+            this.labelCreditos = new System.Windows.Forms.Label();
+            this.labelMetodos = new System.Windows.Forms.Label();
+            this.PanelMenu = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.btnICreditos = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.guna2ImageButton1 = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.btnIMetodos = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.panelBorde = new System.Windows.Forms.Panel();
             this.tabControl1.SuspendLayout();
             this.tabPageMenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.tabPageCreditos.SuspendLayout();
             this.PanelCreditos.SuspendLayout();
             this.tabPageMetodos.SuspendLayout();
             this.PanelMetodos.SuspendLayout();
             this.PanelMenu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2ColorTransition1
@@ -89,7 +90,7 @@
             this.tabControl1.Controls.Add(this.tabPageMenu);
             this.tabControl1.Controls.Add(this.tabPageCreditos);
             this.tabControl1.Controls.Add(this.tabPageMetodos);
-            this.tabControl1.Location = new System.Drawing.Point(178, -25);
+            this.tabControl1.Location = new System.Drawing.Point(208, -24);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(883, 591);
@@ -101,13 +102,29 @@
             this.tabPageMenu.Controls.Add(this.guna2PictureBox1);
             this.tabPageMenu.Controls.Add(this.label9);
             this.tabPageMenu.Controls.Add(this.label4);
-            this.tabPageMenu.Location = new System.Drawing.Point(4, 22);
+            this.tabPageMenu.Location = new System.Drawing.Point(4, 25);
             this.tabPageMenu.Name = "tabPageMenu";
             this.tabPageMenu.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageMenu.Size = new System.Drawing.Size(875, 565);
+            this.tabPageMenu.Size = new System.Drawing.Size(875, 562);
             this.tabPageMenu.TabIndex = 1;
             this.tabPageMenu.Text = "Menu Principal";
             this.tabPageMenu.Click += new System.EventHandler(this.tabPageMenu_Click);
+            // 
+            // guna2PictureBox1
+            // 
+            this.guna2PictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox1.BackgroundImage = global::Metodos_Numeros.Properties.Resources.La_Chica;
+            this.guna2PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.guna2PictureBox1.ErrorImage = global::Metodos_Numeros.Properties.Resources.La_Chica;
+            this.guna2PictureBox1.Image = global::Metodos_Numeros.Properties.Resources.La_Chica;
+            this.guna2PictureBox1.ImageRotate = 0F;
+            this.guna2PictureBox1.InitialImage = global::Metodos_Numeros.Properties.Resources.La_Chica;
+            this.guna2PictureBox1.Location = new System.Drawing.Point(6, 3);
+            this.guna2PictureBox1.Name = "guna2PictureBox1";
+            this.guna2PictureBox1.Size = new System.Drawing.Size(866, 563);
+            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2PictureBox1.TabIndex = 99;
+            this.guna2PictureBox1.TabStop = false;
             // 
             // label9
             // 
@@ -135,9 +152,9 @@
             // 
             this.tabPageCreditos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.tabPageCreditos.Controls.Add(this.PanelCreditos);
-            this.tabPageCreditos.Location = new System.Drawing.Point(4, 22);
+            this.tabPageCreditos.Location = new System.Drawing.Point(4, 25);
             this.tabPageCreditos.Name = "tabPageCreditos";
-            this.tabPageCreditos.Size = new System.Drawing.Size(875, 565);
+            this.tabPageCreditos.Size = new System.Drawing.Size(875, 560);
             this.tabPageCreditos.TabIndex = 3;
             this.tabPageCreditos.Text = "Creditos";
             // 
@@ -194,9 +211,9 @@
             // tabPageMetodos
             // 
             this.tabPageMetodos.Controls.Add(this.PanelMetodos);
-            this.tabPageMetodos.Location = new System.Drawing.Point(4, 22);
+            this.tabPageMetodos.Location = new System.Drawing.Point(4, 25);
             this.tabPageMetodos.Name = "tabPageMetodos";
-            this.tabPageMetodos.Size = new System.Drawing.Size(875, 565);
+            this.tabPageMetodos.Size = new System.Drawing.Size(875, 560);
             this.tabPageMetodos.TabIndex = 2;
             this.tabPageMetodos.Text = "Metodos";
             this.tabPageMetodos.UseVisualStyleBackColor = true;
@@ -237,7 +254,7 @@
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.Location = new System.Drawing.Point(496, 335);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(214, 24);
+            this.label11.Size = new System.Drawing.Size(274, 29);
             this.label11.TabIndex = 85;
             this.label11.Text = "Metodo de Interpolacion";
             // 
@@ -251,13 +268,60 @@
             this.label10.Text = "Seleccione un boton para acceder al metodo deseado";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // button1
+            // 
+            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.Location = new System.Drawing.Point(519, 384);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(191, 168);
+            this.button1.TabIndex = 84;
+            this.button1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // bntBiseccion
+            // 
+            this.bntBiseccion.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bntBiseccion.BackgroundImage")));
+            this.bntBiseccion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bntBiseccion.Location = new System.Drawing.Point(83, 127);
+            this.bntBiseccion.Name = "bntBiseccion";
+            this.bntBiseccion.Size = new System.Drawing.Size(191, 168);
+            this.bntBiseccion.TabIndex = 77;
+            this.bntBiseccion.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.bntBiseccion.UseVisualStyleBackColor = true;
+            this.bntBiseccion.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // btnDiferenciasDivididas
+            // 
+            this.btnDiferenciasDivididas.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDiferenciasDivididas.BackgroundImage")));
+            this.btnDiferenciasDivididas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnDiferenciasDivididas.Location = new System.Drawing.Point(519, 127);
+            this.btnDiferenciasDivididas.Name = "btnDiferenciasDivididas";
+            this.btnDiferenciasDivididas.Size = new System.Drawing.Size(191, 168);
+            this.btnDiferenciasDivididas.TabIndex = 81;
+            this.btnDiferenciasDivididas.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnDiferenciasDivididas.UseVisualStyleBackColor = true;
+            this.btnDiferenciasDivididas.Click += new System.EventHandler(this.btnDiferenciasDivididas_Click);
+            // 
+            // btnReglaFalsa
+            // 
+            this.btnReglaFalsa.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnReglaFalsa.BackgroundImage")));
+            this.btnReglaFalsa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnReglaFalsa.Location = new System.Drawing.Point(83, 384);
+            this.btnReglaFalsa.Name = "btnReglaFalsa";
+            this.btnReglaFalsa.Size = new System.Drawing.Size(191, 168);
+            this.btnReglaFalsa.TabIndex = 79;
+            this.btnReglaFalsa.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnReglaFalsa.UseVisualStyleBackColor = true;
+            this.btnReglaFalsa.Click += new System.EventHandler(this.btnReglaFalsa_Click);
+            // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(515, 100);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(181, 24);
+            this.label8.Size = new System.Drawing.Size(236, 29);
             this.label8.TabIndex = 80;
             this.label8.Text = "Diferencias divididas";
             // 
@@ -267,7 +331,7 @@
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(87, 100);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(187, 24);
+            this.label6.Size = new System.Drawing.Size(238, 29);
             this.label6.TabIndex = 76;
             this.label6.Text = "Metodo de biseccion";
             // 
@@ -277,56 +341,58 @@
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(79, 340);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(205, 24);
+            this.label7.Size = new System.Drawing.Size(264, 29);
             this.label7.TabIndex = 78;
             this.label7.Text = "Metodo de Regla Falsa";
             this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
-            // label12
+            // labelSalir
             // 
-            this.label12.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label12.Font = new System.Drawing.Font("Segoe UI Symbol", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(46, 518);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(112, 29);
-            this.label12.TabIndex = 90;
-            this.label12.Text = "Salir";
-            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label12.Click += new System.EventHandler(this.label12_Click);
+            this.labelSalir.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.labelSalir.Font = new System.Drawing.Font("Segoe UI Symbol", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSalir.Location = new System.Drawing.Point(46, 518);
+            this.labelSalir.Name = "labelSalir";
+            this.labelSalir.Size = new System.Drawing.Size(112, 29);
+            this.labelSalir.TabIndex = 90;
+            this.labelSalir.Text = "Salir";
+            this.labelSalir.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelSalir.Click += new System.EventHandler(this.labelSalir_Click);
             // 
-            // label3
+            // labelCreditos
             // 
-            this.label3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label3.Font = new System.Drawing.Font("Segoe UI Symbol", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(41, 329);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(112, 29);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Creditos";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelCreditos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.labelCreditos.Font = new System.Drawing.Font("Segoe UI Symbol", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCreditos.Location = new System.Drawing.Point(41, 329);
+            this.labelCreditos.Name = "labelCreditos";
+            this.labelCreditos.Size = new System.Drawing.Size(112, 29);
+            this.labelCreditos.TabIndex = 3;
+            this.labelCreditos.Text = "Creditos";
+            this.labelCreditos.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelCreditos.Click += new System.EventHandler(this.labelCreditos_Click);
             // 
-            // label1
+            // labelMetodos
             // 
-            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Symbol", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(36, 138);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(112, 29);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Metodos";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelMetodos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.labelMetodos.Font = new System.Drawing.Font("Segoe UI Symbol", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelMetodos.Location = new System.Drawing.Point(36, 138);
+            this.labelMetodos.Name = "labelMetodos";
+            this.labelMetodos.Size = new System.Drawing.Size(112, 29);
+            this.labelMetodos.TabIndex = 2;
+            this.labelMetodos.Text = "Metodos";
+            this.labelMetodos.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelMetodos.Click += new System.EventHandler(this.labelMetodos_Click);
             // 
             // PanelMenu
             // 
-            this.PanelMenu.Controls.Add(this.label12);
+            this.PanelMenu.Controls.Add(this.labelSalir);
             this.PanelMenu.Controls.Add(this.btnICreditos);
-            this.PanelMenu.Controls.Add(this.label3);
+            this.PanelMenu.Controls.Add(this.labelCreditos);
             this.PanelMenu.Controls.Add(this.guna2ImageButton1);
-            this.PanelMenu.Controls.Add(this.label1);
+            this.PanelMenu.Controls.Add(this.labelMetodos);
             this.PanelMenu.Controls.Add(this.btnIMetodos);
-            this.PanelMenu.Location = new System.Drawing.Point(-2, 0);
+            this.PanelMenu.Location = new System.Drawing.Point(28, 1);
             this.PanelMenu.Name = "PanelMenu";
-            this.PanelMenu.Size = new System.Drawing.Size(191, 562);
+            this.PanelMenu.Size = new System.Drawing.Size(191, 566);
             this.PanelMenu.TabIndex = 89;
             this.PanelMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2GradientPanel1_Paint);
             // 
@@ -378,77 +444,27 @@
             this.btnIMetodos.TabIndex = 88;
             this.btnIMetodos.Click += new System.EventHandler(this.btnIMetodos_Click);
             // 
-            // button1
+            // panelBorde
             // 
-            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.Location = new System.Drawing.Point(519, 384);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(191, 168);
-            this.button1.TabIndex = 84;
-            this.button1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // bntBiseccion
-            // 
-            this.bntBiseccion.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bntBiseccion.BackgroundImage")));
-            this.bntBiseccion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bntBiseccion.Location = new System.Drawing.Point(83, 127);
-            this.bntBiseccion.Name = "bntBiseccion";
-            this.bntBiseccion.Size = new System.Drawing.Size(191, 168);
-            this.bntBiseccion.TabIndex = 77;
-            this.bntBiseccion.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.bntBiseccion.UseVisualStyleBackColor = true;
-            this.bntBiseccion.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // btnDiferenciasDivididas
-            // 
-            this.btnDiferenciasDivididas.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDiferenciasDivididas.BackgroundImage")));
-            this.btnDiferenciasDivididas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnDiferenciasDivididas.Location = new System.Drawing.Point(519, 127);
-            this.btnDiferenciasDivididas.Name = "btnDiferenciasDivididas";
-            this.btnDiferenciasDivididas.Size = new System.Drawing.Size(191, 168);
-            this.btnDiferenciasDivididas.TabIndex = 81;
-            this.btnDiferenciasDivididas.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnDiferenciasDivididas.UseVisualStyleBackColor = true;
-            this.btnDiferenciasDivididas.Click += new System.EventHandler(this.btnDiferenciasDivididas_Click);
-            // 
-            // btnReglaFalsa
-            // 
-            this.btnReglaFalsa.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnReglaFalsa.BackgroundImage")));
-            this.btnReglaFalsa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnReglaFalsa.Location = new System.Drawing.Point(83, 384);
-            this.btnReglaFalsa.Name = "btnReglaFalsa";
-            this.btnReglaFalsa.Size = new System.Drawing.Size(191, 168);
-            this.btnReglaFalsa.TabIndex = 79;
-            this.btnReglaFalsa.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnReglaFalsa.UseVisualStyleBackColor = true;
-            this.btnReglaFalsa.Click += new System.EventHandler(this.btnReglaFalsa_Click);
-            // 
-            // guna2PictureBox1
-            // 
-            this.guna2PictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox1.BackgroundImage = global::Metodos_Numeros.Properties.Resources.La_Chica;
-            this.guna2PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.guna2PictureBox1.ErrorImage = global::Metodos_Numeros.Properties.Resources.La_Chica;
-            this.guna2PictureBox1.Image = global::Metodos_Numeros.Properties.Resources.La_Chica;
-            this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.InitialImage = global::Metodos_Numeros.Properties.Resources.La_Chica;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(6, 3);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(836, 566);
-            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2PictureBox1.TabIndex = 99;
-            this.guna2PictureBox1.TabStop = false;
+            this.panelBorde.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.panelBorde.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelBorde.Location = new System.Drawing.Point(0, 0);
+            this.panelBorde.Name = "panelBorde";
+            this.panelBorde.Size = new System.Drawing.Size(1113, 592);
+            this.panelBorde.TabIndex = 90;
+            this.panelBorde.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelBorde_MouseDown);
+            this.panelBorde.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelBorde_MouseMove);
+            this.panelBorde.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panelBorde_MouseUp);
             // 
             // Menu
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(1024, 562);
+            this.ClientSize = new System.Drawing.Size(1113, 592);
             this.ControlBox = false;
             this.Controls.Add(this.PanelMenu);
             this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.panelBorde);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -458,13 +474,13 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPageMenu.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.tabPageCreditos.ResumeLayout(false);
             this.PanelCreditos.ResumeLayout(false);
             this.tabPageMetodos.ResumeLayout(false);
             this.PanelMetodos.ResumeLayout(false);
             this.PanelMetodos.PerformLayout();
             this.PanelMenu.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -486,14 +502,14 @@
         private System.Windows.Forms.Button btnDiferenciasDivididas;
         private Guna.UI2.WinForms.Guna2ImageButton btnIMetodos;
         private Guna.UI2.WinForms.Guna2ImageButton btnICreditos;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelCreditos;
+        private System.Windows.Forms.Label labelMetodos;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label labelSalir;
         private Guna.UI2.WinForms.Guna2GradientPanel PanelMetodos;
         private Guna.UI2.WinForms.Guna2GradientPanel PanelCreditos;
         private System.Windows.Forms.Label label13;
@@ -501,6 +517,7 @@
         private System.Windows.Forms.Label label14;
         private Guna.UI2.WinForms.Guna2GradientPanel PanelMenu;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
+        private System.Windows.Forms.Panel panelBorde;
     }
 }
 

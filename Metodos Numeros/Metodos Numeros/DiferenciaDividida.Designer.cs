@@ -62,14 +62,16 @@
             this.DGVDiferenciaDividida.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.DGVDiferenciaDividida.BackgroundColor = System.Drawing.Color.Cornsilk;
             this.DGVDiferenciaDividida.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGVDiferenciaDividida.Location = new System.Drawing.Point(388, 269);
+            this.DGVDiferenciaDividida.Location = new System.Drawing.Point(517, 331);
+            this.DGVDiferenciaDividida.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.DGVDiferenciaDividida.Name = "DGVDiferenciaDividida";
             this.DGVDiferenciaDividida.ReadOnly = true;
             this.DGVDiferenciaDividida.RowHeadersVisible = false;
+            this.DGVDiferenciaDividida.RowHeadersWidth = 51;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.DGVDiferenciaDividida.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.DGVDiferenciaDividida.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.DGVDiferenciaDividida.Size = new System.Drawing.Size(476, 186);
+            this.DGVDiferenciaDividida.Size = new System.Drawing.Size(635, 229);
             this.DGVDiferenciaDividida.TabIndex = 0;
             // 
             // DGVEntrada
@@ -90,72 +92,81 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.DGVEntrada.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.DGVEntrada.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGVEntrada.Location = new System.Drawing.Point(12, 269);
+            this.DGVEntrada.Location = new System.Drawing.Point(16, 331);
+            this.DGVEntrada.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.DGVEntrada.Name = "DGVEntrada";
             this.DGVEntrada.ReadOnly = true;
             this.DGVEntrada.RowHeadersVisible = false;
+            this.DGVEntrada.RowHeadersWidth = 51;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.DGVEntrada.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.DGVEntrada.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.DGVEntrada.Size = new System.Drawing.Size(348, 186);
+            this.DGVEntrada.Size = new System.Drawing.Size(464, 229);
             this.DGVEntrada.TabIndex = 1;
-            this.DGVEntrada.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVEntrada_CellContentClick);
             // 
             // txtX
             // 
-            this.txtX.Location = new System.Drawing.Point(103, 95);
+            this.txtX.Location = new System.Drawing.Point(137, 117);
+            this.txtX.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtX.Name = "txtX";
-            this.txtX.Size = new System.Drawing.Size(110, 20);
+            this.txtX.Size = new System.Drawing.Size(145, 22);
             this.txtX.TabIndex = 2;
             // 
             // txtY
             // 
-            this.txtY.Location = new System.Drawing.Point(233, 95);
+            this.txtY.Location = new System.Drawing.Point(311, 117);
+            this.txtY.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtY.Name = "txtY";
-            this.txtY.Size = new System.Drawing.Size(110, 20);
+            this.txtY.Size = new System.Drawing.Size(145, 22);
             this.txtY.TabIndex = 3;
             // 
             // txtPolinomio
             // 
-            this.txtPolinomio.Location = new System.Drawing.Point(903, 326);
+            this.txtPolinomio.Location = new System.Drawing.Point(1204, 401);
+            this.txtPolinomio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtPolinomio.Multiline = true;
             this.txtPolinomio.Name = "txtPolinomio";
             this.txtPolinomio.ReadOnly = true;
-            this.txtPolinomio.Size = new System.Drawing.Size(240, 26);
+            this.txtPolinomio.Size = new System.Drawing.Size(319, 31);
             this.txtPolinomio.TabIndex = 4;
             // 
             // btnAgregarPunto
             // 
-            this.btnAgregarPunto.Location = new System.Drawing.Point(154, 135);
+            this.btnAgregarPunto.Location = new System.Drawing.Point(205, 166);
+            this.btnAgregarPunto.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAgregarPunto.Name = "btnAgregarPunto";
-            this.btnAgregarPunto.Size = new System.Drawing.Size(142, 23);
+            this.btnAgregarPunto.Size = new System.Drawing.Size(189, 28);
             this.btnAgregarPunto.TabIndex = 5;
             this.btnAgregarPunto.Text = "Agregar Punto";
             this.btnAgregarPunto.UseVisualStyleBackColor = true;
             // 
             // btnLimpiar
             // 
-            this.btnLimpiar.Location = new System.Drawing.Point(87, 176);
+            this.btnLimpiar.Location = new System.Drawing.Point(116, 217);
+            this.btnLimpiar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(110, 36);
+            this.btnLimpiar.Size = new System.Drawing.Size(147, 44);
             this.btnLimpiar.TabIndex = 6;
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.UseVisualStyleBackColor = true;
             // 
             // btnCalcular
             // 
-            this.btnCalcular.Location = new System.Drawing.Point(233, 176);
+            this.btnCalcular.Location = new System.Drawing.Point(311, 217);
+            this.btnCalcular.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCalcular.Name = "btnCalcular";
-            this.btnCalcular.Size = new System.Drawing.Size(110, 39);
+            this.btnCalcular.Size = new System.Drawing.Size(147, 48);
             this.btnCalcular.TabIndex = 7;
             this.btnCalcular.Text = "Calcular";
             this.btnCalcular.UseVisualStyleBackColor = true;
+            this.btnCalcular.Click += new System.EventHandler(this.btnCalcular_Click_1);
             // 
             // btnRegresar
             // 
-            this.btnRegresar.Location = new System.Drawing.Point(1120, 447);
+            this.btnRegresar.Location = new System.Drawing.Point(1493, 550);
+            this.btnRegresar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnRegresar.Name = "btnRegresar";
-            this.btnRegresar.Size = new System.Drawing.Size(104, 40);
+            this.btnRegresar.Size = new System.Drawing.Size(139, 49);
             this.btnRegresar.TabIndex = 85;
             this.btnRegresar.Text = "Regresar";
             this.btnRegresar.UseVisualStyleBackColor = true;
@@ -165,18 +176,20 @@
             // 
             this.lbl6.AutoSize = true;
             this.lbl6.Font = new System.Drawing.Font("MS PGothic", 26.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl6.Location = new System.Drawing.Point(6, 9);
+            this.lbl6.Location = new System.Drawing.Point(8, 11);
+            this.lbl6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl6.Name = "lbl6";
-            this.lbl6.Size = new System.Drawing.Size(407, 35);
+            this.lbl6.Size = new System.Drawing.Size(507, 44);
             this.lbl6.TabIndex = 87;
             this.lbl6.Text = "Metodo Diferencia Dividida";
             // 
             // lbl3
             // 
             this.lbl3.AutoSize = true;
-            this.lbl3.Location = new System.Drawing.Point(999, 310);
+            this.lbl3.Location = new System.Drawing.Point(1332, 382);
+            this.lbl3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl3.Name = "lbl3";
-            this.lbl3.Size = new System.Drawing.Size(52, 13);
+            this.lbl3.Size = new System.Drawing.Size(67, 16);
             this.lbl3.TabIndex = 86;
             this.lbl3.Text = "Polinomio";
             // 
@@ -184,9 +197,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(149, 67);
+            this.label1.Location = new System.Drawing.Point(199, 82);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(27, 25);
+            this.label1.Size = new System.Drawing.Size(33, 31);
             this.label1.TabIndex = 88;
             this.label1.Text = "X";
             // 
@@ -194,9 +208,10 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(269, 67);
+            this.label2.Location = new System.Drawing.Point(359, 82);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(28, 25);
+            this.label2.Size = new System.Drawing.Size(33, 31);
             this.label2.TabIndex = 89;
             this.label2.Text = "Y";
             // 
@@ -204,9 +219,10 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(555, 242);
+            this.label3.Location = new System.Drawing.Point(740, 298);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(165, 24);
+            this.label3.Size = new System.Drawing.Size(215, 29);
             this.label3.TabIndex = 90;
             this.label3.Text = "Diferencia Dividida";
             // 
@@ -214,9 +230,10 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(150, 242);
+            this.label4.Location = new System.Drawing.Point(200, 298);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(68, 24);
+            this.label4.Size = new System.Drawing.Size(87, 29);
             this.label4.TabIndex = 91;
             this.label4.Text = "Puntos";
             // 
@@ -229,19 +246,20 @@
             this.guna2PictureBox1.Image = global::Metodos_Numeros.Properties.Resources.La_Chica;
             this.guna2PictureBox1.ImageRotate = 0F;
             this.guna2PictureBox1.InitialImage = global::Metodos_Numeros.Properties.Resources.La_Chica;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(542, 95);
+            this.guna2PictureBox1.Location = new System.Drawing.Point(723, 117);
+            this.guna2PictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(110, 74);
+            this.guna2PictureBox1.Size = new System.Drawing.Size(147, 91);
             this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.guna2PictureBox1.TabIndex = 99;
             this.guna2PictureBox1.TabStop = false;
             // 
             // DiferenciaDividida
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Cornsilk;
-            this.ClientSize = new System.Drawing.Size(1236, 499);
+            this.ClientSize = new System.Drawing.Size(1648, 614);
             this.ControlBox = false;
             this.Controls.Add(this.guna2PictureBox1);
             this.Controls.Add(this.label4);
@@ -259,6 +277,7 @@
             this.Controls.Add(this.txtX);
             this.Controls.Add(this.DGVEntrada);
             this.Controls.Add(this.DGVDiferenciaDividida);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "DiferenciaDividida";
             this.Text = "DiferenciaDividida";
             ((System.ComponentModel.ISupportInitialize)(this.DGVDiferenciaDividida)).EndInit();
