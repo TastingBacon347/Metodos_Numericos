@@ -45,14 +45,8 @@ namespace Metodos_Numeros
                 return;
             }
             
-            
-            DGVBiseccion.Rows.Clear();
             string mensaje = NumericMethods.Biseccion(funcion, a, b, error);
-
-            foreach (string[] array in NumericMethods.ListaStrings)
-            {
-                DGVBiseccion.Rows.Add(array);
-            }
+            DGVBiseccion.DataSource = NumericMethods.ObtenerTablaBiseccion();
             MensajeGunaResultado.Text = mensaje;
             MensajeGunaResultado.Show();
         }

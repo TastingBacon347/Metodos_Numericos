@@ -50,6 +50,31 @@ namespace Metodos_Numeros
 
             return tabla;
         }
+        /// <summary>
+        /// Obtiene la tabla de bisección a partir de la lista de strings.
+        /// </summary>
+        public static DataTable ObtenerTablaBiseccion()
+        {
+            DataTable tabla = new DataTable();
+            tabla.Columns.Add("a", typeof(string));
+            tabla.Columns.Add("b", typeof(string));
+            tabla.Columns.Add("c", typeof(string));
+            tabla.Columns.Add("f(a)", typeof(string));
+            tabla.Columns.Add("f(c)", typeof(string));
+            tabla.Columns.Add("f(a) * f(c)", typeof(string));
+            tabla.Columns.Add("Lado", typeof(string));
+            tabla.Columns.Add("Error", typeof(string));
+            foreach(string[] array in listaStrings)
+            {
+                DataRow fila = tabla.NewRow();
+                for(int i = 0; i < array.Length; i++)
+                {
+                    fila[i] = array[i];
+                }
+                tabla.Rows.Add(fila);
+            }   
+            return tabla;
+        }
 
         /// <summary>
         /// Calcula el polinomio interpolante de Newton y lo almacena en la lista de strings.
@@ -94,6 +119,7 @@ namespace Metodos_Numeros
             if(error <= 0)
                 return "El Error Debe Ser Mayor a 0";
 
+            funcion = funcion.ToLower();
             if (!ReemplazarEInicializarFuncion(ref funcion))
                 return "La Funcion Ingresada No Tiene la Sintaxis Correcta";
 
@@ -110,7 +136,7 @@ namespace Metodos_Numeros
             do
             {
                 RealizarIteracionBiseccion(ref lado);
-                ListaStrings.Add(ConstruirFila(a, b, c, fa, fb, fc, lado, errorActual.ToString()));
+                ListaStrings.Add(ConstruirFila(a, b, c, fa, fb, fc, lado, Math.Round(errorActual, 6).ToString()));
             } while (errorActual >= error);
             if(SeEncontroRaizExacta())
                 return string.Format("Se Encontro Raiz Exacta\rRaiz: {0}\rError Final: {1}", c, errorActual);
@@ -124,6 +150,8 @@ namespace Metodos_Numeros
             ListaStrings.Clear();
             if (error <= 0)
                 return "El Error Debe Ser Mayor a 0";
+
+            funcion = funcion.ToLower();
             if (!ReemplazarEInicializarFuncion(ref funcion))
                 return "La Funcion Ingresada No Tiene la Sintaxis Correcta";
 
@@ -140,7 +168,7 @@ namespace Metodos_Numeros
             do
             {
                 RealizarIteracionReglaFalsa(ref lado);
-                ListaStrings.Add(ConstruirFila(a, b, c, fa, fb, fc, lado, errorActual.ToString()));
+                ListaStrings.Add(ConstruirFila(a, b, c, fa, fb, fc, lado, Math.Round(errorActual, 6).ToString()));
             } while (errorActual >= error);
             if (SeEncontroRaizExacta())
                 return string.Format("Se Encontro Raiz Exacta\rRaiz: {0}\rError Final: {1}", c, errorActual);
@@ -390,8 +418,8 @@ namespace Metodos_Numeros
         {
             return new string[]
             {
-            a.ToString(), b.ToString(), c.ToString(),
-            fa.ToString(), fb.ToString(), fc.ToString(),
+            Math.Round(a, 6).ToString(), Math.Round(b, 6).ToString(), Math.Round(c, 6).ToString(),
+            Math.Round(fa, 6).ToString(), Math.Round(fb, 6).ToString(), Math.Round(fc, 6).ToString(),
             lado, error
             };
         }
