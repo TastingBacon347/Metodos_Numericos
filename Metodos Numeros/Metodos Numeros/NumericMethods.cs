@@ -98,7 +98,6 @@ namespace Metodos_Numeros
         /// <summary>
         /// Calcula el polinomio interpolante de Lagrange y lo almacena en la lista de strings.
         /// </summary>
-        /// <param name="puntos"></param>
         public static string Lagrange(Point[] puntos)
         {
             if (puntos.Length == 0)
@@ -110,7 +109,6 @@ namespace Metodos_Numeros
         /// <summary>
         /// Obtiene el polinomio interpolante de Lagrange simplificado, sumando los términos y_i * L_i(x).
         /// </summary>
-        /// <returns></returns>
         public static string ObtenerPolinomioLagrangeSimplificado()
         {
             List<double> polinomioFinal = new List<double>();
@@ -574,8 +572,7 @@ namespace Metodos_Numeros
             for (int i = coef.Count - 1; i >= 0; i--)
             {
                 double c = coef[i];
-                if (Math.Abs(c) < 1e-10) continue;
-
+                if (Math.Abs(c) < 1e-5) continue;
                 if (!primero)
                     sb.Append(c >= 0 ? " + " : " - ");
                 else if (c < 0)
@@ -583,11 +580,11 @@ namespace Metodos_Numeros
 
                 double absC = Math.Abs(c);
                 if (i == 0)
-                    sb.Append($"{absC:0.###}");
+                    sb.Append($"{absC:0.#####}");
                 else if (i == 1)
-                    sb.Append(absC == 1 ? "x" : $"{absC:0.###}x");
+                    sb.Append(absC == 1 ? "x" : $"{absC:0.#####}x");
                 else
-                    sb.Append(absC == 1 ? $"x^{i}" : $"{absC:0.###}x^{i}");
+                    sb.Append(absC == 1 ? $"x^{i}" : $"{absC:0.#####}x^{i}");
 
                 primero = false;
             }
