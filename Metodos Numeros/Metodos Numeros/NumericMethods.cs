@@ -11,6 +11,7 @@ using OxyPlot.Series;
 using System.CodeDom.Compiler;
 using System.Drawing;
 using System.Text;
+using System.Data;
 
 
 namespace Metodos_Numeros
@@ -23,10 +24,37 @@ namespace Metodos_Numeros
         static double[][] valores;
 
         public static List<string[]> ListaStrings { get => listaStrings;}
+        public static DataTable ObtenerTablaNewton()
+        {
+            DataTable tabla = new DataTable();
+
+            tabla.Columns.Add("x", typeof(double));
+            tabla.Columns.Add("f(x)", typeof(double));
+            for (int i = 1; i < valores.Length; i++)
+            {
+                tabla.Columns.Add("f[" + i + "]", typeof(double));
+            }
+
+            for (int i = 0; i < valores.Length; i++)
+            {
+                DataRow fila = tabla.NewRow();
+                fila[0] = valores[i];
+
+                for (int j = 0; j < valores.Length - i; j++)
+                {
+                    fila[j + 1] = Math.Round(valores[i][j], 6);
+                }
+
+                tabla.Rows.Add(fila);
+            }
+
+            return tabla;
+        }
+
         /// <summary>
-        /// Calcula los Valores para la Diferencia Dividida utilizada en la representación de Newton del polinomio interpolante.
+        /// Calcula el polinomio interpolante de Newton y lo almacena en la lista de strings.
         /// </summary>
-        
+
         public static string Newton(Point[] puntos)
         {
             ListaStrings.Clear();
@@ -194,6 +222,10 @@ namespace Metodos_Numeros
         // -------------------------------------------------------------
         //                     MÉTODOS AUXILIARES
         // -------------------------------------------------------------
+        /// <summary>
+        /// Obtiene el polinomio interpolante en forma de cadena.
+        /// </summary>
+
         public static string ObtenerPolinomio(Point[] puntos)
         {
             if (puntos.Length == 0)
@@ -218,6 +250,10 @@ namespace Metodos_Numeros
 
             return polinomio.ToString();
         }
+        /// <summary>
+        /// Calcula los Valores para la Diferencia Dividida utilizada en la representación de Newton del polinomio interpolante.
+        /// </summary>
+
         private static void DiferenciaDividida(Point[] puntos)
         {
             valores = new double[puntos.Length][];
