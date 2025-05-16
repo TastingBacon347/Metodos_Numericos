@@ -32,6 +32,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menu));
             this.GunaBorderless = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPageMenu = new System.Windows.Forms.TabPage();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.tabPageCreditos = new System.Windows.Forms.TabPage();
             this.PanelCreditos = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.label14 = new System.Windows.Forms.Label();
@@ -61,16 +64,13 @@
             this.ArrastraCreditos = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.ArrastraLateral = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.ArrastraBoton = new Guna.UI2.WinForms.Guna2DragControl(this.components);
-            this.label4 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.tabPageMenu = new System.Windows.Forms.TabPage();
             this.tabControl1.SuspendLayout();
+            this.tabPageMenu.SuspendLayout();
             this.tabPageCreditos.SuspendLayout();
             this.PanelCreditos.SuspendLayout();
             this.tabPageMetodos.SuspendLayout();
             this.PanelMetodos.SuspendLayout();
             this.PanelMenu.SuspendLayout();
-            this.tabPageMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // GunaBorderless
@@ -90,13 +90,48 @@
             this.tabControl1.Size = new System.Drawing.Size(776, 591);
             this.tabControl1.TabIndex = 88;
             // 
+            // tabPageMenu
+            // 
+            this.tabPageMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.tabPageMenu.Controls.Add(this.label9);
+            this.tabPageMenu.Controls.Add(this.label4);
+            this.tabPageMenu.Location = new System.Drawing.Point(4, 25);
+            this.tabPageMenu.Name = "tabPageMenu";
+            this.tabPageMenu.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageMenu.Size = new System.Drawing.Size(768, 562);
+            this.tabPageMenu.TabIndex = 1;
+            this.tabPageMenu.Text = "Menu Principal";
+            this.tabPageMenu.Click += new System.EventHandler(this.tabPageMenu_Click);
+            // 
+            // label9
+            // 
+            this.label9.Font = new System.Drawing.Font("Segoe UI Semibold", 21.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label9.Location = new System.Drawing.Point(16, 184);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(714, 81);
+            this.label9.TabIndex = 1;
+            this.label9.Text = "PROYECTO METODOS NUMERICOS";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label4
+            // 
+            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 21.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label4.Location = new System.Drawing.Point(-27, 265);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(801, 81);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "Presione algun boton para acceder a las opciones ;3";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // tabPageCreditos
             // 
             this.tabPageCreditos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.tabPageCreditos.Controls.Add(this.PanelCreditos);
-            this.tabPageCreditos.Location = new System.Drawing.Point(4, 22);
+            this.tabPageCreditos.Location = new System.Drawing.Point(4, 25);
             this.tabPageCreditos.Name = "tabPageCreditos";
-            this.tabPageCreditos.Size = new System.Drawing.Size(768, 565);
+            this.tabPageCreditos.Size = new System.Drawing.Size(768, 562);
             this.tabPageCreditos.TabIndex = 3;
             this.tabPageCreditos.Text = "Creditos";
             // 
@@ -153,9 +188,9 @@
             // tabPageMetodos
             // 
             this.tabPageMetodos.Controls.Add(this.PanelMetodos);
-            this.tabPageMetodos.Location = new System.Drawing.Point(4, 22);
+            this.tabPageMetodos.Location = new System.Drawing.Point(4, 25);
             this.tabPageMetodos.Name = "tabPageMetodos";
-            this.tabPageMetodos.Size = new System.Drawing.Size(768, 565);
+            this.tabPageMetodos.Size = new System.Drawing.Size(768, 562);
             this.tabPageMetodos.TabIndex = 2;
             this.tabPageMetodos.Text = "Metodos";
             this.tabPageMetodos.UseVisualStyleBackColor = true;
@@ -196,7 +231,7 @@
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.Location = new System.Drawing.Point(496, 335);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(214, 24);
+            this.label11.Size = new System.Drawing.Size(274, 29);
             this.label11.TabIndex = 85;
             this.label11.Text = "Metodo de Interpolacion";
             // 
@@ -220,6 +255,7 @@
             this.btnInterpolacion.TabIndex = 84;
             this.btnInterpolacion.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnInterpolacion.UseVisualStyleBackColor = true;
+            this.btnInterpolacion.Click += new System.EventHandler(this.btnInterpolacion_Click);
             // 
             // bntBiseccion
             // 
@@ -263,7 +299,7 @@
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(93, 335);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(181, 24);
+            this.label8.Size = new System.Drawing.Size(236, 29);
             this.label8.TabIndex = 80;
             this.label8.Text = "Diferencias divididas";
             // 
@@ -273,7 +309,7 @@
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(87, 100);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(187, 24);
+            this.label6.Size = new System.Drawing.Size(238, 29);
             this.label6.TabIndex = 76;
             this.label6.Text = "Metodo de biseccion";
             // 
@@ -283,7 +319,7 @@
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(515, 100);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(205, 24);
+            this.label7.Size = new System.Drawing.Size(264, 29);
             this.label7.TabIndex = 78;
             this.label7.Text = "Metodo de Regla Falsa";
             this.label7.Click += new System.EventHandler(this.label7_Click);
@@ -417,41 +453,6 @@
             this.ArrastraBoton.TargetControl = this.btnIMetodos;
             this.ArrastraBoton.TransparentWhileDrag = false;
             // 
-            // label4
-            // 
-            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 21.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label4.Location = new System.Drawing.Point(-27, 265);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(801, 81);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "Presione algun boton para acceder a las opciones ;3";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label9
-            // 
-            this.label9.Font = new System.Drawing.Font("Segoe UI Semibold", 21.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label9.Location = new System.Drawing.Point(16, 184);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(714, 81);
-            this.label9.TabIndex = 1;
-            this.label9.Text = "PROYECTO METODOS NUMERICOS";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // tabPageMenu
-            // 
-            this.tabPageMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.tabPageMenu.Controls.Add(this.label9);
-            this.tabPageMenu.Controls.Add(this.label4);
-            this.tabPageMenu.Location = new System.Drawing.Point(4, 22);
-            this.tabPageMenu.Name = "tabPageMenu";
-            this.tabPageMenu.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageMenu.Size = new System.Drawing.Size(768, 565);
-            this.tabPageMenu.TabIndex = 1;
-            this.tabPageMenu.Text = "Menu Principal";
-            this.tabPageMenu.Click += new System.EventHandler(this.tabPageMenu_Click);
-            // 
             // Menu
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -461,20 +462,21 @@
             this.Controls.Add(this.PanelMenu);
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Menu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "nnbrt,.m";
+            this.Text = "Metodos Numericos";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.tabControl1.ResumeLayout(false);
+            this.tabPageMenu.ResumeLayout(false);
             this.tabPageCreditos.ResumeLayout(false);
             this.PanelCreditos.ResumeLayout(false);
             this.tabPageMetodos.ResumeLayout(false);
             this.PanelMetodos.ResumeLayout(false);
             this.PanelMetodos.PerformLayout();
             this.PanelMenu.ResumeLayout(false);
-            this.tabPageMenu.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

@@ -790,7 +790,7 @@ namespace Metodos_Numeros
                 double c = coef[i];
                 if (Math.Abs(c) < 1e-5) continue;
                 if (!primero)
-                    sb.Append(c >= 0 ? " + " : " - ");
+                    sb.Append(c >= 0 ? " +" : " -");
                 else if (c < 0)
                     sb.Append("-");
 

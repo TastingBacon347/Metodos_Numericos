@@ -13,6 +13,7 @@ namespace Metodos_Numeros
     public partial class DiferenciasDivididas : Form
     {
         private List<Point> puntos = new List<Point>();
+        private bool graficaAbierta = false;
 
         public DiferenciasDivididas()
         {
@@ -111,6 +112,7 @@ namespace Metodos_Numeros
                     string polinomioSimplificado = NumericMethods.ObtenerPolinomioNewtonSimplificado();
                     txtPolinomio.Text = polinomio;
                     txtPoliSimp.Text = polinomioSimplificado;
+                    graficaAbierta = true;
                 }
                 else
                 {
@@ -125,6 +127,7 @@ namespace Metodos_Numeros
 
         private void btnRegresarG_Click(object sender, EventArgs e)
         {
+            Application.OpenForms["Grafica"]?.Close();
             Menu Menu = (Menu)Application.OpenForms["Menu"];
             if (Menu != null)
             {
@@ -133,19 +136,18 @@ namespace Metodos_Numeros
             }
         }
 
-        private void txtPolinomio_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void DiferenciasDivididas_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnGrafica_Click(object sender, EventArgs e)
         {
-
+            if(!graficaAbierta)
+            {
+                return;
+            }
+            if (Application.OpenForms["Grafica"] == null)
+            {
+                Grafica grafica = new Grafica();
+                grafica.Controls.Add(NumericMethods.GraficarPolinomioInterpolante(puntos.ToArray(), true));
+                grafica.Show();
+            }
         }
     }
 }

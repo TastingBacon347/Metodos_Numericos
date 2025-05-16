@@ -99,6 +99,13 @@ namespace Metodos_Numeros
             PreguntarSalir();
         }
 
+        private void btnInterpolacion_Click(object sender, EventArgs e)
+        {
+            Lagrange lagrange = new Lagrange();
+            lagrange.Show();
+            this.Hide();
+        }
+
         #region metodosAuxiliares
         public void PreguntarSalir()
         {
@@ -129,24 +136,7 @@ namespace Metodos_Numeros
         }
         #endregion
 
-        private void panelBorde_MouseDown(object sender, MouseEventArgs e)
-        {
-            ratonPulsado = true;
-            ultimaPosicion = e.Location;
-        }
 
-        private void panelBorde_MouseMove(object sender, MouseEventArgs e)
-        {
-            if(ratonPulsado)
-            {
-                Location = new Point(Location.X - ultimaPosicion.X + e.X, Location.Y - ultimaPosicion.Y + e.Y);
-                Update();
-            }
-        }
 
-        private void panelBorde_MouseUp(object sender, MouseEventArgs e)
-        {
-            ratonPulsado = false;
-        }
     }
 }

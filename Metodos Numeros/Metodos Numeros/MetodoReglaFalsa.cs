@@ -133,13 +133,13 @@ namespace Metodos_Numeros
             }
             if (Application.OpenForms["Animacion"] == null)
             {
-                Animacion Animacion = new Animacion(funcion, a, b, error, 1000);
+                Animacion Animacion = new Animacion(funcion, a, b, error, 1000, false);
                 Animacion.Show();
             }
             else
             {
                 Application.OpenForms["Animacion"].Close();
-                Animacion Animacion = new Animacion(funcion, a, b, error, 1000);
+                Animacion Animacion = new Animacion(funcion, a, b, error, 1000, false);
                 Animacion.Show();
             }
         }
