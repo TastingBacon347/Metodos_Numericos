@@ -76,39 +76,11 @@ namespace Metodos_Numeros
             }
 
             string mensaje = NumericMethods.Biseccion(funcion, a, b, error);
+            DGVBiseccion.Visible = true;
             DGVBiseccion.DataSource = NumericMethods.ObtenerTablaBiseccion();
             MensajeGunaResultado.Text = mensaje;
             MensajeGunaResultado.Show();
         }
-
-        private void btnGrafica_Click(object sender, EventArgs e)
-        {
-            string funcion = txtFuncionBiseccionGuna.Text;
-            if (string.IsNullOrWhiteSpace(funcion))
-            {
-                MensajeGunaDatosFaltantes.Show();
-                return;
-            }
-
-            if (!double.TryParse(txtParametroABiseccionGuna.Text, out double a))
-            {
-                MensajeGunaDatosFaltantes.Show();
-                return;
-            }
-
-            if (!double.TryParse(txtParametroBBiseccionGuna.Text, out double b))
-            {
-                MensajeGunaDatosFaltantes.Show();
-                return;
-            }
-            if (Application.OpenForms["Grafica"] == null)
-            {
-                Grafica grafica = new Grafica();
-                grafica.Controls.Add(NumericMethods.Grafica(funcion, a, b));
-                grafica.Show();
-            }
-        }
-
         private void btnAnimacion_Click(object sender, EventArgs e)
         {
             string funcion = txtFuncionBiseccionGuna.Text;
@@ -143,6 +115,34 @@ namespace Metodos_Numeros
                 Application.OpenForms["Animacion"].Close();
                 Animacion Animacion = new Animacion(funcion, a, b, error, 1000);
                 Animacion.Show();
+            }
+        }
+
+        private void btnGrafica_Click(object sender, EventArgs e)
+        {
+            string funcion = txtFuncionBiseccionGuna.Text;
+            if (string.IsNullOrWhiteSpace(funcion))
+            {
+                MensajeGunaDatosFaltantes.Show();
+                return;
+            }
+
+            if (!double.TryParse(txtParametroABiseccionGuna.Text, out double a))
+            {
+                MensajeGunaDatosFaltantes.Show();
+                return;
+            }
+
+            if (!double.TryParse(txtParametroBBiseccionGuna.Text, out double b))
+            {
+                MensajeGunaDatosFaltantes.Show();
+                return;
+            }
+            if (Application.OpenForms["Grafica"] == null)
+            {
+                Grafica grafica = new Grafica();
+                grafica.Controls.Add(NumericMethods.Grafica(funcion, a, b));
+                grafica.Show();
             }
         }
     }

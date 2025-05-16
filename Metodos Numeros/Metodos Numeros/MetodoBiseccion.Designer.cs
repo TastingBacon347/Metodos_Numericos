@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
             this.DGVBiseccion = new System.Windows.Forms.DataGridView();
             this.labelMetodoBiseccion = new System.Windows.Forms.Label();
             this.txtFuncionBiseccionGuna = new Guna.UI2.WinForms.Guna2TextBox();
@@ -48,8 +48,8 @@
             this.guna2ImageButtonRegresar = new Guna.UI2.WinForms.Guna2ImageButton();
             this.btnAyuda = new Guna.UI2.WinForms.Guna2ImageButton();
             this.btnCorrer = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.btnGrafica = new Guna.UI2.WinForms.Guna2GradientCircleButton();
             this.btnAnimacion = new Guna.UI2.WinForms.Guna2GradientTileButton();
+            this.btnGrafica = new Guna.UI2.WinForms.Guna2GradientTileButton();
             ((System.ComponentModel.ISupportInitialize)(this.DGVBiseccion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -59,44 +59,45 @@
             this.DGVBiseccion.AllowUserToDeleteRows = false;
             this.DGVBiseccion.AllowUserToResizeColumns = false;
             this.DGVBiseccion.AllowUserToResizeRows = false;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGVBiseccion.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGVBiseccion.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle21;
             this.DGVBiseccion.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DGVBiseccion.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.DGVBiseccion.BackgroundColor = System.Drawing.Color.LightSkyBlue;
             this.DGVBiseccion.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.LightSkyBlue;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGVBiseccion.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle22.BackColor = System.Drawing.Color.LightSkyBlue;
+            dataGridViewCellStyle22.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle22.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGVBiseccion.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle22;
             this.DGVBiseccion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.Color.LightSteelBlue;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DGVBiseccion.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle23.BackColor = System.Drawing.Color.LightSteelBlue;
+            dataGridViewCellStyle23.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle23.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DGVBiseccion.DefaultCellStyle = dataGridViewCellStyle23;
             this.DGVBiseccion.EnableHeadersVisualStyles = false;
             this.DGVBiseccion.GridColor = System.Drawing.Color.LightSeaGreen;
-            this.DGVBiseccion.Location = new System.Drawing.Point(16, 329);
-            this.DGVBiseccion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DGVBiseccion.Location = new System.Drawing.Point(16, 280);
+            this.DGVBiseccion.Margin = new System.Windows.Forms.Padding(4);
             this.DGVBiseccion.Name = "DGVBiseccion";
             this.DGVBiseccion.ReadOnly = true;
             this.DGVBiseccion.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.DGVBiseccion.RowHeadersVisible = false;
             this.DGVBiseccion.RowHeadersWidth = 60;
-            dataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.DGVBiseccion.RowsDefaultCellStyle = dataGridViewCellStyle16;
-            this.DGVBiseccion.Size = new System.Drawing.Size(689, 196);
+            dataGridViewCellStyle24.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.DGVBiseccion.RowsDefaultCellStyle = dataGridViewCellStyle24;
+            this.DGVBiseccion.Size = new System.Drawing.Size(907, 292);
             this.DGVBiseccion.TabIndex = 82;
+            this.DGVBiseccion.Visible = false;
             // 
             // labelMetodoBiseccion
             // 
@@ -231,7 +232,7 @@
             this.labelParametroA.Location = new System.Drawing.Point(11, 112);
             this.labelParametroA.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelParametroA.Name = "labelParametroA";
-            this.labelParametroA.Size = new System.Drawing.Size(159, 39);
+            this.labelParametroA.Size = new System.Drawing.Size(231, 52);
             this.labelParametroA.TabIndex = 94;
             this.labelParametroA.Text = "\r\nIngrese parametro a:\r\n";
             // 
@@ -274,7 +275,7 @@
             this.guna2PictureBox1.ImageRotate = 0F;
             this.guna2PictureBox1.InitialImage = global::Metodos_Numeros.Properties.Resources.La_Chica;
             this.guna2PictureBox1.Location = new System.Drawing.Point(549, 15);
-            this.guna2PictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2PictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.guna2PictureBox1.Name = "guna2PictureBox1";
             this.guna2PictureBox1.Size = new System.Drawing.Size(147, 91);
             this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -288,8 +289,8 @@
             this.guna2ImageButtonRegresar.Image = global::Metodos_Numeros.Properties.Resources.arrow_return_left_icon_160458;
             this.guna2ImageButtonRegresar.ImageOffset = new System.Drawing.Point(0, 0);
             this.guna2ImageButtonRegresar.ImageRotate = 0F;
-            this.guna2ImageButtonRegresar.Location = new System.Drawing.Point(968, 503);
-            this.guna2ImageButtonRegresar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2ImageButtonRegresar.Location = new System.Drawing.Point(968, 506);
+            this.guna2ImageButtonRegresar.Margin = new System.Windows.Forms.Padding(4);
             this.guna2ImageButtonRegresar.Name = "guna2ImageButtonRegresar";
             this.guna2ImageButtonRegresar.PressedState.ImageSize = new System.Drawing.Size(64, 64);
             this.guna2ImageButtonRegresar.Size = new System.Drawing.Size(85, 66);
@@ -304,7 +305,7 @@
             this.btnAyuda.ImageOffset = new System.Drawing.Point(0, 0);
             this.btnAyuda.ImageRotate = 0F;
             this.btnAyuda.Location = new System.Drawing.Point(983, -4);
-            this.btnAyuda.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAyuda.Margin = new System.Windows.Forms.Padding(4);
             this.btnAyuda.Name = "btnAyuda";
             this.btnAyuda.PressedState.ImageSize = new System.Drawing.Size(64, 64);
             this.btnAyuda.Size = new System.Drawing.Size(85, 84);
@@ -313,6 +314,7 @@
             // 
             // btnCorrer
             // 
+            this.btnCorrer.BorderRadius = 20;
             this.btnCorrer.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnCorrer.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnCorrer.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -320,34 +322,17 @@
             this.btnCorrer.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnCorrer.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnCorrer.ForeColor = System.Drawing.Color.White;
-            this.btnCorrer.Location = new System.Drawing.Point(945, 329);
-            this.btnCorrer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCorrer.Location = new System.Drawing.Point(931, 354);
+            this.btnCorrer.Margin = new System.Windows.Forms.Padding(4);
             this.btnCorrer.Name = "btnCorrer";
-            this.btnCorrer.Size = new System.Drawing.Size(100, 55);
+            this.btnCorrer.Size = new System.Drawing.Size(123, 68);
             this.btnCorrer.TabIndex = 100;
-            this.btnCorrer.Text = "Correr metodo";
+            this.btnCorrer.Text = "Correr Método";
             this.btnCorrer.Click += new System.EventHandler(this.btnCorrer_Click);
-            // 
-            // btnGrafica
-            // 
-            this.btnGrafica.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnGrafica.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnGrafica.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnGrafica.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnGrafica.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnGrafica.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnGrafica.ForeColor = System.Drawing.Color.White;
-            this.btnGrafica.Location = new System.Drawing.Point(945, 406);
-            this.btnGrafica.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnGrafica.Name = "btnGrafica";
-            this.btnGrafica.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.btnGrafica.Size = new System.Drawing.Size(108, 90);
-            this.btnGrafica.TabIndex = 101;
-            this.btnGrafica.Text = "Generar Grafica";
-            this.btnGrafica.Click += new System.EventHandler(this.btnGrafica_Click);
             // 
             // btnAnimacion
             // 
+            this.btnAnimacion.BorderRadius = 20;
             this.btnAnimacion.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnAnimacion.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnAnimacion.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -355,13 +340,31 @@
             this.btnAnimacion.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnAnimacion.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnAnimacion.ForeColor = System.Drawing.Color.White;
-            this.btnAnimacion.Location = new System.Drawing.Point(931, 222);
-            this.btnAnimacion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAnimacion.Location = new System.Drawing.Point(931, 278);
+            this.btnAnimacion.Margin = new System.Windows.Forms.Padding(4);
             this.btnAnimacion.Name = "btnAnimacion";
-            this.btnAnimacion.Size = new System.Drawing.Size(123, 79);
+            this.btnAnimacion.Size = new System.Drawing.Size(123, 68);
             this.btnAnimacion.TabIndex = 102;
-            this.btnAnimacion.Text = "Animacion";
+            this.btnAnimacion.Text = "Animación";
             this.btnAnimacion.Click += new System.EventHandler(this.btnAnimacion_Click);
+            // 
+            // btnGrafica
+            // 
+            this.btnGrafica.BorderRadius = 20;
+            this.btnGrafica.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnGrafica.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnGrafica.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnGrafica.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnGrafica.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnGrafica.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnGrafica.ForeColor = System.Drawing.Color.White;
+            this.btnGrafica.Location = new System.Drawing.Point(931, 430);
+            this.btnGrafica.Margin = new System.Windows.Forms.Padding(4);
+            this.btnGrafica.Name = "btnGrafica";
+            this.btnGrafica.Size = new System.Drawing.Size(123, 68);
+            this.btnGrafica.TabIndex = 103;
+            this.btnGrafica.Text = "Generar Gráfica";
+            this.btnGrafica.Click += new System.EventHandler(this.btnGrafica_Click);
             // 
             // Metodo_De_Biseccion
             // 
@@ -370,8 +373,8 @@
             this.BackColor = System.Drawing.Color.LightSkyBlue;
             this.ClientSize = new System.Drawing.Size(1067, 585);
             this.ControlBox = false;
-            this.Controls.Add(this.btnAnimacion);
             this.Controls.Add(this.btnGrafica);
+            this.Controls.Add(this.btnAnimacion);
             this.Controls.Add(this.btnCorrer);
             this.Controls.Add(this.guna2PictureBox1);
             this.Controls.Add(this.guna2ImageButtonRegresar);
@@ -386,7 +389,7 @@
             this.Controls.Add(this.btnAyuda);
             this.Controls.Add(this.DGVBiseccion);
             this.Controls.Add(this.labelMetodoBiseccion);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Metodo_De_Biseccion";
@@ -417,7 +420,7 @@
         private Guna.UI2.WinForms.Guna2MessageDialog MensajeGunaResultado;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         private Guna.UI2.WinForms.Guna2GradientTileButton btnAnimacion;
-        private Guna.UI2.WinForms.Guna2GradientCircleButton btnGrafica;
         private Guna.UI2.WinForms.Guna2GradientButton btnCorrer;
+        private Guna.UI2.WinForms.Guna2GradientTileButton btnGrafica;
     }
 }
