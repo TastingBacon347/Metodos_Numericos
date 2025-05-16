@@ -22,62 +22,13 @@ namespace Metodos_Numeros
         }
         private void btnCorrerBiseccion_Click(object sender, EventArgs e)
         {
-            string funcion = txtFuncionBiseccionGuna.Text;
-            if (string.IsNullOrWhiteSpace(funcion))
-            {
-                MensajeGunaDatosFaltantes.Show();
-                return;
-            }
-            if (!double.TryParse(txtParametroABiseccionGuna.Text, out double a))
-            {
-                MensajeGunaDatosFaltantes.Show();
-                return;
-            }
-            if (!double.TryParse(txtParametroBBiseccionGuna.Text, out double b))
-            {
-                MensajeGunaDatosFaltantes.Show();
-                return;
-            }
-
-            if (!double.TryParse(txtErrorBiseccionGuna.Text, out double error))
-            {
-                MensajeGunaDatosFaltantes.Show();
-                return;
-            }
             
-            string mensaje = NumericMethods.Biseccion(funcion, a, b, error);
-            DGVBiseccion.DataSource = NumericMethods.ObtenerTablaBiseccion();
-            MensajeGunaResultado.Text = mensaje;
-            MensajeGunaResultado.Show();
         }
 
 
         private void btnGraficaBiseccion_Click(object sender, EventArgs e)
         {
-            string funcion = txtFuncionBiseccionGuna.Text;
-            if (string.IsNullOrWhiteSpace(funcion))
-            {
-                MensajeGunaDatosFaltantes.Show();
-                return;
-            }
-
-            if (!double.TryParse(txtParametroABiseccionGuna.Text, out double a))
-            {
-                MensajeGunaDatosFaltantes.Show();
-                return;
-            }
-
-            if (!double.TryParse(txtParametroBBiseccionGuna.Text, out double b))
-            {
-                MensajeGunaDatosFaltantes.Show();
-                return;
-            }
-            if (Application.OpenForms["Grafica"] == null)
-            {
-                Grafica grafica = new Grafica();
-                grafica.Controls.Add(NumericMethods.Grafica(funcion, a, b));
-                grafica.Show();
-            }
+            
         }
 
         private void guna2ImageButtonRegresar_Click(object sender, EventArgs e)
@@ -104,6 +55,65 @@ namespace Metodos_Numeros
             DGVBiseccion.ColumnHeadersDefaultCellStyle.BackColor = Color.DarkBlue;
             DGVBiseccion.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
             DGVBiseccion.AlternatingRowsDefaultCellStyle.BackColor = Color.LightGray;
+        }
+
+        private void btnCorrer_Click(object sender, EventArgs e)
+        {
+            string funcion = txtFuncionBiseccionGuna.Text;
+            if (string.IsNullOrWhiteSpace(funcion))
+            {
+                MensajeGunaDatosFaltantes.Show();
+                return;
+            }
+            if (!double.TryParse(txtParametroABiseccionGuna.Text, out double a))
+            {
+                MensajeGunaDatosFaltantes.Show();
+                return;
+            }
+            if (!double.TryParse(txtParametroBBiseccionGuna.Text, out double b))
+            {
+                MensajeGunaDatosFaltantes.Show();
+                return;
+            }
+
+            if (!double.TryParse(txtErrorBiseccionGuna.Text, out double error))
+            {
+                MensajeGunaDatosFaltantes.Show();
+                return;
+            }
+
+            string mensaje = NumericMethods.Biseccion(funcion, a, b, error);
+            DGVBiseccion.DataSource = NumericMethods.ObtenerTablaBiseccion();
+            MensajeGunaResultado.Text = mensaje;
+            MensajeGunaResultado.Show();
+        }
+
+        private void btnGrafica_Click(object sender, EventArgs e)
+        {
+            string funcion = txtFuncionBiseccionGuna.Text;
+            if (string.IsNullOrWhiteSpace(funcion))
+            {
+                MensajeGunaDatosFaltantes.Show();
+                return;
+            }
+
+            if (!double.TryParse(txtParametroABiseccionGuna.Text, out double a))
+            {
+                MensajeGunaDatosFaltantes.Show();
+                return;
+            }
+
+            if (!double.TryParse(txtParametroBBiseccionGuna.Text, out double b))
+            {
+                MensajeGunaDatosFaltantes.Show();
+                return;
+            }
+            if (Application.OpenForms["Grafica"] == null)
+            {
+                Grafica grafica = new Grafica();
+                grafica.Controls.Add(NumericMethods.Grafica(funcion, a, b));
+                grafica.Show();
+            }
         }
     }
 }
