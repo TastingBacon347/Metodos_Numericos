@@ -35,8 +35,6 @@ namespace Metodos_Numeros
 
         public static string Newton(Point[] puntos)
         {
-            if (puntos.Length == 0)
-                return "No se Ingresaron Puntos";
             ListaStrings.Clear();
             CalcularDiferenciaDividida(puntos);
             return ObtenerPolinomioNewton();
@@ -132,7 +130,7 @@ namespace Metodos_Numeros
                 polinomioFinal = SumarPolinomios(polinomioFinal, coeficientes);
             }
 
-            return FormatoPolinomio(polinomioFinal, "P(x)");
+            return FormatoPolinomio(polinomioFinal, "L(x)");
         }
 
         /// <summary>
@@ -387,6 +385,169 @@ namespace Metodos_Numeros
             plotView.Model = modelo;
             return plotView;
         }
+        /// <summary>
+        /// Animación de la bisección o regla falsa.
+        /// </summary>
+        public static async Task AnimacionAsync(
+            PlotView plotView,
+            string funcion,
+            double aInicial,
+            double bInicial,
+            double error,
+            int delayMs = 1000,
+            bool biseccion = true)
+        {
+            // Ejecutar el método para llenar ListaStrings
+            if (biseccion)
+                EjecutarBiseccion(funcion, aInicial, bInicial, error);
+            else
+                EjecutarReglaFalsa(funcion, aInicial, bInicial, error);
+
+            if (ListaStrings.Count == 0 || plotView == null || plotView.IsDisposed)
+                return;
+
+            // Crear modelo base
+            var modelo = new PlotModel { Title = $"Animación {(biseccion ? "Bisección" : "Regla Falsa")}" };
+            var serieFuncion = new LineSeries { Title = "f(x)", Color = OxyColors.Blue };
+
+            double aG = aInicial, bG = bInicial;
+            for (double x = aG; x <= bG; x += 0.01)
+                serieFuncion.Points.Add(new DataPoint(x, EvaluarLaFuncion(x)));
+
+            modelo.Series.Add(serieFuncion);
+
+            var xAxis = new LinearAxis { Position = AxisPosition.Bottom, Title = "x", Minimum = aG, Maximum = bG };
+            var yAxis = new LinearAxis { Position = AxisPosition.Left, Title = "f(x)" };
+            modelo.Axes.Add(xAxis);
+            modelo.Axes.Add(yAxis);
+
+            // Línea horizontal en y = 0 (eje X)
+            modelo.Annotations.Add(new LineAnnotation
+            {
+                Type = LineAnnotationType.Horizontal,
+                Y = 0,
+                Color = OxyColors.Black,
+                LineStyle = LineStyle.Solid,
+                StrokeThickness = 1
+            });
+
+            plotView.Invoke(new Action(() =>
+            {
+                if (!plotView.IsDisposed)
+                    plotView.Model = modelo;
+            }));
+
+            for (int i = 0; i < ListaStrings.Count; i++)
+            {
+                if (plotView == null || plotView.IsDisposed || !plotView.IsHandleCreated)
+                    break;
+
+                string[] fila = ListaStrings[i];
+
+                double aVal = double.Parse(fila[0]);
+                double bVal = double.Parse(fila[1]);
+                double cVal = double.Parse(fila[2]);
+                double fcVal = double.Parse(fila[biseccion ? 4 : 5]);
+                string errorStr = fila.Last();
+
+                // Limpiar anteriores
+                var seriesAEliminar = modelo.Series.Where(s =>
+                    s is ScatterSeries ||
+                    (s is LineSeries l && (
+                        l.Color == OxyColors.Gray ||
+                        l.Color == OxyColors.Red || l.Color == OxyColors.Green
+                    )))
+                      .ToList();
+
+                foreach (var serie in seriesAEliminar)
+                    modelo.Series.Remove(serie);
+
+                var annotationsAEliminar = modelo.Annotations.Where(a =>
+                a is TextAnnotation ||
+                (a is LineAnnotation la && (
+                la.Y == fcVal || la.Color == OxyColors.DarkOrange
+                )))
+                    .ToList();
+
+                foreach (var annotation in annotationsAEliminar)
+                    modelo.Annotations.Remove(annotation);
+
+                // Punto c
+                var punto = new ScatterSeries
+                {
+                    MarkerType = MarkerType.Circle,
+                    MarkerFill = OxyColors.Red,
+                    MarkerSize = 5
+                };
+                punto.Points.Add(new ScatterPoint(cVal, fcVal));
+                modelo.Series.Add(punto);
+
+                // Línea vertical en c
+                var lineaC = new LineSeries { Color = OxyColors.Gray, StrokeThickness = 1 };
+                lineaC.Points.Add(new DataPoint(cVal, -10));
+                lineaC.Points.Add(new DataPoint(cVal, 10));
+                modelo.Series.Add(lineaC);
+
+                // Línea horizontal en f(c)
+                modelo.Annotations.Add(new LineAnnotation
+                {
+                    Type = LineAnnotationType.Horizontal,
+                    Y = fcVal,
+                    Color = OxyColors.DarkOrange,
+                    LineStyle = LineStyle.Dot,
+                    StrokeThickness = 1
+                });
+
+                // Zoom dinámico al intervalo actual (debe hacerse antes de agregar las líneas)
+                double margenX = (bVal - aVal) * 0.1;
+                double margenY = Math.Max(1, Math.Abs(fcVal) * 1.5);
+                xAxis.Minimum = aVal - margenX;
+                xAxis.Maximum = bVal + margenX;
+                yAxis.Minimum = fcVal - margenY;
+                yAxis.Maximum = fcVal + margenY;
+
+                // Línea vertical en a (todo el alto visible)
+                var lineaA = new LineSeries { Color = OxyColors.Red, StrokeThickness = 2 };
+                lineaA.Points.Add(new DataPoint(aVal, yAxis.Minimum));
+                lineaA.Points.Add(new DataPoint(aVal, yAxis.Maximum));
+                modelo.Series.Add(lineaA);
+
+                // Línea vertical en b (todo el alto visible)
+                var lineaB = new LineSeries { Color = OxyColors.Green, StrokeThickness = 2 };
+                lineaB.Points.Add(new DataPoint(bVal, yAxis.Minimum));
+                lineaB.Points.Add(new DataPoint(bVal, yAxis.Maximum));
+                modelo.Series.Add(lineaB);
+
+
+                // Texto
+                var texto = new TextAnnotation
+                {
+                    Text = $"Iteración {i + 1}\nc = {cVal:0.#####}\nf(c) = {fcVal:0.#####}\nError = {errorStr}",
+                    TextPosition = new DataPoint(cVal, fcVal),
+                    Stroke = OxyColors.Transparent,
+                    TextHorizontalAlignment = OxyPlot.HorizontalAlignment.Left,
+                    TextVerticalAlignment = VerticalAlignment.Top,
+                    FontSize = 12
+                };
+                modelo.Annotations.Add(texto);
+
+                // Zoom dinámico al intervalo actual
+                margenX = (bVal - aVal) * 0.1;
+                margenY = Math.Max(1, Math.Abs(fcVal) * 1.5);
+                xAxis.Minimum = aVal - margenX;
+                xAxis.Maximum = bVal + margenX;
+                yAxis.Minimum = fcVal - margenY;
+                yAxis.Maximum = fcVal + margenY;
+
+                plotView.Invoke(new Action(() =>
+                {
+                    if (!plotView.IsDisposed)
+                        plotView.Model.InvalidatePlot(true);
+                }));
+
+                await Task.Delay(delayMs);
+            }
+        }
 
 
         // -------------------------------------------------------------
@@ -462,7 +623,7 @@ namespace Metodos_Numeros
         /// </summary>
         private static string ObtenerPolinomioLagrange()
         {
-            StringBuilder polinomio = new StringBuilder("P(x) = ");
+            StringBuilder polinomio = new StringBuilder("L(x) = ");
 
             for (int i = 0; i < ListaStrings.Count; i++)
             {
@@ -485,7 +646,7 @@ namespace Metodos_Numeros
         /// </summary>
         private static string ObtenerPolinomioNewton()
         {
-            StringBuilder polinomio = new StringBuilder();
+            StringBuilder polinomio = new StringBuilder("P(x) = ");
             polinomio.Append(ListaStrings[0][1]);
 
             for (int i = 2; i < ListaStrings[0].Length; i++)
@@ -841,169 +1002,6 @@ namespace Metodos_Numeros
                 errorActual = 0;
             else
                 errorActual = Math.Abs((cAnterior - c) / c);
-        }
-        /// <summary>
-        /// Animación de la bisección o regla falsa.
-        /// </summary>
-        public static async Task AnimacionAsync(
-            PlotView plotView,
-            string funcion,
-            double aInicial,
-            double bInicial,
-            double error,
-            int delayMs = 1000,
-            bool biseccion = true)
-        {
-            // Ejecutar el método para llenar ListaStrings
-            if (biseccion)
-                EjecutarBiseccion(funcion, aInicial, bInicial, error);
-            else
-                EjecutarReglaFalsa(funcion, aInicial, bInicial, error);
-
-            if (ListaStrings.Count == 0 || plotView == null || plotView.IsDisposed)
-                return;
-
-            // Crear modelo base
-            var modelo = new PlotModel { Title = $"Animación {(biseccion ? "Bisección" : "Regla Falsa")}" };
-            var serieFuncion = new LineSeries { Title = "f(x)", Color = OxyColors.Blue };
-
-            double aG = aInicial, bG = bInicial;
-            for (double x = aG; x <= bG; x += 0.01)
-                serieFuncion.Points.Add(new DataPoint(x, EvaluarLaFuncion(x)));
-
-            modelo.Series.Add(serieFuncion);
-
-            var xAxis = new LinearAxis { Position = AxisPosition.Bottom, Title = "x", Minimum = aG, Maximum = bG };
-            var yAxis = new LinearAxis { Position = AxisPosition.Left, Title = "f(x)" };
-            modelo.Axes.Add(xAxis);
-            modelo.Axes.Add(yAxis);
-
-            // Línea horizontal en y = 0 (eje X)
-            modelo.Annotations.Add(new LineAnnotation
-            {
-                Type = LineAnnotationType.Horizontal,
-                Y = 0,
-                Color = OxyColors.Black,
-                LineStyle = LineStyle.Solid,
-                StrokeThickness = 1
-            });
-
-            plotView.Invoke(new Action(() =>
-            {
-                if (!plotView.IsDisposed)
-                    plotView.Model = modelo;
-            }));
-
-            for (int i = 0; i < ListaStrings.Count; i++)
-            {
-                if (plotView == null || plotView.IsDisposed || !plotView.IsHandleCreated)
-                    break;
-
-                string[] fila = ListaStrings[i];
-
-                double aVal = double.Parse(fila[0]);
-                double bVal = double.Parse(fila[1]);
-                double cVal = double.Parse(fila[2]);
-                double fcVal = double.Parse(fila[biseccion ? 4 : 5]);
-                string errorStr = fila.Last();
-
-                // Limpiar anteriores
-                var seriesAEliminar = modelo.Series.Where(s =>
-                    s is ScatterSeries ||
-                    (s is LineSeries l && (
-                        l.Color == OxyColors.Gray ||
-                        l.Color == OxyColors.Red || l.Color == OxyColors.Green
-                    )))
-                      .ToList();
-
-                foreach (var serie in seriesAEliminar)
-                    modelo.Series.Remove(serie);
-
-                var annotationsAEliminar = modelo.Annotations.Where(a =>
-                a is TextAnnotation || 
-                (a is LineAnnotation la &&(
-                la.Y == fcVal || la.Color == OxyColors.DarkOrange
-                )))
-                    .ToList();
-
-                foreach (var annotation in annotationsAEliminar)
-                    modelo.Annotations.Remove(annotation);
-
-                // Punto c
-                var punto = new ScatterSeries
-                {
-                    MarkerType = MarkerType.Circle,
-                    MarkerFill = OxyColors.Red,
-                    MarkerSize = 5
-                };
-                punto.Points.Add(new ScatterPoint(cVal, fcVal));
-                modelo.Series.Add(punto);
-
-                // Línea vertical en c
-                var lineaC = new LineSeries { Color = OxyColors.Gray, StrokeThickness = 1 };
-                lineaC.Points.Add(new DataPoint(cVal, -10));
-                lineaC.Points.Add(new DataPoint(cVal, 10));
-                modelo.Series.Add(lineaC);
-
-                // Línea horizontal en f(c)
-                modelo.Annotations.Add(new LineAnnotation
-                {
-                    Type = LineAnnotationType.Horizontal,
-                    Y = fcVal,
-                    Color = OxyColors.DarkOrange,
-                    LineStyle = LineStyle.Dot,
-                    StrokeThickness = 1
-                });
-
-                // Zoom dinámico al intervalo actual (debe hacerse antes de agregar las líneas)
-                double margenX = (bVal - aVal) * 0.1;
-                double margenY = Math.Max(1, Math.Abs(fcVal) * 1.5);
-                xAxis.Minimum = aVal - margenX;
-                xAxis.Maximum = bVal + margenX;
-                yAxis.Minimum = fcVal - margenY;
-                yAxis.Maximum = fcVal + margenY;
-
-                // Línea vertical en a (todo el alto visible)
-                var lineaA = new LineSeries { Color = OxyColors.Red, StrokeThickness = 2 };
-                lineaA.Points.Add(new DataPoint(aVal, yAxis.Minimum));
-                lineaA.Points.Add(new DataPoint(aVal, yAxis.Maximum));
-                modelo.Series.Add(lineaA);
-
-                // Línea vertical en b (todo el alto visible)
-                var lineaB = new LineSeries { Color = OxyColors.Green, StrokeThickness = 2 };
-                lineaB.Points.Add(new DataPoint(bVal, yAxis.Minimum));
-                lineaB.Points.Add(new DataPoint(bVal, yAxis.Maximum));
-                modelo.Series.Add(lineaB);
-
-
-                // Texto
-                var texto = new TextAnnotation
-                {
-                    Text = $"Iteración {i + 1}\nc = {cVal:0.#####}\nf(c) = {fcVal:0.#####}\nError = {errorStr}",
-                    TextPosition = new DataPoint(cVal, fcVal),
-                    Stroke = OxyColors.Transparent,
-                    TextHorizontalAlignment = OxyPlot.HorizontalAlignment.Left,
-                    TextVerticalAlignment = VerticalAlignment.Top,
-                    FontSize = 12
-                };
-                modelo.Annotations.Add(texto);
-
-                // Zoom dinámico al intervalo actual
-                margenX = (bVal - aVal) * 0.1;
-                margenY = Math.Max(1, Math.Abs(fcVal) * 1.5);
-                xAxis.Minimum = aVal - margenX;
-                xAxis.Maximum = bVal + margenX;
-                yAxis.Minimum = fcVal - margenY;
-                yAxis.Maximum = fcVal + margenY;
-
-                plotView.Invoke(new Action(() =>
-                {
-                    if (!plotView.IsDisposed)
-                        plotView.Model.InvalidatePlot(true);
-                }));
-
-                await Task.Delay(delayMs);
-            }
         }
 
 

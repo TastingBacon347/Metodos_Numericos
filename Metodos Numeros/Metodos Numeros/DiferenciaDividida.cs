@@ -33,11 +33,6 @@ namespace Metodos_Numeros
 
             DGVEntrada.Columns.Add(columnX);
             DGVEntrada.Columns.Add(columnY);
-
-            // Agregar eventos
-            btnAgregarPuntoG.Click += btnAgregarPuntoG_Click;
-            btnCalcularG.Click += btnCalcularG_Click;
-            btnLimpiarG.Click += btnLimpiarG_Click;
         }
 
         private void DGVEntrada_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -82,11 +77,6 @@ namespace Metodos_Numeros
             }
         }
 
-        private void btnLimpiar_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnLimpiarG_Click(object sender, EventArgs e)
         {
             DGVEntrada.Rows.Clear();
@@ -117,17 +107,13 @@ namespace Metodos_Numeros
                 }
 
                 Point[] puntosArray = puntos.ToArray();
-
-                //DataTable resultado = CalculadoraDiferenciaDividida.CalcularDiferenciaDividida(puntosArray);
-                string res = NumericMethods.Newton(puntosArray);
+                string polinomio = NumericMethods.Newton(puntosArray);
                 DataTable resultado = NumericMethods.ObtenerTablaDiferenciasDivididas();
                 if (resultado != null)
                 {
                     DGVDiferenciaDividida.DataSource = resultado;
-
-                    //string polinomio = CalculadoraDiferenciaDividida.ObtenerPolinomio(puntosArray);
-                    string polinomio = NumericMethods.ObtenerPolinomioNewtonSimplificado();
-                    txtPolinomio.Text = polinomio;
+                    string polinomioSimplificado = NumericMethods.ObtenerPolinomioNewtonSimplificado();
+                    txtPolinomio.Text = polinomio + "\r\n" + polinomioSimplificado;
                 }
                 else
                 {
@@ -150,80 +136,4 @@ namespace Metodos_Numeros
             }
         }
     }
-    // Clase para manejar el método de Diferencia Dividida
-    //public class CalculadoraDiferenciaDividida
-    //{
-    //    private static double[][] valores;
-
-    //    public static DataTable CalcularDiferenciaDividida(Point[] puntos)
-    //    {
-    //        if (puntos.Length == 0)
-    //            return null;
-
-    //        valores = new double[puntos.Length][];
-    //        for (int i = 0; i < puntos.Length; i++)
-    //        {
-    //            valores[i] = new double[puntos.Length];
-    //            valores[i][0] = puntos[i].Y;
-    //        }
-
-    //        for (int j = 1; j < puntos.Length; j++)
-    //        {
-    //            for (int i = 0; i < puntos.Length - j; i++)
-    //            {
-    //                valores[i][j] = (valores[i + 1][j - 1] - valores[i][j - 1]) / (puntos[i + j].X - puntos[i].X);
-    //            }
-    //        }
-
-    //        DataTable tabla = new DataTable();
-
-    //        tabla.Columns.Add("x", typeof(double));
-    //        tabla.Columns.Add("f(x)", typeof(double));
-    //        for (int i = 1; i < puntos.Length; i++)
-    //        {
-    //            tabla.Columns.Add("f[" + i + "]", typeof(double));
-    //        }
-
-    //        for (int i = 0; i < puntos.Length; i++)
-    //        {
-    //            DataRow fila = tabla.NewRow();
-    //            fila[0] = puntos[i].X;
-
-    //            for (int j = 0; j < puntos.Length - i; j++)
-    //            {
-    //                fila[j + 1] = Math.Round(valores[i][j], 6);
-    //            }
-
-    //            tabla.Rows.Add(fila);
-    //        }
-
-    //        return tabla;
-    //    }
-
-    //    public static string ObtenerPolinomio(Point[] puntos)
-    //    {
-    //        if (puntos.Length == 0)
-    //            return "No hay puntos para interpolar";
-
-    //        StringBuilder polinomio = new StringBuilder();
-    //        polinomio.Append(valores[0][0].ToString("0.######"));
-
-    //        for (int i = 1; i < puntos.Length; i++)
-    //        {
-    //            double coef = valores[0][i];
-    //            if (coef == 0) continue;
-
-    //            string termino = coef >= 0 ? " + " : " - ";
-    //            polinomio.Append(termino + Math.Abs(coef).ToString("0.######"));
-
-    //            for (int j = 0; j < i; j++)
-    //            {
-    //                polinomio.Append("(x - " + puntos[j].X.ToString("0.######") + ")");
-    //            }
-    //        }
-
-    //        return polinomio.ToString();
-    //    }
-    //}
-    
 }
