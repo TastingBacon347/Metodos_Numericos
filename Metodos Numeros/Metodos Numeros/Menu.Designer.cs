@@ -34,7 +34,6 @@
             this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPageMenu = new System.Windows.Forms.TabPage();
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.tabPageCreditos = new System.Windows.Forms.TabPage();
@@ -64,7 +63,6 @@
             this.panelBorde = new System.Windows.Forms.Panel();
             this.tabControl1.SuspendLayout();
             this.tabPageMenu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.tabPageCreditos.SuspendLayout();
             this.PanelCreditos.SuspendLayout();
             this.tabPageMetodos.SuspendLayout();
@@ -99,32 +97,15 @@
             // tabPageMenu
             // 
             this.tabPageMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.tabPageMenu.Controls.Add(this.guna2PictureBox1);
             this.tabPageMenu.Controls.Add(this.label9);
             this.tabPageMenu.Controls.Add(this.label4);
-            this.tabPageMenu.Location = new System.Drawing.Point(4, 25);
+            this.tabPageMenu.Location = new System.Drawing.Point(4, 22);
             this.tabPageMenu.Name = "tabPageMenu";
             this.tabPageMenu.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageMenu.Size = new System.Drawing.Size(875, 562);
+            this.tabPageMenu.Size = new System.Drawing.Size(875, 565);
             this.tabPageMenu.TabIndex = 1;
             this.tabPageMenu.Text = "Menu Principal";
             this.tabPageMenu.Click += new System.EventHandler(this.tabPageMenu_Click);
-            // 
-            // guna2PictureBox1
-            // 
-            this.guna2PictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox1.BackgroundImage = global::Metodos_Numeros.Properties.Resources.La_Chica;
-            this.guna2PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.guna2PictureBox1.ErrorImage = global::Metodos_Numeros.Properties.Resources.La_Chica;
-            this.guna2PictureBox1.Image = global::Metodos_Numeros.Properties.Resources.La_Chica;
-            this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.InitialImage = global::Metodos_Numeros.Properties.Resources.La_Chica;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(6, 3);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(866, 563);
-            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2PictureBox1.TabIndex = 99;
-            this.guna2PictureBox1.TabStop = false;
             // 
             // label9
             // 
@@ -152,9 +133,9 @@
             // 
             this.tabPageCreditos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.tabPageCreditos.Controls.Add(this.PanelCreditos);
-            this.tabPageCreditos.Location = new System.Drawing.Point(4, 25);
+            this.tabPageCreditos.Location = new System.Drawing.Point(4, 22);
             this.tabPageCreditos.Name = "tabPageCreditos";
-            this.tabPageCreditos.Size = new System.Drawing.Size(875, 560);
+            this.tabPageCreditos.Size = new System.Drawing.Size(875, 565);
             this.tabPageCreditos.TabIndex = 3;
             this.tabPageCreditos.Text = "Creditos";
             // 
@@ -180,7 +161,7 @@
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(463, 132);
             this.label14.TabIndex = 84;
-            this.label14.Text = "Alberto Rodriguez Rios\r\nNo. Control: 22310???";
+            this.label14.Text = "Alberto Rodriguez Rios\r\nNo. Control: 22310532";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label13
@@ -211,9 +192,9 @@
             // tabPageMetodos
             // 
             this.tabPageMetodos.Controls.Add(this.PanelMetodos);
-            this.tabPageMetodos.Location = new System.Drawing.Point(4, 25);
+            this.tabPageMetodos.Location = new System.Drawing.Point(4, 22);
             this.tabPageMetodos.Name = "tabPageMetodos";
-            this.tabPageMetodos.Size = new System.Drawing.Size(875, 560);
+            this.tabPageMetodos.Size = new System.Drawing.Size(875, 565);
             this.tabPageMetodos.TabIndex = 2;
             this.tabPageMetodos.Text = "Metodos";
             this.tabPageMetodos.UseVisualStyleBackColor = true;
@@ -254,7 +235,7 @@
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.Location = new System.Drawing.Point(496, 335);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(274, 29);
+            this.label11.Size = new System.Drawing.Size(214, 24);
             this.label11.TabIndex = 85;
             this.label11.Text = "Metodo de Interpolacion";
             // 
@@ -321,7 +302,7 @@
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(515, 100);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(236, 29);
+            this.label8.Size = new System.Drawing.Size(181, 24);
             this.label8.TabIndex = 80;
             this.label8.Text = "Diferencias divididas";
             // 
@@ -331,7 +312,7 @@
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(87, 100);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(238, 29);
+            this.label6.Size = new System.Drawing.Size(187, 24);
             this.label6.TabIndex = 76;
             this.label6.Text = "Metodo de biseccion";
             // 
@@ -341,7 +322,7 @@
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(79, 340);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(264, 29);
+            this.label7.Size = new System.Drawing.Size(205, 24);
             this.label7.TabIndex = 78;
             this.label7.Text = "Metodo de Regla Falsa";
             this.label7.Click += new System.EventHandler(this.label7_Click);
@@ -474,7 +455,6 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPageMenu.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.tabPageCreditos.ResumeLayout(false);
             this.PanelCreditos.ResumeLayout(false);
             this.tabPageMetodos.ResumeLayout(false);
@@ -516,7 +496,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label14;
         private Guna.UI2.WinForms.Guna2GradientPanel PanelMenu;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         private System.Windows.Forms.Panel panelBorde;
     }
 }
