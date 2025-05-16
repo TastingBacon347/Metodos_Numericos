@@ -60,7 +60,7 @@
             this.btnICreditos = new Guna.UI2.WinForms.Guna2ImageButton();
             this.guna2ImageButton1 = new Guna.UI2.WinForms.Guna2ImageButton();
             this.btnIMetodos = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.panelBorde = new System.Windows.Forms.Panel();
+            this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.tabControl1.SuspendLayout();
             this.tabPageMenu.SuspendLayout();
             this.tabPageCreditos.SuspendLayout();
@@ -425,18 +425,6 @@
             this.btnIMetodos.TabIndex = 88;
             this.btnIMetodos.Click += new System.EventHandler(this.btnIMetodos_Click);
             // 
-            // panelBorde
-            // 
-            this.panelBorde.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.panelBorde.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelBorde.Location = new System.Drawing.Point(0, 0);
-            this.panelBorde.Name = "panelBorde";
-            this.panelBorde.Size = new System.Drawing.Size(1113, 592);
-            this.panelBorde.TabIndex = 90;
-            this.panelBorde.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelBorde_MouseDown);
-            this.panelBorde.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelBorde_MouseMove);
-            this.panelBorde.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panelBorde_MouseUp);
-            // 
             // Menu
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -445,7 +433,6 @@
             this.ControlBox = false;
             this.Controls.Add(this.PanelMenu);
             this.Controls.Add(this.tabControl1);
-            this.Controls.Add(this.panelBorde);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -496,7 +483,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label14;
         private Guna.UI2.WinForms.Guna2GradientPanel PanelMenu;
-        private System.Windows.Forms.Panel panelBorde;
+        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
     }
 }
 

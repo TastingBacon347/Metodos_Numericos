@@ -59,7 +59,7 @@ namespace Metodos_Numeros
 
         private void btnDiferenciasDivididas_Click(object sender, EventArgs e)
         {
-            DiferenciaDividida diferenciaDividida = new DiferenciaDividida();
+            DiferenciasDivididas diferenciaDividida = new DiferenciasDivididas();
             diferenciaDividida.Show();
             this.Hide();
         }

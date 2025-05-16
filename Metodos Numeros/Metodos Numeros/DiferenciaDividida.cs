@@ -10,11 +10,11 @@ using System.Windows.Forms;
 
 namespace Metodos_Numeros
 {
-    public partial class DiferenciaDividida : Form
+    public partial class DiferenciasDivididas : Form
     {
         private List<Point> puntos = new List<Point>();
 
-        public DiferenciaDividida()
+        public DiferenciasDivididas()
         {
             InitializeComponent();
             ConfigurarInterfaz();
@@ -35,19 +35,18 @@ namespace Metodos_Numeros
             DGVEntrada.Columns.Add(columnY);
 
             // Agregar eventos
-            btnAgregarPunto.Click += BtnAgregarPunto_Click;
-            btnCalcular.Click += BtnCalcular_Click;
-            btnLimpiar.Click += BtnLimpiar_Click;
-        }
-        private void BtnLimpiar_Click(object sender, EventArgs e)
-        {
-            DGVEntrada.Rows.Clear();
-            DGVDiferenciaDividida.DataSource = null;
-            txtPolinomio.Clear();
-            puntos.Clear();
+            btnAgregarPuntoG.Click += btnAgregarPuntoG_Click;
+            btnCalcularG.Click += btnCalcularG_Click;
+            btnLimpiarG.Click += btnLimpiarG_Click;
         }
 
-        private void BtnAgregarPunto_Click(object sender, EventArgs e)
+        private void DGVEntrada_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+
+        private void btnAgregarPuntoG_Click(object sender, EventArgs e)
         {
             try
             {
@@ -83,7 +82,20 @@ namespace Metodos_Numeros
             }
         }
 
-        private void BtnCalcular_Click(object sender, EventArgs e)
+        private void btnLimpiar_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnLimpiarG_Click(object sender, EventArgs e)
+        {
+            DGVEntrada.Rows.Clear();
+            DGVDiferenciaDividida.DataSource = null;
+            txtPolinomio.Clear();
+            puntos.Clear();
+        }
+
+        private void btnCalcularG_Click(object sender, EventArgs e)
         {
             try
             {
@@ -128,7 +140,7 @@ namespace Metodos_Numeros
             }
         }
 
-        private void btnRegresar_Click(object sender, EventArgs e)
+        private void btnRegresarG_Click(object sender, EventArgs e)
         {
             Menu Menu = (Menu)Application.OpenForms["Menu"];
             if (Menu != null)
@@ -136,11 +148,6 @@ namespace Metodos_Numeros
                 Menu.Show();
                 this.Close();
             }
-        }
-
-        private void btnCalcular_Click_1(object sender, EventArgs e)
-        {
-
         }
     }
     // Clase para manejar el método de Diferencia Dividida
