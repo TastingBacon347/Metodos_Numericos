@@ -145,6 +145,12 @@
     <Compile Include="DiferenciaDividida.Designer.cs">
       <DependentUpon>DiferenciaDividida.cs</DependentUpon>
     </Compile>
+    <Compile Include="Lagrange.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Lagrange.Designer.cs">
+      <DependentUpon>Lagrange.cs</DependentUpon>
+    </Compile>
     <Compile Include="Menu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -183,6 +189,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DiferenciaDividida.resx">
       <DependentUpon>DiferenciaDividida.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lagrange.resx">
+      <DependentUpon>Lagrange.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
@@ -277,6 +286,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\La Chica.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cru.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\inisio.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\inisio1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\inisio-removebg-preview.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.NETFramework.ReferenceAssemblies.net472.1.0.2\build\Microsoft.NETFramework.ReferenceAssemblies.net472.targets" Condition="Exists('..\packages\Microsoft.NETFramework.ReferenceAssemblies.net472.1.0.2\build\Microsoft.NETFramework.ReferenceAssemblies.net472.targets')" />

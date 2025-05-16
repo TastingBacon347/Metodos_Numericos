@@ -142,6 +142,9 @@
   <data name="stock-helpagent_104167" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\stock-helpagent_104167.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="cru" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cru.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Paso1Regla" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Paso1Regla.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -160,8 +163,14 @@
   <data name="persona1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\persona1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="La Chica" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\La Chica.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Paso3Regla" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Paso3Regla.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="inisio1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\inisio1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="persona" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\persona.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -172,10 +181,13 @@
   <data name="Paso3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Paso3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="inisio" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\inisio.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="metodos" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\metodos.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="La Chica" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\La Chica.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="inisio-removebg-preview" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\inisio-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

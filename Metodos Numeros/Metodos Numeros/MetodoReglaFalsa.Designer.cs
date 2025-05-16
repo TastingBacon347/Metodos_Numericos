@@ -28,33 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.btnCorrerReglaFalsa = new System.Windows.Forms.Button();
             this.DGVReglaFalsa = new System.Windows.Forms.DataGridView();
-            this.a = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.b = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.c = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fa = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fb = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IzqoDer = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ErrorAbsoluto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblMetodoReglaFalsa = new System.Windows.Forms.Label();
-            this.btnGraficaReglaFalsa = new System.Windows.Forms.Button();
-            this.MensajeGuna4 = new Guna.UI2.WinForms.Guna2MessageDialog();
-            this.MensajeGuna3 = new Guna.UI2.WinForms.Guna2MessageDialog();
-            this.MensajeGuna1 = new Guna.UI2.WinForms.Guna2MessageDialog();
-            this.MensajeGuna2 = new Guna.UI2.WinForms.Guna2MessageDialog();
             this.lblErrorRF = new System.Windows.Forms.Label();
             this.lblParametroBRF = new System.Windows.Forms.Label();
             this.lvlParametroARF = new System.Windows.Forms.Label();
@@ -63,147 +42,62 @@
             this.txtParametroBReglaFGuna = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtParametroAReglaFGuna = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtFuncionReglaFGuna = new Guna.UI2.WinForms.Guna2TextBox();
-            this.guna2ImageButton1 = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.btnAyuda = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.SinBordes = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
+            this.MoverForms = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.btnRegresar = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.btnAyuda = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.btnCorrerMetodo = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.btnGrafica = new Guna.UI2.WinForms.Guna2GradientTileButton();
             this.btnAnimacion = new Guna.UI2.WinForms.Guna2GradientTileButton();
-            this.btnGrafica = new Guna.UI2.WinForms.Guna2GradientCircleButton();
-            this.btnCorrer = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.MensajeGuna2 = new Guna.UI2.WinForms.Guna2MessageDialog();
+            this.MensajeGuna1 = new Guna.UI2.WinForms.Guna2MessageDialog();
+            this.MensajeGuna3 = new Guna.UI2.WinForms.Guna2MessageDialog();
+            this.MensajeGuna4 = new Guna.UI2.WinForms.Guna2MessageDialog();
+            this.MensajeGunaResultado = new Guna.UI2.WinForms.Guna2MessageDialog();
+            this.MensajeGunaDatosFaltantes = new Guna.UI2.WinForms.Guna2MessageDialog();
             ((System.ComponentModel.ISupportInitialize)(this.DGVReglaFalsa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // btnCorrerReglaFalsa
-            // 
-            this.btnCorrerReglaFalsa.ForeColor = System.Drawing.Color.Black;
-            this.btnCorrerReglaFalsa.Location = new System.Drawing.Point(543, 55);
-            this.btnCorrerReglaFalsa.Name = "btnCorrerReglaFalsa";
-            this.btnCorrerReglaFalsa.Size = new System.Drawing.Size(93, 28);
-            this.btnCorrerReglaFalsa.TabIndex = 83;
-            this.btnCorrerReglaFalsa.Text = "Correr";
-            this.btnCorrerReglaFalsa.UseVisualStyleBackColor = true;
-            this.btnCorrerReglaFalsa.Click += new System.EventHandler(this.btnCorrerReglaFalsa_Click);
-            // 
             // DGVReglaFalsa
             // 
+            this.DGVReglaFalsa.AllowUserToAddRows = false;
             this.DGVReglaFalsa.AllowUserToDeleteRows = false;
             this.DGVReglaFalsa.AllowUserToResizeColumns = false;
             this.DGVReglaFalsa.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Beige;
-            this.DGVReglaFalsa.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Beige;
+            this.DGVReglaFalsa.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.DGVReglaFalsa.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DGVReglaFalsa.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.DGVReglaFalsa.BackgroundColor = System.Drawing.Color.Cornsilk;
             this.DGVReglaFalsa.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Goldenrod;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGVReglaFalsa.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.Goldenrod;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGVReglaFalsa.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.DGVReglaFalsa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGVReglaFalsa.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.a,
-            this.b,
-            this.c,
-            this.fa,
-            this.fb,
-            this.fc,
-            this.IzqoDer,
-            this.ErrorAbsoluto});
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.Gold;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DGVReglaFalsa.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.Gold;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DGVReglaFalsa.DefaultCellStyle = dataGridViewCellStyle6;
             this.DGVReglaFalsa.GridColor = System.Drawing.Color.Cornsilk;
-            this.DGVReglaFalsa.Location = new System.Drawing.Point(12, 277);
+            this.DGVReglaFalsa.Location = new System.Drawing.Point(12, 236);
             this.DGVReglaFalsa.Name = "DGVReglaFalsa";
             this.DGVReglaFalsa.ReadOnly = true;
             this.DGVReglaFalsa.RowHeadersVisible = false;
             this.DGVReglaFalsa.RowHeadersWidth = 51;
-            this.DGVReglaFalsa.Size = new System.Drawing.Size(689, 196);
+            this.DGVReglaFalsa.Size = new System.Drawing.Size(689, 237);
             this.DGVReglaFalsa.TabIndex = 82;
-            // 
-            // a
-            // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.a.DefaultCellStyle = dataGridViewCellStyle3;
-            this.a.HeaderText = "a";
-            this.a.MinimumWidth = 6;
-            this.a.Name = "a";
-            this.a.ReadOnly = true;
-            // 
-            // b
-            // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            this.b.DefaultCellStyle = dataGridViewCellStyle4;
-            this.b.HeaderText = "b";
-            this.b.MinimumWidth = 6;
-            this.b.Name = "b";
-            this.b.ReadOnly = true;
-            // 
-            // c
-            // 
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.c.DefaultCellStyle = dataGridViewCellStyle5;
-            this.c.HeaderText = "c";
-            this.c.MinimumWidth = 6;
-            this.c.Name = "c";
-            this.c.ReadOnly = true;
-            // 
-            // fa
-            // 
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
-            this.fa.DefaultCellStyle = dataGridViewCellStyle6;
-            this.fa.HeaderText = "f(a)";
-            this.fa.MinimumWidth = 6;
-            this.fa.Name = "fa";
-            this.fa.ReadOnly = true;
-            // 
-            // fb
-            // 
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.fb.DefaultCellStyle = dataGridViewCellStyle7;
-            this.fb.HeaderText = "f(b)";
-            this.fb.MinimumWidth = 6;
-            this.fb.Name = "fb";
-            this.fb.ReadOnly = true;
-            // 
-            // fc
-            // 
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.fc.DefaultCellStyle = dataGridViewCellStyle8;
-            this.fc.HeaderText = "f(c)";
-            this.fc.MinimumWidth = 6;
-            this.fc.Name = "fc";
-            this.fc.ReadOnly = true;
-            // 
-            // IzqoDer
-            // 
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.IzqoDer.DefaultCellStyle = dataGridViewCellStyle9;
-            this.IzqoDer.HeaderText = "Izq o Der";
-            this.IzqoDer.MinimumWidth = 6;
-            this.IzqoDer.Name = "IzqoDer";
-            this.IzqoDer.ReadOnly = true;
-            // 
-            // ErrorAbsoluto
-            // 
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.ErrorAbsoluto.DefaultCellStyle = dataGridViewCellStyle10;
-            this.ErrorAbsoluto.HeaderText = "ErrorAbsoluto";
-            this.ErrorAbsoluto.MinimumWidth = 6;
-            this.ErrorAbsoluto.Name = "ErrorAbsoluto";
-            this.ErrorAbsoluto.ReadOnly = true;
+            this.DGVReglaFalsa.Visible = false;
             // 
             // lblMetodoReglaFalsa
             // 
@@ -215,52 +109,6 @@
             this.lblMetodoReglaFalsa.Size = new System.Drawing.Size(348, 35);
             this.lblMetodoReglaFalsa.TabIndex = 74;
             this.lblMetodoReglaFalsa.Text = "Metodo de Regla Falsa";
-            // 
-            // btnGraficaReglaFalsa
-            // 
-            this.btnGraficaReglaFalsa.Location = new System.Drawing.Point(515, 182);
-            this.btnGraficaReglaFalsa.Name = "btnGraficaReglaFalsa";
-            this.btnGraficaReglaFalsa.Size = new System.Drawing.Size(163, 38);
-            this.btnGraficaReglaFalsa.TabIndex = 87;
-            this.btnGraficaReglaFalsa.Text = "Generar Grafica";
-            this.btnGraficaReglaFalsa.UseVisualStyleBackColor = true;
-            this.btnGraficaReglaFalsa.Click += new System.EventHandler(this.btnGraficaBiseccion_Click);
-            // 
-            // MensajeGuna4
-            // 
-            this.MensajeGuna4.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
-            this.MensajeGuna4.Caption = "Error";
-            this.MensajeGuna4.Icon = Guna.UI2.WinForms.MessageDialogIcon.Warning;
-            this.MensajeGuna4.Parent = this;
-            this.MensajeGuna4.Style = Guna.UI2.WinForms.MessageDialogStyle.Light;
-            this.MensajeGuna4.Text = "Valor de fin invalido";
-            // 
-            // MensajeGuna3
-            // 
-            this.MensajeGuna3.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
-            this.MensajeGuna3.Caption = "Error";
-            this.MensajeGuna3.Icon = Guna.UI2.WinForms.MessageDialogIcon.Warning;
-            this.MensajeGuna3.Parent = this;
-            this.MensajeGuna3.Style = Guna.UI2.WinForms.MessageDialogStyle.Light;
-            this.MensajeGuna3.Text = "Valor de inicio invalido ";
-            // 
-            // MensajeGuna1
-            // 
-            this.MensajeGuna1.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
-            this.MensajeGuna1.Caption = "Error";
-            this.MensajeGuna1.Icon = Guna.UI2.WinForms.MessageDialogIcon.Warning;
-            this.MensajeGuna1.Parent = this;
-            this.MensajeGuna1.Style = Guna.UI2.WinForms.MessageDialogStyle.Light;
-            this.MensajeGuna1.Text = "Datos faltantes o incorrectos, Intente denuevo";
-            // 
-            // MensajeGuna2
-            // 
-            this.MensajeGuna2.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
-            this.MensajeGuna2.Caption = "Error";
-            this.MensajeGuna2.Icon = Guna.UI2.WinForms.MessageDialogIcon.Warning;
-            this.MensajeGuna2.Parent = this;
-            this.MensajeGuna2.Style = Guna.UI2.WinForms.MessageDialogStyle.Light;
-            this.MensajeGuna2.Text = "Ingrese una funcion valida";
             // 
             // lblErrorRF
             // 
@@ -391,19 +239,47 @@
             this.txtFuncionReglaFGuna.Size = new System.Drawing.Size(160, 27);
             this.txtFuncionReglaFGuna.TabIndex = 99;
             // 
-            // guna2ImageButton1
+            // SinBordes
             // 
-            this.guna2ImageButton1.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButton1.HoverState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButton1.Image = global::Metodos_Numeros.Properties.Resources.arrow_return_left_icon_160458;
-            this.guna2ImageButton1.ImageOffset = new System.Drawing.Point(0, 0);
-            this.guna2ImageButton1.ImageRotate = 0F;
-            this.guna2ImageButton1.Location = new System.Drawing.Point(724, 409);
-            this.guna2ImageButton1.Name = "guna2ImageButton1";
-            this.guna2ImageButton1.PressedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButton1.Size = new System.Drawing.Size(64, 54);
-            this.guna2ImageButton1.TabIndex = 98;
-            this.guna2ImageButton1.Click += new System.EventHandler(this.guna2ImageButton1_Click);
+            this.SinBordes.ContainerControl = this;
+            this.SinBordes.DockIndicatorTransparencyValue = 0.6D;
+            this.SinBordes.TransparentWhileDrag = true;
+            // 
+            // MoverForms
+            // 
+            this.MoverForms.DockIndicatorTransparencyValue = 0.6D;
+            this.MoverForms.TargetControl = this;
+            this.MoverForms.TransparentWhileDrag = false;
+            // 
+            // guna2PictureBox1
+            // 
+            this.guna2PictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox1.BackgroundImage = global::Metodos_Numeros.Properties.Resources.La_Chica;
+            this.guna2PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.guna2PictureBox1.ErrorImage = global::Metodos_Numeros.Properties.Resources.La_Chica;
+            this.guna2PictureBox1.Image = global::Metodos_Numeros.Properties.Resources.La_Chica;
+            this.guna2PictureBox1.ImageRotate = 0F;
+            this.guna2PictureBox1.InitialImage = global::Metodos_Numeros.Properties.Resources.La_Chica;
+            this.guna2PictureBox1.Location = new System.Drawing.Point(684, 92);
+            this.guna2PictureBox1.Name = "guna2PictureBox1";
+            this.guna2PictureBox1.Size = new System.Drawing.Size(110, 74);
+            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2PictureBox1.TabIndex = 107;
+            this.guna2PictureBox1.TabStop = false;
+            // 
+            // btnRegresar
+            // 
+            this.btnRegresar.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.btnRegresar.HoverState.ImageSize = new System.Drawing.Size(64, 64);
+            this.btnRegresar.Image = global::Metodos_Numeros.Properties.Resources.arrow_return_left_icon_160458;
+            this.btnRegresar.ImageOffset = new System.Drawing.Point(0, 0);
+            this.btnRegresar.ImageRotate = 0F;
+            this.btnRegresar.Location = new System.Drawing.Point(724, 409);
+            this.btnRegresar.Name = "btnRegresar";
+            this.btnRegresar.PressedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.btnRegresar.Size = new System.Drawing.Size(64, 54);
+            this.btnRegresar.TabIndex = 98;
+            this.btnRegresar.Click += new System.EventHandler(this.guna2ImageButton1_Click);
             // 
             // btnAyuda
             // 
@@ -417,69 +293,118 @@
             this.btnAyuda.PressedState.ImageSize = new System.Drawing.Size(64, 64);
             this.btnAyuda.Size = new System.Drawing.Size(64, 68);
             this.btnAyuda.TabIndex = 88;
+            this.btnAyuda.TabStop = false;
             this.btnAyuda.Click += new System.EventHandler(this.btnAyuda_Click);
             // 
-            // guna2PictureBox1
+            // btnCorrerMetodo
             // 
-            this.guna2PictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox1.BackgroundImage = global::Metodos_Numeros.Properties.Resources.La_Chica;
-            this.guna2PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.guna2PictureBox1.ErrorImage = global::Metodos_Numeros.Properties.Resources.La_Chica;
-            this.guna2PictureBox1.Image = global::Metodos_Numeros.Properties.Resources.La_Chica;
-            this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.InitialImage = global::Metodos_Numeros.Properties.Resources.La_Chica;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(390, 90);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(110, 74);
-            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2PictureBox1.TabIndex = 107;
-            this.guna2PictureBox1.TabStop = false;
-            // 
-            // btnAnimacion
-            // 
-            this.btnAnimacion.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnAnimacion.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnAnimacion.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnAnimacion.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnAnimacion.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnAnimacion.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnAnimacion.ForeColor = System.Drawing.Color.White;
-            this.btnAnimacion.Location = new System.Drawing.Point(702, 172);
-            this.btnAnimacion.Name = "btnAnimacion";
-            this.btnAnimacion.Size = new System.Drawing.Size(92, 64);
-            this.btnAnimacion.TabIndex = 110;
-            this.btnAnimacion.Text = "Animacion";
+            this.btnCorrerMetodo.BackColor = System.Drawing.Color.Transparent;
+            this.btnCorrerMetodo.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.btnCorrerMetodo.HoverState.ImageSize = new System.Drawing.Size(250, 250);
+            this.btnCorrerMetodo.Image = global::Metodos_Numeros.Properties.Resources.inisio_removebg_preview;
+            this.btnCorrerMetodo.ImageOffset = new System.Drawing.Point(0, 0);
+            this.btnCorrerMetodo.ImageRotate = 0F;
+            this.btnCorrerMetodo.ImageSize = new System.Drawing.Size(250, 250);
+            this.btnCorrerMetodo.Location = new System.Drawing.Point(395, 94);
+            this.btnCorrerMetodo.Name = "btnCorrerMetodo";
+            this.btnCorrerMetodo.PressedState.ImageSize = new System.Drawing.Size(250, 250);
+            this.btnCorrerMetodo.Size = new System.Drawing.Size(204, 89);
+            this.btnCorrerMetodo.TabIndex = 111;
+            this.btnCorrerMetodo.Click += new System.EventHandler(this.btnCorrerMetodo_Click);
             // 
             // btnGrafica
             // 
+            this.btnGrafica.BorderRadius = 20;
             this.btnGrafica.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnGrafica.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnGrafica.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnGrafica.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnGrafica.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnGrafica.FillColor = System.Drawing.Color.Cornsilk;
+            this.btnGrafica.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.btnGrafica.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnGrafica.ForeColor = System.Drawing.Color.White;
-            this.btnGrafica.Location = new System.Drawing.Point(713, 322);
+            this.btnGrafica.Location = new System.Drawing.Point(707, 348);
             this.btnGrafica.Name = "btnGrafica";
-            this.btnGrafica.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.btnGrafica.Size = new System.Drawing.Size(81, 73);
-            this.btnGrafica.TabIndex = 109;
-            this.btnGrafica.Text = "Generar Grafica";
+            this.btnGrafica.Size = new System.Drawing.Size(92, 55);
+            this.btnGrafica.TabIndex = 113;
+            this.btnGrafica.Text = "Generar Gráfica";
+            this.btnGrafica.Visible = false;
+            this.btnGrafica.Click += new System.EventHandler(this.btnGrafica_Click);
             // 
-            // btnCorrer
+            // btnAnimacion
             // 
-            this.btnCorrer.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnCorrer.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnCorrer.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnCorrer.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnCorrer.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnCorrer.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnCorrer.ForeColor = System.Drawing.Color.White;
-            this.btnCorrer.Location = new System.Drawing.Point(713, 259);
-            this.btnCorrer.Name = "btnCorrer";
-            this.btnCorrer.Size = new System.Drawing.Size(75, 45);
-            this.btnCorrer.TabIndex = 108;
-            this.btnCorrer.Text = "Correr metodo";
+            this.btnAnimacion.BorderRadius = 20;
+            this.btnAnimacion.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnAnimacion.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnAnimacion.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnAnimacion.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnAnimacion.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnAnimacion.FillColor = System.Drawing.Color.Cornsilk;
+            this.btnAnimacion.FillColor2 = System.Drawing.Color.MediumVioletRed;
+            this.btnAnimacion.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnAnimacion.ForeColor = System.Drawing.Color.White;
+            this.btnAnimacion.Location = new System.Drawing.Point(707, 266);
+            this.btnAnimacion.Name = "btnAnimacion";
+            this.btnAnimacion.Size = new System.Drawing.Size(92, 55);
+            this.btnAnimacion.TabIndex = 112;
+            this.btnAnimacion.Text = "Animación";
+            this.btnAnimacion.Visible = false;
+            this.btnAnimacion.Click += new System.EventHandler(this.btnAnimacion_Click);
+            // 
+            // MensajeGuna2
+            // 
+            this.MensajeGuna2.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
+            this.MensajeGuna2.Caption = "Error";
+            this.MensajeGuna2.Icon = Guna.UI2.WinForms.MessageDialogIcon.Warning;
+            this.MensajeGuna2.Parent = this;
+            this.MensajeGuna2.Style = Guna.UI2.WinForms.MessageDialogStyle.Light;
+            this.MensajeGuna2.Text = "Ingrese una funcion valida";
+            // 
+            // MensajeGuna1
+            // 
+            this.MensajeGuna1.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
+            this.MensajeGuna1.Caption = "Error";
+            this.MensajeGuna1.Icon = Guna.UI2.WinForms.MessageDialogIcon.Warning;
+            this.MensajeGuna1.Parent = this;
+            this.MensajeGuna1.Style = Guna.UI2.WinForms.MessageDialogStyle.Light;
+            this.MensajeGuna1.Text = "Datos faltantes o incorrectos, Intente denuevo";
+            // 
+            // MensajeGuna3
+            // 
+            this.MensajeGuna3.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
+            this.MensajeGuna3.Caption = "Error";
+            this.MensajeGuna3.Icon = Guna.UI2.WinForms.MessageDialogIcon.Warning;
+            this.MensajeGuna3.Parent = this;
+            this.MensajeGuna3.Style = Guna.UI2.WinForms.MessageDialogStyle.Light;
+            this.MensajeGuna3.Text = "Valor de inicio invalido ";
+            // 
+            // MensajeGuna4
+            // 
+            this.MensajeGuna4.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
+            this.MensajeGuna4.Caption = "Error";
+            this.MensajeGuna4.Icon = Guna.UI2.WinForms.MessageDialogIcon.Warning;
+            this.MensajeGuna4.Parent = this;
+            this.MensajeGuna4.Style = Guna.UI2.WinForms.MessageDialogStyle.Light;
+            this.MensajeGuna4.Text = "Valor de fin invalido";
+            // 
+            // MensajeGunaResultado
+            // 
+            this.MensajeGunaResultado.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
+            this.MensajeGunaResultado.Caption = "Método Biseccion Detectó";
+            this.MensajeGunaResultado.Icon = Guna.UI2.WinForms.MessageDialogIcon.Information;
+            this.MensajeGunaResultado.Parent = this;
+            this.MensajeGunaResultado.Style = Guna.UI2.WinForms.MessageDialogStyle.Light;
+            this.MensajeGunaResultado.Text = "";
+            // 
+            // MensajeGunaDatosFaltantes
+            // 
+            this.MensajeGunaDatosFaltantes.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
+            this.MensajeGunaDatosFaltantes.Caption = "Error";
+            this.MensajeGunaDatosFaltantes.Icon = Guna.UI2.WinForms.MessageDialogIcon.Warning;
+            this.MensajeGunaDatosFaltantes.Parent = this;
+            this.MensajeGunaDatosFaltantes.Style = Guna.UI2.WinForms.MessageDialogStyle.Light;
+            this.MensajeGunaDatosFaltantes.Text = "Datos faltantes o Incorrectos, Intente denuevo";
             // 
             // Metodo_De_Regla_Falsa
             // 
@@ -488,9 +413,9 @@
             this.BackColor = System.Drawing.Color.Cornsilk;
             this.ClientSize = new System.Drawing.Size(800, 475);
             this.ControlBox = false;
-            this.Controls.Add(this.btnAnimacion);
             this.Controls.Add(this.btnGrafica);
-            this.Controls.Add(this.btnCorrer);
+            this.Controls.Add(this.btnAnimacion);
+            this.Controls.Add(this.btnCorrerMetodo);
             this.Controls.Add(this.guna2PictureBox1);
             this.Controls.Add(this.lblErrorRF);
             this.Controls.Add(this.lblParametroBRF);
@@ -500,12 +425,11 @@
             this.Controls.Add(this.txtParametroBReglaFGuna);
             this.Controls.Add(this.txtParametroAReglaFGuna);
             this.Controls.Add(this.txtFuncionReglaFGuna);
-            this.Controls.Add(this.guna2ImageButton1);
+            this.Controls.Add(this.btnRegresar);
             this.Controls.Add(this.btnAyuda);
-            this.Controls.Add(this.btnGraficaReglaFalsa);
-            this.Controls.Add(this.btnCorrerReglaFalsa);
             this.Controls.Add(this.DGVReglaFalsa);
             this.Controls.Add(this.lblMetodoReglaFalsa);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Metodo_De_Regla_Falsa";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Metodo de Regla Falsa";
@@ -518,24 +442,10 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button btnCorrerReglaFalsa;
         private System.Windows.Forms.DataGridView DGVReglaFalsa;
         private System.Windows.Forms.Label lblMetodoReglaFalsa;
-        private System.Windows.Forms.Button btnGraficaReglaFalsa;
-        private System.Windows.Forms.DataGridViewTextBoxColumn a;
-        private System.Windows.Forms.DataGridViewTextBoxColumn b;
-        private System.Windows.Forms.DataGridViewTextBoxColumn c;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fa;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fb;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fc;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IzqoDer;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ErrorAbsoluto;
         private Guna.UI2.WinForms.Guna2ImageButton btnAyuda;
-        private Guna.UI2.WinForms.Guna2ImageButton guna2ImageButton1;
-        private Guna.UI2.WinForms.Guna2MessageDialog MensajeGuna4;
-        private Guna.UI2.WinForms.Guna2MessageDialog MensajeGuna3;
-        private Guna.UI2.WinForms.Guna2MessageDialog MensajeGuna1;
-        private Guna.UI2.WinForms.Guna2MessageDialog MensajeGuna2;
+        private Guna.UI2.WinForms.Guna2ImageButton btnRegresar;
         private System.Windows.Forms.Label lblErrorRF;
         private System.Windows.Forms.Label lblParametroBRF;
         private System.Windows.Forms.Label lvlParametroARF;
@@ -545,8 +455,16 @@
         private Guna.UI2.WinForms.Guna2TextBox txtParametroAReglaFGuna;
         private Guna.UI2.WinForms.Guna2TextBox txtFuncionReglaFGuna;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
+        private Guna.UI2.WinForms.Guna2BorderlessForm SinBordes;
+        private Guna.UI2.WinForms.Guna2DragControl MoverForms;
+        private Guna.UI2.WinForms.Guna2ImageButton btnCorrerMetodo;
+        private Guna.UI2.WinForms.Guna2GradientTileButton btnGrafica;
         private Guna.UI2.WinForms.Guna2GradientTileButton btnAnimacion;
-        private Guna.UI2.WinForms.Guna2GradientCircleButton btnGrafica;
-        private Guna.UI2.WinForms.Guna2GradientButton btnCorrer;
+        private Guna.UI2.WinForms.Guna2MessageDialog MensajeGuna2;
+        private Guna.UI2.WinForms.Guna2MessageDialog MensajeGuna1;
+        private Guna.UI2.WinForms.Guna2MessageDialog MensajeGuna3;
+        private Guna.UI2.WinForms.Guna2MessageDialog MensajeGuna4;
+        private Guna.UI2.WinForms.Guna2MessageDialog MensajeGunaResultado;
+        private Guna.UI2.WinForms.Guna2MessageDialog MensajeGunaDatosFaltantes;
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace Metodos_Numeros
 {
-    partial class DiferenciasDivididas
+    partial class Lagrange
     {
         /// <summary>
         /// Required designer variable.
@@ -29,15 +29,16 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DiferenciasDivididas));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.ElipseBlanco = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Lagrange));
             this.PanelBlanco = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.DGVDiferenciaDividida = new System.Windows.Forms.DataGridView();
+            this.DGVEntrada = new System.Windows.Forms.DataGridView();
             this.btnGrafica = new Guna.UI2.WinForms.Guna2Button();
             this.txtPoliSimp = new System.Windows.Forms.TextBox();
             this.lblPoliSimp = new System.Windows.Forms.Label();
@@ -48,27 +49,23 @@
             this.txtX = new Guna.UI2.WinForms.Guna2TextBox();
             this.lblPuntosDiferencias = new System.Windows.Forms.Label();
             this.lblPuntos = new System.Windows.Forms.Label();
-            this.lblDiferenciaDividida = new System.Windows.Forms.Label();
+            this.lblLagrangePoli = new System.Windows.Forms.Label();
             this.txtPolinomio = new System.Windows.Forms.TextBox();
             this.lblPolinomio = new System.Windows.Forms.Label();
             this.lblX = new System.Windows.Forms.Label();
             this.lblY = new System.Windows.Forms.Label();
+            this.lblTitulo = new System.Windows.Forms.Label();
+            this.lblLagrange = new System.Windows.Forms.Label();
+            this.guna2ImageButton1 = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.btnRegresarG = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.ElipseBlanco = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.ArrastrasPagina = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.ElipseNaranja = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.ArrastraLateral = new Guna.UI2.WinForms.Guna2DragControl(this.components);
-            this.lblTitulo = new System.Windows.Forms.Label();
-            this.btnRegresarG = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.DGVEntrada = new System.Windows.Forms.DataGridView();
-            this.DGVDiferenciaDividida = new System.Windows.Forms.DataGridView();
             this.PanelBlanco.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DGVEntrada)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DGVDiferenciaDividida)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVEntrada)).BeginInit();
             this.SuspendLayout();
-            // 
-            // ElipseBlanco
-            // 
-            this.ElipseBlanco.BorderRadius = 20;
-            this.ElipseBlanco.TargetControl = this.PanelBlanco;
             // 
             // PanelBlanco
             // 
@@ -85,17 +82,96 @@
             this.PanelBlanco.Controls.Add(this.txtX);
             this.PanelBlanco.Controls.Add(this.lblPuntosDiferencias);
             this.PanelBlanco.Controls.Add(this.lblPuntos);
-            this.PanelBlanco.Controls.Add(this.lblDiferenciaDividida);
+            this.PanelBlanco.Controls.Add(this.lblLagrangePoli);
             this.PanelBlanco.Controls.Add(this.txtPolinomio);
             this.PanelBlanco.Controls.Add(this.lblPolinomio);
             this.PanelBlanco.Controls.Add(this.lblX);
             this.PanelBlanco.Controls.Add(this.lblY);
             this.PanelBlanco.FillColor = System.Drawing.Color.White;
             this.PanelBlanco.FillColor2 = System.Drawing.Color.White;
-            this.PanelBlanco.Location = new System.Drawing.Point(12, 93);
+            this.PanelBlanco.Location = new System.Drawing.Point(12, 85);
             this.PanelBlanco.Name = "PanelBlanco";
             this.PanelBlanco.Size = new System.Drawing.Size(774, 557);
-            this.PanelBlanco.TabIndex = 100;
+            this.PanelBlanco.TabIndex = 109;
+            // 
+            // DGVDiferenciaDividida
+            // 
+            this.DGVDiferenciaDividida.AllowUserToAddRows = false;
+            this.DGVDiferenciaDividida.AllowUserToDeleteRows = false;
+            this.DGVDiferenciaDividida.AllowUserToResizeColumns = false;
+            this.DGVDiferenciaDividida.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.PowderBlue;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.PowderBlue;
+            this.DGVDiferenciaDividida.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.DGVDiferenciaDividida.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(90)))), ((int)(((byte)(156)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(90)))), ((int)(((byte)(156)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGVDiferenciaDividida.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.DGVDiferenciaDividida.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.LightSkyBlue;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.LightSkyBlue;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DGVDiferenciaDividida.DefaultCellStyle = dataGridViewCellStyle3;
+            this.DGVDiferenciaDividida.Enabled = false;
+            this.DGVDiferenciaDividida.Location = new System.Drawing.Point(393, 176);
+            this.DGVDiferenciaDividida.MultiSelect = false;
+            this.DGVDiferenciaDividida.Name = "DGVDiferenciaDividida";
+            this.DGVDiferenciaDividida.ReadOnly = true;
+            this.DGVDiferenciaDividida.RowHeadersVisible = false;
+            this.DGVDiferenciaDividida.Size = new System.Drawing.Size(363, 186);
+            this.DGVDiferenciaDividida.TabIndex = 111;
+            // 
+            // DGVEntrada
+            // 
+            this.DGVEntrada.AllowUserToAddRows = false;
+            this.DGVEntrada.AllowUserToDeleteRows = false;
+            this.DGVEntrada.AllowUserToResizeColumns = false;
+            this.DGVEntrada.AllowUserToResizeRows = false;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.PowderBlue;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.PowderBlue;
+            this.DGVEntrada.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.DGVEntrada.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(90)))), ((int)(((byte)(156)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(90)))), ((int)(((byte)(156)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGVEntrada.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            this.DGVEntrada.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.LightSkyBlue;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.LightSkyBlue;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DGVEntrada.DefaultCellStyle = dataGridViewCellStyle6;
+            this.DGVEntrada.Enabled = false;
+            this.DGVEntrada.Location = new System.Drawing.Point(24, 176);
+            this.DGVEntrada.MultiSelect = false;
+            this.DGVEntrada.Name = "DGVEntrada";
+            this.DGVEntrada.ReadOnly = true;
+            this.DGVEntrada.RowHeadersVisible = false;
+            this.DGVEntrada.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            this.DGVEntrada.Size = new System.Drawing.Size(348, 186);
+            this.DGVEntrada.TabIndex = 110;
             // 
             // btnGrafica
             // 
@@ -111,7 +187,6 @@
             this.btnGrafica.Size = new System.Drawing.Size(200, 53);
             this.btnGrafica.TabIndex = 109;
             this.btnGrafica.Text = "Generar Grafica";
-            this.btnGrafica.Click += new System.EventHandler(this.btnGrafica_Click);
             // 
             // txtPoliSimp
             // 
@@ -149,7 +224,6 @@
             this.btnCalcularG.Size = new System.Drawing.Size(200, 53);
             this.btnCalcularG.TabIndex = 106;
             this.btnCalcularG.Text = "Calcular Polinomio";
-            this.btnCalcularG.Click += new System.EventHandler(this.btnCalcularG_Click);
             // 
             // btnLimpiarG
             // 
@@ -165,7 +239,6 @@
             this.btnLimpiarG.Size = new System.Drawing.Size(160, 53);
             this.btnLimpiarG.TabIndex = 105;
             this.btnLimpiarG.Text = "Limpiar";
-            this.btnLimpiarG.Click += new System.EventHandler(this.btnLimpiarG_Click);
             // 
             // btnAgregarPuntoG
             // 
@@ -181,7 +254,6 @@
             this.btnAgregarPuntoG.Size = new System.Drawing.Size(160, 53);
             this.btnAgregarPuntoG.TabIndex = 104;
             this.btnAgregarPuntoG.Text = "Añadir Punto";
-            this.btnAgregarPuntoG.Click += new System.EventHandler(this.btnAgregarPuntoG_Click);
             // 
             // txtY
             // 
@@ -251,16 +323,16 @@
             this.lblPuntos.TabIndex = 91;
             this.lblPuntos.Text = "Puntos";
             // 
-            // lblDiferenciaDividida
+            // lblLagrangePoli
             // 
-            this.lblDiferenciaDividida.AutoSize = true;
-            this.lblDiferenciaDividida.BackColor = System.Drawing.Color.Transparent;
-            this.lblDiferenciaDividida.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDiferenciaDividida.Location = new System.Drawing.Point(498, 149);
-            this.lblDiferenciaDividida.Name = "lblDiferenciaDividida";
-            this.lblDiferenciaDividida.Size = new System.Drawing.Size(165, 24);
-            this.lblDiferenciaDividida.TabIndex = 90;
-            this.lblDiferenciaDividida.Text = "Diferencia Dividida";
+            this.lblLagrangePoli.AutoSize = true;
+            this.lblLagrangePoli.BackColor = System.Drawing.Color.Transparent;
+            this.lblLagrangePoli.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLagrangePoli.Location = new System.Drawing.Point(498, 149);
+            this.lblLagrangePoli.Name = "lblLagrangePoli";
+            this.lblLagrangePoli.Size = new System.Drawing.Size(168, 24);
+            this.lblLagrangePoli.TabIndex = 90;
+            this.lblLagrangePoli.Text = "Cosas de lagrange";
             // 
             // txtPolinomio
             // 
@@ -272,7 +344,6 @@
             this.txtPolinomio.Size = new System.Drawing.Size(732, 34);
             this.txtPolinomio.TabIndex = 4;
             this.txtPolinomio.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtPolinomio.TextChanged += new System.EventHandler(this.txtPolinomio_TextChanged);
             // 
             // lblPolinomio
             // 
@@ -306,6 +377,59 @@
             this.lblY.TabIndex = 89;
             this.lblY.Text = "Y:";
             // 
+            // lblTitulo
+            // 
+            this.lblTitulo.AutoSize = true;
+            this.lblTitulo.Font = new System.Drawing.Font("MS PGothic", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo.ForeColor = System.Drawing.Color.White;
+            this.lblTitulo.Location = new System.Drawing.Point(183, -84);
+            this.lblTitulo.Name = "lblTitulo";
+            this.lblTitulo.Size = new System.Drawing.Size(457, 48);
+            this.lblTitulo.TabIndex = 108;
+            this.lblTitulo.Text = "Diferencias Divididas";
+            // 
+            // lblLagrange
+            // 
+            this.lblLagrange.AutoSize = true;
+            this.lblLagrange.Font = new System.Drawing.Font("MS PGothic", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLagrange.ForeColor = System.Drawing.Color.White;
+            this.lblLagrange.Location = new System.Drawing.Point(159, 22);
+            this.lblLagrange.Name = "lblLagrange";
+            this.lblLagrange.Size = new System.Drawing.Size(495, 48);
+            this.lblLagrange.TabIndex = 111;
+            this.lblLagrange.Text = "Interpolacion Lagrange";
+            // 
+            // guna2ImageButton1
+            // 
+            this.guna2ImageButton1.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.guna2ImageButton1.HoverState.ImageSize = new System.Drawing.Size(64, 64);
+            this.guna2ImageButton1.Image = ((System.Drawing.Image)(resources.GetObject("guna2ImageButton1.Image")));
+            this.guna2ImageButton1.ImageOffset = new System.Drawing.Point(0, 0);
+            this.guna2ImageButton1.ImageRotate = 0F;
+            this.guna2ImageButton1.Location = new System.Drawing.Point(699, 16);
+            this.guna2ImageButton1.Name = "guna2ImageButton1";
+            this.guna2ImageButton1.PressedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.guna2ImageButton1.Size = new System.Drawing.Size(64, 54);
+            this.guna2ImageButton1.TabIndex = 112;
+            // 
+            // btnRegresarG
+            // 
+            this.btnRegresarG.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.btnRegresarG.HoverState.ImageSize = new System.Drawing.Size(64, 64);
+            this.btnRegresarG.Image = ((System.Drawing.Image)(resources.GetObject("btnRegresarG.Image")));
+            this.btnRegresarG.ImageOffset = new System.Drawing.Point(0, 0);
+            this.btnRegresarG.ImageRotate = 0F;
+            this.btnRegresarG.Location = new System.Drawing.Point(723, -90);
+            this.btnRegresarG.Name = "btnRegresarG";
+            this.btnRegresarG.PressedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.btnRegresarG.Size = new System.Drawing.Size(64, 54);
+            this.btnRegresarG.TabIndex = 110;
+            // 
+            // ElipseBlanco
+            // 
+            this.ElipseBlanco.BorderRadius = 20;
+            this.ElipseBlanco.TargetControl = this.PanelBlanco;
+            // 
             // ArrastrasPagina
             // 
             this.ArrastrasPagina.DockIndicatorTransparencyValue = 0.6D;
@@ -320,143 +444,38 @@
             // ArrastraLateral
             // 
             this.ArrastraLateral.DockIndicatorTransparencyValue = 0.6D;
-            this.ArrastraLateral.TargetControl = this.lblPoliSimp;
+            this.ArrastraLateral.TargetControl = this.lblLagrange;
             this.ArrastraLateral.UseTransparentDrag = true;
             // 
-            // lblTitulo
-            // 
-            this.lblTitulo.AutoSize = true;
-            this.lblTitulo.Font = new System.Drawing.Font("MS PGothic", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitulo.ForeColor = System.Drawing.Color.White;
-            this.lblTitulo.Location = new System.Drawing.Point(182, 26);
-            this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(457, 48);
-            this.lblTitulo.TabIndex = 87;
-            this.lblTitulo.Text = "Diferencias Divididas";
-            // 
-            // btnRegresarG
-            // 
-            this.btnRegresarG.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.btnRegresarG.HoverState.ImageSize = new System.Drawing.Size(64, 64);
-            this.btnRegresarG.Image = ((System.Drawing.Image)(resources.GetObject("btnRegresarG.Image")));
-            this.btnRegresarG.ImageOffset = new System.Drawing.Point(0, 0);
-            this.btnRegresarG.ImageRotate = 0F;
-            this.btnRegresarG.Location = new System.Drawing.Point(722, 20);
-            this.btnRegresarG.Name = "btnRegresarG";
-            this.btnRegresarG.PressedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.btnRegresarG.Size = new System.Drawing.Size(64, 54);
-            this.btnRegresarG.TabIndex = 107;
-            this.btnRegresarG.Click += new System.EventHandler(this.btnRegresarG_Click);
-            // 
-            // DGVEntrada
-            // 
-            this.DGVEntrada.AllowUserToAddRows = false;
-            this.DGVEntrada.AllowUserToDeleteRows = false;
-            this.DGVEntrada.AllowUserToResizeColumns = false;
-            this.DGVEntrada.AllowUserToResizeRows = false;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.PowderBlue;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.PowderBlue;
-            this.DGVEntrada.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.DGVEntrada.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(90)))), ((int)(((byte)(156)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(90)))), ((int)(((byte)(156)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGVEntrada.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            this.DGVEntrada.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.LightSkyBlue;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.LightSkyBlue;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DGVEntrada.DefaultCellStyle = dataGridViewCellStyle6;
-            this.DGVEntrada.Enabled = false;
-            this.DGVEntrada.Location = new System.Drawing.Point(24, 176);
-            this.DGVEntrada.MultiSelect = false;
-            this.DGVEntrada.Name = "DGVEntrada";
-            this.DGVEntrada.ReadOnly = true;
-            this.DGVEntrada.RowHeadersVisible = false;
-            this.DGVEntrada.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            this.DGVEntrada.Size = new System.Drawing.Size(348, 186);
-            this.DGVEntrada.TabIndex = 110;
-            // 
-            // DGVDiferenciaDividida
-            // 
-            this.DGVDiferenciaDividida.AllowUserToAddRows = false;
-            this.DGVDiferenciaDividida.AllowUserToDeleteRows = false;
-            this.DGVDiferenciaDividida.AllowUserToResizeColumns = false;
-            this.DGVDiferenciaDividida.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.PowderBlue;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.PowderBlue;
-            this.DGVDiferenciaDividida.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.DGVDiferenciaDividida.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(90)))), ((int)(((byte)(156)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(90)))), ((int)(((byte)(156)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGVDiferenciaDividida.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.DGVDiferenciaDividida.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.LightSkyBlue;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.LightSkyBlue;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DGVDiferenciaDividida.DefaultCellStyle = dataGridViewCellStyle3;
-            this.DGVDiferenciaDividida.Enabled = false;
-            this.DGVDiferenciaDividida.Location = new System.Drawing.Point(393, 176);
-            this.DGVDiferenciaDividida.MultiSelect = false;
-            this.DGVDiferenciaDividida.Name = "DGVDiferenciaDividida";
-            this.DGVDiferenciaDividida.ReadOnly = true;
-            this.DGVDiferenciaDividida.RowHeadersVisible = false;
-            this.DGVDiferenciaDividida.Size = new System.Drawing.Size(363, 186);
-            this.DGVDiferenciaDividida.TabIndex = 111;
-            // 
-            // DiferenciasDivididas
+            // Lagrange
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Peru;
-            this.ClientSize = new System.Drawing.Size(800, 660);
-            this.ControlBox = false;
+            this.BackColor = System.Drawing.Color.YellowGreen;
+            this.ClientSize = new System.Drawing.Size(800, 655);
+            this.Controls.Add(this.guna2ImageButton1);
+            this.Controls.Add(this.lblLagrange);
             this.Controls.Add(this.btnRegresarG);
             this.Controls.Add(this.PanelBlanco);
             this.Controls.Add(this.lblTitulo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "DiferenciasDivididas";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "DiferenciaDividida";
-            this.Load += new System.EventHandler(this.DiferenciasDivididas_Load);
+            this.Name = "Lagrange";
+            this.Text = "Lagrange";
             this.PanelBlanco.ResumeLayout(false);
             this.PanelBlanco.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DGVEntrada)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DGVDiferenciaDividida)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVEntrada)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private Guna.UI2.WinForms.Guna2Elipse ElipseBlanco;
-        private Guna.UI2.WinForms.Guna2DragControl ArrastrasPagina;
-        private Guna.UI2.WinForms.Guna2Elipse ElipseNaranja;
-        private Guna.UI2.WinForms.Guna2DragControl ArrastraLateral;
+
+        private Guna.UI2.WinForms.Guna2ImageButton btnRegresarG;
         private Guna.UI2.WinForms.Guna2GradientPanel PanelBlanco;
+        private System.Windows.Forms.DataGridView DGVDiferenciaDividida;
+        private System.Windows.Forms.DataGridView DGVEntrada;
         private Guna.UI2.WinForms.Guna2Button btnGrafica;
         private System.Windows.Forms.TextBox txtPoliSimp;
         private System.Windows.Forms.Label lblPoliSimp;
@@ -467,14 +486,17 @@
         private Guna.UI2.WinForms.Guna2TextBox txtX;
         private System.Windows.Forms.Label lblPuntosDiferencias;
         private System.Windows.Forms.Label lblPuntos;
-        private System.Windows.Forms.Label lblDiferenciaDividida;
+        private System.Windows.Forms.Label lblLagrangePoli;
         private System.Windows.Forms.TextBox txtPolinomio;
         private System.Windows.Forms.Label lblPolinomio;
         private System.Windows.Forms.Label lblX;
         private System.Windows.Forms.Label lblY;
-        private Guna.UI2.WinForms.Guna2ImageButton btnRegresarG;
         private System.Windows.Forms.Label lblTitulo;
-        private System.Windows.Forms.DataGridView DGVEntrada;
-        private System.Windows.Forms.DataGridView DGVDiferenciaDividida;
+        private Guna.UI2.WinForms.Guna2ImageButton guna2ImageButton1;
+        private System.Windows.Forms.Label lblLagrange;
+        private Guna.UI2.WinForms.Guna2Elipse ElipseBlanco;
+        private Guna.UI2.WinForms.Guna2DragControl ArrastrasPagina;
+        private Guna.UI2.WinForms.Guna2Elipse ElipseNaranja;
+        private Guna.UI2.WinForms.Guna2DragControl ArrastraLateral;
     }
 }

@@ -19,6 +19,12 @@ namespace Metodos_Numeros
        
 
         bool biseccion;
+
+        private void plotViewAnimacion_Click(object sender, EventArgs e)
+        {
+
+        }
+
         public Animacion(string funcion, double aInicial, double bInicial, double error, int velocidad = 1000, bool biseccion = true)
         {
             this.funcion = funcion;

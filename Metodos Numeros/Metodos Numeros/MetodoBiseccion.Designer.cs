@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -44,14 +45,14 @@
             this.labelParametroB = new System.Windows.Forms.Label();
             this.labelError = new System.Windows.Forms.Label();
             this.MensajeGunaResultado = new Guna.UI2.WinForms.Guna2MessageDialog();
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2ImageButtonRegresar = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.btnAyuda = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.btnCorrer = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btnAnimacion = new Guna.UI2.WinForms.Guna2GradientTileButton();
             this.btnGrafica = new Guna.UI2.WinForms.Guna2GradientTileButton();
+            this.SinBordes = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
+            this.MoverForms = new Guna.UI2.WinForms.Guna2DragControl(this.components);
+            this.btnCorrerMetodo = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.btnRegresar = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.btnAyuda = new Guna.UI2.WinForms.Guna2ImageButton();
             ((System.ComponentModel.ISupportInitialize)(this.DGVBiseccion)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // DGVBiseccion
@@ -86,8 +87,7 @@
             this.DGVBiseccion.DefaultCellStyle = dataGridViewCellStyle23;
             this.DGVBiseccion.EnableHeadersVisualStyles = false;
             this.DGVBiseccion.GridColor = System.Drawing.Color.LightSeaGreen;
-            this.DGVBiseccion.Location = new System.Drawing.Point(16, 280);
-            this.DGVBiseccion.Margin = new System.Windows.Forms.Padding(4);
+            this.DGVBiseccion.Location = new System.Drawing.Point(12, 228);
             this.DGVBiseccion.Name = "DGVBiseccion";
             this.DGVBiseccion.ReadOnly = true;
             this.DGVBiseccion.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -95,7 +95,7 @@
             this.DGVBiseccion.RowHeadersWidth = 60;
             dataGridViewCellStyle24.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.DGVBiseccion.RowsDefaultCellStyle = dataGridViewCellStyle24;
-            this.DGVBiseccion.Size = new System.Drawing.Size(907, 292);
+            this.DGVBiseccion.Size = new System.Drawing.Size(680, 237);
             this.DGVBiseccion.TabIndex = 82;
             this.DGVBiseccion.Visible = false;
             // 
@@ -103,10 +103,9 @@
             // 
             this.labelMetodoBiseccion.AutoSize = true;
             this.labelMetodoBiseccion.Font = new System.Drawing.Font("MS PGothic", 26.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelMetodoBiseccion.Location = new System.Drawing.Point(8, 11);
-            this.labelMetodoBiseccion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelMetodoBiseccion.Location = new System.Drawing.Point(6, 9);
             this.labelMetodoBiseccion.Name = "labelMetodoBiseccion";
-            this.labelMetodoBiseccion.Size = new System.Drawing.Size(401, 44);
+            this.labelMetodoBiseccion.Size = new System.Drawing.Size(323, 35);
             this.labelMetodoBiseccion.TabIndex = 73;
             this.labelMetodoBiseccion.Text = "Metodo de Biseccion";
             // 
@@ -116,7 +115,7 @@
             this.txtFuncionBiseccionGuna.AutoRoundedCorners = true;
             this.txtFuncionBiseccionGuna.BackColor = System.Drawing.Color.Transparent;
             this.txtFuncionBiseccionGuna.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.txtFuncionBiseccionGuna.BorderRadius = 15;
+            this.txtFuncionBiseccionGuna.BorderRadius = 12;
             this.txtFuncionBiseccionGuna.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtFuncionBiseccionGuna.DefaultText = "";
             this.txtFuncionBiseccionGuna.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -126,12 +125,12 @@
             this.txtFuncionBiseccionGuna.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtFuncionBiseccionGuna.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtFuncionBiseccionGuna.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtFuncionBiseccionGuna.Location = new System.Drawing.Point(231, 75);
-            this.txtFuncionBiseccionGuna.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtFuncionBiseccionGuna.Location = new System.Drawing.Point(173, 61);
+            this.txtFuncionBiseccionGuna.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtFuncionBiseccionGuna.Name = "txtFuncionBiseccionGuna";
             this.txtFuncionBiseccionGuna.PlaceholderText = "";
             this.txtFuncionBiseccionGuna.SelectedText = "";
-            this.txtFuncionBiseccionGuna.Size = new System.Drawing.Size(213, 33);
+            this.txtFuncionBiseccionGuna.Size = new System.Drawing.Size(160, 27);
             this.txtFuncionBiseccionGuna.TabIndex = 88;
             // 
             // txtParametroABiseccionGuna
@@ -140,7 +139,7 @@
             this.txtParametroABiseccionGuna.AutoRoundedCorners = true;
             this.txtParametroABiseccionGuna.BackColor = System.Drawing.Color.Transparent;
             this.txtParametroABiseccionGuna.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.txtParametroABiseccionGuna.BorderRadius = 15;
+            this.txtParametroABiseccionGuna.BorderRadius = 12;
             this.txtParametroABiseccionGuna.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtParametroABiseccionGuna.DefaultText = "";
             this.txtParametroABiseccionGuna.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -150,12 +149,12 @@
             this.txtParametroABiseccionGuna.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtParametroABiseccionGuna.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtParametroABiseccionGuna.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtParametroABiseccionGuna.Location = new System.Drawing.Point(288, 127);
-            this.txtParametroABiseccionGuna.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtParametroABiseccionGuna.Location = new System.Drawing.Point(216, 103);
+            this.txtParametroABiseccionGuna.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtParametroABiseccionGuna.Name = "txtParametroABiseccionGuna";
             this.txtParametroABiseccionGuna.PlaceholderText = "";
             this.txtParametroABiseccionGuna.SelectedText = "";
-            this.txtParametroABiseccionGuna.Size = new System.Drawing.Size(88, 33);
+            this.txtParametroABiseccionGuna.Size = new System.Drawing.Size(66, 27);
             this.txtParametroABiseccionGuna.TabIndex = 89;
             // 
             // txtParametroBBiseccionGuna
@@ -164,7 +163,7 @@
             this.txtParametroBBiseccionGuna.AutoRoundedCorners = true;
             this.txtParametroBBiseccionGuna.BackColor = System.Drawing.Color.Transparent;
             this.txtParametroBBiseccionGuna.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.txtParametroBBiseccionGuna.BorderRadius = 15;
+            this.txtParametroBBiseccionGuna.BorderRadius = 12;
             this.txtParametroBBiseccionGuna.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtParametroBBiseccionGuna.DefaultText = "";
             this.txtParametroBBiseccionGuna.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -174,12 +173,12 @@
             this.txtParametroBBiseccionGuna.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtParametroBBiseccionGuna.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtParametroBBiseccionGuna.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtParametroBBiseccionGuna.Location = new System.Drawing.Point(288, 178);
-            this.txtParametroBBiseccionGuna.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtParametroBBiseccionGuna.Location = new System.Drawing.Point(216, 145);
+            this.txtParametroBBiseccionGuna.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtParametroBBiseccionGuna.Name = "txtParametroBBiseccionGuna";
             this.txtParametroBBiseccionGuna.PlaceholderText = "";
             this.txtParametroBBiseccionGuna.SelectedText = "";
-            this.txtParametroBBiseccionGuna.Size = new System.Drawing.Size(88, 33);
+            this.txtParametroBBiseccionGuna.Size = new System.Drawing.Size(66, 27);
             this.txtParametroBBiseccionGuna.TabIndex = 90;
             // 
             // txtErrorBiseccionGuna
@@ -188,7 +187,7 @@
             this.txtErrorBiseccionGuna.AutoRoundedCorners = true;
             this.txtErrorBiseccionGuna.BackColor = System.Drawing.Color.Transparent;
             this.txtErrorBiseccionGuna.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.txtErrorBiseccionGuna.BorderRadius = 15;
+            this.txtErrorBiseccionGuna.BorderRadius = 12;
             this.txtErrorBiseccionGuna.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtErrorBiseccionGuna.DefaultText = "";
             this.txtErrorBiseccionGuna.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -198,12 +197,12 @@
             this.txtErrorBiseccionGuna.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtErrorBiseccionGuna.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtErrorBiseccionGuna.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtErrorBiseccionGuna.Location = new System.Drawing.Point(288, 238);
-            this.txtErrorBiseccionGuna.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtErrorBiseccionGuna.Location = new System.Drawing.Point(216, 193);
+            this.txtErrorBiseccionGuna.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtErrorBiseccionGuna.Name = "txtErrorBiseccionGuna";
             this.txtErrorBiseccionGuna.PlaceholderText = "";
             this.txtErrorBiseccionGuna.SelectedText = "";
-            this.txtErrorBiseccionGuna.Size = new System.Drawing.Size(88, 33);
+            this.txtErrorBiseccionGuna.Size = new System.Drawing.Size(66, 27);
             this.txtErrorBiseccionGuna.TabIndex = 91;
             // 
             // MensajeGunaDatosFaltantes
@@ -218,10 +217,9 @@
             // labelFuncion
             // 
             this.labelFuncion.Font = new System.Drawing.Font("Bookman Old Style", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelFuncion.Location = new System.Drawing.Point(11, 60);
-            this.labelFuncion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelFuncion.Location = new System.Drawing.Point(8, 49);
             this.labelFuncion.Name = "labelFuncion";
-            this.labelFuncion.Size = new System.Drawing.Size(201, 58);
+            this.labelFuncion.Size = new System.Drawing.Size(151, 47);
             this.labelFuncion.TabIndex = 93;
             this.labelFuncion.Text = "\r\nIngrese la funcion:\r\n\r\n";
             this.labelFuncion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -229,30 +227,27 @@
             // labelParametroA
             // 
             this.labelParametroA.Font = new System.Drawing.Font("Bookman Old Style", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelParametroA.Location = new System.Drawing.Point(11, 112);
-            this.labelParametroA.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelParametroA.Location = new System.Drawing.Point(8, 91);
             this.labelParametroA.Name = "labelParametroA";
-            this.labelParametroA.Size = new System.Drawing.Size(231, 52);
+            this.labelParametroA.Size = new System.Drawing.Size(173, 42);
             this.labelParametroA.TabIndex = 94;
             this.labelParametroA.Text = "\r\nIngrese parametro a:\r\n";
             // 
             // labelParametroB
             // 
             this.labelParametroB.Font = new System.Drawing.Font("Bookman Old Style", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelParametroB.Location = new System.Drawing.Point(11, 164);
-            this.labelParametroB.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelParametroB.Location = new System.Drawing.Point(8, 133);
             this.labelParametroB.Name = "labelParametroB";
-            this.labelParametroB.Size = new System.Drawing.Size(231, 48);
+            this.labelParametroB.Size = new System.Drawing.Size(173, 39);
             this.labelParametroB.TabIndex = 95;
             this.labelParametroB.Text = "\r\nIngrese parametro b:\r\n";
             // 
             // labelError
             // 
             this.labelError.Font = new System.Drawing.Font("Bookman Old Style", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelError.Location = new System.Drawing.Point(12, 222);
-            this.labelError.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelError.Location = new System.Drawing.Point(9, 180);
             this.labelError.Name = "labelError";
-            this.labelError.Size = new System.Drawing.Size(267, 48);
+            this.labelError.Size = new System.Drawing.Size(200, 39);
             this.labelError.TabIndex = 96;
             this.labelError.Text = "\r\nIngrese el error deseado:\r\n";
             // 
@@ -265,71 +260,6 @@
             this.MensajeGunaResultado.Style = Guna.UI2.WinForms.MessageDialogStyle.Light;
             this.MensajeGunaResultado.Text = "";
             // 
-            // guna2PictureBox1
-            // 
-            this.guna2PictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox1.BackgroundImage = global::Metodos_Numeros.Properties.Resources.La_Chica;
-            this.guna2PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.guna2PictureBox1.ErrorImage = global::Metodos_Numeros.Properties.Resources.La_Chica;
-            this.guna2PictureBox1.Image = global::Metodos_Numeros.Properties.Resources.La_Chica;
-            this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.InitialImage = global::Metodos_Numeros.Properties.Resources.La_Chica;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(549, 15);
-            this.guna2PictureBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(147, 91);
-            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2PictureBox1.TabIndex = 98;
-            this.guna2PictureBox1.TabStop = false;
-            // 
-            // guna2ImageButtonRegresar
-            // 
-            this.guna2ImageButtonRegresar.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButtonRegresar.HoverState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButtonRegresar.Image = global::Metodos_Numeros.Properties.Resources.arrow_return_left_icon_160458;
-            this.guna2ImageButtonRegresar.ImageOffset = new System.Drawing.Point(0, 0);
-            this.guna2ImageButtonRegresar.ImageRotate = 0F;
-            this.guna2ImageButtonRegresar.Location = new System.Drawing.Point(968, 506);
-            this.guna2ImageButtonRegresar.Margin = new System.Windows.Forms.Padding(4);
-            this.guna2ImageButtonRegresar.Name = "guna2ImageButtonRegresar";
-            this.guna2ImageButtonRegresar.PressedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButtonRegresar.Size = new System.Drawing.Size(85, 66);
-            this.guna2ImageButtonRegresar.TabIndex = 97;
-            this.guna2ImageButtonRegresar.Click += new System.EventHandler(this.guna2ImageButtonRegresar_Click);
-            // 
-            // btnAyuda
-            // 
-            this.btnAyuda.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.btnAyuda.HoverState.ImageSize = new System.Drawing.Size(64, 64);
-            this.btnAyuda.Image = global::Metodos_Numeros.Properties.Resources.stock_helpagent_104167;
-            this.btnAyuda.ImageOffset = new System.Drawing.Point(0, 0);
-            this.btnAyuda.ImageRotate = 0F;
-            this.btnAyuda.Location = new System.Drawing.Point(983, -4);
-            this.btnAyuda.Margin = new System.Windows.Forms.Padding(4);
-            this.btnAyuda.Name = "btnAyuda";
-            this.btnAyuda.PressedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.btnAyuda.Size = new System.Drawing.Size(85, 84);
-            this.btnAyuda.TabIndex = 87;
-            this.btnAyuda.Click += new System.EventHandler(this.btnAyuda_Click);
-            // 
-            // btnCorrer
-            // 
-            this.btnCorrer.BorderRadius = 20;
-            this.btnCorrer.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnCorrer.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnCorrer.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnCorrer.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnCorrer.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnCorrer.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnCorrer.ForeColor = System.Drawing.Color.White;
-            this.btnCorrer.Location = new System.Drawing.Point(931, 354);
-            this.btnCorrer.Margin = new System.Windows.Forms.Padding(4);
-            this.btnCorrer.Name = "btnCorrer";
-            this.btnCorrer.Size = new System.Drawing.Size(123, 68);
-            this.btnCorrer.TabIndex = 100;
-            this.btnCorrer.Text = "Correr Método";
-            this.btnCorrer.Click += new System.EventHandler(this.btnCorrer_Click);
-            // 
             // btnAnimacion
             // 
             this.btnAnimacion.BorderRadius = 20;
@@ -338,14 +268,16 @@
             this.btnAnimacion.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnAnimacion.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnAnimacion.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnAnimacion.FillColor = System.Drawing.Color.LightSkyBlue;
+            this.btnAnimacion.FillColor2 = System.Drawing.Color.MidnightBlue;
             this.btnAnimacion.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnAnimacion.ForeColor = System.Drawing.Color.White;
-            this.btnAnimacion.Location = new System.Drawing.Point(931, 278);
-            this.btnAnimacion.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAnimacion.Location = new System.Drawing.Point(698, 255);
             this.btnAnimacion.Name = "btnAnimacion";
-            this.btnAnimacion.Size = new System.Drawing.Size(123, 68);
+            this.btnAnimacion.Size = new System.Drawing.Size(92, 55);
             this.btnAnimacion.TabIndex = 102;
             this.btnAnimacion.Text = "Animación";
+            this.btnAnimacion.Visible = false;
             this.btnAnimacion.Click += new System.EventHandler(this.btnAnimacion_Click);
             // 
             // btnGrafica
@@ -356,28 +288,86 @@
             this.btnGrafica.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnGrafica.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnGrafica.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnGrafica.FillColor = System.Drawing.Color.LightSkyBlue;
+            this.btnGrafica.FillColor2 = System.Drawing.Color.DarkViolet;
             this.btnGrafica.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnGrafica.ForeColor = System.Drawing.Color.White;
-            this.btnGrafica.Location = new System.Drawing.Point(931, 430);
-            this.btnGrafica.Margin = new System.Windows.Forms.Padding(4);
+            this.btnGrafica.Location = new System.Drawing.Point(698, 337);
             this.btnGrafica.Name = "btnGrafica";
-            this.btnGrafica.Size = new System.Drawing.Size(123, 68);
+            this.btnGrafica.Size = new System.Drawing.Size(92, 55);
             this.btnGrafica.TabIndex = 103;
             this.btnGrafica.Text = "Generar Gráfica";
+            this.btnGrafica.Visible = false;
             this.btnGrafica.Click += new System.EventHandler(this.btnGrafica_Click);
+            // 
+            // SinBordes
+            // 
+            this.SinBordes.ContainerControl = this;
+            this.SinBordes.DockIndicatorTransparencyValue = 0.6D;
+            this.SinBordes.TransparentWhileDrag = true;
+            // 
+            // MoverForms
+            // 
+            this.MoverForms.DockIndicatorTransparencyValue = 0.6D;
+            this.MoverForms.TargetControl = this;
+            this.MoverForms.TransparentWhileDrag = false;
+            // 
+            // btnCorrerMetodo
+            // 
+            this.btnCorrerMetodo.BackColor = System.Drawing.Color.Transparent;
+            this.btnCorrerMetodo.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.btnCorrerMetodo.HoverState.ImageSize = new System.Drawing.Size(250, 250);
+            this.btnCorrerMetodo.Image = global::Metodos_Numeros.Properties.Resources.inisio_removebg_preview;
+            this.btnCorrerMetodo.ImageOffset = new System.Drawing.Point(0, 0);
+            this.btnCorrerMetodo.ImageRotate = 0F;
+            this.btnCorrerMetodo.ImageSize = new System.Drawing.Size(250, 250);
+            this.btnCorrerMetodo.Location = new System.Drawing.Point(400, 103);
+            this.btnCorrerMetodo.Name = "btnCorrerMetodo";
+            this.btnCorrerMetodo.PressedState.ImageSize = new System.Drawing.Size(250, 250);
+            this.btnCorrerMetodo.Size = new System.Drawing.Size(204, 89);
+            this.btnCorrerMetodo.TabIndex = 104;
+            this.btnCorrerMetodo.Click += new System.EventHandler(this.btnCorrerMetodo_Click);
+            // 
+            // btnRegresar
+            // 
+            this.btnRegresar.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.btnRegresar.HoverState.ImageSize = new System.Drawing.Size(64, 64);
+            this.btnRegresar.Image = global::Metodos_Numeros.Properties.Resources.arrow_return_left_icon_160458;
+            this.btnRegresar.ImageOffset = new System.Drawing.Point(0, 0);
+            this.btnRegresar.ImageRotate = 0F;
+            this.btnRegresar.Location = new System.Drawing.Point(726, 411);
+            this.btnRegresar.Name = "btnRegresar";
+            this.btnRegresar.PressedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.btnRegresar.Size = new System.Drawing.Size(64, 54);
+            this.btnRegresar.TabIndex = 97;
+            this.btnRegresar.Click += new System.EventHandler(this.guna2ImageButtonRegresar_Click);
+            // 
+            // btnAyuda
+            // 
+            this.btnAyuda.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.btnAyuda.HoverState.ImageSize = new System.Drawing.Size(64, 64);
+            this.btnAyuda.Image = global::Metodos_Numeros.Properties.Resources.stock_helpagent_104167;
+            this.btnAyuda.ImageOffset = new System.Drawing.Point(0, 0);
+            this.btnAyuda.ImageRotate = 0F;
+            this.btnAyuda.Location = new System.Drawing.Point(737, -3);
+            this.btnAyuda.Name = "btnAyuda";
+            this.btnAyuda.PressedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.btnAyuda.Size = new System.Drawing.Size(64, 68);
+            this.btnAyuda.TabIndex = 87;
+            this.btnAyuda.TabStop = false;
+            this.btnAyuda.Click += new System.EventHandler(this.btnAyuda_Click);
             // 
             // Metodo_De_Biseccion
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.ClientSize = new System.Drawing.Size(1067, 585);
+            this.ClientSize = new System.Drawing.Size(800, 475);
             this.ControlBox = false;
+            this.Controls.Add(this.btnCorrerMetodo);
             this.Controls.Add(this.btnGrafica);
             this.Controls.Add(this.btnAnimacion);
-            this.Controls.Add(this.btnCorrer);
-            this.Controls.Add(this.guna2PictureBox1);
-            this.Controls.Add(this.guna2ImageButtonRegresar);
+            this.Controls.Add(this.btnRegresar);
             this.Controls.Add(this.labelError);
             this.Controls.Add(this.labelParametroB);
             this.Controls.Add(this.labelParametroA);
@@ -389,7 +379,7 @@
             this.Controls.Add(this.btnAyuda);
             this.Controls.Add(this.DGVBiseccion);
             this.Controls.Add(this.labelMetodoBiseccion);
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Metodo_De_Biseccion";
@@ -397,7 +387,6 @@
             this.Text = "Animacion ";
             this.Load += new System.EventHandler(this.Metodo_De_Biseccion_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DGVBiseccion)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -416,11 +405,12 @@
         private System.Windows.Forms.Label labelParametroB;
         private System.Windows.Forms.Label labelParametroA;
         private System.Windows.Forms.Label labelFuncion;
-        private Guna.UI2.WinForms.Guna2ImageButton guna2ImageButtonRegresar;
+        private Guna.UI2.WinForms.Guna2ImageButton btnRegresar;
         private Guna.UI2.WinForms.Guna2MessageDialog MensajeGunaResultado;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         private Guna.UI2.WinForms.Guna2GradientTileButton btnAnimacion;
-        private Guna.UI2.WinForms.Guna2GradientButton btnCorrer;
         private Guna.UI2.WinForms.Guna2GradientTileButton btnGrafica;
+        private Guna.UI2.WinForms.Guna2BorderlessForm SinBordes;
+        private Guna.UI2.WinForms.Guna2DragControl MoverForms;
+        private Guna.UI2.WinForms.Guna2ImageButton btnCorrerMetodo;
     }
 }

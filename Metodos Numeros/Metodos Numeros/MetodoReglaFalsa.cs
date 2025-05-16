@@ -15,6 +15,7 @@ namespace Metodos_Numeros
         public Metodo_De_Regla_Falsa()
         {
             InitializeComponent();
+            this.AcceptButton = btnCorrerMetodo;
 
         }
 
@@ -25,20 +26,26 @@ namespace Metodos_Numeros
 
             DGVReglaFalsa.AlternatingRowsDefaultCellStyle.BackColor = Color.LightGray;
         }
-        private void btnRegreso2_Click(object sender, EventArgs e)
+        
+        private void btnAyuda_Click(object sender, EventArgs e)
         {
+            AyudaD AyudaD = new AyudaD();
+            AyudaD.Show();
+        }
+
+        private void guna2ImageButton1_Click(object sender, EventArgs e)
+        {
+            Application.OpenForms["Grafica"]?.Close();
+            Application.OpenForms["Animacion"]?.Close();
             Menu Menu = (Menu)Application.OpenForms["Menu"];
             if (Menu != null)
             {
                 Menu.Show();
-                this.Close();
+                Close();
             }
-            btnCorrerReglaFalsa.Visible = false;
-            txtErrorReglaFGuna.Visible = false;
-            DGVReglaFalsa.Visible = false;
         }
 
-        private void btnGraficaBiseccion_Click(object sender, EventArgs e)
+        private void btnGrafica_Click(object sender, EventArgs e)
         {
             string funcion = txtFuncionReglaFGuna.Text;  // 
             if (string.IsNullOrWhiteSpace(funcion))
@@ -58,52 +65,108 @@ namespace Metodos_Numeros
                 MensajeGuna4.Show();
                 return;
             }
-
-            
+            if (Application.OpenForms["Grafica"] == null)
+            {
+                Grafica grafica = new Grafica();
+                grafica.Controls.Add(NumericMethods.Grafica(funcion, a, b));
+                grafica.Show();
+            }
         }
 
-        private void btnCorrerReglaFalsa_Click(object sender, EventArgs e)
+        private void btnCorrerMetodo_Click(object sender, EventArgs e)
         {
-            float num1, num2, num3;
-            if (float.TryParse(txtErrorReglaFGuna.Text, out num1) &&
-                float.TryParse(txtParametroBReglaFGuna.Text, out num2) &&
-                float.TryParse(txtParametroAReglaFGuna.Text, out num3) &&
-                !string.IsNullOrWhiteSpace(txtFuncionReglaFGuna.Text))
+            string funcion = txtFuncionReglaFGuna.Text;
+            if (string.IsNullOrWhiteSpace(funcion))
             {
-                
+                MensajeGunaDatosFaltantes.Show();
+                return;
             }
-            //No se donde poner el messagebox en caso de que no haya raiz en el intervalo 
-            //Cambie el codigo y no se como invocar la grafica lolamento
+            if (!double.TryParse(txtParametroAReglaFGuna.Text, out double a))
+            {
+                MensajeGunaDatosFaltantes.Show();
+                return;
+            }
+            if (!double.TryParse(txtParametroBReglaFGuna.Text, out double b))
+            {
+                MensajeGunaDatosFaltantes.Show();
+                return;
+            }
+
+            if (!double.TryParse(txtErrorReglaFGuna.Text, out double error))
+            {
+                MensajeGunaDatosFaltantes.Show();
+                return;
+            }
+
+            string mensaje = NumericMethods.ReglaFalsa(funcion, a, b, error);
+            DGVReglaFalsa.Visible = true;
+            DGVReglaFalsa.DataSource = NumericMethods.ObtenerTablaReglaFalsa();
+            MensajeGunaResultado.Text = mensaje;
+            MensajeGunaResultado.Show();
+            btnGrafica.Visible = true;
+            btnAnimacion.Visible = true;
+        }
+
+        private void btnAnimacion_Click(object sender, EventArgs e)
+        {
+            string funcion = txtFuncionReglaFGuna.Text;
+            if (string.IsNullOrWhiteSpace(funcion))
+            {
+                MensajeGunaDatosFaltantes.Show();
+                return;
+            }
+            if (!double.TryParse(txtParametroAReglaFGuna.Text, out double a))
+            {
+                MensajeGunaDatosFaltantes.Show();
+                return;
+            }
+            if (!double.TryParse(txtParametroBReglaFGuna.Text, out double b))
+            {
+                MensajeGunaDatosFaltantes.Show();
+                return;
+            }
+
+            if (!double.TryParse(txtErrorReglaFGuna.Text, out double error))
+            {
+                MensajeGunaDatosFaltantes.Show();
+                return;
+            }
+            if (Application.OpenForms["Animacion"] == null)
+            {
+                Animacion Animacion = new Animacion(funcion, a, b, error, 1000);
+                Animacion.Show();
+            }
             else
             {
-                MensajeGuna1.Show();
-            }
-            if (txtFuncionReglaFGuna.Text == string.Empty) return;
-            if (txtParametroAReglaFGuna.Text == string.Empty) return;
-            if (txtParametroBReglaFGuna.Text == string.Empty) return;
-            if (txtErrorReglaFGuna.Text == string.Empty) return;
-            DGVReglaFalsa.Rows.Clear();
-            string mensaje = NumericMethods.ReglaFalsa(txtFuncionReglaFGuna.Text, Convert.ToDouble(txtParametroAReglaFGuna.Text), Convert.ToDouble(txtParametroBReglaFGuna.Text), Convert.ToDouble(txtErrorReglaFGuna.Text));
-            foreach (string[] array in NumericMethods.ListaStrings)
-            {
-                DGVReglaFalsa.Rows.Add(array);
+                Application.OpenForms["Animacion"].Close();
+                Animacion Animacion = new Animacion(funcion, a, b, error, 1000);
+                Animacion.Show();
             }
         }
 
-        private void btnAyuda_Click(object sender, EventArgs e)
-        {
-            AyudaD AyudaD = new AyudaD();
-            AyudaD.Show();
-        }
+        //float num1, num2, num3;
+        //if (float.TryParse(txtErrorReglaFGuna.Text, out num1) &&
+        //    float.TryParse(txtParametroBReglaFGuna.Text, out num2) &&
+        //    float.TryParse(txtParametroAReglaFGuna.Text, out num3) &&
+        //    !string.IsNullOrWhiteSpace(txtFuncionReglaFGuna.Text))
+        //{
 
-        private void guna2ImageButton1_Click(object sender, EventArgs e)
-        {
-            Menu Menu = (Menu)Application.OpenForms["Menu"];
-            if (Menu != null)
-            {
-                Menu.Show();
-                this.Close();
-            }
-        }
+        //}
+        //else
+        //{
+        //    MensajeGuna1.Show();
+        //}
+        //if (txtFuncionReglaFGuna.Text == string.Empty) return;
+        //if (txtParametroAReglaFGuna.Text == string.Empty) return;
+        //if (txtParametroBReglaFGuna.Text == string.Empty) return;
+        //if (txtErrorReglaFGuna.Text == string.Empty) return;
+        //DGVReglaFalsa.Rows.Clear();
+        //string mensaje = NumericMethods.ReglaFalsa(txtFuncionReglaFGuna.Text, Convert.ToDouble(txtParametroAReglaFGuna.Text), Convert.ToDouble(txtParametroBReglaFGuna.Text), Convert.ToDouble(txtErrorReglaFGuna.Text));
+        //foreach (string[] array in NumericMethods.ListaStrings)
+        //{
+        //    DGVReglaFalsa.Rows.Add(array);
+        //}
+        //btnGrafica.Visible = true;
+        //btnAnimacion.Visible = true;
     }
 }

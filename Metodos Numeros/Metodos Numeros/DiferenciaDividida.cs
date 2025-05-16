@@ -18,11 +18,13 @@ namespace Metodos_Numeros
         {
             InitializeComponent();
             ConfigurarInterfaz();
+
         }
 
         private void ConfigurarInterfaz()
         {
-
+            DGVEntrada.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            DGVDiferenciaDividida.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             DataGridViewTextBoxColumn columnX = new DataGridViewTextBoxColumn();
             columnX.HeaderText = "X";
             columnX.Name = "X";
@@ -33,14 +35,8 @@ namespace Metodos_Numeros
 
             DGVEntrada.Columns.Add(columnX);
             DGVEntrada.Columns.Add(columnY);
+            
         }
-
-        private void DGVEntrada_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-
         private void btnAgregarPuntoG_Click(object sender, EventArgs e)
         {
             try
@@ -113,7 +109,8 @@ namespace Metodos_Numeros
                 {
                     DGVDiferenciaDividida.DataSource = resultado;
                     string polinomioSimplificado = NumericMethods.ObtenerPolinomioNewtonSimplificado();
-                    txtPolinomio.Text = polinomio + "\r\n" + polinomioSimplificado;
+                    txtPolinomio.Text = polinomio;
+                    txtPoliSimp.Text = polinomioSimplificado;
                 }
                 else
                 {
@@ -134,6 +131,21 @@ namespace Metodos_Numeros
                 Menu.Show();
                 this.Close();
             }
+        }
+
+        private void txtPolinomio_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DiferenciasDivididas_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnGrafica_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
