@@ -14,24 +14,25 @@ namespace Metodos_Numeros
     public partial class Animacion : Form
     {
         string funcion;
-        double aInicial, bInicial, tolerancia;
-
+        double aInicial, bInicial, error;
+        int velocidad;
        
 
         bool biseccion;
-        public Animacion(string funcion, double aInicial, double bInicial, double tolerancia, bool biseccion)
+        public Animacion(string funcion, double aInicial, double bInicial, double error, int velocidad = 1000, bool biseccion = true)
         {
             this.funcion = funcion;
             this.aInicial = aInicial;
             this.bInicial = bInicial;
-            this.tolerancia = tolerancia;
+            this.error = error;
             this.biseccion = biseccion;
+            this.velocidad = velocidad;
             InitializeComponent();
             
         }
         private async void Animacion_Load(object sender, EventArgs e)
         {
-            await NumericMethods.AnimacionAsync(plotViewAnimacion, funcion, aInicial, bInicial, tolerancia,biseccion: biseccion);
+            await NumericMethods.AnimacionAsync(plotViewAnimacion, funcion, aInicial, bInicial, error,velocidad,biseccion);
         }
     }
 }

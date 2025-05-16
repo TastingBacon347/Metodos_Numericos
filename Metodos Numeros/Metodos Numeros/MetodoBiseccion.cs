@@ -1,4 +1,5 @@
-﻿using OxyPlot.WindowsForms;
+﻿using NCalc.Domain;
+using OxyPlot.WindowsForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,19 +21,11 @@ namespace Metodos_Numeros
             InitializeComponent();
 
         }
-        private void btnCorrerBiseccion_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-
-        private void btnGraficaBiseccion_Click(object sender, EventArgs e)
-        {
-            
-        }
 
         private void guna2ImageButtonRegresar_Click(object sender, EventArgs e)
         {
+            Application.OpenForms["Grafica"]?.Close();
+            Application.OpenForms["Animacion"]?.Close();
             Menu Menu = (Menu)Application.OpenForms["Menu"];
             if (Menu != null)
             {
@@ -113,6 +106,43 @@ namespace Metodos_Numeros
                 Grafica grafica = new Grafica();
                 grafica.Controls.Add(NumericMethods.Grafica(funcion, a, b));
                 grafica.Show();
+            }
+        }
+
+        private void btnAnimacion_Click(object sender, EventArgs e)
+        {
+            string funcion = txtFuncionBiseccionGuna.Text;
+            if (string.IsNullOrWhiteSpace(funcion))
+            {
+                MensajeGunaDatosFaltantes.Show();
+                return;
+            }
+            if (!double.TryParse(txtParametroABiseccionGuna.Text, out double a))
+            {
+                MensajeGunaDatosFaltantes.Show();
+                return;
+            }
+            if (!double.TryParse(txtParametroBBiseccionGuna.Text, out double b))
+            {
+                MensajeGunaDatosFaltantes.Show();
+                return;
+            }
+
+            if (!double.TryParse(txtErrorBiseccionGuna.Text, out double error))
+            {
+                MensajeGunaDatosFaltantes.Show();
+                return;
+            }
+            if (Application.OpenForms["Animacion"] == null)
+            {
+                Animacion Animacion = new Animacion(funcion, a, b, error, 1000);
+                Animacion.Show();
+            }
+            else
+            {
+                Application.OpenForms["Animacion"].Close();
+                Animacion Animacion = new Animacion(funcion, a, b, error, 1000);
+                Animacion.Show();
             }
         }
     }

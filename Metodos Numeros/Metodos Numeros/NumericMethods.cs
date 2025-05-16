@@ -14,6 +14,7 @@ using System.Text;
 using System.Data;
 using Newtonsoft.Json.Linq;
 using System.Threading.Tasks;
+using OxyPlot.Annotations;
 
 
 namespace Metodos_Numeros
@@ -26,8 +27,8 @@ namespace Metodos_Numeros
         static List<string[]> listaStrings = new List<string[]>();
         static double[][] valores;
 
-        public static List<string[]> ListaStrings { get => listaStrings;}
-        
+        public static List<string[]> ListaStrings { get => listaStrings; }
+
         /// <summary>
         /// Calcula el polinomio interpolante de Newton y lo almacena en la lista de strings.
         /// </summary>
@@ -169,32 +170,24 @@ namespace Metodos_Numeros
         public static string Biseccion(string funcion, double limiteA, double limiteB, double error)
         {
             ListaStrings.Clear();
-            if(error <= 0)
+            if (error <= 0)
                 return "El Error Debe Ser Mayor a 0";
 
-            funcion = funcion.ToLower();
-            if (!ReemplazarEInicializarFuncion(ref funcion))
-                return "La Funcion Ingresada No Tiene la Sintaxis Correcta";
+            EjecutarBiseccion(funcion, limiteA, limiteB, error);
 
-            if (!PrepararIntervalo(limiteA, limiteB))
-                return "No se Encontro una Raiz en el Intervalo Proporcionado"; 
+            if (ListaStrings.Count == 0)
+                return "No se Encontro una Raiz en el Intervalo Proporcionado";
 
-            c = ObtenerValorDeCEnBiseccion();
-            fc = EvaluarLaFuncion(c);
-            errorActual = 0;
-            string lado = (fa * fc > 0) ? "DER" : "IZQ";
-            ListaStrings.Add(ConstruirFilaBiseccion(a, b, c, fa, fc, fa*fc, lado, "Null"));
-            if(SeEncontroRaizExacta())
-                return string.Format("Se Encontro Raiz Exacta\rRaiz: {0}\rError Final: {1}", c, errorActual);
-            do
-            {
-                RealizarIteracionBiseccion(ref lado);
-                ListaStrings.Add(ConstruirFilaBiseccion(a, b, c, fa, fc, fa * fc, lado, errorActual.ToString("0.######")));
-            } while (errorActual >= error);
-            if(SeEncontroRaizExacta())
-                return string.Format("Se Encontro Raiz Exacta\rRaiz: {0}\rError Final: {1}", c, errorActual);
-            return string.Format("Se Encontro Una Aproximacion\rRaiz: {0}\rError Final: {1}", c, errorActual);
+            string[] ultima = ListaStrings.Last();
+            string resultado = ultima[2]; // c
+            string errorFinal = ultima[7]; // error
+
+            if (errorFinal == "Null" || double.TryParse(errorFinal, out double err) && err == 0)
+                return $"Se Encontro Raiz Exacta\rRaiz: {resultado}\rError Final: {errorFinal}";
+            else
+                return $"Se Encontro Una Aproximacion\rRaiz: {resultado}\rError Final: {errorFinal}";
         }
+
         /// <summary>
         /// Obtiene la tabla de bisección a partir de la lista de strings.
         /// </summary>
@@ -229,29 +222,21 @@ namespace Metodos_Numeros
             if (error <= 0)
                 return "El Error Debe Ser Mayor a 0";
 
-            funcion = funcion.ToLower();
-            if (!ReemplazarEInicializarFuncion(ref funcion))
-                return "La Funcion Ingresada No Tiene la Sintaxis Correcta";
+            EjecutarReglaFalsa(funcion, limiteA, limiteB, error);
 
-            if (!PrepararIntervalo(limiteA, limiteB))
+            if (ListaStrings.Count == 0)
                 return "No se Encontro una Raiz en el Intervalo Proporcionado";
 
-            c = ObtenerValorDeCEnReglaFalsa();
-            fc = EvaluarLaFuncion(c);
-            errorActual = 0;
-            string lado = (fa * fc > 0) ? "DER" : "IZQ";
-            ListaStrings.Add(ConstruirFilaReglaFalsa(a, b, c, fa, fb, fc, lado, "Null"));
-            if (SeEncontroRaizExacta())
-                return string.Format("Se Encontro Raiz Exacta\rRaiz: {0}\rError Final: {1}", c, errorActual);
-            do
-            {
-                RealizarIteracionReglaFalsa(ref lado);
-                ListaStrings.Add(ConstruirFilaReglaFalsa(a, b, c, fa, fb, fc, lado, errorActual.ToString("0.######")));
-            } while (errorActual >= error);
-            if (SeEncontroRaizExacta())
-                return string.Format("Se Encontro Raiz Exacta\rRaiz: {0}\rError Final: {1}", c, errorActual);
-            return string.Format("Se Encontro Una Aproximacion\rRaiz: {0}\rError Final: {1}", c, errorActual);
+            string[] ultima = ListaStrings.Last();
+            string resultado = ultima[2]; // c
+            string errorFinal = ultima[7]; // error
+
+            if (errorFinal == "Null" || double.TryParse(errorFinal, out double err) && err == 0)
+                return $"Se Encontro Raiz Exacta\rRaiz: {resultado}\rError Final: {errorFinal}";
+            else
+                return $"Se Encontro Una Aproximacion\rRaiz: {resultado}\rError Final: {errorFinal}";
         }
+
         /// <summary>
         /// Obtiene la tabla de bisección a partir de la lista de strings.
         /// </summary>
@@ -295,7 +280,7 @@ namespace Metodos_Numeros
             {
                 (b, a) = (a, b);
             }
-            for (double i = a; i < b; i+=0.01)
+            for (double i = a; i < b; i += 0.01)
             {
                 linea.Points.Add(new DataPoint(i, EvaluarLaFuncion(i)));
             }
@@ -305,27 +290,27 @@ namespace Metodos_Numeros
 
             var xAxis = new LinearAxis
             {
-                Position = AxisPosition.Bottom,    
-                Title = "Eje X",                 
-                Minimum = a,              
-                Maximum = b,                     
-                MajorStep = 1,                     
-                MinorStep = 0.5                    
+                Position = AxisPosition.Bottom,
+                Title = "Eje X",
+                Minimum = a,
+                Maximum = b,
+                MajorStep = 1,
+                MinorStep = 0.5
             };
 
             var yAxis = new LinearAxis
             {
-                Position = AxisPosition.Left, 
-                Title = "Eje Y",              
-                Minimum = -2,                      
-                Maximum = 2,                      
-                MajorStep = 1,                      
-                MinorStep = 0.5                     
+                Position = AxisPosition.Left,
+                Title = "Eje Y",
+                Minimum = -2,
+                Maximum = 2,
+                MajorStep = 1,
+                MinorStep = 0.5
             };
-            xAxis.MajorGridlineStyle = LineStyle.Solid;   
-            xAxis.MinorGridlineStyle = LineStyle.Dot;      
-            xAxis.MajorGridlineThickness = 1;              
-            xAxis.MinorGridlineThickness = 0.5;            
+            xAxis.MajorGridlineStyle = LineStyle.Solid;
+            xAxis.MinorGridlineStyle = LineStyle.Dot;
+            xAxis.MajorGridlineThickness = 1;
+            xAxis.MinorGridlineThickness = 0.5;
 
             xAxis.AxislineStyle = LineStyle.Solid;
             xAxis.AxislineColor = OxyColors.Black;
@@ -364,23 +349,23 @@ namespace Metodos_Numeros
             else
             {
                 polinomio = ObtenerPolinomioLagrangeSimplificado();
-    
+
             }
             coef = ExtraerCoeficientesDesdeString(polinomio);
-            
+
 
             double minX = puntos.Min(p => p.X);
             double maxX = puntos.Max(p => p.X);
             double paso = (maxX - minX) / 100.0;
 
-            
+
             PlotView plotView = new PlotView { Dock = DockStyle.Fill };
             LineSeries serie = new LineSeries { Title = "Interpolante", StrokeThickness = 2, Color = OxyColors.SteelBlue };
 
             for (double x = minX; x <= maxX; x += paso)
                 serie.Points.Add(new DataPoint(x, EvaluarPolinomio(coef, x)));
 
-            
+
             ScatterSeries puntosOriginales = new ScatterSeries
             {
                 MarkerType = MarkerType.Circle,
@@ -392,7 +377,7 @@ namespace Metodos_Numeros
             foreach (var p in puntos)
                 puntosOriginales.Points.Add(new ScatterPoint(p.X, p.Y));
 
-           
+
             PlotModel modelo = new PlotModel { Title = "Polinomio Interpolante" };
             modelo.Series.Add(serie);
             modelo.Series.Add(puntosOriginales);
@@ -513,7 +498,7 @@ namespace Metodos_Numeros
 
                 for (int j = 1; j < i; j++)
                 {
-                    double valor = Convert.ToDouble(ListaStrings[j-1][0]);
+                    double valor = Convert.ToDouble(ListaStrings[j - 1][0]);
                     polinomio.Append(valor == 0 ? "(x)" : valor < 0 ? "(x + " + Math.Abs(valor).ToString("0.######") + ")" : "(x - " + Math.Abs(valor).ToString("0.######") + ")");
                 }
             }
@@ -531,7 +516,7 @@ namespace Metodos_Numeros
             {
                 valores[i] = new double[puntos.Length];
                 valores[i][0] = puntos[i].Y;
-                ListaStrings.Add(new string[puntos.Length+1]);
+                ListaStrings.Add(new string[puntos.Length + 1]);
                 ListaStrings[i][0] = puntos[i].X.ToString();
                 ListaStrings[i][1] = puntos[i].Y.ToString();
             }
@@ -555,7 +540,7 @@ namespace Metodos_Numeros
                 StringBuilder numeradorBuilder = new StringBuilder();
                 double denominadorTotal = 1.0;
 
-                List<double> polinomioNumerador = new List<double> { 1 }; 
+                List<double> polinomioNumerador = new List<double> { 1 };
 
                 bool primerTermino = true;
                 for (int j = 0; j < puntos.Length; j++)
@@ -567,7 +552,7 @@ namespace Metodos_Numeros
                     double denominador = xi - xj;
 
                     denominadorTotal *= denominador;
-            
+
                     string termFraccion = $"(x - {xj}) / ({xi} - {xj})";
                     if (!primerTermino)
                     {
@@ -586,16 +571,16 @@ namespace Metodos_Numeros
                     primerTermino = false;
                 }
 
-               
+
                 for (int d = 0; d < polinomioNumerador.Count; d++)
                     polinomioNumerador[d] /= denominadorTotal;
 
                 string[] fila = new string[5];
                 fila[0] = puntos[i].X.ToString();
                 fila[1] = puntos[i].Y.ToString();
-                fila[2] = LiFraccionado.ToString(); 
-                fila[3] = $"L{i}(x) = {numeradorBuilder} / {denominadorTotal}"; 
-                fila[4] = FormatoPolinomio(polinomioNumerador, $"L{i}(x)"); 
+                fila[2] = LiFraccionado.ToString();
+                fila[3] = $"L{i}(x) = {numeradorBuilder} / {denominadorTotal}";
+                fila[4] = FormatoPolinomio(polinomioNumerador, $"L{i}(x)");
 
                 ListaStrings.Add(fila);
             }
@@ -728,7 +713,7 @@ namespace Metodos_Numeros
                 @"(\([^\)]+\)|[a-zA-Z0-9\.]+)\s*\^\s*(\([^\)]+\)|[\-]?[0-9a-zA-Z\.]+)",
                 "Pow($1,$2)"
             );
-            
+
             exp = new Expression(funcion);
             return EsExpresionValida();
         }
@@ -857,72 +842,223 @@ namespace Metodos_Numeros
             else
                 errorActual = Math.Abs((cAnterior - c) / c);
         }
-        public static async Task AnimacionAsync(PlotView plotView, string funcion, double aInicial, double bInicial, double tolerancia, int delayMs = 1000, bool biseccion = true)
+        /// <summary>
+        /// Animación de la bisección o regla falsa.
+        /// </summary>
+        public static async Task AnimacionAsync(
+            PlotView plotView,
+            string funcion,
+            double aInicial,
+            double bInicial,
+            double error,
+            int delayMs = 1000,
+            bool biseccion = true)
+        {
+            // Ejecutar el método para llenar ListaStrings
+            if (biseccion)
+                EjecutarBiseccion(funcion, aInicial, bInicial, error);
+            else
+                EjecutarReglaFalsa(funcion, aInicial, bInicial, error);
+
+            if (ListaStrings.Count == 0 || plotView == null || plotView.IsDisposed)
+                return;
+
+            // Crear modelo base
+            var modelo = new PlotModel { Title = $"Animación {(biseccion ? "Bisección" : "Regla Falsa")}" };
+            var serieFuncion = new LineSeries { Title = "f(x)", Color = OxyColors.Blue };
+
+            double aG = aInicial, bG = bInicial;
+            for (double x = aG; x <= bG; x += 0.01)
+                serieFuncion.Points.Add(new DataPoint(x, EvaluarLaFuncion(x)));
+
+            modelo.Series.Add(serieFuncion);
+
+            var xAxis = new LinearAxis { Position = AxisPosition.Bottom, Title = "x", Minimum = aG, Maximum = bG };
+            var yAxis = new LinearAxis { Position = AxisPosition.Left, Title = "f(x)" };
+            modelo.Axes.Add(xAxis);
+            modelo.Axes.Add(yAxis);
+
+            // Línea horizontal en y = 0 (eje X)
+            modelo.Annotations.Add(new LineAnnotation
+            {
+                Type = LineAnnotationType.Horizontal,
+                Y = 0,
+                Color = OxyColors.Black,
+                LineStyle = LineStyle.Solid,
+                StrokeThickness = 1
+            });
+
+            plotView.Invoke(new Action(() =>
+            {
+                if (!plotView.IsDisposed)
+                    plotView.Model = modelo;
+            }));
+
+            for (int i = 0; i < ListaStrings.Count; i++)
+            {
+                if (plotView == null || plotView.IsDisposed || !plotView.IsHandleCreated)
+                    break;
+
+                string[] fila = ListaStrings[i];
+
+                double aVal = double.Parse(fila[0]);
+                double bVal = double.Parse(fila[1]);
+                double cVal = double.Parse(fila[2]);
+                double fcVal = double.Parse(fila[biseccion ? 4 : 5]);
+                string errorStr = fila.Last();
+
+                // Limpiar anteriores
+                var seriesAEliminar = modelo.Series.Where(s =>
+                    s is ScatterSeries ||
+                    (s is LineSeries l && (
+                        l.Color == OxyColors.Gray ||
+                        l.Color == OxyColors.Red || l.Color == OxyColors.Green
+                    )))
+                      .ToList();
+
+                foreach (var serie in seriesAEliminar)
+                    modelo.Series.Remove(serie);
+
+                var annotationsAEliminar = modelo.Annotations.Where(a =>
+                a is TextAnnotation || 
+                (a is LineAnnotation la &&(
+                la.Y == fcVal || la.Color == OxyColors.DarkOrange
+                )))
+                    .ToList();
+
+                foreach (var annotation in annotationsAEliminar)
+                    modelo.Annotations.Remove(annotation);
+
+                // Punto c
+                var punto = new ScatterSeries
+                {
+                    MarkerType = MarkerType.Circle,
+                    MarkerFill = OxyColors.Red,
+                    MarkerSize = 5
+                };
+                punto.Points.Add(new ScatterPoint(cVal, fcVal));
+                modelo.Series.Add(punto);
+
+                // Línea vertical en c
+                var lineaC = new LineSeries { Color = OxyColors.Gray, StrokeThickness = 1 };
+                lineaC.Points.Add(new DataPoint(cVal, -10));
+                lineaC.Points.Add(new DataPoint(cVal, 10));
+                modelo.Series.Add(lineaC);
+
+                // Línea horizontal en f(c)
+                modelo.Annotations.Add(new LineAnnotation
+                {
+                    Type = LineAnnotationType.Horizontal,
+                    Y = fcVal,
+                    Color = OxyColors.DarkOrange,
+                    LineStyle = LineStyle.Dot,
+                    StrokeThickness = 1
+                });
+
+                // Zoom dinámico al intervalo actual (debe hacerse antes de agregar las líneas)
+                double margenX = (bVal - aVal) * 0.1;
+                double margenY = Math.Max(1, Math.Abs(fcVal) * 1.5);
+                xAxis.Minimum = aVal - margenX;
+                xAxis.Maximum = bVal + margenX;
+                yAxis.Minimum = fcVal - margenY;
+                yAxis.Maximum = fcVal + margenY;
+
+                // Línea vertical en a (todo el alto visible)
+                var lineaA = new LineSeries { Color = OxyColors.Red, StrokeThickness = 2 };
+                lineaA.Points.Add(new DataPoint(aVal, yAxis.Minimum));
+                lineaA.Points.Add(new DataPoint(aVal, yAxis.Maximum));
+                modelo.Series.Add(lineaA);
+
+                // Línea vertical en b (todo el alto visible)
+                var lineaB = new LineSeries { Color = OxyColors.Green, StrokeThickness = 2 };
+                lineaB.Points.Add(new DataPoint(bVal, yAxis.Minimum));
+                lineaB.Points.Add(new DataPoint(bVal, yAxis.Maximum));
+                modelo.Series.Add(lineaB);
+
+
+                // Texto
+                var texto = new TextAnnotation
+                {
+                    Text = $"Iteración {i + 1}\nc = {cVal:0.#####}\nf(c) = {fcVal:0.#####}\nError = {errorStr}",
+                    TextPosition = new DataPoint(cVal, fcVal),
+                    Stroke = OxyColors.Transparent,
+                    TextHorizontalAlignment = OxyPlot.HorizontalAlignment.Left,
+                    TextVerticalAlignment = VerticalAlignment.Top,
+                    FontSize = 12
+                };
+                modelo.Annotations.Add(texto);
+
+                // Zoom dinámico al intervalo actual
+                margenX = (bVal - aVal) * 0.1;
+                margenY = Math.Max(1, Math.Abs(fcVal) * 1.5);
+                xAxis.Minimum = aVal - margenX;
+                xAxis.Maximum = bVal + margenX;
+                yAxis.Minimum = fcVal - margenY;
+                yAxis.Maximum = fcVal + margenY;
+
+                plotView.Invoke(new Action(() =>
+                {
+                    if (!plotView.IsDisposed)
+                        plotView.Model.InvalidatePlot(true);
+                }));
+
+                await Task.Delay(delayMs);
+            }
+        }
+
+
+        /// <summary>
+        ///  Ejecuta el método de bisección.
+        /// </summary>
+        private static void EjecutarBiseccion(string funcion, double limiteA, double limiteB, double error)
         {
             ListaStrings.Clear();
 
             if (!ReemplazarEInicializarFuncion(ref funcion)) return;
+            if (!PrepararIntervalo(limiteA, limiteB)) return;
 
-            a = aInicial;
-            b = bInicial;
-            fa = EvaluarLaFuncion(a);
-            fb = EvaluarLaFuncion(b);
+            c = ObtenerValorDeCEnBiseccion();
+            fc = EvaluarLaFuncion(c);
+            errorActual = 0;
 
-            if (!ExisteRaizEnElIntervalo()) return;
-            string metodo = biseccion ? "Bisección" : "Regla Falsa";
-            PlotModel model = new PlotModel { Title = $"Animación {metodo}" };
-            LineSeries funcionSeries = new LineSeries { Title = "f(x)", Color = OxyColors.Blue };
+            string lado = (fa * fc > 0) ? "DER" : "IZQ";
+            ListaStrings.Add(ConstruirFilaBiseccion(a, b, c, fa, fc, fa * fc, lado, "Null"));
 
-            
-            for (double x = a - 1; x <= b + 1; x += 0.01)
-            {
-                funcionSeries.Points.Add(new DataPoint(x, EvaluarLaFuncion(x)));
-            }
-            model.Series.Add(funcionSeries);
-
-            
-            model.Axes.Add(new LinearAxis { Position = AxisPosition.Bottom, Title = "x", Minimum = a - 1, Maximum = b + 1 });
-            model.Axes.Add(new LinearAxis { Position = AxisPosition.Left, Title = "f(x)" });
-
-            plotView.Invoke(new Action(() => plotView.Model = model));
+            if (SeEncontroRaizExacta()) return;
 
             do
             {
-                c = biseccion ? ObtenerValorDeCEnBiseccion() : ObtenerValorDeCEnReglaFalsa();
-                fc = EvaluarLaFuncion(c);
-                errorActual = Math.Abs((b - a) / 2);
-
-               
-                var marker = new ScatterSeries
-                {
-                    MarkerType = MarkerType.Circle,
-                    MarkerFill = OxyColors.Red,
-                    MarkerSize = 5,
-                    Title = $"Iteración"
-                };
-                marker.Points.Add(new ScatterPoint(c, fc));
-                model.Series.Add(marker);
-
-                
-                var lineaVertical = new LineSeries { Color = OxyColors.Gray, StrokeThickness = 1 };
-                lineaVertical.Points.Add(new DataPoint(c, -10));
-                lineaVertical.Points.Add(new DataPoint(c, 10));
-                model.Series.Add(lineaVertical);
-
-                plotView.Invoke(new Action(() => plotView.Model = model));
-                await Task.Delay(delayMs);
-
-                if (fc == 0) break;
-
-                if (fa * fc < 0)
-                    b = c;
-                else
-                    a = c;
-
-                fa = EvaluarLaFuncion(a);
-                fb = EvaluarLaFuncion(b);
-
-            } while (errorActual > tolerancia);
+                RealizarIteracionBiseccion(ref lado);
+                ListaStrings.Add(ConstruirFilaBiseccion(a, b, c, fa, fc, fa * fc, lado, errorActual.ToString("0.######")));
+            }
+            while (errorActual >= error);
         }
+        /// <summary>
+        ///  Ejecuta el método de Regla Falsa.
+        /// </summary>
+        private static void EjecutarReglaFalsa(string funcion, double limiteA, double limiteB, double error)
+        {
+            ListaStrings.Clear();
+
+            if (!ReemplazarEInicializarFuncion(ref funcion)) return;
+            if (!PrepararIntervalo(limiteA, limiteB)) return;
+
+            c = ObtenerValorDeCEnReglaFalsa();
+            fc = EvaluarLaFuncion(c);
+            errorActual = 0;
+
+            string lado = (fa * fc > 0) ? "DER" : "IZQ";
+            ListaStrings.Add(ConstruirFilaReglaFalsa(a, b, c, fa, fb, fc, lado, "Null"));
+
+            if (SeEncontroRaizExacta()) return;
+
+            do
+            {
+                RealizarIteracionReglaFalsa(ref lado);
+                ListaStrings.Add(ConstruirFilaReglaFalsa(a, b, c, fa, fb, fc, lado, errorActual.ToString("0.######")));
+            }
+            while (errorActual >= error);
+        }
+
     }
 }
