@@ -857,7 +857,7 @@ namespace Metodos_Numeros
             else
                 errorActual = Math.Abs((cAnterior - c) / c);
         }
-        public static async Task AnimarBiseccionAsync(PlotView plotView, string funcion, double aInicial, double bInicial, double tolerancia, int delayMs = 1000)
+        public static async Task AnimacionAsync(PlotView plotView, string funcion, double aInicial, double bInicial, double tolerancia, int delayMs = 1000, bool biseccion = true)
         {
             ListaStrings.Clear();
 
@@ -869,18 +869,18 @@ namespace Metodos_Numeros
             fb = EvaluarLaFuncion(b);
 
             if (!ExisteRaizEnElIntervalo()) return;
-
-            PlotModel model = new PlotModel { Title = "Animación Bisección" };
+            string metodo = biseccion ? "Bisección" : "Regla Falsa";
+            PlotModel model = new PlotModel { Title = $"Animación {metodo}" };
             LineSeries funcionSeries = new LineSeries { Title = "f(x)", Color = OxyColors.Blue };
 
-            // Dibujar función
+            
             for (double x = a - 1; x <= b + 1; x += 0.01)
             {
                 funcionSeries.Points.Add(new DataPoint(x, EvaluarLaFuncion(x)));
             }
             model.Series.Add(funcionSeries);
 
-            // Ejes
+            
             model.Axes.Add(new LinearAxis { Position = AxisPosition.Bottom, Title = "x", Minimum = a - 1, Maximum = b + 1 });
             model.Axes.Add(new LinearAxis { Position = AxisPosition.Left, Title = "f(x)" });
 
@@ -888,11 +888,11 @@ namespace Metodos_Numeros
 
             do
             {
-                c = ObtenerValorDeCEnBiseccion();
+                c = biseccion ? ObtenerValorDeCEnBiseccion() : ObtenerValorDeCEnReglaFalsa();
                 fc = EvaluarLaFuncion(c);
                 errorActual = Math.Abs((b - a) / 2);
 
-                // Agregar punto actual
+               
                 var marker = new ScatterSeries
                 {
                     MarkerType = MarkerType.Circle,
@@ -903,75 +903,7 @@ namespace Metodos_Numeros
                 marker.Points.Add(new ScatterPoint(c, fc));
                 model.Series.Add(marker);
 
-                // Línea vertical en 'c'
-                var lineaVertical = new LineSeries { Color = OxyColors.Gray, StrokeThickness = 1 };
-                lineaVertical.Points.Add(new DataPoint(c, -10));
-                lineaVertical.Points.Add(new DataPoint(c, 10));
-                model.Series.Add(lineaVertical);
-
-                plotView.Invoke(new Action(() => plotView.Model = model));
-                await Task.Delay(delayMs);
-
-                if (fc == 0) break;
-
-                if (fa * fc < 0)
-                    b = c;
-                else
-                    a = c;
-
-                fa = EvaluarLaFuncion(a);
-                fb = EvaluarLaFuncion(b);
-
-            } while (errorActual > tolerancia);
-        }
-
-        public static async Task AnimarReglaFalsaAsync(PlotView plotView, string funcion, double aInicial, double bInicial, double tolerancia, int delayMs = 1000)
-        {
-            ListaStrings.Clear();
-
-            if (!ReemplazarEInicializarFuncion(ref funcion)) return;
-
-            a = aInicial;
-            b = bInicial;
-            fa = EvaluarLaFuncion(a);
-            fb = EvaluarLaFuncion(b);
-
-            if (!ExisteRaizEnElIntervalo()) return;
-
-            PlotModel model = new PlotModel { Title = "Animación Bisección" };
-            LineSeries funcionSeries = new LineSeries { Title = "f(x)", Color = OxyColors.Blue };
-
-            // Dibujar función
-            for (double x = a - 1; x <= b + 1; x += 0.01)
-            {
-                funcionSeries.Points.Add(new DataPoint(x, EvaluarLaFuncion(x)));
-            }
-            model.Series.Add(funcionSeries);
-
-            // Ejes
-            model.Axes.Add(new LinearAxis { Position = AxisPosition.Bottom, Title = "x", Minimum = a - 1, Maximum = b + 1 });
-            model.Axes.Add(new LinearAxis { Position = AxisPosition.Left, Title = "f(x)" });
-
-            plotView.Invoke(new Action(() => plotView.Model = model));
-
-            do
-            {
-                c = ObtenerValorDeCEnReglaFalsa();
-                fc = EvaluarLaFuncion(c);
-                errorActual = Math.Abs((b - a) / 2);
-
-                // Agregar punto actual
-                var marker = new ScatterSeries
-                {
-                    MarkerType = MarkerType.Circle,
-                    MarkerFill = OxyColors.Red,
-                    MarkerSize = 5,
-                    Title = $"Iteración"
-                };
-                marker.Points.Add(new ScatterPoint(c, fc));
-                model.Series.Add(marker);
-
-                // Línea vertical en 'c'
+                
                 var lineaVertical = new LineSeries { Color = OxyColors.Gray, StrokeThickness = 1 };
                 lineaVertical.Points.Add(new DataPoint(c, -10));
                 lineaVertical.Points.Add(new DataPoint(c, 10));

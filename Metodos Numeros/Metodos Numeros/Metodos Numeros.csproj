@@ -121,6 +121,12 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Animacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Animacion.Designer.cs">
+      <DependentUpon>Animacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="AyudaB.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -166,6 +172,9 @@
     <Compile Include="NumericMethods.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Animacion.resx">
+      <DependentUpon>Animacion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AyudaB.resx">
       <DependentUpon>AyudaB.cs</DependentUpon>
     </EmbeddedResource>
