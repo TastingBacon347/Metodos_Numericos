@@ -13,6 +13,7 @@ using System.Drawing;
 using System.Text;
 using System.Data;
 using Newtonsoft.Json.Linq;
+using System.Threading.Tasks;
 
 
 namespace Metodos_Numeros
@@ -20,6 +21,7 @@ namespace Metodos_Numeros
     public static class NumericMethods
     {
         static Expression exp;
+        static string funcionOriginal;
         static double a, b, fa, fb, c, fc, cAnterior, errorActual;
         static List<string[]> listaStrings = new List<string[]>();
         static double[][] valores;
@@ -119,14 +121,14 @@ namespace Metodos_Numeros
                 string LiExpandido = ListaStrings[i][4];
 
                 // Obtener coeficientes desde string
-                List<double> coeficientesLi = ExtraerCoeficientesDesdeString(LiExpandido);
+                List<double> coeficientes = ExtraerCoeficientesDesdeString(LiExpandido);
 
                 // Multiplicar por y_i
-                for (int j = 0; j < coeficientesLi.Count; j++)
-                    coeficientesLi[j] *= yi;
+                for (int j = 0; j < coeficientes.Count; j++)
+                    coeficientes[j] *= yi;
 
                 // Sumar al polinomio final
-                polinomioFinal = SumarPolinomios(polinomioFinal, coeficientesLi);
+                polinomioFinal = SumarPolinomios(polinomioFinal, coeficientes);
             }
 
             return FormatoPolinomio(polinomioFinal, "P(x)");
@@ -282,6 +284,7 @@ namespace Metodos_Numeros
         {
             PlotView plotView = new PlotView();
             plotView.Dock = DockStyle.Fill;
+            funcionOriginal = funcion;
             if (!ReemplazarEInicializarFuncion(ref funcion))
                 return null;
             a = limiteA;
@@ -297,7 +300,7 @@ namespace Metodos_Numeros
                 linea.Points.Add(new DataPoint(i, EvaluarLaFuncion(i)));
             }
 
-            PlotModel modelo = new PlotModel { Title = funcion };
+            PlotModel modelo = new PlotModel { Title = funcionOriginal };
             modelo.Series.Add(linea);
 
             var xAxis = new LinearAxis
@@ -342,15 +345,82 @@ namespace Metodos_Numeros
             modelo.Axes.Add(xAxis);
             modelo.Axes.Add(yAxis);
             plotView.Model = modelo;
-            linea.Title = funcion;
+            linea.Title = funcionOriginal;
             linea.Color = OxyColors.Blue;
             linea.StrokeThickness = 2;
             return plotView;
         }
+        /// <summary>
+        ///     Genera una gráfica del polinomio interpolante a partir de los puntos dados.
+        /// </summary>
+        public static PlotView GraficarPolinomioInterpolante(Point[] puntos, bool usarNewton = false)
+        {
+            List<double> coef;
+            string polinomio;
+            if (usarNewton)
+            {
+                polinomio = ObtenerPolinomioNewtonSimplificado();
+            }
+            else
+            {
+                polinomio = ObtenerPolinomioLagrangeSimplificado();
+    
+            }
+            coef = ExtraerCoeficientesDesdeString(polinomio);
+            
+
+            double minX = puntos.Min(p => p.X);
+            double maxX = puntos.Max(p => p.X);
+            double paso = (maxX - minX) / 100.0;
+
+            
+            PlotView plotView = new PlotView { Dock = DockStyle.Fill };
+            LineSeries serie = new LineSeries { Title = "Interpolante", StrokeThickness = 2, Color = OxyColors.SteelBlue };
+
+            for (double x = minX; x <= maxX; x += paso)
+                serie.Points.Add(new DataPoint(x, EvaluarPolinomio(coef, x)));
+
+            
+            ScatterSeries puntosOriginales = new ScatterSeries
+            {
+                MarkerType = MarkerType.Circle,
+                MarkerSize = 4,
+                MarkerFill = OxyColors.Red,
+                Title = "Puntos"
+            };
+
+            foreach (var p in puntos)
+                puntosOriginales.Points.Add(new ScatterPoint(p.X, p.Y));
+
+           
+            PlotModel modelo = new PlotModel { Title = "Polinomio Interpolante" };
+            modelo.Series.Add(serie);
+            modelo.Series.Add(puntosOriginales);
+            modelo.Axes.Add(new LinearAxis { Position = AxisPosition.Bottom, Title = "x", Minimum = minX, Maximum = maxX });
+            modelo.Axes.Add(new LinearAxis { Position = AxisPosition.Left, Title = "y" });
+
+            plotView.Model = modelo;
+            return plotView;
+        }
+
 
         // -------------------------------------------------------------
         //                     MÉTODOS AUXILIARES
         // -------------------------------------------------------------
+
+        /// <summary>
+        /// Evalúa la función en un punto x.
+        /// </summary>
+        private static double EvaluarPolinomio(List<double> coeficientes, double x)
+        {
+            double resultado = 0;
+            for (int i = 0; i < coeficientes.Count; i++)
+            {
+                resultado += coeficientes[i] * Math.Pow(x, i);
+            }
+            return resultado;
+        }
+
         /// <summary>
         /// Extrae los coeficientes de un polinomio dado en forma de cadena.
         /// </summary>
@@ -405,7 +475,7 @@ namespace Metodos_Numeros
         /// <summary>
         /// Devuelve el polinomio interpolante de Lagrange sin simplificar, en forma de suma de términos y_i * L_i(x).
         /// </summary>
-        public static string ObtenerPolinomioLagrange()
+        private static string ObtenerPolinomioLagrange()
         {
             StringBuilder polinomio = new StringBuilder("P(x) = ");
 
@@ -787,6 +857,140 @@ namespace Metodos_Numeros
             else
                 errorActual = Math.Abs((cAnterior - c) / c);
         }
+        public static async Task AnimarBiseccionAsync(PlotView plotView, string funcion, double aInicial, double bInicial, double tolerancia, int delayMs = 1000)
+        {
+            ListaStrings.Clear();
 
+            if (!ReemplazarEInicializarFuncion(ref funcion)) return;
+
+            a = aInicial;
+            b = bInicial;
+            fa = EvaluarLaFuncion(a);
+            fb = EvaluarLaFuncion(b);
+
+            if (!ExisteRaizEnElIntervalo()) return;
+
+            PlotModel model = new PlotModel { Title = "Animación Bisección" };
+            LineSeries funcionSeries = new LineSeries { Title = "f(x)", Color = OxyColors.Blue };
+
+            // Dibujar función
+            for (double x = a - 1; x <= b + 1; x += 0.01)
+            {
+                funcionSeries.Points.Add(new DataPoint(x, EvaluarLaFuncion(x)));
+            }
+            model.Series.Add(funcionSeries);
+
+            // Ejes
+            model.Axes.Add(new LinearAxis { Position = AxisPosition.Bottom, Title = "x", Minimum = a - 1, Maximum = b + 1 });
+            model.Axes.Add(new LinearAxis { Position = AxisPosition.Left, Title = "f(x)" });
+
+            plotView.Invoke(new Action(() => plotView.Model = model));
+
+            do
+            {
+                c = ObtenerValorDeCEnBiseccion();
+                fc = EvaluarLaFuncion(c);
+                errorActual = Math.Abs((b - a) / 2);
+
+                // Agregar punto actual
+                var marker = new ScatterSeries
+                {
+                    MarkerType = MarkerType.Circle,
+                    MarkerFill = OxyColors.Red,
+                    MarkerSize = 5,
+                    Title = $"Iteración"
+                };
+                marker.Points.Add(new ScatterPoint(c, fc));
+                model.Series.Add(marker);
+
+                // Línea vertical en 'c'
+                var lineaVertical = new LineSeries { Color = OxyColors.Gray, StrokeThickness = 1 };
+                lineaVertical.Points.Add(new DataPoint(c, -10));
+                lineaVertical.Points.Add(new DataPoint(c, 10));
+                model.Series.Add(lineaVertical);
+
+                plotView.Invoke(new Action(() => plotView.Model = model));
+                await Task.Delay(delayMs);
+
+                if (fc == 0) break;
+
+                if (fa * fc < 0)
+                    b = c;
+                else
+                    a = c;
+
+                fa = EvaluarLaFuncion(a);
+                fb = EvaluarLaFuncion(b);
+
+            } while (errorActual > tolerancia);
+        }
+
+        public static async Task AnimarReglaFalsaAsync(PlotView plotView, string funcion, double aInicial, double bInicial, double tolerancia, int delayMs = 1000)
+        {
+            ListaStrings.Clear();
+
+            if (!ReemplazarEInicializarFuncion(ref funcion)) return;
+
+            a = aInicial;
+            b = bInicial;
+            fa = EvaluarLaFuncion(a);
+            fb = EvaluarLaFuncion(b);
+
+            if (!ExisteRaizEnElIntervalo()) return;
+
+            PlotModel model = new PlotModel { Title = "Animación Bisección" };
+            LineSeries funcionSeries = new LineSeries { Title = "f(x)", Color = OxyColors.Blue };
+
+            // Dibujar función
+            for (double x = a - 1; x <= b + 1; x += 0.01)
+            {
+                funcionSeries.Points.Add(new DataPoint(x, EvaluarLaFuncion(x)));
+            }
+            model.Series.Add(funcionSeries);
+
+            // Ejes
+            model.Axes.Add(new LinearAxis { Position = AxisPosition.Bottom, Title = "x", Minimum = a - 1, Maximum = b + 1 });
+            model.Axes.Add(new LinearAxis { Position = AxisPosition.Left, Title = "f(x)" });
+
+            plotView.Invoke(new Action(() => plotView.Model = model));
+
+            do
+            {
+                c = ObtenerValorDeCEnReglaFalsa();
+                fc = EvaluarLaFuncion(c);
+                errorActual = Math.Abs((b - a) / 2);
+
+                // Agregar punto actual
+                var marker = new ScatterSeries
+                {
+                    MarkerType = MarkerType.Circle,
+                    MarkerFill = OxyColors.Red,
+                    MarkerSize = 5,
+                    Title = $"Iteración"
+                };
+                marker.Points.Add(new ScatterPoint(c, fc));
+                model.Series.Add(marker);
+
+                // Línea vertical en 'c'
+                var lineaVertical = new LineSeries { Color = OxyColors.Gray, StrokeThickness = 1 };
+                lineaVertical.Points.Add(new DataPoint(c, -10));
+                lineaVertical.Points.Add(new DataPoint(c, 10));
+                model.Series.Add(lineaVertical);
+
+                plotView.Invoke(new Action(() => plotView.Model = model));
+                await Task.Delay(delayMs);
+
+                if (fc == 0) break;
+
+                if (fa * fc < 0)
+                    b = c;
+                else
+                    a = c;
+
+                fa = EvaluarLaFuncion(a);
+                fb = EvaluarLaFuncion(b);
+
+            } while (errorActual > tolerancia);
+        }
     }
 }
