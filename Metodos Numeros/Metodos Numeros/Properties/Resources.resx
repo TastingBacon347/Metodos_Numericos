@@ -118,76 +118,91 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="arrow_return_left_icon_160458" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\arrow_return_left_icon_160458.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Paso 1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Paso 1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Paso2Bis1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Paso2Bis1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="istockphoto-1332100919-612x612" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\istockphoto-1332100919-612x612.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Regla Falsa.drawio" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Regla Falsa.drawio.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ayuda" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ayuda.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Paso2Bis" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Paso2Bis.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="stock-helpagent_104167" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\stock-helpagent_104167.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="cru" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\cru.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Paso1Regla" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Paso1Regla.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Paso2Regla" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Paso2Regla.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Biseccion.drawio" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Biseccion.drawio.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Paso4Bis" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Paso4Bis.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Paso3RF" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Paso3RF.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="persona1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\persona1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="La Chica" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\La Chica.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Paso3Regla" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Paso3Regla.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="bisection" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bisection.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="inisio1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\inisio1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="persona" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\persona.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Biseccion.drawio" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Biseccion.drawio.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="power-off-icon_f" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\power-off-icon_f;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="stock-helpagent_104167" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\stock-helpagent_104167.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Paso 1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Paso 1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LagrangeInterpolatingPoly_900" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LagrangeInterpolatingPoly_900.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Paso4Bis" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Paso4Bis.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="arrow_return_left_icon_160458" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\arrow_return_left_icon_160458.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Paso2Bis1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Paso2Bis1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="newton-backward-table" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\newton-backward-table.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Regla Falsa.drawio" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Regla Falsa.drawio.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="inisio" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\inisio.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Paso3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Paso3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="inisio" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\inisio.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Paso3Regla" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Paso3Regla.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Paso3RF" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Paso3RF.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="La Chica" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\La Chica.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="power-off-icon_f" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\power-off-icon_f;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="False_position_method" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\False_position_method.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="cru" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cru.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Paso2Regla" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Paso2Regla.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Paso1Regla" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Paso1Regla.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ayuda" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ayuda.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="metodos" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\metodos.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="inisio-removebg-preview" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\inisio-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="persona1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\persona1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="istockphoto-1332100919-612x612" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\istockphoto-1332100919-612x612.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="persona" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\persona.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Paso2Bis" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Paso2Bis.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="newton-backward-table1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\newton-backward-table.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

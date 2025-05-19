@@ -18,6 +18,9 @@ namespace Metodos_Numeros
         {
             InitializeComponent();
             ConfigurarInterfaz();
+            DGVLagrange.ScrollBars = ScrollBars.Both;
+            DGVLagrange.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+
         }
         private void ConfigurarInterfaz()
         {
@@ -145,6 +148,11 @@ namespace Metodos_Numeros
                 Menu.Show();
                 this.Close();
             }
+        }
+
+        private void Lagrange_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

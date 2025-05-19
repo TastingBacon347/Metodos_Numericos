@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Metodo_De_Regla_Falsa));
             this.DGVReglaFalsa = new System.Windows.Forms.DataGridView();
             this.lblMetodoReglaFalsa = new System.Windows.Forms.Label();
@@ -45,7 +45,6 @@
             this.txtFuncionReglaFGuna = new Guna.UI2.WinForms.Guna2TextBox();
             this.SinBordes = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.MoverForms = new Guna.UI2.WinForms.Guna2DragControl(this.components);
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.btnRegresar = new Guna.UI2.WinForms.Guna2ImageButton();
             this.btnAyuda = new Guna.UI2.WinForms.Guna2ImageButton();
             this.btnCorrerMetodo = new Guna.UI2.WinForms.Guna2ImageButton();
@@ -58,7 +57,6 @@
             this.MensajeGunaResultado = new Guna.UI2.WinForms.Guna2MessageDialog();
             this.MensajeGunaDatosFaltantes = new Guna.UI2.WinForms.Guna2MessageDialog();
             ((System.ComponentModel.ISupportInitialize)(this.DGVReglaFalsa)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // DGVReglaFalsa
@@ -67,37 +65,36 @@
             this.DGVReglaFalsa.AllowUserToDeleteRows = false;
             this.DGVReglaFalsa.AllowUserToResizeColumns = false;
             this.DGVReglaFalsa.AllowUserToResizeRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Beige;
-            this.DGVReglaFalsa.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Beige;
+            this.DGVReglaFalsa.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.DGVReglaFalsa.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DGVReglaFalsa.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.DGVReglaFalsa.BackgroundColor = System.Drawing.Color.Cornsilk;
             this.DGVReglaFalsa.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.Goldenrod;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGVReglaFalsa.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Goldenrod;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGVReglaFalsa.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.DGVReglaFalsa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.Gold;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DGVReglaFalsa.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Gold;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DGVReglaFalsa.DefaultCellStyle = dataGridViewCellStyle3;
             this.DGVReglaFalsa.GridColor = System.Drawing.Color.Cornsilk;
-            this.DGVReglaFalsa.Location = new System.Drawing.Point(16, 290);
-            this.DGVReglaFalsa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DGVReglaFalsa.Location = new System.Drawing.Point(12, 236);
             this.DGVReglaFalsa.Name = "DGVReglaFalsa";
             this.DGVReglaFalsa.ReadOnly = true;
             this.DGVReglaFalsa.RowHeadersVisible = false;
             this.DGVReglaFalsa.RowHeadersWidth = 51;
-            this.DGVReglaFalsa.Size = new System.Drawing.Size(919, 292);
+            this.DGVReglaFalsa.Size = new System.Drawing.Size(689, 237);
             this.DGVReglaFalsa.TabIndex = 82;
             this.DGVReglaFalsa.Visible = false;
             // 
@@ -106,50 +103,45 @@
             this.lblMetodoReglaFalsa.AutoSize = true;
             this.lblMetodoReglaFalsa.Font = new System.Drawing.Font("MS PGothic", 26.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMetodoReglaFalsa.ForeColor = System.Drawing.Color.Black;
-            this.lblMetodoReglaFalsa.Location = new System.Drawing.Point(16, 11);
-            this.lblMetodoReglaFalsa.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblMetodoReglaFalsa.Location = new System.Drawing.Point(12, 9);
             this.lblMetodoReglaFalsa.Name = "lblMetodoReglaFalsa";
-            this.lblMetodoReglaFalsa.Size = new System.Drawing.Size(433, 44);
+            this.lblMetodoReglaFalsa.Size = new System.Drawing.Size(348, 35);
             this.lblMetodoReglaFalsa.TabIndex = 74;
             this.lblMetodoReglaFalsa.Text = "Metodo de Regla Falsa";
             // 
             // lblErrorRF
             // 
             this.lblErrorRF.Font = new System.Drawing.Font("Bookman Old Style", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblErrorRF.Location = new System.Drawing.Point(20, 235);
-            this.lblErrorRF.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblErrorRF.Location = new System.Drawing.Point(15, 191);
             this.lblErrorRF.Name = "lblErrorRF";
-            this.lblErrorRF.Size = new System.Drawing.Size(267, 48);
+            this.lblErrorRF.Size = new System.Drawing.Size(200, 39);
             this.lblErrorRF.TabIndex = 106;
             this.lblErrorRF.Text = "\r\nIngrese el error deseado:\r\n";
             // 
             // lblParametroBRF
             // 
             this.lblParametroBRF.Font = new System.Drawing.Font("Bookman Old Style", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblParametroBRF.Location = new System.Drawing.Point(19, 177);
-            this.lblParametroBRF.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblParametroBRF.Location = new System.Drawing.Point(14, 144);
             this.lblParametroBRF.Name = "lblParametroBRF";
-            this.lblParametroBRF.Size = new System.Drawing.Size(231, 48);
+            this.lblParametroBRF.Size = new System.Drawing.Size(173, 39);
             this.lblParametroBRF.TabIndex = 105;
             this.lblParametroBRF.Text = "\r\nIngrese parametro b:\r\n";
             // 
             // lvlParametroARF
             // 
             this.lvlParametroARF.Font = new System.Drawing.Font("Bookman Old Style", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lvlParametroARF.Location = new System.Drawing.Point(19, 126);
-            this.lvlParametroARF.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lvlParametroARF.Location = new System.Drawing.Point(14, 102);
             this.lvlParametroARF.Name = "lvlParametroARF";
-            this.lvlParametroARF.Size = new System.Drawing.Size(231, 48);
+            this.lvlParametroARF.Size = new System.Drawing.Size(173, 39);
             this.lvlParametroARF.TabIndex = 104;
             this.lvlParametroARF.Text = "\r\nIngrese parametro a:\r\n";
             // 
             // lblFuncionRF
             // 
             this.lblFuncionRF.Font = new System.Drawing.Font("Bookman Old Style", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFuncionRF.Location = new System.Drawing.Point(19, 68);
-            this.lblFuncionRF.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblFuncionRF.Location = new System.Drawing.Point(14, 55);
             this.lblFuncionRF.Name = "lblFuncionRF";
-            this.lblFuncionRF.Size = new System.Drawing.Size(208, 48);
+            this.lblFuncionRF.Size = new System.Drawing.Size(156, 39);
             this.lblFuncionRF.TabIndex = 103;
             this.lblFuncionRF.Text = "\r\nIngrese la funcion:\r\n\r\n";
             this.lblFuncionRF.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -160,7 +152,7 @@
             this.txtErrorReglaFGuna.AutoRoundedCorners = true;
             this.txtErrorReglaFGuna.BackColor = System.Drawing.Color.Transparent;
             this.txtErrorReglaFGuna.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.txtErrorReglaFGuna.BorderRadius = 15;
+            this.txtErrorReglaFGuna.BorderRadius = 12;
             this.txtErrorReglaFGuna.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtErrorReglaFGuna.DefaultText = "";
             this.txtErrorReglaFGuna.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -170,12 +162,12 @@
             this.txtErrorReglaFGuna.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtErrorReglaFGuna.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtErrorReglaFGuna.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtErrorReglaFGuna.Location = new System.Drawing.Point(295, 250);
-            this.txtErrorReglaFGuna.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtErrorReglaFGuna.Location = new System.Drawing.Point(221, 203);
+            this.txtErrorReglaFGuna.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtErrorReglaFGuna.Name = "txtErrorReglaFGuna";
             this.txtErrorReglaFGuna.PlaceholderText = "";
             this.txtErrorReglaFGuna.SelectedText = "";
-            this.txtErrorReglaFGuna.Size = new System.Drawing.Size(88, 33);
+            this.txtErrorReglaFGuna.Size = new System.Drawing.Size(66, 27);
             this.txtErrorReglaFGuna.TabIndex = 102;
             // 
             // txtParametroBReglaFGuna
@@ -184,7 +176,7 @@
             this.txtParametroBReglaFGuna.AutoRoundedCorners = true;
             this.txtParametroBReglaFGuna.BackColor = System.Drawing.Color.Transparent;
             this.txtParametroBReglaFGuna.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.txtParametroBReglaFGuna.BorderRadius = 15;
+            this.txtParametroBReglaFGuna.BorderRadius = 12;
             this.txtParametroBReglaFGuna.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtParametroBReglaFGuna.DefaultText = "";
             this.txtParametroBReglaFGuna.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -194,12 +186,12 @@
             this.txtParametroBReglaFGuna.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtParametroBReglaFGuna.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtParametroBReglaFGuna.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtParametroBReglaFGuna.Location = new System.Drawing.Point(295, 192);
-            this.txtParametroBReglaFGuna.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtParametroBReglaFGuna.Location = new System.Drawing.Point(221, 156);
+            this.txtParametroBReglaFGuna.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtParametroBReglaFGuna.Name = "txtParametroBReglaFGuna";
             this.txtParametroBReglaFGuna.PlaceholderText = "";
             this.txtParametroBReglaFGuna.SelectedText = "";
-            this.txtParametroBReglaFGuna.Size = new System.Drawing.Size(88, 33);
+            this.txtParametroBReglaFGuna.Size = new System.Drawing.Size(66, 27);
             this.txtParametroBReglaFGuna.TabIndex = 101;
             // 
             // txtParametroAReglaFGuna
@@ -208,7 +200,7 @@
             this.txtParametroAReglaFGuna.AutoRoundedCorners = true;
             this.txtParametroAReglaFGuna.BackColor = System.Drawing.Color.Transparent;
             this.txtParametroAReglaFGuna.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.txtParametroAReglaFGuna.BorderRadius = 15;
+            this.txtParametroAReglaFGuna.BorderRadius = 12;
             this.txtParametroAReglaFGuna.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtParametroAReglaFGuna.DefaultText = "";
             this.txtParametroAReglaFGuna.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -218,12 +210,12 @@
             this.txtParametroAReglaFGuna.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtParametroAReglaFGuna.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtParametroAReglaFGuna.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtParametroAReglaFGuna.Location = new System.Drawing.Point(295, 140);
-            this.txtParametroAReglaFGuna.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtParametroAReglaFGuna.Location = new System.Drawing.Point(221, 114);
+            this.txtParametroAReglaFGuna.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtParametroAReglaFGuna.Name = "txtParametroAReglaFGuna";
             this.txtParametroAReglaFGuna.PlaceholderText = "";
             this.txtParametroAReglaFGuna.SelectedText = "";
-            this.txtParametroAReglaFGuna.Size = new System.Drawing.Size(88, 33);
+            this.txtParametroAReglaFGuna.Size = new System.Drawing.Size(66, 27);
             this.txtParametroAReglaFGuna.TabIndex = 100;
             // 
             // txtFuncionReglaFGuna
@@ -232,7 +224,7 @@
             this.txtFuncionReglaFGuna.AutoRoundedCorners = true;
             this.txtFuncionReglaFGuna.BackColor = System.Drawing.Color.Transparent;
             this.txtFuncionReglaFGuna.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.txtFuncionReglaFGuna.BorderRadius = 15;
+            this.txtFuncionReglaFGuna.BorderRadius = 12;
             this.txtFuncionReglaFGuna.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtFuncionReglaFGuna.DefaultText = "";
             this.txtFuncionReglaFGuna.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -242,12 +234,12 @@
             this.txtFuncionReglaFGuna.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtFuncionReglaFGuna.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtFuncionReglaFGuna.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtFuncionReglaFGuna.Location = new System.Drawing.Point(233, 82);
-            this.txtFuncionReglaFGuna.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtFuncionReglaFGuna.Location = new System.Drawing.Point(175, 67);
+            this.txtFuncionReglaFGuna.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtFuncionReglaFGuna.Name = "txtFuncionReglaFGuna";
             this.txtFuncionReglaFGuna.PlaceholderText = "";
             this.txtFuncionReglaFGuna.SelectedText = "";
-            this.txtFuncionReglaFGuna.Size = new System.Drawing.Size(213, 33);
+            this.txtFuncionReglaFGuna.Size = new System.Drawing.Size(160, 27);
             this.txtFuncionReglaFGuna.TabIndex = 99;
             // 
             // SinBordes
@@ -262,23 +254,6 @@
             this.MoverForms.TargetControl = this;
             this.MoverForms.TransparentWhileDrag = false;
             // 
-            // guna2PictureBox1
-            // 
-            this.guna2PictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox1.BackgroundImage = global::Metodos_Numeros.Properties.Resources.La_Chica;
-            this.guna2PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.guna2PictureBox1.ErrorImage = global::Metodos_Numeros.Properties.Resources.La_Chica;
-            this.guna2PictureBox1.Image = global::Metodos_Numeros.Properties.Resources.La_Chica;
-            this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.InitialImage = global::Metodos_Numeros.Properties.Resources.La_Chica;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(912, 113);
-            this.guna2PictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(147, 91);
-            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2PictureBox1.TabIndex = 107;
-            this.guna2PictureBox1.TabStop = false;
-            // 
             // btnRegresar
             // 
             this.btnRegresar.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
@@ -286,11 +261,10 @@
             this.btnRegresar.Image = global::Metodos_Numeros.Properties.Resources.arrow_return_left_icon_160458;
             this.btnRegresar.ImageOffset = new System.Drawing.Point(0, 0);
             this.btnRegresar.ImageRotate = 0F;
-            this.btnRegresar.Location = new System.Drawing.Point(965, 503);
-            this.btnRegresar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRegresar.Location = new System.Drawing.Point(724, 409);
             this.btnRegresar.Name = "btnRegresar";
             this.btnRegresar.PressedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.btnRegresar.Size = new System.Drawing.Size(85, 66);
+            this.btnRegresar.Size = new System.Drawing.Size(64, 54);
             this.btnRegresar.TabIndex = 98;
             this.btnRegresar.Click += new System.EventHandler(this.guna2ImageButton1_Click);
             // 
@@ -301,11 +275,10 @@
             this.btnAyuda.Image = global::Metodos_Numeros.Properties.Resources.stock_helpagent_104167;
             this.btnAyuda.ImageOffset = new System.Drawing.Point(0, 0);
             this.btnAyuda.ImageRotate = 0F;
-            this.btnAyuda.Location = new System.Drawing.Point(980, -1);
-            this.btnAyuda.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAyuda.Location = new System.Drawing.Point(735, -1);
             this.btnAyuda.Name = "btnAyuda";
             this.btnAyuda.PressedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.btnAyuda.Size = new System.Drawing.Size(85, 84);
+            this.btnAyuda.Size = new System.Drawing.Size(64, 68);
             this.btnAyuda.TabIndex = 88;
             this.btnAyuda.TabStop = false;
             this.btnAyuda.Click += new System.EventHandler(this.btnAyuda_Click);
@@ -319,11 +292,10 @@
             this.btnCorrerMetodo.ImageOffset = new System.Drawing.Point(0, 0);
             this.btnCorrerMetodo.ImageRotate = 0F;
             this.btnCorrerMetodo.ImageSize = new System.Drawing.Size(250, 250);
-            this.btnCorrerMetodo.Location = new System.Drawing.Point(527, 116);
-            this.btnCorrerMetodo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCorrerMetodo.Location = new System.Drawing.Point(395, 94);
             this.btnCorrerMetodo.Name = "btnCorrerMetodo";
             this.btnCorrerMetodo.PressedState.ImageSize = new System.Drawing.Size(250, 250);
-            this.btnCorrerMetodo.Size = new System.Drawing.Size(272, 110);
+            this.btnCorrerMetodo.Size = new System.Drawing.Size(204, 89);
             this.btnCorrerMetodo.TabIndex = 111;
             this.btnCorrerMetodo.Click += new System.EventHandler(this.btnCorrerMetodo_Click);
             // 
@@ -339,10 +311,9 @@
             this.btnGrafica.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.btnGrafica.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnGrafica.ForeColor = System.Drawing.Color.White;
-            this.btnGrafica.Location = new System.Drawing.Point(943, 428);
-            this.btnGrafica.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnGrafica.Location = new System.Drawing.Point(707, 348);
             this.btnGrafica.Name = "btnGrafica";
-            this.btnGrafica.Size = new System.Drawing.Size(123, 68);
+            this.btnGrafica.Size = new System.Drawing.Size(92, 55);
             this.btnGrafica.TabIndex = 113;
             this.btnGrafica.Text = "Generar Gráfica";
             this.btnGrafica.Visible = false;
@@ -360,10 +331,9 @@
             this.btnAnimacion.FillColor2 = System.Drawing.Color.MediumVioletRed;
             this.btnAnimacion.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnAnimacion.ForeColor = System.Drawing.Color.White;
-            this.btnAnimacion.Location = new System.Drawing.Point(943, 327);
-            this.btnAnimacion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAnimacion.Location = new System.Drawing.Point(707, 266);
             this.btnAnimacion.Name = "btnAnimacion";
-            this.btnAnimacion.Size = new System.Drawing.Size(123, 68);
+            this.btnAnimacion.Size = new System.Drawing.Size(92, 55);
             this.btnAnimacion.TabIndex = 112;
             this.btnAnimacion.Text = "Animación";
             this.btnAnimacion.Visible = false;
@@ -425,15 +395,14 @@
             // 
             // Metodo_De_Regla_Falsa
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Cornsilk;
-            this.ClientSize = new System.Drawing.Size(1067, 585);
+            this.ClientSize = new System.Drawing.Size(800, 475);
             this.ControlBox = false;
             this.Controls.Add(this.btnGrafica);
             this.Controls.Add(this.btnAnimacion);
             this.Controls.Add(this.btnCorrerMetodo);
-            this.Controls.Add(this.guna2PictureBox1);
             this.Controls.Add(this.lblErrorRF);
             this.Controls.Add(this.lblParametroBRF);
             this.Controls.Add(this.lvlParametroARF);
@@ -448,13 +417,11 @@
             this.Controls.Add(this.lblMetodoReglaFalsa);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Metodo_De_Regla_Falsa";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Metodo de Regla Falsa";
             this.Load += new System.EventHandler(this.Form3_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DGVReglaFalsa)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -473,7 +440,6 @@
         private Guna.UI2.WinForms.Guna2TextBox txtParametroBReglaFGuna;
         private Guna.UI2.WinForms.Guna2TextBox txtParametroAReglaFGuna;
         private Guna.UI2.WinForms.Guna2TextBox txtFuncionReglaFGuna;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         private Guna.UI2.WinForms.Guna2BorderlessForm SinBordes;
         private Guna.UI2.WinForms.Guna2DragControl MoverForms;
         private Guna.UI2.WinForms.Guna2ImageButton btnCorrerMetodo;

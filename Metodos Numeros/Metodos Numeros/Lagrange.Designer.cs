@@ -29,15 +29,14 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Lagrange));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.PanelBlanco = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.DGVLagrange = new System.Windows.Forms.DataGridView();
             this.DGVEntrada = new System.Windows.Forms.DataGridView();
             this.btnGrafica = new Guna.UI2.WinForms.Guna2Button();
             this.txtPoliSimp = new System.Windows.Forms.TextBox();
@@ -62,9 +61,10 @@
             this.ArrastrasPagina = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.ElipseNaranja = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.ArrastraLateral = new Guna.UI2.WinForms.Guna2DragControl(this.components);
+            this.DGVLagrange = new System.Windows.Forms.DataGridView();
             this.PanelBlanco.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DGVLagrange)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DGVEntrada)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVLagrange)).BeginInit();
             this.SuspendLayout();
             // 
             // PanelBlanco
@@ -89,51 +89,10 @@
             this.PanelBlanco.Controls.Add(this.lblY);
             this.PanelBlanco.FillColor = System.Drawing.Color.White;
             this.PanelBlanco.FillColor2 = System.Drawing.Color.White;
-            this.PanelBlanco.Location = new System.Drawing.Point(16, 105);
-            this.PanelBlanco.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.PanelBlanco.Location = new System.Drawing.Point(12, 85);
             this.PanelBlanco.Name = "PanelBlanco";
-            this.PanelBlanco.Size = new System.Drawing.Size(1032, 686);
+            this.PanelBlanco.Size = new System.Drawing.Size(774, 557);
             this.PanelBlanco.TabIndex = 109;
-            // 
-            // DGVLagrange
-            // 
-            this.DGVLagrange.AllowUserToAddRows = false;
-            this.DGVLagrange.AllowUserToDeleteRows = false;
-            this.DGVLagrange.AllowUserToResizeColumns = false;
-            this.DGVLagrange.AllowUserToResizeRows = false;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.PowderBlue;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.PowderBlue;
-            this.DGVLagrange.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
-            this.DGVLagrange.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(90)))), ((int)(((byte)(156)))));
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(90)))), ((int)(((byte)(156)))));
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGVLagrange.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
-            this.DGVLagrange.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle15.BackColor = System.Drawing.Color.LightSkyBlue;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.LightSkyBlue;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DGVLagrange.DefaultCellStyle = dataGridViewCellStyle15;
-            this.DGVLagrange.Location = new System.Drawing.Point(524, 217);
-            this.DGVLagrange.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.DGVLagrange.MultiSelect = false;
-            this.DGVLagrange.Name = "DGVLagrange";
-            this.DGVLagrange.ReadOnly = true;
-            this.DGVLagrange.RowHeadersVisible = false;
-            this.DGVLagrange.RowHeadersWidth = 51;
-            this.DGVLagrange.Size = new System.Drawing.Size(484, 229);
-            this.DGVLagrange.TabIndex = 111;
             // 
             // DGVEntrada
             // 
@@ -141,39 +100,38 @@
             this.DGVEntrada.AllowUserToDeleteRows = false;
             this.DGVEntrada.AllowUserToResizeColumns = false;
             this.DGVEntrada.AllowUserToResizeRows = false;
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle16.BackColor = System.Drawing.Color.PowderBlue;
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.PowderBlue;
-            this.DGVEntrada.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.PowderBlue;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.PowderBlue;
+            this.DGVEntrada.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
             this.DGVEntrada.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(90)))), ((int)(((byte)(156)))));
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(90)))), ((int)(((byte)(156)))));
-            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGVEntrada.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(90)))), ((int)(((byte)(156)))));
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(90)))), ((int)(((byte)(156)))));
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGVEntrada.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.DGVEntrada.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle18.BackColor = System.Drawing.Color.LightSkyBlue;
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.LightSkyBlue;
-            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DGVEntrada.DefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.LightSkyBlue;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.LightSkyBlue;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DGVEntrada.DefaultCellStyle = dataGridViewCellStyle12;
             this.DGVEntrada.Enabled = false;
-            this.DGVEntrada.Location = new System.Drawing.Point(32, 217);
-            this.DGVEntrada.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DGVEntrada.Location = new System.Drawing.Point(24, 176);
             this.DGVEntrada.MultiSelect = false;
             this.DGVEntrada.Name = "DGVEntrada";
             this.DGVEntrada.ReadOnly = true;
             this.DGVEntrada.RowHeadersVisible = false;
             this.DGVEntrada.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            this.DGVEntrada.Size = new System.Drawing.Size(464, 229);
+            this.DGVEntrada.Size = new System.Drawing.Size(348, 186);
             this.DGVEntrada.TabIndex = 110;
             // 
             // btnGrafica
@@ -185,23 +143,22 @@
             this.btnGrafica.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnGrafica.Font = new System.Drawing.Font("Segoe UI", 14.25F);
             this.btnGrafica.ForeColor = System.Drawing.Color.White;
-            this.btnGrafica.Location = new System.Drawing.Point(741, 468);
-            this.btnGrafica.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnGrafica.Location = new System.Drawing.Point(556, 380);
             this.btnGrafica.Name = "btnGrafica";
-            this.btnGrafica.Size = new System.Drawing.Size(267, 65);
+            this.btnGrafica.Size = new System.Drawing.Size(200, 53);
             this.btnGrafica.TabIndex = 109;
             this.btnGrafica.Text = "Generar Grafica";
             this.btnGrafica.Click += new System.EventHandler(this.btnGrafica_Click);
             // 
             // txtPoliSimp
             // 
+            this.txtPoliSimp.Enabled = false;
             this.txtPoliSimp.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPoliSimp.Location = new System.Drawing.Point(26, 640);
-            this.txtPoliSimp.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPoliSimp.Location = new System.Drawing.Point(20, 520);
             this.txtPoliSimp.Multiline = true;
             this.txtPoliSimp.Name = "txtPoliSimp";
             this.txtPoliSimp.ReadOnly = true;
-            this.txtPoliSimp.Size = new System.Drawing.Size(975, 41);
+            this.txtPoliSimp.Size = new System.Drawing.Size(732, 34);
             this.txtPoliSimp.TabIndex = 107;
             this.txtPoliSimp.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -209,10 +166,9 @@
             // 
             this.lblPoliSimp.BackColor = System.Drawing.Color.Transparent;
             this.lblPoliSimp.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPoliSimp.Location = new System.Drawing.Point(35, 603);
-            this.lblPoliSimp.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblPoliSimp.Location = new System.Drawing.Point(26, 490);
             this.lblPoliSimp.Name = "lblPoliSimp";
-            this.lblPoliSimp.Size = new System.Drawing.Size(368, 33);
+            this.lblPoliSimp.Size = new System.Drawing.Size(276, 27);
             this.lblPoliSimp.TabIndex = 108;
             this.lblPoliSimp.Text = "Polinomio Simplificado:";
             // 
@@ -225,10 +181,9 @@
             this.btnCalcularG.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnCalcularG.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCalcularG.ForeColor = System.Drawing.Color.White;
-            this.btnCalcularG.Location = new System.Drawing.Point(373, 468);
-            this.btnCalcularG.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCalcularG.Location = new System.Drawing.Point(280, 380);
             this.btnCalcularG.Name = "btnCalcularG";
-            this.btnCalcularG.Size = new System.Drawing.Size(267, 65);
+            this.btnCalcularG.Size = new System.Drawing.Size(200, 53);
             this.btnCalcularG.TabIndex = 106;
             this.btnCalcularG.Text = "Calcular Polinomio";
             this.btnCalcularG.Click += new System.EventHandler(this.btnCalcularG_Click);
@@ -242,10 +197,9 @@
             this.btnLimpiarG.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnLimpiarG.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLimpiarG.ForeColor = System.Drawing.Color.White;
-            this.btnLimpiarG.Location = new System.Drawing.Point(708, 60);
-            this.btnLimpiarG.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLimpiarG.Location = new System.Drawing.Point(531, 49);
             this.btnLimpiarG.Name = "btnLimpiarG";
-            this.btnLimpiarG.Size = new System.Drawing.Size(213, 65);
+            this.btnLimpiarG.Size = new System.Drawing.Size(160, 53);
             this.btnLimpiarG.TabIndex = 105;
             this.btnLimpiarG.Text = "Limpiar";
             this.btnLimpiarG.Click += new System.EventHandler(this.btnLimpiarG_Click);
@@ -259,10 +213,9 @@
             this.btnAgregarPuntoG.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnAgregarPuntoG.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregarPuntoG.ForeColor = System.Drawing.Color.White;
-            this.btnAgregarPuntoG.Location = new System.Drawing.Point(407, 60);
-            this.btnAgregarPuntoG.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAgregarPuntoG.Location = new System.Drawing.Point(305, 49);
             this.btnAgregarPuntoG.Name = "btnAgregarPuntoG";
-            this.btnAgregarPuntoG.Size = new System.Drawing.Size(213, 65);
+            this.btnAgregarPuntoG.Size = new System.Drawing.Size(160, 53);
             this.btnAgregarPuntoG.TabIndex = 104;
             this.btnAgregarPuntoG.Text = "Añadir Punto";
             this.btnAgregarPuntoG.Click += new System.EventHandler(this.btnAgregarPuntoG_Click);
@@ -273,7 +226,7 @@
             this.txtY.AutoRoundedCorners = true;
             this.txtY.BackColor = System.Drawing.Color.Transparent;
             this.txtY.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.txtY.BorderRadius = 15;
+            this.txtY.BorderRadius = 12;
             this.txtY.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtY.DefaultText = "";
             this.txtY.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -283,12 +236,12 @@
             this.txtY.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtY.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtY.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtY.Location = new System.Drawing.Point(109, 111);
-            this.txtY.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtY.Location = new System.Drawing.Point(82, 90);
+            this.txtY.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtY.Name = "txtY";
             this.txtY.PlaceholderText = "";
             this.txtY.SelectedText = "";
-            this.txtY.Size = new System.Drawing.Size(213, 33);
+            this.txtY.Size = new System.Drawing.Size(160, 27);
             this.txtY.TabIndex = 102;
             // 
             // txtX
@@ -297,7 +250,7 @@
             this.txtX.AutoRoundedCorners = true;
             this.txtX.BackColor = System.Drawing.Color.Transparent;
             this.txtX.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.txtX.BorderRadius = 15;
+            this.txtX.BorderRadius = 12;
             this.txtX.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtX.DefaultText = "";
             this.txtX.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -307,21 +260,20 @@
             this.txtX.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtX.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtX.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtX.Location = new System.Drawing.Point(109, 58);
-            this.txtX.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtX.Location = new System.Drawing.Point(82, 47);
+            this.txtX.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtX.Name = "txtX";
             this.txtX.PlaceholderText = "";
             this.txtX.SelectedText = "";
-            this.txtX.Size = new System.Drawing.Size(213, 33);
+            this.txtX.Size = new System.Drawing.Size(160, 27);
             this.txtX.TabIndex = 101;
             // 
             // lblPuntosDiferencias
             // 
             this.lblPuntosDiferencias.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPuntosDiferencias.Location = new System.Drawing.Point(67, 16);
-            this.lblPuntosDiferencias.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblPuntosDiferencias.Location = new System.Drawing.Point(50, 13);
             this.lblPuntosDiferencias.Name = "lblPuntosDiferencias";
-            this.lblPuntosDiferencias.Size = new System.Drawing.Size(257, 37);
+            this.lblPuntosDiferencias.Size = new System.Drawing.Size(193, 30);
             this.lblPuntosDiferencias.TabIndex = 100;
             this.lblPuntosDiferencias.Text = "Ingrese sus puntos:";
             // 
@@ -330,10 +282,9 @@
             this.lblPuntos.AutoSize = true;
             this.lblPuntos.BackColor = System.Drawing.Color.Transparent;
             this.lblPuntos.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPuntos.Location = new System.Drawing.Point(201, 183);
-            this.lblPuntos.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblPuntos.Location = new System.Drawing.Point(151, 149);
             this.lblPuntos.Name = "lblPuntos";
-            this.lblPuntos.Size = new System.Drawing.Size(87, 29);
+            this.lblPuntos.Size = new System.Drawing.Size(68, 24);
             this.lblPuntos.TabIndex = 91;
             this.lblPuntos.Text = "Puntos";
             // 
@@ -342,22 +293,21 @@
             this.lblLagrangePoli.AutoSize = true;
             this.lblLagrangePoli.BackColor = System.Drawing.Color.Transparent;
             this.lblLagrangePoli.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLagrangePoli.Location = new System.Drawing.Point(664, 183);
-            this.lblLagrangePoli.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblLagrangePoli.Location = new System.Drawing.Point(467, 149);
             this.lblLagrangePoli.Name = "lblLagrangePoli";
-            this.lblLagrangePoli.Size = new System.Drawing.Size(216, 29);
+            this.lblLagrangePoli.Size = new System.Drawing.Size(224, 24);
             this.lblLagrangePoli.TabIndex = 90;
-            this.lblLagrangePoli.Text = "Cosas de lagrange";
+            this.lblLagrangePoli.Text = "Interpolacion de lagrange";
             // 
             // txtPolinomio
             // 
+            this.txtPolinomio.Enabled = false;
             this.txtPolinomio.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPolinomio.Location = new System.Drawing.Point(32, 554);
-            this.txtPolinomio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPolinomio.Location = new System.Drawing.Point(24, 450);
             this.txtPolinomio.Multiline = true;
             this.txtPolinomio.Name = "txtPolinomio";
             this.txtPolinomio.ReadOnly = true;
-            this.txtPolinomio.Size = new System.Drawing.Size(975, 41);
+            this.txtPolinomio.Size = new System.Drawing.Size(732, 34);
             this.txtPolinomio.TabIndex = 4;
             this.txtPolinomio.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -365,10 +315,9 @@
             // 
             this.lblPolinomio.BackColor = System.Drawing.Color.Transparent;
             this.lblPolinomio.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPolinomio.Location = new System.Drawing.Point(35, 517);
-            this.lblPolinomio.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblPolinomio.Location = new System.Drawing.Point(26, 420);
             this.lblPolinomio.Name = "lblPolinomio";
-            this.lblPolinomio.Size = new System.Drawing.Size(171, 33);
+            this.lblPolinomio.Size = new System.Drawing.Size(128, 27);
             this.lblPolinomio.TabIndex = 86;
             this.lblPolinomio.Text = "Polinomio:";
             // 
@@ -377,10 +326,9 @@
             this.lblX.AutoSize = true;
             this.lblX.BackColor = System.Drawing.Color.Transparent;
             this.lblX.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblX.Location = new System.Drawing.Point(65, 60);
-            this.lblX.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblX.Location = new System.Drawing.Point(49, 49);
             this.lblX.Name = "lblX";
-            this.lblX.Size = new System.Drawing.Size(42, 31);
+            this.lblX.Size = new System.Drawing.Size(34, 25);
             this.lblX.TabIndex = 88;
             this.lblX.Text = "X:";
             // 
@@ -389,10 +337,9 @@
             this.lblY.AutoSize = true;
             this.lblY.BackColor = System.Drawing.Color.Transparent;
             this.lblY.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblY.Location = new System.Drawing.Point(65, 111);
-            this.lblY.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblY.Location = new System.Drawing.Point(49, 90);
             this.lblY.Name = "lblY";
-            this.lblY.Size = new System.Drawing.Size(42, 31);
+            this.lblY.Size = new System.Drawing.Size(35, 25);
             this.lblY.TabIndex = 89;
             this.lblY.Text = "Y:";
             // 
@@ -401,10 +348,9 @@
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.Font = new System.Drawing.Font("MS PGothic", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo.ForeColor = System.Drawing.Color.White;
-            this.lblTitulo.Location = new System.Drawing.Point(244, -103);
-            this.lblTitulo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTitulo.Location = new System.Drawing.Point(183, -84);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(569, 60);
+            this.lblTitulo.Size = new System.Drawing.Size(457, 48);
             this.lblTitulo.TabIndex = 108;
             this.lblTitulo.Text = "Diferencias Divididas";
             // 
@@ -413,10 +359,9 @@
             this.lblLagrange.AutoSize = true;
             this.lblLagrange.Font = new System.Drawing.Font("MS PGothic", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLagrange.ForeColor = System.Drawing.Color.White;
-            this.lblLagrange.Location = new System.Drawing.Point(212, 27);
-            this.lblLagrange.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblLagrange.Location = new System.Drawing.Point(159, 22);
             this.lblLagrange.Name = "lblLagrange";
-            this.lblLagrange.Size = new System.Drawing.Size(614, 60);
+            this.lblLagrange.Size = new System.Drawing.Size(495, 48);
             this.lblLagrange.TabIndex = 111;
             this.lblLagrange.Text = "Interpolacion Lagrange";
             // 
@@ -427,11 +372,10 @@
             this.guna2ImageButton1.Image = ((System.Drawing.Image)(resources.GetObject("guna2ImageButton1.Image")));
             this.guna2ImageButton1.ImageOffset = new System.Drawing.Point(0, 0);
             this.guna2ImageButton1.ImageRotate = 0F;
-            this.guna2ImageButton1.Location = new System.Drawing.Point(932, 20);
-            this.guna2ImageButton1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2ImageButton1.Location = new System.Drawing.Point(699, 16);
             this.guna2ImageButton1.Name = "guna2ImageButton1";
             this.guna2ImageButton1.PressedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButton1.Size = new System.Drawing.Size(85, 66);
+            this.guna2ImageButton1.Size = new System.Drawing.Size(64, 54);
             this.guna2ImageButton1.TabIndex = 112;
             this.guna2ImageButton1.Click += new System.EventHandler(this.guna2ImageButton1_Click);
             // 
@@ -442,11 +386,10 @@
             this.btnRegresarG.Image = ((System.Drawing.Image)(resources.GetObject("btnRegresarG.Image")));
             this.btnRegresarG.ImageOffset = new System.Drawing.Point(0, 0);
             this.btnRegresarG.ImageRotate = 0F;
-            this.btnRegresarG.Location = new System.Drawing.Point(964, -111);
-            this.btnRegresarG.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRegresarG.Location = new System.Drawing.Point(723, -90);
             this.btnRegresarG.Name = "btnRegresarG";
             this.btnRegresarG.PressedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.btnRegresarG.Size = new System.Drawing.Size(85, 66);
+            this.btnRegresarG.Size = new System.Drawing.Size(64, 54);
             this.btnRegresarG.TabIndex = 110;
             // 
             // ElipseBlanco
@@ -471,12 +414,51 @@
             this.ArrastraLateral.TargetControl = this.lblLagrange;
             this.ArrastraLateral.UseTransparentDrag = true;
             // 
+            // DGVLagrange
+            // 
+            this.DGVLagrange.AllowUserToAddRows = false;
+            this.DGVLagrange.AllowUserToDeleteRows = false;
+            this.DGVLagrange.AllowUserToResizeColumns = false;
+            this.DGVLagrange.AllowUserToResizeRows = false;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.PowderBlue;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.PowderBlue;
+            this.DGVLagrange.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            this.DGVLagrange.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(90)))), ((int)(((byte)(156)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(90)))), ((int)(((byte)(156)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGVLagrange.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            this.DGVLagrange.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.LightSkyBlue;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.LightSkyBlue;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DGVLagrange.DefaultCellStyle = dataGridViewCellStyle9;
+            this.DGVLagrange.Location = new System.Drawing.Point(393, 176);
+            this.DGVLagrange.MultiSelect = false;
+            this.DGVLagrange.Name = "DGVLagrange";
+            this.DGVLagrange.ReadOnly = true;
+            this.DGVLagrange.RowHeadersVisible = false;
+            this.DGVLagrange.RowHeadersWidth = 51;
+            this.DGVLagrange.Size = new System.Drawing.Size(363, 186);
+            this.DGVLagrange.TabIndex = 111;
+            // 
             // Lagrange
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.YellowGreen;
-            this.ClientSize = new System.Drawing.Size(1067, 806);
+            this.ClientSize = new System.Drawing.Size(800, 670);
             this.Controls.Add(this.guna2ImageButton1);
             this.Controls.Add(this.lblLagrange);
             this.Controls.Add(this.btnRegresarG);
@@ -484,14 +466,14 @@
             this.Controls.Add(this.lblTitulo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Lagrange";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Lagrange";
+            this.Load += new System.EventHandler(this.Lagrange_Load);
             this.PanelBlanco.ResumeLayout(false);
             this.PanelBlanco.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DGVLagrange)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DGVEntrada)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVLagrange)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -501,7 +483,6 @@
 
         private Guna.UI2.WinForms.Guna2ImageButton btnRegresarG;
         private Guna.UI2.WinForms.Guna2GradientPanel PanelBlanco;
-        private System.Windows.Forms.DataGridView DGVLagrange;
         private System.Windows.Forms.DataGridView DGVEntrada;
         private Guna.UI2.WinForms.Guna2Button btnGrafica;
         private System.Windows.Forms.TextBox txtPoliSimp;
@@ -525,5 +506,6 @@
         private Guna.UI2.WinForms.Guna2DragControl ArrastrasPagina;
         private Guna.UI2.WinForms.Guna2Elipse ElipseNaranja;
         private Guna.UI2.WinForms.Guna2DragControl ArrastraLateral;
+        private System.Windows.Forms.DataGridView DGVLagrange;
     }
 }

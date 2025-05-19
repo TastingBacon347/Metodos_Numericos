@@ -44,9 +44,7 @@ namespace Metodos_Numeros
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Metodo_De_Biseccion nuevaVentana = new Metodo_De_Biseccion();
-            nuevaVentana.Show();
-            this.Hide();
+            
             
         }
 
@@ -134,9 +132,15 @@ namespace Metodos_Numeros
             PanelMenu.FillColor = color1;
             PanelMenu.FillColor2 = color2;
         }
+
+
         #endregion
 
-
-
+        private void guna2ImageButton2_Click(object sender, EventArgs e)
+        {
+            Metodo_De_Biseccion nuevaVentana = new Metodo_De_Biseccion();
+            nuevaVentana.Show();
+            this.Hide();
+        }
     }
 }

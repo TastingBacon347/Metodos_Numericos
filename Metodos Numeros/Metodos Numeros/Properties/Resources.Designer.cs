@@ -93,9 +93,29 @@ namespace Metodos_Numeros.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap bisection {
+            get {
+                object obj = ResourceManager.GetObject("bisection", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap cru {
             get {
                 object obj = ResourceManager.GetObject("cru", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap False_position_method {
+            get {
+                object obj = ResourceManager.GetObject("False_position_method", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -153,9 +173,39 @@ namespace Metodos_Numeros.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap LagrangeInterpolatingPoly_900 {
+            get {
+                object obj = ResourceManager.GetObject("LagrangeInterpolatingPoly_900", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap metodos {
             get {
                 object obj = ResourceManager.GetObject("metodos", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap newton_backward_table {
+            get {
+                object obj = ResourceManager.GetObject("newton-backward-table", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap newton_backward_table1 {
+            get {
+                object obj = ResourceManager.GetObject("newton-backward-table1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
