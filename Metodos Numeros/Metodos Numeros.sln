@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.13.35828.75 d17.13
+VisualStudioVersion = 17.13.35828.75
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Metodos Numeros", "Metodos Numeros\Metodos Numeros.csproj", "{1D918580-7159-4190-AB34-6357CFAC7C02}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "SetUp Metodos Numericos", "SetUp Metodos Numericos\SetUp Metodos Numericos.vdproj", "{10ADE54B-9BCA-EE33-89B2-D3788182A2FE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,8 @@ Global
 		{1D918580-7159-4190-AB34-6357CFAC7C02}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1D918580-7159-4190-AB34-6357CFAC7C02}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1D918580-7159-4190-AB34-6357CFAC7C02}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10ADE54B-9BCA-EE33-89B2-D3788182A2FE}.Debug|Any CPU.ActiveCfg = Release
+		{10ADE54B-9BCA-EE33-89B2-D3788182A2FE}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
